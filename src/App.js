@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import {Layout} from 'antd';
+import Menu from './Layout/Menu';
+import ContentBox from './Layout/ContentBox';
+import HeaderBox from './Layout/HeaderBox';
+import FooterBox from './Layout/FooterBox';
+const {Content,Sider,Header,Footer} = Layout;
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <div>
+                <Layout>
+                    <Menu/>
+                    <Layout>
+                        <Header
+                            style={{background:'#fff', borderBottomColor:'#0a0a0a'}}><HeaderBox/></Header>
+                        <Content style={{height:'100%', margin: '30px 30px' ,background:'white'}}><ContentBox/></Content>
+                        <Footer style={{margin:'0 30px', background:'white'}}><FooterBox/></Footer>
+                    </Layout>
+                </Layout>
+            </div>
+        );
+    }
 }
 
 export default App;

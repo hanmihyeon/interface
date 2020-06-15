@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import 'antd/dist/antd.css';
-
-
 import {Layout, Menu, Avatar, Typography} from 'antd';
 import {
     MenuUnfoldOutlined,
@@ -18,7 +16,7 @@ import {
 } from '@ant-design/icons';
 
 const {SubMenu} = Menu
-const {Sider} = Layout
+const {Sider, Header} = Layout
 const {Title} = Typography
 
 class SiderMenu extends Component {
@@ -27,13 +25,16 @@ class SiderMenu extends Component {
         collapsed: false
     };
 
-    onCollapse = collapsed => {
-        this.setState({collapsed});
+    toggle = () => {
+        this.setState({
+            collapsed: !this.state.collapsed
+        });
     };
 
     render() {
         return (
                 <Sider
+                    trigger={null}
                     width={250}
                     collapsible="collapsible"
                     collapsed={this.state.collapsed}
@@ -57,16 +58,16 @@ class SiderMenu extends Component {
                     <Menu
                         mode="inline"
                         style={{
-                            height: '791px'
+                            height: '100%'
                         }}
                         defaultSelectedKeys={['1']}>
-                        <Menu.Item to={'/'} key="1" icon={<HomeOutlined/>}>Home</Menu.Item>
-                        <SubMenu to={'/Dashboard'} key="sub1" icon={<DashboardOutlined />} title="Dashboard">
-                            <Menu.Item to={'/Dashboard'}key="2" icon={<DatabaseOutlined />}>Data</Menu.Item>
+                        <Menu.Item key="1" icon={<HomeOutlined/>}>Home</Menu.Item>
+                        <SubMenu key="sub1" icon={<DashboardOutlined />} title="Dashboard">
+                            <Menu.Item key="2" icon={<DatabaseOutlined />}>Data</Menu.Item>
                             <Menu.Item key="3" icon={<LineChartOutlined />}>Chart</Menu.Item>
                         </SubMenu>
-                        <SubMenu to={'/Video'} key="sub2" icon={<LaptopOutlined />} title="Multimedia">
-                            <Menu.Item to={'/Video'} key="4" icon={<VideoCameraOutlined />}>Video</Menu.Item>
+                        <SubMenu key="sub2" icon={<LaptopOutlined />} title="Multimedia">
+                            <Menu.Item key="4" icon={<VideoCameraOutlined />}>Video</Menu.Item>
                             <Menu.Item key="5" icon={<SoundOutlined />}>Sound</Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub3" icon={<SettingOutlined/>} title="Settings">
