@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import 'antd/dist/antd.css';
-
+import {Link} from 'react-router-dom';
+import './Menu.css'
 
 import {Layout, Menu, Avatar, Typography} from 'antd';
 import {
@@ -14,7 +15,8 @@ import {
     LineChartOutlined,
     DatabaseOutlined,
     VideoCameraOutlined,
-    SettingOutlined
+    SettingOutlined,
+    SafetyOutlined
 } from '@ant-design/icons';
 
 const {SubMenu} = Menu
@@ -42,39 +44,53 @@ class SiderMenu extends Component {
                         style={{
                             backgroundColor: 'white',
                             height: '62px',
-                            display:'flex',
-                            justifyContent:'center'
+                            display: 'flex',
+                            justifyContent: 'center'
                         }}>
                         <Title
                             level={2}
                             style={{
-                                height:'100%',
-                                display:'flex',
-                                alignItems:'center',
-                                marginBottom:'0'
+                                height: '100%',
+                                display: 'flex',
+                                alignItems: 'center',
+                                marginBottom: '0'
                             }}>Title</Title>
                     </Typography>
                     <Menu
                         mode="inline"
                         style={{
-                            height: '791px'
+                            height: '793px'
                         }}
                         defaultSelectedKeys={['1']}>
-                        <Menu.Item to={'/'} key="1" icon={<HomeOutlined/>}>Home</Menu.Item>
-                        <SubMenu to={'/Dashboard'} key="sub1" icon={<DashboardOutlined />} title="Dashboard">
-                            <Menu.Item to={'/Dashboard'}key="2" icon={<DatabaseOutlined />}>Data</Menu.Item>
-                            <Menu.Item key="3" icon={<LineChartOutlined />}>Chart</Menu.Item>
+                        <Menu.Item key="1" icon={<HomeOutlined/>}>Home
+                            <Link to="/Home_1"/></Menu.Item>
+                        <SubMenu
+                            key="sub1"
+                            icon={<DashboardOutlined />}
+                            title="Dashboard">
+                                <Link to="/Dashboard"/>
+                            <Menu.Item key="2" to={'/Dashboard'} icon={<DatabaseOutlined />}>Data
+                                <Link to="/Dashboard"/></Menu.Item>
+                            <Menu.Item key="3" icon={<LineChartOutlined />}>Chart
+                            <Link to="/Chart"/></Menu.Item>
                         </SubMenu>
-                        <SubMenu to={'/Video'} key="sub2" icon={<LaptopOutlined />} title="Multimedia">
-                            <Menu.Item to={'/Video'} key="4" icon={<VideoCameraOutlined />}>Video</Menu.Item>
-                            <Menu.Item key="5" icon={<SoundOutlined />}>Sound</Menu.Item>
+                        <SubMenu key="sub2" icon={<LaptopOutlined />} title="Multimedia">
+                        <Link to="/Video"/>
+                            <Menu.Item key="4" icon={<VideoCameraOutlined />}>
+                                <Link to="/Video"/>Video</Menu.Item>
+                            <Menu.Item key="5" icon={<SoundOutlined />}>Sound
+                            <Link to="/Sound"/></Menu.Item>
                         </SubMenu>
                         <SubMenu key="sub3" icon={<SettingOutlined/>} title="Settings">
-                            <Menu.Item key="6" icon={<UserOutlined/>}>User</Menu.Item>
-                            <Menu.Item key="7" icon={<UserOutlined/>}>Device</Menu.Item>
+                        <Link to="/User"/>
+                            <Menu.Item key="6" icon={<UserOutlined/>}>User
+                            <Link to="/User"/></Menu.Item>
+                            <Menu.Item key="7" icon={<SafetyOutlined/>}>Device
+                            <Link to="/Device"/></Menu.Item>
                         </SubMenu>
                     </Menu>
                 </Sider>
+  
         )
     }
 }

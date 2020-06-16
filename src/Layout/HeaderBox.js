@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import {Typography, Avatar, Layout} from 'antd';
-import Menu from './Menu';
 import {MenuUnfoldOutlined, MenuFoldOutlined, UserOutlined} from '@ant-design/icons'
 
-const {Header} = Layout
-const {Title} = Typography
+// const {Header} = Layout
+// const {Title} = Typography
 
 class HeaderBox extends Component {
     render() {
