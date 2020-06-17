@@ -2,3 +2,24 @@
     background: #e6f7ff;
     color: #1890ff;
 }
+
+.ant-layout-sider-children,
+.ant-layout-sider {
+    background: #fff;
+}
+
+.brand {
+    box-shadow: 0 1px 9px -3px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+    position: relative;
+}
+
+span {
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 12px;
+  }

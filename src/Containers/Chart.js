@@ -12,7 +12,8 @@ import {
     AreaChart,
     Area,
     ComposedChart,
-    Bar
+    Bar,
+    ResponsiveContainer
 } from 'recharts';
 
 const data = [
@@ -181,6 +182,7 @@ const Chart = () => {
                     <Row gutter={24}>
                         <Col span={8}>
                             <Card title="Chart 1">
+                            <ResponsiveContainer minHeight={360}>
                                 <LineChart
                                     width={420}
                                     height={300}
@@ -205,10 +207,12 @@ const Chart = () => {
                                         }}/>
                                     <Line type="monotone" dataKey="uv" stroke="#82ca9d"/>
                                 </LineChart>
+                                </ResponsiveContainer>
                             </Card>
                         </Col>
                         <Col span={8}>
                             <Card title="Chart2">
+                            <ResponsiveContainer minHeight={360}>
                                 <AreaChart
                                     width={420}
                                     height={300}
@@ -227,10 +231,12 @@ const Chart = () => {
                                     <Area type='monotone' dataKey='b' stackId="1" stroke='#82ca9d' fill='#82ca9d'/>
                                     <Area type='monotone' dataKey='c' stackId="1" stroke='#ffc658' fill='#ffc658'/>
                                 </AreaChart>
+                                </ResponsiveContainer>
                             </Card>
                         </Col>
                         <Col span={8}>
                             <Card title="Chart 3">
+                            <ResponsiveContainer minHeight={360}>
                                 <ComposedChart
                                     width={500}
                                     height={300}
@@ -249,6 +255,7 @@ const Chart = () => {
                                     <Bar dataKey="uv" barSize={20} fill="#413ea0"/>
                                     <Line type="monotone" dataKey="avg" stroke="#ff7300"/>
                                 </ComposedChart>
+                                </ResponsiveContainer>
                             </Card>
                         </Col>
                     </Row>

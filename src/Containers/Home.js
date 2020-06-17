@@ -1,6 +1,6 @@
 import React from 'react';
 import {Layout} from 'antd';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
 
 import Dashboard from './Dashboard';
 import Chart from './Chart';
@@ -11,7 +11,6 @@ import Device from './Device';
 import Home1 from './Home_1';
 import Menu from '../Layout/Menu';
 
-import ContentBox from '../Layout/ContentBox';
 import HeaderBox from '../Layout/HeaderBox';
 import FooterBox from '../Layout/FooterBox';
 
@@ -24,25 +23,24 @@ const Home = () => {
                 <Layout>
                     <Menu/>
                     <Layout>
-                        <Header
-                            style={{
-                                background: '#fff',
-                                borderBottomColor: '#0a0a0a'
-                            }}><HeaderBox/></Header>
+                        <HeaderBox/>
                         <Content
                             style={{
-                                height: '100%',
-                                margin: '30px 30px',
-                                background: 'white'
+                                height: 'calc(100% - 62px)',
+                                padding: '24px',
+                                position: 'sticky',
+                                top: '62px'
                             }}>
-                            <ContentBox/>
-                            <Route path="/Home_1" component={Home1}/>
+                            
+                            <Switch>
+                            <Route exact path="/Home_1" component={Home1}/>
                             <Route path="/Dashboard" component={Dashboard}/>
                             <Route path="/Chart" component={Chart}/>
                             <Route path="/Video" component={Video}/>
                             <Route path="/Sound" component={Sound}/>
                             <Route path="/User" component={User}/>
                             <Route path="/Device" component={Device}/>
+                            </Switch>
                         </Content>
                         <Footer
                             style={{

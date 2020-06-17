@@ -1,14 +1,15 @@
 import React, {Component} from 'react';
 import {Typography, Avatar, Layout} from 'antd';
+import './HeaderBox.css';
 import {MenuUnfoldOutlined, MenuFoldOutlined, UserOutlined} from '@ant-design/icons'
 
-// const {Header} = Layout
-// const {Title} = Typography
+const {Header} = Layout
 
 class HeaderBox extends Component {
     render() {
         return (
             <Layout>
+                <Header className="header">
                 <div
                     style={{
                         display: 'flex',
@@ -42,7 +43,7 @@ class HeaderBox extends Component {
                                 float: 'left',
                                 marginRight: '15px',
                                 marginTop: '-10px',
-                                fontSize: '18px',
+                                fontSize: '13px',
                                 alignItems: 'center'
                             }}>Login</div>
                         <div
@@ -50,7 +51,7 @@ class HeaderBox extends Component {
                                 float: 'left',
                                 marginRight: '15px',
                                 marginTop: '-10px',
-                                fontSize: '18px',
+                                fontSize: '13px',
                                 alignItems: 'center'
                             }}>hello</div>
                         <div
@@ -68,7 +69,7 @@ class HeaderBox extends Component {
                         </div>
                     </div>
                 </div>
-
+                </Header>
             </Layout>
 
         )

@@ -1,0 +1,15 @@
+.header {
+    background-color: white;
+    overflow: hidden;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - 250px);
+    z-index: 1;
+    transition: width 0.2s;
+    height: 62px;
+    display: flex;
+    box-shadow: 4px 4px 40px 0 rgba(0,0,0,0.05);
+    justify-content: space-between;
+}

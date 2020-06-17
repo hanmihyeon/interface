@@ -6,23 +6,35 @@ const Dashboard = () => {
     return (
         <Fragment>
             <div style={{
-                    marginLeft: '15px'
+                    margin: '0 20px'
                 }}>
                 <Breadcrumb>
                     <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
                     <Breadcrumb.Item><DatabaseOutlined/>&nbsp;Data</Breadcrumb.Item>
                 </Breadcrumb>
-                <div style={{marginTop:'5px'}}>.</div>
-                <Row gutter={24}>
-                    <Col lg={8} md={24}>
-                        <Card  bodyStyle={{padding:0,height:204}}>
-                            
-                        </Card>
+                <div style={{margin:'15px 0'}}>
+                <Row gutter={[24,24]}>
+                    <Col span={16}>
+                        <Card  bodyStyle={{padding:0,height:350}}></Card>
                     </Col>
-                    <Col log={24} md={12}>
-                        <Card bodyStyle={{padding:0,height:204,}}></Card>
+                    <Col span={8}>
+                        <Card bodyStyle={{padding:0,height:350}}></Card>
                     </Col>
                 </Row>
+                <Row gutter={[24,24]}>
+                    <Col span={12}>
+                        <Card  bodyStyle={{padding:0,height:350}}></Card>
+                    </Col>
+                    <Col span={12}>
+                        <Card bodyStyle={{padding:0,height:350}}></Card>
+                    </Col>
+                </Row>
+                <Row gutter={[24,24]}>
+                    <Col span={24}>
+                        <Card  bodyStyle={{padding:0,height:350}}></Card>
+                    </Col>
+                </Row>
+                </div>
             </div>
         </Fragment>
     );
