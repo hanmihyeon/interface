@@ -1,13 +1,15 @@
 import React, {Fragment} from 'react';
 import {Button, Row, Input, Form} from 'antd';
 import './Login.css'
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const FormItem = Form.Item
 const Login = () => {
     return (
-        <Fragment>
-                <div className="formform" style={{width:'100%',height:'100%'}}>
+            <Fragment>
+                <div
+                    className="formform"
+                    >
                     <Form>
                         <div>
                             <span>h4tech-interface</span>
@@ -40,8 +42,7 @@ const Login = () => {
                     </div>
                 </div>
 
-        </Fragment>
-
+            </Fragment>
     );
 };
 

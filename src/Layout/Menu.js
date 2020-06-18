@@ -62,27 +62,27 @@ class SiderMenu extends Component {
                 </div>
                 <Menu mode="inline" defaultSelectedKeys={['1']}>
                     <Menu.Item key="1" icon={<HomeOutlined/>}>Home
-                        <Link to="/Home"/></Menu.Item>
+                        <Link to="/Home/Home1"/></Menu.Item>
                     <SubMenu key="sub1" icon={<DashboardOutlined />} title="Dashboard">
-                        <Link to="/Dashboard"/>
+                        <Link to="/Home/Dashboard"/>
                         <Menu.Item key="2" to={'/Dashboard'} icon={<DatabaseOutlined />}>Data
-                            <Link to="/Dashboard"/></Menu.Item>
+                            <Link to="/Home/Dashboard"/></Menu.Item>
                         <Menu.Item key="3" icon={<LineChartOutlined />}>Chart
-                            <Link to="/Chart"/></Menu.Item>
+                            <Link to="/Home/Chart"/></Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub2" icon={<LaptopOutlined />} title="Multimedia">
-                        <Link to="/Video"/>
+                        <Link to="/Home/Video"/>
                         <Menu.Item key="4" icon={<VideoCameraOutlined />}>
-                            <Link to="/Video"/>Video</Menu.Item>
+                            <Link to="/Home/Video"/>Video</Menu.Item>
                         <Menu.Item key="5" icon={<SoundOutlined />}>Sound
-                            <Link to="/Sound"/></Menu.Item>
+                            <Link to="/Home/Sound"/></Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub3" icon={<SettingOutlined/>} title="Settings">
-                        <Link to="/User"/>
+                        <Link to="/Home/User"/>
                         <Menu.Item key="6" icon={<UserOutlined/>}>User
-                            <Link to="/User"/></Menu.Item>
+                            <Link to="/Home/User"/></Menu.Item>
                         <Menu.Item key="7" icon={<SafetyOutlined/>}>Device
-                            <Link to="/Device"/></Menu.Item>
+                            <Link to="/Home/Device"/></Menu.Item>
                     </SubMenu>
                 </Menu>
             </Sider>

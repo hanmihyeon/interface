@@ -5,7 +5,7 @@ import {GlobalFooter} from 'components';
 import styles from './Login.css'
 const FormItem = Form.Item
 
-class Login extends Component {
+class Login1 extends Component {
     render() {
         
 
@@ -53,4 +53,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default Login1;

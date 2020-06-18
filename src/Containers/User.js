@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Breadcrumb} from 'antd';
 import {SettingOutlined,UserOutlined} from '@ant-design/icons';
 
-const USer = () => {
+const User = () => {
     return (
         <Fragment>
             <div style={{
@@ -18,4 +18,4 @@ const USer = () => {
     );
 };
 
-export default USer;
+export default User;
