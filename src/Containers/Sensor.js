@@ -19,7 +19,7 @@ class TempChart extends Component {
         for (var i = 1; i <= nb_elem; i++) {
             data_bar.push({
                 name: i,
-                temp: Math.round(Math.random() * 100)
+                temp: (30 + (Math.round(Math.random() * 20 )/10))
             });
         }
         return data_bar;
@@ -49,15 +49,21 @@ class TempChart extends Component {
 
     render() {
         return (
-            <BarChart width={1170} height={340} data={this.state.data} style={{marginLeft:'-32px'}}>
-                <XAxis dataKey="name"/>
-                <YAxis/>
-                <CartesianGrid strokeDasharray="5 5"/>
-                <Tooltip/>
-                <Legend/>
-                <Bar dataKey="temp" fill="#c1e0fc"/>
-                <ReferenceLine y={5} stroke="red"  />
-            </BarChart>
+                <BarChart
+                    width={1170}
+                    height={340}
+                    data={this.state.data}
+                    style={{
+                        marginLeft: '-32px'
+                    }}>
+                    <XAxis dataKey="name"/>
+                    <YAxis/>
+                    <CartesianGrid strokeDasharray="5 5"/>
+                    <Tooltip/>
+                    <Legend/>
+                    <Bar dataKey="temp" fill="#c1e0fc"/>
+                    <ReferenceLine y={5} stroke="red"/>
+                </BarChart>
         );
     }
 }
@@ -68,17 +74,24 @@ class SoundChart extends Component {
         for (var i = 1; i <= nb_elem; i++) {
             data_bar.push({
                 name: i,
-                temp: Math.round(Math.random() * 100)
+                temp: (50 + (Math.round(Math.random() * 10 )))
             });
         }
         return data_bar;
+    }
+
+    randomAvg(nb_elem,data_bar) {
+        let avg = (sum(data_bar.temp)/nb_elem);
+        
+        return avg;
     }
 
     constructor(props) {
         super(props);
         this.state = {
             nb_bar: props.nb_bar,
-            data: this.randomDataArray(props.nb_bar)
+            data: this.randomDataArray(props.nb_bar),
+            avg: this.randomAvg(props.nb_bar)
         };
     }
 
@@ -92,21 +105,29 @@ class SoundChart extends Component {
 
     tick() {
         this.setState({
-            data: this.randomDataArray(this.props.nb_bar)
+            data: this.randomDataArray(this.props.nb_bar),
+            avg: this.randomAvg(this.props.nb_bar)
+            
         });
     }
 
     render() {
         return (
-            <BarChart width={1170} height={340} data={this.state.data} style={{marginLeft:'-32px'}}>
-                <XAxis dataKey="name"/>
-                <YAxis/>
-                <CartesianGrid strokeDasharray="5 5"/>
-                <Tooltip/>
-                <Legend/>
-                <Bar dataKey="temp" fill="#d6fbb5"/>
-                <ReferenceLine y={5} stroke="red"  />
-            </BarChart>
+                <BarChart
+                    width={1170}
+                    height={340}
+                    data={this.state.data}
+                    style={{
+                        marginLeft: '-32px'
+                    }}>
+                    <XAxis dataKey="name"/>
+                    <YAxis/>
+                    <CartesianGrid strokeDasharray="5 5"/>
+                    <Tooltip/>
+                    <Legend/>
+                    <Bar dataKey="temp" fill="#d6fbb5"/>
+                    <ReferenceLine y={this.state.avg} stroke="red"/>
+                </BarChart>
         );
     }
 }
@@ -123,14 +144,14 @@ const Sensor = () => {
                 <div style={{
                         marginTop: '5px'
                     }}>
-                    <Row gutter={[0,16]}>
+                    <Row gutter={[0, 16]}>
                         <Col>
-                            <Card title="온도"><TempChart nb_bar={24} /></Card>
+                            <Card title="온도"><TempChart nb_bar={24}/></Card>
                         </Col>
                     </Row>
-                    <Row gutter={[0,16]}>
+                    <Row gutter={[0, 16]}>
                         <Col>
-                            <Card title="소리"><SoundChart nb_bar={24} /></Card>
+                            <Card title="소리"><SoundChart nb_bar={24}/></Card>
                         </Col>
                     </Row>
                 </div>
