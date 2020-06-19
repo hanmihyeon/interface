@@ -105,6 +105,7 @@ class SoundChart extends Component {
                 <Tooltip/>
                 <Legend/>
                 <Bar dataKey="temp" fill="#d6fbb5"/>
+                <ReferenceLine y={5} stroke="red"  />
             </BarChart>
         );
     }
