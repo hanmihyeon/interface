@@ -48,7 +48,8 @@ class SiderMenu extends Component {
                     top: 0,
                     left: 0,
                     height: '100vh',
-                    boxShadow: 'rgba(24, 144, 255, 0.1) 0 0 28px 0'
+                    boxShadow: 'rgba(24, 144, 255, 0.1) 0 0 28px 0',
+                    zIndex:'2'
                 }}>
                 <div className='brand'>
                     <Typography>
