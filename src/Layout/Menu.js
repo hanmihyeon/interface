@@ -16,7 +16,9 @@ import {
     DatabaseOutlined,
     VideoCameraOutlined,
     SettingOutlined,
-    SafetyOutlined
+    SafetyOutlined,
+    RobotOutlined,
+    BarChartOutlined
 } from '@ant-design/icons';
 
 const {SubMenu} = Menu
@@ -69,19 +71,23 @@ class SiderMenu extends Component {
                             <Link to="/Home/Dashboard"/></Menu.Item>
                         <Menu.Item key="3" icon={<LineChartOutlined />}>Chart
                             <Link to="/Home/Chart"/></Menu.Item>
+                        <Menu.Item key="4" icon={<RobotOutlined />}>Robot
+                            <Link to="/Home/Robot"/></Menu.Item>
+                        <Menu.Item key="5" icon={<BarChartOutlined />}>Sensor
+                            <Link to="/Home/Sensor"/></Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub2" icon={<LaptopOutlined />} title="Multimedia">
                         <Link to="/Home/Video"/>
-                        <Menu.Item key="4" icon={<VideoCameraOutlined />}>
+                        <Menu.Item key="6" icon={<VideoCameraOutlined />}>
                             <Link to="/Home/Video"/>Video</Menu.Item>
-                        <Menu.Item key="5" icon={<SoundOutlined />}>Sound
+                        <Menu.Item key="7" icon={<SoundOutlined />}>Sound
                             <Link to="/Home/Sound"/></Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub3" icon={<SettingOutlined/>} title="Settings">
                         <Link to="/Home/User"/>
-                        <Menu.Item key="6" icon={<UserOutlined/>}>User
+                        <Menu.Item key="8" icon={<UserOutlined/>}>User
                             <Link to="/Home/User"/></Menu.Item>
-                        <Menu.Item key="7" icon={<SafetyOutlined/>}>Device
+                        <Menu.Item key="9" icon={<SafetyOutlined/>}>Device
                             <Link to="/Home/Device"/></Menu.Item>
                     </SubMenu>
                 </Menu>

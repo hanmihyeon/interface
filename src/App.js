@@ -5,6 +5,8 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home1 from './Containers/Home_1';
 import Dashboard from './Containers/Dashboard';
 import Chart from './Containers/Chart';
+import Robot from './Containers/Robot';
+import Sensor from './Containers/Sensor';
 import Video from './Containers/Video';
 import Sound from './Containers/Sound';
 import User from './Containers/User';
@@ -37,6 +39,8 @@ class App extends Component {
                                         <Route path="/Home/Home1" component={Home1}/>
                                         <Route path="/Home/Dashboard" component={Dashboard}/>
                                         <Route path="/Home/Chart" component={Chart}/>
+                                        <Route path="/Home/Robot" component={Robot}/>
+                                        <Route path="/Home/Sensor" component={Sensor}/>
                                         <Route path="/Home/Video" component={Video}/>
                                         <Route path="/Home/Sound" component={Sound}/>
                                         <Route path="/Home/User" component={User}/>
