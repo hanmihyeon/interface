@@ -81,9 +81,9 @@ class SoundChart extends Component {
     }
 
     randomAvg(nb_elem,data_bar) {
-        let avg = (sum(data_bar.temp)/nb_elem);
+//        let avg = (sum(data_bar.temp)/nb_elem);
         
-        return avg;
+ //       return avg;
     }
 
     constructor(props) {

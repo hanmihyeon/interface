@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {Component, Fragment} from 'react';
 import {Breadcrumb, Row, Col, Card} from 'antd';
 import {DashboardOutlined, RobotOutlined} from '@ant-design/icons';
 import {

@@ -5,14 +5,14 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home1 from './Containers/Home_1';
 import Dashboard from './Containers/Dashboard';
 import Chart from './Containers/Chart';
-import Robot from './Containers/Robot';
+//import Robot from './Containers/Robot';
 import Sensor from './Containers/Sensor';
 import Video from './Containers/Video';
 import Sound from './Containers/Sound';
 import User from './Containers/User';
 import Device from './Containers/Device';
 import Menu from './Layout/Menu';
-
+import Robot from './Containers/ddd';
 import HeaderBox from './Layout/HeaderBox';
 import FooterBox from './Layout/FooterBox';
 
