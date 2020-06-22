@@ -1,18 +1,8 @@
-import ReactApexChart from 'react-apexcharts';
 import React, {Component, Fragment} from 'react';
 import {Breadcrumb, Row, Col, Card} from 'antd';
 import {DashboardOutlined, RobotOutlined} from '@ant-design/icons';
 
-import './ddd.css';
-import {
-    LineChart,
-    Line,
-    XAxis,
-    YAxis,
-    CartesianGrid,
-    Tooltip,
-    Legend
-} from 'recharts';
+import './Robot_1.css';
 
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
@@ -34,7 +24,7 @@ const options = {
                     series.addPoint([
                         x, y
                     ], true, true);
-                }, 1000);
+                }, 5000);
             }
         }
     },
@@ -101,7 +91,7 @@ const options = {
 
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
-                        x: time + i * 1000,
+                        x: time + i * 5000,
                         y: (30 + ((Math.random() * 10 )/10))
                     });
                 }
@@ -128,7 +118,7 @@ const options_2 = {
                     series.addPoint([
                         x, y
                     ], true, true);
-                }, 1000);
+                }, 5000);
             }
         }
     },
@@ -195,7 +185,7 @@ const options_2 = {
 
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
-                        x: time + i * 1000,
+                        x: time + i * 5000,
                         y: (30 + ((Math.random() * 10 )/10))
                     });
                 }
@@ -208,7 +198,12 @@ const options_2 = {
 
 
 class ddd extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            data : ''
+        }
+    }
     render() {
         return (
             <Fragment>

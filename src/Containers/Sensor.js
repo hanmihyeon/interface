@@ -2,7 +2,6 @@ import React, {Fragment, Component} from 'react';
 import {Breadcrumb, Row, Col, Card} from 'antd';
 import {DashboardOutlined, BarChartOutlined} from '@ant-design/icons';
 import {
-    ResponsiveContainer,
     BarChart,
     Bar,
     XAxis,
