@@ -1,11 +1,10 @@
 import React, {Component, Fragment} from 'react';
 import {Breadcrumb, Row, Col, Card} from 'antd';
 import {DashboardOutlined, RobotOutlined} from '@ant-design/icons';
-
-import './Robot_1.css';
-
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+
+import './Robot_1.css';
 
 const options = {
     chart: {
@@ -49,6 +48,14 @@ const options = {
         }
     },
 
+    plotOptions: {
+        series: {
+            marker: {
+                enabled: false
+            }
+        }
+    },
+    
     xAxis: {
         type: 'datetime',
         tickPixelInterval: 150
