@@ -170,7 +170,7 @@ const Chart = () => {
     return (
         <Fragment>
             <div style={{
-                    margin: '0 15px'
+                    margin: '0 6px'
                 }}>
                 <Breadcrumb>
                     <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>

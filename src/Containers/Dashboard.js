@@ -6,7 +6,7 @@ const Dashboard = () => {
     return (
         <Fragment>
             <div style={{
-                    margin: '0 20px'
+                    margin: '0 6px'
                 }}>
                 <Breadcrumb>
                     <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>

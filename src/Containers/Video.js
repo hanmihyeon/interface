@@ -8,7 +8,7 @@ const Video = (props) => {
     return (
         <Fragment>
             <div style={{
-                    margin: '0 15px'
+                    margin: '0 6px'
                 }}>
                 <Breadcrumb>
                     <Breadcrumb.Item><LaptopOutlined/>&nbsp;&nbsp;Multimedia</Breadcrumb.Item>

@@ -6,7 +6,8 @@ class FooterBox extends Component {
             <div style={{
                     display: 'flex',
                     justifyContent: 'center',
-                    fontSize:'13px'
+                    fontSize:'13px',
+                    position: 'relative'
                 }}>h4tech tunnel system by Ant Design ©2020</div>
         )
     }
