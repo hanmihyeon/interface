@@ -13,6 +13,7 @@ import User from './Containers/User';
 import Device from './Containers/Device';
 import Menu from './Layout/Menu';
 import Robot from './Containers/ddd';
+// import Robot from './Containers/highcharts';
 import HeaderBox from './Layout/HeaderBox';
 import FooterBox from './Layout/FooterBox';
 

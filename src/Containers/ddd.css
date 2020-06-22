@@ -4,5 +4,25 @@
 }
 
 .ant-card-head {
-    height: 34px;
+    min-height: 34px;
+}
+
+.robot-img {
+    width: 200px;
+    height:200px;
+    background: lightblue;
+    float: left;
+}
+
+.robot-info {
+    float: left;
+    width: 130px;
+    height:200px;
+    background-color: lightyellow;
+    padding: 0 15px;
+}
+
+.robot-info p {
+    color: black;
+    text-align: left;
 }

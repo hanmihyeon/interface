@@ -15,6 +15,101 @@ import {
     Bar,
     ResponsiveContainer
 } from 'recharts';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+
+const options = {
+    chart: {
+        type: 'spline',
+        animation: Highcharts.svg, // don't animate in old IE
+        marginRight: 10,
+        events: {
+            load: function () {
+
+                // set up the updating of the chart each second
+                var series = this.series[0];
+                setInterval(function () {
+                    var x = (new Date()).getTime(), // current time
+                        y = Math.random();
+                    series.addPoint([
+                        x, y
+                    ], true, true);
+                }, 1000);
+            }
+        }
+    },
+
+    time: {
+        useUTC: false
+    },
+
+    title: {
+        text: 'chart'
+    },
+    accessibility: {
+        announceNewData: {
+            enabled: true,
+            minAnnounceInterval: 15000,
+            announcementFormatter: function (allSeries, newSeries, newPoint) {
+                if (newPoint) {
+                    return 'New point added. Value: ' + newPoint.y;
+                }
+                return false;
+            }
+        }
+    },
+
+    xAxis: {
+        type: 'datetime',
+        tickPixelInterval: 150
+    },
+
+    yAxis: {
+        title: {
+            text: 'Value'
+        },
+        plotLines: [
+            {
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }
+        ]
+    },
+
+    tooltip: {
+        headerFormat: '<b>{series.name}</b><br/>',
+        pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+    },
+
+    legend: {
+        enabled: false
+    },
+
+    exporting: {
+        enabled: false
+    },
+
+    series: [
+        {
+            name: 'Random data',
+            data: (function () {
+                // generate an array of random data
+                var data = [],
+                    time = (new Date()).getTime(),
+                    i;
+
+                for (i = -19; i <= 0; i += 1) {
+                    data.push({
+                        x: time + i * 1000,
+                        y: Math.random()
+                    });
+                }
+                return data;
+            }())
+        }
+    ]
+}
 
 const data = [
     {
@@ -119,7 +214,7 @@ const data2 = [
         pv: 1200,
         amt: 1228,
         avg: 1302
-    },{
+    }, {
         name: 'Page E',
         uv: 1520,
         pv: 1108,
@@ -182,79 +277,54 @@ const Robot = () => {
                     <Row gutter={24}>
                         <Col span={8}>
                             <Card title="Chart 1">
-                            <ResponsiveContainer minHeight={360}>
-                                <LineChart
-                                    width={420}
-                                    height={300}
-                                    data={data}
-                                    margin={{
-                                        top: 5,
-                                        right: 20,
-                                        left: 20,
-                                        bottom: 5
-                                    }}>
-                                    <XAxis dataKey="name"/>
-                                    <YAxis/>
-                                    <CartesianGrid strokeDasharray="3 3"/>
-                                    <Tooltip/>
-                                    <Legend/>
-                                    <Line
-                                        type="monotone"
-                                        dataKey="pv"
-                                        stroke="#8884d8"
-                                        activeDot={{
-                                            r: 8
-                                        }}/>
-                                    <Line type="monotone" dataKey="uv" stroke="#82ca9d"/>
-                                </LineChart>
-                                </ResponsiveContainer>
+                                <HighchartsReact Highcharts={Highcharts} options={options}/>
                             </Card>
                         </Col>
                         <Col span={8}>
                             <Card title="Chart2">
-                            <ResponsiveContainer minHeight={360}>
-                                <AreaChart
-                                    width={420}
-                                    height={300}
-                                    data={data1}
-                                    stackOffset="expand"
-                                    margin={{
-                                        top: 5,
-                                        right: 20,
-                                        left: 20,
-                                        bottom: 5
-                                    }}>
-                                    <XAxis dataKey="month"/>
-                                    <YAxis tickFormatter={toPercent}/>
-                                    <Tooltip content={renderTooltipContent}/>
-                                    <Area type='monotone' dataKey='a' stackId="1" stroke='#8884d8' fill='#8884d8'/>
-                                    <Area type='monotone' dataKey='b' stackId="1" stroke='#82ca9d' fill='#82ca9d'/>
-                                    <Area type='monotone' dataKey='c' stackId="1" stroke='#ffc658' fill='#ffc658'/>
-                                </AreaChart>
+                                <ResponsiveContainer minHeight={360}>
+                                    <AreaChart
+                                        width={420}
+                                        height={300}
+                                        data={data1}
+                                        stackOffset="expand"
+                                        margin={{
+                                            top: 5,
+                                            right: 20,
+                                            left: 20,
+                                            bottom: 5
+                                        }}>
+                                        <XAxis dataKey="month"/>
+                                        <YAxis tickFormatter={toPercent}/>
+                                        <Tooltip content={renderTooltipContent}/>
+                                        <Area type='monotone' dataKey='a' stackId="1" stroke='#8884d8' fill='#8884d8'/>
+                                        <Area type='monotone' dataKey='b' stackId="1" stroke='#82ca9d' fill='#82ca9d'/>
+                                        <Area type='monotone' dataKey='c' stackId="1" stroke='#ffc658' fill='#ffc658'/>
+                                    </AreaChart>
                                 </ResponsiveContainer>
                             </Card>
                         </Col>
                         <Col span={8}>
                             <Card title="Chart 3">
-                            <ResponsiveContainer minHeight={360}>
-                                <ComposedChart
-                                    width={500}
-                                    height={300}
-                                    data={data2}
-                                    margin={{
-                                        top: 5,
-                                        right: 20,
-                                        bottom: 5,
-                                        left: 0
-                                    }}>
-                                    <CartesianGrid stroke="#f5f5f5"/>
-                                    <XAxis dataKey="name"/>
-                                    <YAxis/>
-                                    <Tooltip/>
-                                    <Legend/>
-                                    <Bar dataKey="uv" barSize={20} fill="#413ea0"/>
-                                    <Line type="monotone" dataKey="avg" stroke="#ff7300"/>
-                                </ComposedChart>
+                                <ResponsiveContainer minHeight={360}>
+                                    <ComposedChart
+                                        width={500}
+                                        height={300}
+                                        data={data2}
+                                        margin={{
+                                            top: 5,
+                                            right: 20,
+                                            bottom: 5,
+                                            left: 0
+                                        }}>
+                                        <CartesianGrid stroke="#f5f5f5"/>
+                                        <XAxis dataKey="name"/>
+                                        <YAxis/>
+                                        <Tooltip/>
+                                        <Legend/>
+                                        <Bar dataKey="uv" barSize={20} fill="#413ea0"/>
+                                        <Line type="monotone" dataKey="avg" stroke="#ff7300"/>
+                                    </ComposedChart>
                                 </ResponsiveContainer>
                             </Card>
                         </Col>
