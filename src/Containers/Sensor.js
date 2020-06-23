@@ -22,11 +22,7 @@ class TempChart extends Component {
                 temp: (30 + (Math.round(Math.random() * 20) / 10))
             });
         }
-        /*   let sum = data_bar.reduce(function (prev, cur){
-            return prev + cur.temp
-        }, 0);
 
-        let avg = (Math.round((sum/24)*10)/10); */
         return data_bar;
     }
 
@@ -88,12 +84,6 @@ class SoundChart extends Component {
                 temp: (50 + (Math.round(Math.random() * 10)))
             });
         }
-
-        /*    let sum = data_bar.reduce(function (prev, cur){
-            return prev + cur.temp
-        }, 0);
-
-        let avg = (Math.round((sum/24)*10)/10); */
 
         return data_bar;
     }
