@@ -3,10 +3,8 @@ import 'antd/dist/antd.css';
 import {Link} from 'react-router-dom';
 import './Menu.css'
 
-import {Layout, Menu, Avatar, Typography} from 'antd';
+import {Layout, Menu, Typography} from 'antd';
 import {
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
     UserOutlined,
     LaptopOutlined,
     DashboardOutlined,

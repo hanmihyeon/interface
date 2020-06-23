@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Typography, Avatar, Layout} from 'antd';
+import {Avatar, Layout} from 'antd';
 import './HeaderBox.css';
-import {MenuUnfoldOutlined, MenuFoldOutlined, UserOutlined} from '@ant-design/icons'
+import {UserOutlined} from '@ant-design/icons'
 
 const {Header} = Layout
 

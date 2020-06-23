@@ -4,7 +4,14 @@ import {DashboardOutlined, RobotOutlined} from '@ant-design/icons';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 
-import './Robot_1.css';
+import './Robot1.css';
+
+// var date = new Date().getTime();
+
+/*options.series[0].addPoint({
+    x : date,
+    y : (30 + ((Math.random() * 10 )/10))
+})*/
 
 const options = {
     chart: {
@@ -12,18 +19,18 @@ const options = {
         height: 200,
         animation: Highcharts.svg, // don't animate in old IE
         marginRight: 10,
-        events: {
+         events: {
             load: function () {
 
                 // set up the updating of the chart each second
                 var series = this.series[0];
                 setInterval(function () {
                     var x = (new Date()).getTime(), // current time
-                        y = (30 + ((Math.random() * 10 )/10))
+                        y = (30 + ((Math.random() * 10 )/100))
                     series.addPoint([
                         x, y
                     ], true, true);
-                }, 5000);
+                }, 1000);
             }
         }
     },
@@ -33,7 +40,7 @@ const options = {
     },
 
     title: {
-        text: 'CO2'
+        text: ''
     },
     accessibility: {
         announceNewData: {
@@ -55,7 +62,7 @@ const options = {
             }
         }
     },
-    
+
     xAxis: {
         type: 'datetime',
         tickPixelInterval: 150
@@ -121,7 +128,7 @@ const options_2 = {
                 var series = this.series[0];
                 setInterval(function () {
                     var x = (new Date()).getTime(), // current time
-                        y = (30 + ((Math.random() * 10 )/10))
+                        y = (Math.round(Math.random() * 2))
                     series.addPoint([
                         x, y
                     ], true, true);
@@ -193,7 +200,7 @@ const options_2 = {
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 5000,
-                        y: (30 + ((Math.random() * 10 )/10))
+                        y:(Math.round(Math.random() * 2 ))
                     });
                 }
                 return data;
@@ -205,12 +212,15 @@ const options_2 = {
 
 
 class ddd extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data : ''
-        }
+
+    componentDidMount() {
+       
     }
+
+    componentWillUnmount() {
+        
+    }
+
     render() {
         return (
             <Fragment>
