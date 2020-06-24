@@ -47,7 +47,7 @@ class SiderMenu extends Component {
                     left: 0,
                     height: '100vh',
                     boxShadow: 'rgba(24, 144, 255, 0.1) 0 0 28px 0',
-                    zIndex:'2'
+                    zIndex: '2'
                 }}>
                 <div className='brand'>
                     <Typography>
@@ -88,6 +88,10 @@ class SiderMenu extends Component {
                             <Link to="/Home/User"/></Menu.Item>
                         <Menu.Item key="9" icon={<SafetyOutlined/>}>Device
                             <Link to="/Home/Device"/></Menu.Item>
+                        <Menu.Item key="10" icon={<SafetyOutlined/>}>Camera
+                            <Link to="/Home/Camera"/></Menu.Item>
+                        <Menu.Item key="12" icon={<SafetyOutlined/>}>TunnelCurrent
+                            <Link to="/Home/TunnelCurrent"/></Menu.Item>
                     </SubMenu>
                 </Menu>
             </Sider>

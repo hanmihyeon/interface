@@ -14,6 +14,8 @@ import Device from './Containers/Device';
 import Menu from './Layout/Menu';
 import HeaderBox from './Layout/HeaderBox';
 import FooterBox from './Layout/FooterBox';
+import Tunnel from './Containers/TunnelCurrentA';
+import Camera from './Containers/Camera';
 
 const {Content, Footer} = Layout;
 
@@ -32,7 +34,8 @@ class App extends Component {
                                         height: 'calc(100% - 62px)',
                                         padding: '24px',
                                         position: 'sticky',
-                                        top: '62px'
+                                        top: '62px',
+                                        marginBottom: '10px'
                                     }}>
                                     <Switch>
                                         <Route path="/Home/Home1" component={Home1}/>
@@ -44,11 +47,13 @@ class App extends Component {
                                         <Route path="/Home/Sound" component={Sound}/>
                                         <Route path="/Home/User" component={User}/>
                                         <Route path="/Home/Device" component={Device}/>
+                                        <Route path="/Home/Camera" component={Camera}/>
+                                        <Route path="/Home/TunnelCurrent" component={Tunnel}/>
                                     </Switch>
                                 </Content>
                                 <Footer
                                     style={{
-                                        margin: '0 30px',
+                                        margin: '20px 30px',
                                         background: 'white'
                                     }}><FooterBox/></Footer>
                             </Layout>
