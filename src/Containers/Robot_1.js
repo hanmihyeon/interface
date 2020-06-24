@@ -13,20 +13,22 @@ import './Robot1.css';
     y : (30 + ((Math.random() * 10 )/10))
 })*/
 
+let brobot = false
+
 const options = {
     chart: {
         type: 'spline',
         height: 200,
         animation: Highcharts.svg, // don't animate in old IE
         marginRight: 10,
-         events: {
+        events: {
             load: function () {
 
                 // set up the updating of the chart each second
                 var series = this.series[0];
                 setInterval(function () {
                     var x = (new Date()).getTime(), // current time
-                        y = (30 + ((Math.random() * 10 )/100))
+                        y = (30 + ((Math.random() * 10) / 100))
                     series.addPoint([
                         x, y
                     ], true, true);
@@ -106,9 +108,14 @@ const options = {
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 5000,
-                        y: (30 + ((Math.random() * 10 )/10))
+                        y: (30 + ((Math.random() * 10) / 10))
                     });
                 }
+               /* if (brobot === false) {
+                    return;
+                } else {
+                    return data;
+                }*/
                 return data;
             }())
         }
@@ -141,7 +148,7 @@ const options_2 = {
         useUTC: false
     },
     title: {
-        text: '',
+        text: ''
     },
 
     accessibility: {
@@ -200,7 +207,7 @@ const options_2 = {
                 for (i = -19; i <= 0; i += 1) {
                     data.push({
                         x: time + i * 5000,
-                        y:(Math.round(Math.random() * 2 ))
+                        y: (Math.round(Math.random() * 2))
                     });
                 }
                 return data;
@@ -210,16 +217,11 @@ const options_2 = {
     ]
 }
 
-
 class ddd extends Component {
 
-    componentDidMount() {
-       
-    }
+    componentDidMount() {}
 
-    componentWillUnmount() {
-        
-    }
+    componentWillUnmount() {}
 
     render() {
         return (
@@ -241,34 +243,34 @@ class ddd extends Component {
                                     <Row gutter={[16, 16]}>
                                         <Col span={8}>
                                             <div id="chart">
-                                                <HighchartsReact Highcharts={Highcharts} options={options} />
+                                                <HighchartsReact Highcharts={Highcharts} options={options} brobot={true}/>
                                             </div>
                                         </Col>
                                         <Col span={8}>
                                             <div id="chart">
-                                            <HighchartsReact Highcharts={Highcharts} options={options} />
+                                                <HighchartsReact Highcharts={Highcharts} options={options} brobot={false}/>
                                             </div>
                                         </Col>
                                         <Col span={8}>
                                             <div id="chart">
-                                            <HighchartsReact Highcharts={Highcharts} options={options} />
+                                                <HighchartsReact brobot={false} Highcharts={Highcharts} options={options}/>
                                             </div>
                                         </Col>
                                     </Row>
                                     <Row gutter={[16, 16]}>
                                         <Col span={8}>
                                             <div id="chart">
-                                            <HighchartsReact Highcharts={Highcharts} options={options} />
+                                                <HighchartsReact brobot={false} Highcharts={Highcharts} options={options}/>
                                             </div>
                                         </Col>
                                         <Col span={8}>
                                             <div id="chart">
-                                            <HighchartsReact Highcharts={Highcharts} options={options} />
+                                                <HighchartsReact Highcharts={Highcharts} options={options} brobot={false}/>
                                             </div>
                                         </Col>
                                         <Col span={8}>
                                             <div id="chart">
-                                            <HighchartsReact Highcharts={Highcharts} options={options} />
+                                                <HighchartsReact brobot={false} Highcharts={Highcharts} options={options}/>
                                             </div>
                                         </Col>
                                     </Row>
@@ -291,7 +293,7 @@ class ddd extends Component {
                                     </div>
                                 </Card>
                                 <Card title="레일 로봇 상태 추이">
-                                <HighchartsReact Highcharts={Highcharts} options={options_2}/>
+                                    <HighchartsReact Highcharts={Highcharts} options={options_2}/>
                                 </Card>
                             </Col>
                         </Row>
