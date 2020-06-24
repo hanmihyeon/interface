@@ -111,12 +111,12 @@ const options = {
                         y: (30 + ((Math.random() * 10) / 10))
                     });
                 }
-               /* if (brobot === false) {
+                if (brobot === true) {
                     return;
                 } else {
                     return data;
-                }*/
-                return data;
+                }
+               // return data;
             }())
         }
     ]
@@ -243,7 +243,7 @@ class ddd extends Component {
                                     <Row gutter={[16, 16]}>
                                         <Col span={8}>
                                             <div id="chart">
-                                                <HighchartsReact Highcharts={Highcharts} options={options} brobot={true}/>
+                                                <HighchartsReact Highcharts={Highcharts} options={options} brobot={false}/>
                                             </div>
                                         </Col>
                                         <Col span={8}>
