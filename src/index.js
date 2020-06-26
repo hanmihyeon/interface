@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import App from './App';
-import Login from './Containers/Login';
-import './Containers/Login.css';
+import Login from './Containers/Pages/Login';
+import './Containers/Pages/Login.css';
 
 ReactDOM.render(
     <BrowserRouter>

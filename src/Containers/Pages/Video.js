@@ -3,20 +3,19 @@ import {Breadcrumb, Row, Col} from 'antd';
 import {LaptopOutlined, VideoCameraOutlined} from '@ant-design/icons';
 import {Player} from 'video-react';
 import 'video-react/dist/video-react.css';
-
+// import BigPlayButton from 'video-react/lib/components/BigPlayButton';
+import './Video.css';
 const Video = (props) => {
     return (
         <Fragment>
-            <div style={{
-                    margin: '0 6px'
-                }}>
-                <Breadcrumb>
+            <div>
+                <Breadcrumb style={{
+                            marginBottom: '20px'
+                        }}>
                     <Breadcrumb.Item><LaptopOutlined/>&nbsp;&nbsp;Multimedia</Breadcrumb.Item>
                     <Breadcrumb.Item><VideoCameraOutlined/>&nbsp;Video</Breadcrumb.Item>
                 </Breadcrumb>
-                <div style={{
-                        marginTop: '20px'
-                    }}>
+                <div>
                     <Row gutter={12}>
                         <Col span={16}>
                             <Player
@@ -24,7 +23,7 @@ const Video = (props) => {
                                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                                 autoPlay={true}
                                 muted={true}
-                                />
+                                ></Player>
                         </Col>
                         <Col span={8}>
                             <Row>
@@ -33,7 +32,8 @@ const Video = (props) => {
                                         playsInline="playsInline"
                                         src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                                         autoPlay={true}
-                                        muted={true}/>
+                                        muted={true}
+                                        />
                                 </Col>
                                 <Col span={12}>
                                     <Player

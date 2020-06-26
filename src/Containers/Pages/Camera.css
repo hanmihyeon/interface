@@ -1,0 +1,38 @@
+.cl_iframe {  width:100%; height:100%;  padding:4% 2% 4% 2%; border: 0; margin-top:-5px;}
+.cl_blink_orange {
+     -webkit-animation: cl_blink_orange 3.0s linear infinite;
+       }
+@keyframes cl_blink_orange {
+      /*0% 부터 100% 까지*/
+       0% { background:white;}
+       100% {background:#fff58c; }
+       /*from부터 to 까지
+       from {color:#00a0e9;}
+       to {color:#000;}
+       */
+       }
+
+
+.cl_blink_red {
+
+  -webkit-animation: cl_blink_red 3.0s linear infinite;
+              }
+@keyframes cl_blink_red {
+             /*0% 부터 100% 까지*/
+              0% { background:white;}
+              100% {background:#ff8cac; }
+              /*from부터 to 까지
+              from {color:#00a0e9;}
+              to {color:#000;}
+              */
+  }
+
+.c_iframe {
+    background:#acff8c;
+    width:100%;
+    height:400px;
+    padding:2%;
+    border: 0;
+    position:relative;
+
+}

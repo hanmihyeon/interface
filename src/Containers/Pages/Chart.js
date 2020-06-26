@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, {Fragment} from 'react';
 import {Breadcrumb, Row, Col, Card} from 'antd';
 import {DashboardOutlined, LineChartOutlined} from '@ant-design/icons';
 import {
@@ -15,6 +15,8 @@ import {
     Bar,
     ResponsiveContainer
 } from 'recharts';
+
+import './Common.css';
 
 const data = [
     {
@@ -119,7 +121,7 @@ const data2 = [
         pv: 1200,
         amt: 1228,
         avg: 1302
-    },{
+    }, {
         name: 'Page E',
         uv: 1520,
         pv: 1108,
@@ -169,19 +171,14 @@ const renderTooltipContent = (o) => {
 const Chart = () => {
     return (
         <Fragment>
-            <div style={{
-                    margin: '0 6px'
-                }}>
-                <Breadcrumb>
-                    <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
-                    <Breadcrumb.Item><LineChartOutlined/>&nbsp;Chart</Breadcrumb.Item>
-                </Breadcrumb>
-                <div style={{
-                        marginTop: '15px'
-                    }}>
-                    <Row gutter={24}>
-                        <Col span={8}>
-                            <Card title="Chart 1">
+            <Breadcrumb className="bread">
+                <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
+                <Breadcrumb.Item><LineChartOutlined/>&nbsp;Chart</Breadcrumb.Item>
+            </Breadcrumb>
+            <div className="chart contents">
+                <Row gutter={24}>
+                    <Col span={8}>
+                        <Card title="Chart 1">
                             <ResponsiveContainer minHeight={360}>
                                 <LineChart
                                     width={420}
@@ -207,11 +204,11 @@ const Chart = () => {
                                         }}/>
                                     <Line type="monotone" dataKey="uv" stroke="#82ca9d"/>
                                 </LineChart>
-                                </ResponsiveContainer>
-                            </Card>
-                        </Col>
-                        <Col span={8}>
-                            <Card title="Chart2">
+                            </ResponsiveContainer>
+                        </Card>
+                    </Col>
+                    <Col span={8}>
+                        <Card title="Chart2">
                             <ResponsiveContainer minHeight={360}>
                                 <AreaChart
                                     width={420}
@@ -231,11 +228,11 @@ const Chart = () => {
                                     <Area type='monotone' dataKey='b' stackId="1" stroke='#82ca9d' fill='#82ca9d'/>
                                     <Area type='monotone' dataKey='c' stackId="1" stroke='#ffc658' fill='#ffc658'/>
                                 </AreaChart>
-                                </ResponsiveContainer>
-                            </Card>
-                        </Col>
-                        <Col span={8}>
-                            <Card title="Chart 3">
+                            </ResponsiveContainer>
+                        </Card>
+                    </Col>
+                    <Col span={8}>
+                        <Card title="Chart 3">
                             <ResponsiveContainer minHeight={360}>
                                 <ComposedChart
                                     width={500}
@@ -255,12 +252,10 @@ const Chart = () => {
                                     <Bar dataKey="uv" barSize={20} fill="#413ea0"/>
                                     <Line type="monotone" dataKey="avg" stroke="#ff7300"/>
                                 </ComposedChart>
-                                </ResponsiveContainer>
-                            </Card>
-                        </Col>
-                    </Row>
-
-                </div>
+                            </ResponsiveContainer>
+                        </Card>
+                    </Col>
+                </Row>
             </div>
         </Fragment>
     );

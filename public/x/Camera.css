@@ -1,0 +1,10 @@
+.mainCam {
+    padding: 10px;
+    background-color: #acff8c;
+    /*b7ffdb; 62b06e 8FE08F
+    yellow : #fff58c
+    red : #ff8cac
+    green : #8cff99, #acff8c*/
+    border-radius: 20px;
+    border: none;
+}

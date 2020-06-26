@@ -86,10 +86,11 @@ class SiderMenu extends Component {
                         <Link to="/Home/User"/>
                         <Menu.Item key="8" icon={<UserOutlined/>}>User
                             <Link to="/Home/User"/></Menu.Item>
-                        <Menu.Item key="9" icon={<SafetyOutlined/>}>Device
-                            <Link to="/Home/Device"/></Menu.Item>
+
                         <Menu.Item key="10" icon={<SafetyOutlined/>}>Camera
                             <Link to="/Home/Camera"/></Menu.Item>
+                        <Menu.Item key="9" icon={<SafetyOutlined/>}>TunnelTab
+                            <Link to="/Home/Device"/></Menu.Item>
                         <Menu.Item key="12" icon={<SafetyOutlined/>}>TunnelCurrent
                             <Link to="/Home/TunnelCurrent"/></Menu.Item>
                     </SubMenu>

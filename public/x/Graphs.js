@@ -361,7 +361,7 @@ export const GraphsAccid = () => {
      yAxis: { min: 0 },
      label: { visible: true },
      groupField: 'name',
-     color: ['yellow', '#f88c24'],
+     color: ['#fff58c', '#FFCB8C'],
    };
     return (
           <div  style={{ width:'100%' , height:'110%' }}  >
