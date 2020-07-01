@@ -8,7 +8,6 @@ export const SagnacAvgChart = () => {
     const optionavg1 = {
         chart: {
             type: 'area',
-            width: 1100,
             height: 320,
             marginTop: 70,
             animation: Highcharts.svg, // don't animate in old IE
@@ -95,7 +94,7 @@ export const SagnacAvgChart = () => {
 
         series: [
             {
-                name: 'FOS',
+                name: 'AVG',
                 color: '#ff8cac',
                 data: (function () {
                     // generate an array of random data
@@ -122,24 +121,29 @@ export const SagnacAvgChart = () => {
 
     return (
         <div>
-        <div>
-            <div
-                className="title"
-                style={{
-                    fontSize: '16px',
-                    margin: '0 0 0px 32px',
-                    float: 'left'
-                }}>Sagnac AVG Chart</div>
-            <div
-                style={{
-                    fontSize: '16px',
-                    float: 'right'
-                }}>Update every minutes</div></div>
+            <div>
+                <div
+                    className="title"
+                    style={{
+                        fontSize: '16px',
+                        margin: '0 0 0px 32px',
+                        float: 'left'
+                    }}>Sagnac AVG</div>
+                <div
+                    style={{
+                        fontSize: '16px',
+                        float: 'right',
+                        border: '1px solid #1890ff',
+                        background: '#e6f7ff',
+                        color: 'black',
+                        padding: '5px'
+                    }}>1분 단위</div>
+            </div>
             <div style={{
                     marginLeft: '32px'
                 }}>
                 <HighchartsReact Highcharts={Highcharts} options={optionavg1} brobot={false}/></div>
-                </div>
+        </div>
     );
 }
 
@@ -147,7 +151,6 @@ export const TempAvgChart = () => {
     const optionavg2 = {
         chart: {
             type: 'area',
-            width: 1100,
             height: 320,
             marginTop: 70,
             animation: Highcharts.svg, // don't animate in old IE
@@ -234,7 +237,7 @@ export const TempAvgChart = () => {
 
         series: [
             {
-                name: 'Temp AVG',
+                name: 'AVG',
                 color: 'rgb(193, 224, 252)',
                 data: (function () {
                     // generate an array of random data
@@ -267,12 +270,16 @@ export const TempAvgChart = () => {
                     fontSize: '16px',
                     margin: '0 0 0px 32px',
                     float: 'left'
-                }}>Temp AVG Chart</div>
+                }}>FBG Temperature AVG</div>
             <div
                 style={{
                     fontSize: '16px',
-                    float: 'right'
-                }}>Update every minutes</div>
+                    float: 'right',
+                    border: '1px solid #1890ff',
+                    background: '#e6f7ff',
+                    color: 'black',
+                    padding: '5px'
+                }}>1분 단위</div>
             <div style={{
                     marginLeft: '32px'
                 }}>
@@ -285,7 +292,7 @@ export const SoundAvgChart = () => {
     const optionavg3 = {
         chart: {
             type: 'area',
-            width: 1100,
+            
             height: 320,
             marginTop: 70,
             animation: Highcharts.svg, // don't animate in old IE
@@ -372,7 +379,7 @@ export const SoundAvgChart = () => {
 
         series: [
             {
-                name: 'Sound AVG',
+                name: 'AVG',
                 color: 'rgb(214, 251, 181)',
                 data: (function () {
                     // generate an array of random data
@@ -405,12 +412,16 @@ export const SoundAvgChart = () => {
                     fontSize: '16px',
                     margin: '0 0 0px 32px',
                     float: 'left'
-                }}>Sound AVG Chart</div>
+                }}>FBG Sound AVG</div>
             <div
                 style={{
                     fontSize: '16px',
-                    float: 'right'
-                }}>Update every minutes</div>
+                    float: 'right',
+                    border: '1px solid #1890ff',
+                    background: '#e6f7ff',
+                    color: 'black',
+                    padding: '5px'
+                }}>1분 단위</div>
             <div style={{
                     marginLeft: '32px'
                 }}>

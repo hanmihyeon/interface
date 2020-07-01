@@ -10,15 +10,12 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import Home1 from './Containers/Pages/Home_1';
 import Dashboard from './Containers/Pages/Dashboard';
 import Chart from './Containers/Pages/Chart';
-// import Robot from './Containers/Pages/Robot_1';
-//import Sensor from './Containers/Pages/Sensor';
 import Video from './Containers/Pages/Video';
-import Sound from './Containers/Pages/Sound';
-import User from './Containers/Pages/User';
-// import Device from './Containers/Pages/Device';
-import Tunnel from './Containers/Pages/TunnelCurrentA';
-import Tunnel1 from './Containers/Pages/TunnelCurrentB';
-import Camera from './Containers/Pages/Camera';
+import EventManager from './Containers/Pages/EventManager';
+import RobotControl from './Containers/Pages/RobotControl';
+ import User from './Containers/Pages/User';
+ import Device from './Containers/Pages/Device';
+import Tunnel from './Containers/Pages/TunnelCurrentB';
 
 import HeaderBox from './Layout/HeaderBox';
 import FooterBox from './Layout/FooterBox';
@@ -37,7 +34,7 @@ class App extends Component {
                             <Content
                                 style={{
                                     padding: '10px 25px 20px 25px',
-                                    minHeight: 'calc(100% - 40px)'
+                                    minHeight: 'calc(100% - 70px)'
                                 }}>
                                 <ContentBox/>
                                 <Switch>
@@ -47,10 +44,10 @@ class App extends Component {
                                      {/*<Route path="/Home/Robot" component={Robot}/>
                                    <Route path="/Home/Sensor" component={Sensor}/>*/}
                                     <Route path="/Home/Video" component={Video}/>
-                                    <Route path="/Home/Sound" component={Sound}/>
+                                    <Route path="/Home/EventManager" component={EventManager}/>
+                                    <Route path="/Home/RobotControl" component={RobotControl}/>
                                     <Route path="/Home/User" component={User}/>
-                                    <Route path="/Home/Device" component={Tunnel1}/>
-                                    <Route path="/Home/Camera" component={Camera}/>
+                                    <Route path="/Home/Device" component={Device}/>
                                     <Route path="/Home/TunnelCurrent" component={Tunnel}/>
                                 </Switch>
                             </Content>

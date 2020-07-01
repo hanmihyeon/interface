@@ -173,7 +173,7 @@ const Chart = () => {
         <Fragment>
             <Breadcrumb className="bread">
                 <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
-                <Breadcrumb.Item><LineChartOutlined/>&nbsp;Chart</Breadcrumb.Item>
+                <Breadcrumb.Item><LineChartOutlined/>&nbsp;Statistic</Breadcrumb.Item>
             </Breadcrumb>
             <div className="chart contents">
                 <Row gutter={24}>

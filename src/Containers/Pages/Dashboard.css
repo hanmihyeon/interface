@@ -1,0 +1,9 @@
+.section-title {
+    margin-bottom: 15px;
+    width: 100%;
+    background: #ddd;
+}
+
+.section-title .ant-card-head {
+    background: white;
+}

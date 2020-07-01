@@ -1,0 +1,42 @@
+.move {
+    position:absolute;
+    left:100px;
+    width:100px;
+    height:50px;
+    margin-left:-50px;
+    background-color:#000;
+    border:solid 1px #000;
+    color:#fff;
+    /* animation-name:duration; */
+  }
+  
+  .zero{
+    top:20px;
+    animation-duration:0
+  }
+  .minus{
+    top:80px;
+    animation-duration:-2s
+  }
+  .s {
+    top:140px;
+    animation-duration:2s
+  }
+  /* .s:hover {
+      animation-name:duration;
+  } */
+  .ms{
+    top:200px;
+    animation-duration:900ms
+  }
+  
+  @-webkit-keyframes duration{
+    from{
+      left:100px;
+      background-color:#fff;
+    }
+    to{
+      left:300px;
+      background-color:#999;
+    }
+  }

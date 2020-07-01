@@ -1,83 +1,81 @@
-import React, {Fragment} from 'react';
-import {Breadcrumb, Row, Col, Card , Tabs} from 'antd';
-import {DashboardOutlined,DatabaseOutlined} from '@ant-design/icons';
-// import { Line , StackedArea} from '@ant-design/charts';
+import React, {Component ,Fragment ,useState, useEffect} from 'react';
+import {Breadcrumb, Row, Col, Card } from 'antd';
+import {DashboardOutlined,DatabaseOutlined , SmileTwoTone } from '@ant-design/icons';
 
-import { GraphsTemp , GraphsEvent , GraphsCotwo} from './Graphs';
+import './TunnelCurrentB.css'
 
-import './Common.css';
+import TweenOne from 'rc-tween-one';
+import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
+TweenOne.plugins.push(BezierPlugin);
 
-const { TabPane } = Tabs;
+export const TunnelList =({tList})=>{
 
-export default class TunnelCurrentB extends React.Component {
+  const animation = {
+    bezier: {
+      type: 'soft',
+      vars: [
+        { x: 500, y: 0 },
+        { x: 600, y: 0 },
+      ],
+    },
+    repeat: -1,
+    yoyo: true,
+    duration: 15000,
+  };
 
- state={
-    tunnelName:'상행'
+  return(
+    <>
+    
+          {/*<ul style={{position:'absolute',marginTop:'24%',fontSize:'110%' , border:'1px solid black', lineHeight:'130%'}}>
+              <div style={{marginTop:'-19%'}}>범례</div>
+              <li>내부 혼잡도: <SmileTwoTone twoToneColor="#eb2f96"/></li>
+              <li>일반 카메라: <SmileTwoTone /> </li>
+              <li>열화상 카메라: <SmileTwoTone twoToneColor="#00ff00" />  </li>
+              <li>로봇 카메라: <SmileTwoTone twoToneColor="#3333cc"/> </li>
+  </ul>*/}
+
+                <div style={{position:'absolute',marginLeft:'25%' , marginTop:'6%',width:'50%' ,border:'4px solid #3333cc'  }}></div>
+                <TweenOne animation={animation} > <div style={{position:'absolute',marginLeft:'25%' , marginTop:'5%' , width:'3%', height:'35px',border:'4px solid #3333cc' , background:'#7070db', borderRadius:'20%' }}></div></TweenOne>
+
+                <div style={{position:'absolute',marginLeft:'29%' , marginTop:'9%',width:'55%' ,border:'1px solid black'  }}></div>
+
+                <div style={{position:'absolute',marginLeft:'28%' , marginTop:'8%',width:'3%', height:'10%',border:'4px solid #00a000' , background:'#75ff75', borderRadius:'100%' }}></div>
+                <div style={{position:'absolute',marginLeft:'46%' , marginTop:'8%',width:'3%', height:'10%',border:'4px solid #00a000' , background:'#75ff75',borderRadius:'100%' }}></div>
+                <div style={{position:'absolute',marginLeft:'64%' , marginTop:'8%',width:'3%', height:'10%',border:'4px solid #00a000' , background:'#75ff75',borderRadius:'100%' }}></div>
+                <div style={{position:'absolute',marginLeft:'82%' , marginTop:'8%',width:'3%', height:'10%',border:'4px solid #00a000' , background:'#75ff75',borderRadius:'100%' }}></div>
+
+                <div style={{position:'absolute',marginLeft:'27%' , marginTop:'9%',width:'3%', height:'10%',border:'4px solid #1890ff' , background:'skyblue', borderRadius:'100%' }}></div>
+                <div style={{position:'absolute',marginLeft:'45%' , marginTop:'9%',width:'3%', height:'10%',border:'4px solid #1890ff' , background:'skyblue',borderRadius:'100%' }}></div>
+                <div style={{position:'absolute',marginLeft:'63%' , marginTop:'9%',width:'3%', height:'10%',border:'4px solid #1890ff' , background:'skyblue',borderRadius:'100%' }}></div>
+                <div style={{position:'absolute',marginLeft:'81%' , marginTop:'9%',width:'3%', height:'10%',border:'4px solid #1890ff' , background:'skyblue',borderRadius:'100%' }}></div>
+
+{/*
+                <div style={{position:'absolute',marginLeft:'15%' , marginTop:'24%',width:'12%', height:'10%', background:'#e6f7ff',textAlign:'center',border:'4px solid #1890ff'  }}><h1>내부혼잡도: 원활</h1> </div>
+                <div style={{position:'absolute',marginLeft:'28%' , marginTop:'24%',width:'10%', height:'10%', background:'#e6f7ff' ,textAlign:'center',border:'4px solid #1890ff' }}><h1>FBG: 24/24</h1></div>
+                <div style={{position:'absolute',marginLeft:'39%' , marginTop:'24%',width:'10%', height:'10%', background:'#e6f7ff',textAlign:'center' ,border:'4px solid #1890ff' }}><h1>Sagnac: 정상</h1></div>
+*/}
+
+              <div   style={{float:'left',marginLeft:'23%' ,marginTop:'6%' ,width:'55%'  ,border:'3px solid black' }}></div>
+              <div style={{float:'left' ,marginLeft:'15%' ,  width:'15%', height:'200px' ,border:'5px solid black' , borderRadius:'100px 100px 0px 0px' }}></div>
+
+              <div style={{marginLeft:'70%' , marginTop:'6%',width:'16%', height:'200px'   ,borderRight:'5px solid black' , borderRadius:'100px 100px 0px 0px' }}></div>
+
+    </>
+  );
 }
 
-  setTunnel=(key)=>{
-    if(key === 1){
-      this.setState({  tunnelName:'상행'  })
-    }else{
-      this.setState({  tunnelName:'하행'  })
-    }
-  }
+export default class TunnelCurrentB extends Component {
 
-//border:'solid 1px black'
 refreshDiv =()=>{
   this.setState({});
 }
 
   render(){
+    const tList = [1, 2 ];
     {setTimeout(this.refreshDiv , 15000)}
     return (
-        <Fragment>
-
-            <div>
-                <Breadcrumb style={{
-                            marginBottom: '20px'
-                        }}>
-                    <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
-                    <Breadcrumb.Item><DatabaseOutlined/>&nbsp;Data</Breadcrumb.Item>
-                </Breadcrumb>
-
-                <div>
-
-                <Tabs defaultActiveKey="1" onChange={(key)=>{this.setTunnel(key)}}>
-                  <TabPane tab="세종 A위치 터널 상행" key="1" />
-                  <TabPane tab="세종 A위치 터널 하행" key="2" />
-                </Tabs>
-<Card>
-                  <Row justify="center"  style={{ marginBottom:'3px'}} >
-                      <Col  style={{background: '#F9F9F9' ,width:'20%' , height:'40px',boxShadow:'5px 5px 5px 5px gray' }} >
-                          <h2 style={{ textAlign:'left' , marginLeft:'20px'}}>Tunnel Name</h2>
-                        </Col>
-                        <Col   style={{ marginLeft:'3px' ,background: '#F9F9F9' ,width:'70%',height:'40px' ,boxShadow:'5px 5px 5px 5px gray' }} >
-                            <h2 style={{ textAlign:'left' ,  marginLeft:'20px'}}>Graph</h2>
-                        </Col>
-                  </Row>
-
-                  <Row justify="center"  style={{ marginBottom:'3px'}} >
-                      <Col  style={{  background: '#DEEBF7' ,width:'20%' , height:'500px' ,boxShadow:'5px 5px 5px 5px gray' }} >
-                        <ul><br/>
-                             세종 A터널 {this.state.tunnelName}<br/>
-                            <li>위치설명 : 세종시 전동면 심중리 <br/> A 터널 {this.state.tunnelName} 입니다.</li>
-                            <li>온도 : 현재 온도그래프의 <br/>기준온도 27℃입니다.</li>
-                            <li>사고 : 금일의 사고 현황을 나타냅니다. </li>
-                            <li>Co2  : 이산화탄소의 평균 농도는 0.04% 이고 <br/> 약간의 가중치로 변화량을 나타냈습니다. </li>
-
-                        </ul>
-                        </Col>
-                        <Col   style={{  marginLeft:'3px' ,background: 'white' ,width:'70%',height:'500px' ,boxShadow:'5px 5px 5px 5px gray' }} >
-                          <div  style={{borderRight:'2px solid #F1F1F1' ,background: 'white'  ,width:'33%',height:'300px' , float:'left'}}>   <GraphsTemp/></div>
-                            <div  style={{borderRight:'2px solid #F1F1F1' , background: 'white'  ,width:'33%',height:'300px' , float:'left'}}><GraphsEvent/></div>
-                            <div  style={{background: 'white'  ,width:'33%',height:'300px' , float:'left'}}><GraphsCotwo/></div>
-                        </Col>
-                  </Row></Card>
-                  </div>
-            </div>
-        </Fragment>
+                <div></div>
     );
   }
 };
-//<GraphsTemp/>
+

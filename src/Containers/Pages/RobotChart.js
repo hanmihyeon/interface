@@ -8,7 +8,7 @@ export const RobotChart1 = () => {
     const option1 = {
         chart: {
             type: 'spline',
-            width:265,
+            
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,
@@ -126,7 +126,7 @@ export const RobotChart2 = () => {
     const option2 = {
         chart: {
             type: 'spline',
-            width:265,
+            
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,
@@ -246,7 +246,7 @@ export const RobotChart3 = () => {
     const option3 = {
         chart: {
             type: 'spline',
-            width:265,
+            
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
@@ -364,7 +364,7 @@ export const RobotChart4 = () => {
     const option4 = {
         chart: {
             type: 'spline',
-            width:265,
+            
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,
@@ -483,7 +483,7 @@ export const RobotChart5 = () => {
     const option5 = {
         chart: {
             type: 'spline',
-            width:265,
+            
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,
@@ -602,7 +602,7 @@ export const RobotChart6 = () => {
     const option6 = {
         chart: {
             type: 'spline',
-            width:265,
+           
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
@@ -715,7 +715,7 @@ export const RobotChart6 = () => {
     );
 }
 
-export const SagnacChart = () => {
+export const RobotStateChart = () => {
         
     const optionState = {
         chart: {
