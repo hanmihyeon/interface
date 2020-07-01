@@ -715,7 +715,7 @@ export const RobotChart6 = () => {
     );
 }
 
-export const RobotStateChart = () => {
+export const SagnacChart = () => {
         
     const optionState = {
         chart: {

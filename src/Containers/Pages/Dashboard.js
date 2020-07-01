@@ -12,8 +12,11 @@ import {
     RobotChart4,
     RobotChart5,
     RobotChart6,
-    RobotStateChart
+    SagnacChart
 } from './RobotChart';
+import {
+    SagnacAvgChart, TempAvgChart, SoundAvgChart
+} from './RobotAvgChart';
 
 import './Robot1.css';
 
@@ -36,9 +39,9 @@ const Dashboard = () => {
                     <Col span={12}>
                         <Card
                             bodyStyle={{
-                                padding: 0,
+                                padding: '24px 36px 24px 0',
                                 height: 380
-                            }}></Card>
+                            }}><SagnacAvgChart/></Card>
                     </Col>
                     <Col span={12}>
                         <Card
@@ -50,9 +53,9 @@ const Dashboard = () => {
                     <Col span={12}>
                         <Card
                             bodyStyle={{
-                                padding: 0,
+                                padding: '24px 36px 24px 0',
                                 height: 380
-                            }}></Card>
+                            }}><TempAvgChart/></Card>
                     </Col>
                     <Col span={12}>
                         <Card
@@ -64,9 +67,9 @@ const Dashboard = () => {
                     <Col span={12}>
                         <Card
                             bodyStyle={{
-                                padding: 0,
+                                padding: '24px 36px 24px 0',
                                 height: 380
-                            }}></Card>
+                            }}><SoundAvgChart/></Card>
                     </Col>
                     <Col span={16}>
                         <Card
@@ -128,7 +131,7 @@ const Dashboard = () => {
                                 </div>
                             </Card>
                             <Card title="레일 로봇 상태 추이" size="small">
-                                <RobotStateChart/>
+                                <SagnacChart/>
                             </Card>
                         </Card>
                     </Col>
