@@ -141,6 +141,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                             </Card>
+                            {/*
                             <Card size="small" className="section-title" title="Robot Data">
                                 <Row gutter={[6, 6]}>
                                     <Col span={8}>
@@ -240,6 +241,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                             </Card>
+                                                */}
                             <Card size="small" className="section-title" title="Tunnel">
                                 <Row gutter={[6, 6]}>
                                     <Col span={16}>
@@ -405,6 +407,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                             </Card>
+                            {/*
                             <Card size="small" className="section-title" title="Robot Data">
                                 <Row gutter={[6, 6]}>
                                     <Col span={8}>
@@ -504,6 +507,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                             </Card>
+                                                */}
                             <Card size="small" className="section-title" title="Tunnel">
                                 <Row gutter={[6, 6]}>
                                     <Col span={16}>
