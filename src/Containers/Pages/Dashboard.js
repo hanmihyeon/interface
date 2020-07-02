@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import {Breadcrumb, Row, Col, Card, Tabs} from 'antd';
-import {DashboardOutlined, DatabaseOutlined} from '@ant-design/icons';
+import {DashboardOutlined, DatabaseOutlined, ArrowRightOutlined} from '@ant-design/icons';
 
 import './Common.css';
 import './Dashboard.css';
@@ -62,7 +62,7 @@ const Dashboard = () => {
                                                     }}>Sagnac AVG</div>
                                                 <div
                                                     style={{
-                                                        fontSize: '16px',
+                                                        fontSize: '12px',
                                                         float: 'right',
                                                         border: '1px solid #f0faff',
                                                         background: '#e6f7ff',
@@ -98,7 +98,7 @@ const Dashboard = () => {
                                                     }}>FBG Temperature AVG</div>
                                                 <div
                                                     style={{
-                                                        fontSize: '16px',
+                                                        fontSize: '12px',
                                                         float: 'right',
                                                         border: '1px solid #f0faff',
                                                         background: '#e6f7ff',
@@ -130,7 +130,7 @@ const Dashboard = () => {
                                                     }}>FBG Sound AVG</div>
                                                 <div
                                                     style={{
-                                                        fontSize: '16px',
+                                                        fontSize: '12px',
                                                         float: 'right',
                                                         border: '1px solid #f0faff',
                                                         background: '#e6f7ff',
@@ -197,6 +197,7 @@ const Dashboard = () => {
                                                     <div
                                                         style={{
                                                             float: 'right',
+                                                            fontSize:'12px',
                                                             border: '1px solid #f0faff',
                                                             background: '#e6f7ff',
                                                             color: 'black',
@@ -207,32 +208,32 @@ const Dashboard = () => {
                                                     span={8}
                                                     style={{
                                                         border: '0.5px solid #b0b0b0',
-                                                        padding:'3px'
+                                                        padding: '3px'
                                                     }}><RobotChart1/></Col>
                                                 <Col
                                                     span={8}
                                                     style={{
-                                                        border: '0.5px solid #b0b0b0',
+                                                        border: '0.5px solid #b0b0b0'
                                                     }}><RobotChart2/></Col>
                                                 <Col
                                                     span={8}
                                                     style={{
-                                                        border:'0.5px solid #b0b0b0',
+                                                        border: '0.5px solid #b0b0b0'
                                                     }}><RobotChart3/></Col>
                                                 <Col
                                                     span={8}
                                                     style={{
-                                                        border:'0.5px solid #b0b0b0',
+                                                        border: '0.5px solid #b0b0b0'
                                                     }}><RobotChart4/></Col>
                                                 <Col
                                                     span={8}
                                                     style={{
-                                                        border: '0.5px solid #b0b0b0',
+                                                        border: '0.5px solid #b0b0b0'
                                                     }}><RobotChart5/></Col>
                                                 <Col
                                                     span={8}
                                                     style={{
-                                                        border:'0.5px solid #b0b0b0',
+                                                        border: '0.5px solid #b0b0b0'
                                                     }}><RobotChart6/></Col>
                                             </Row>
                                         </Card>
@@ -247,14 +248,18 @@ const Dashboard = () => {
                                                 padding: 0,
                                                 height: 520
                                             }}>
-                                            <div><img
-                                                src="/tunnel.png"
-                                                alt=""
+                                            <div
                                                 style={{
-                height: '300px',
-                width: '80%',
-                marginTop: '110px'
-            }}/></div>
+                                                    display: 'flex'
+                                                }}>
+                                                <img
+                                                    src="/tunnel_2.png"
+                                                    alt=""
+                                                    style={{
+                                                        height: '300px',
+                                                        width: '100%',
+                                                        marginTop: '80px'
+                                                    }}/></div>
                                         </Card>
                                     </Col>
                                     <Col span={8}>
@@ -273,7 +278,7 @@ const Dashboard = () => {
                                                     }}>네트워크 상태</div>
                                                 <div
                                                     style={{
-                                                        fontSize: '16px',
+                                                        fontSize: '12px',
                                                         float: 'right',
                                                         border: '1px solid #f0faff',
                                                         background: '#e6f7ff',
@@ -289,7 +294,7 @@ const Dashboard = () => {
                 </Fragment>
             </TabPane>
             <TabPane tab="청주-&gt;부강" key="2">
-                <Fragment>
+            <Fragment>
                     <Breadcrumb className="bread">
                         <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
                         <Breadcrumb.Item><DatabaseOutlined/>&nbsp;Data</Breadcrumb.Item>
@@ -310,7 +315,25 @@ const Dashboard = () => {
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><SagnacAvgChart/></Card>
+                                            }}>
+                                            <div>
+                                                <div
+                                                    className="title"
+                                                    style={{
+                                                        fontSize: '16px',
+                                                        margin: '0 0 0px 32px',
+                                                        float: 'left'
+                                                    }}>Sagnac AVG</div>
+                                                <div
+                                                    style={{
+                                                        fontSize: '12px',
+                                                        float: 'right',
+                                                        border: '1px solid #f0faff',
+                                                        background: '#e6f7ff',
+                                                        color: 'black',
+                                                        padding: '5px'
+                                                    }}>1분 단위</div>
+                                            </div><SagnacAvgChart/></Card>
                                     </Col>
                                 </Row>
                             </Card>
@@ -328,7 +351,25 @@ const Dashboard = () => {
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><TempAvgChart/></Card>
+                                            }}>
+                                            <div>
+                                                <div
+                                                    className="title"
+                                                    style={{
+                                                        fontSize: '16px',
+                                                        margin: '0 0 0px 32px',
+                                                        float: 'left'
+                                                    }}>FBG Temperature AVG</div>
+                                                <div
+                                                    style={{
+                                                        fontSize: '12px',
+                                                        float: 'right',
+                                                        border: '1px solid #f0faff',
+                                                        background: '#e6f7ff',
+                                                        color: 'black',
+                                                        padding: '5px'
+                                                    }}>1분 단위</div>
+                                            </div><TempAvgChart/></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
@@ -342,7 +383,25 @@ const Dashboard = () => {
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><SoundAvgChart/></Card>
+                                            }}>
+                                            <div>
+                                                <div
+                                                    className="title"
+                                                    style={{
+                                                        fontSize: '16px',
+                                                        margin: '0 0 0px 32px',
+                                                        float: 'left'
+                                                    }}>FBG Sound AVG</div>
+                                                <div
+                                                    style={{
+                                                        fontSize: '12px',
+                                                        float: 'right',
+                                                        border: '1px solid #f0faff',
+                                                        background: '#e6f7ff',
+                                                        color: 'black',
+                                                        padding: '5px'
+                                                    }}>1분 단위</div>
+                                            </div><SoundAvgChart/></Card>
                                     </Col>
                                 </Row>
                             </Card>
@@ -392,28 +451,54 @@ const Dashboard = () => {
                                                 <Col
                                                     span={24}
                                                     style={{
-                                                        marginBottom: '20px',
+                                                        marginBottom: '14px',
                                                         fontSize: '16px'
                                                     }}>
                                                     <div
                                                         style={{
                                                             float: 'left'
-                                                        }}>환경정보</div>
+                                                        }}>로봇 환경 센서</div>
                                                     <div
                                                         style={{
                                                             float: 'right',
-                                                            border: '1px solid #1890ff',
+                                                            fontSize:'12px',
+                                                            border: '1px solid #f0faff',
                                                             background: '#e6f7ff',
                                                             color: 'black',
                                                             padding: '5px'
                                                         }}>1분 단위</div>
                                                 </Col>
-                                                <Col span={8}><RobotChart1/></Col>
-                                                <Col span={8}><RobotChart2/></Col>
-                                                <Col span={8}><RobotChart3/></Col>
-                                                <Col span={8}><RobotChart4/></Col>
-                                                <Col span={8}><RobotChart5/></Col>
-                                                <Col span={8}><RobotChart6/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0',
+                                                        padding: '3px'
+                                                    }}><RobotChart1/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0'
+                                                    }}><RobotChart2/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0'
+                                                    }}><RobotChart3/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0'
+                                                    }}><RobotChart4/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0'
+                                                    }}><RobotChart5/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0'
+                                                    }}><RobotChart6/></Col>
                                             </Row>
                                         </Card>
                                     </Col>
@@ -425,15 +510,46 @@ const Dashboard = () => {
                                         <Card
                                             bodyStyle={{
                                                 padding: 0,
-                                                height: 450
-                                            }}><TunnelList/></Card>
+                                                height: 520
+                                            }}>
+                                            <div
+                                                style={{
+                                                    display: 'flex'
+                                                }}>
+                                                <img
+                                                    src="/tunnel_2.png"
+                                                    alt=""
+                                                    style={{
+                                                        height: '300px',
+                                                        width: '100%',
+                                                        marginTop: '80px'
+                                                    }}/></div>
+                                        </Card>
                                     </Col>
                                     <Col span={8}>
                                         <Card
                                             bodyStyle={{
-                                                padding: '12px 18px 12px 18px',
-                                                height: 450
-                                            }}><NetworkChart/></Card>
+                                                padding: '24px 24px',
+                                                height: 520
+                                            }}>
+                                            <div>
+                                                <div
+                                                    className="title"
+                                                    style={{
+                                                        fontSize: '16px',
+                                                        margin: '0 0 0px 16px',
+                                                        float: 'left'
+                                                    }}>네트워크 상태</div>
+                                                <div
+                                                    style={{
+                                                        fontSize: '12px',
+                                                        float: 'right',
+                                                        border: '1px solid #f0faff',
+                                                        background: '#e6f7ff',
+                                                        color: 'black',
+                                                        padding: '5px'
+                                                    }}>1분 단위</div>
+                                            </div><NetworkChart/></Card>
                                     </Col>
                                 </Row>
                             </Card>

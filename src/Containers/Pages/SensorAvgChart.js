@@ -201,12 +201,7 @@ export const TempAvgChart = () => {
         },
 
         legend: {
-            enabled: true,
-            align: 'top',
-            verticalAlign: 'top',
-            layout: 'horizontal',
-            x: 280,
-            y: 0
+            enabled: false,
         },
 
         exporting: {
@@ -326,12 +321,7 @@ export const SoundAvgChart = () => {
         },
 
         legend: {
-            enabled: true,
-            align: 'top',
-            verticalAlign: 'top',
-            layout: 'horizontal',
-            x: 280,
-            y: 0
+            enabled: false,
         },
 
         exporting: {

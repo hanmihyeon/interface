@@ -67,7 +67,7 @@ export class TempChart extends Component {
                         float:'left'
                     }}>FBG Temperature</div>
                     <div style={{
-                        fontSize: '16px',
+                        fontSize: '12px',
                         float:'right',
                         border: '1px solid #f0faff',
                         background: '#e6f7ff',
@@ -150,7 +150,7 @@ export class SoundChart extends Component {
                         float: 'left'
                     }}>FBG Sound</div>
                     <div style={{
-                        fontSize: '16px',
+                        fontSize: '12px',
                         float:'right',
                         border: '1px solid #f0faff',
                         background: '#e6f7ff',
@@ -191,7 +191,7 @@ export class SagnacChart extends Component {
                         float:'left'
                     }}>Sagnac</div>
                     <div style={{
-                        fontSize: '16px',
+                        fontSize: '12px',
                         float:'right',
                         border: '1px solid #f0faff',
                         background: '#e6f7ff',

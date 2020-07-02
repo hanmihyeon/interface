@@ -12,3 +12,17 @@
 .section-title .ant-card-head {
     background: white;
 }
+
+.ant-tabs-card.ant-tabs-top> .ant-tabs-nav .ant-tabs-tab {
+    border-radius: 10px 10px 0 0;
+}
+
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
+    color: #1890ff;
+    border: 1px solid #1890ff;
+    background: #fff;
+}
+
+.ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
+    padding : 4px 16px;
+}
