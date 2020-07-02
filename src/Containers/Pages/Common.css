@@ -1,5 +1,4 @@
 .ant-breadcrumb {
-    
     background:#e6f7ff;
     overflow: hidden;
     display: flex;
@@ -19,12 +18,19 @@
 
 .ant-tabs-top > .ant-tabs-nav {
     margin-top: 30px;
+    margin-bottom:10px;
+    margin-left: 2px;
 }
 
 .contents {
     margin-top:30px;
 }
 
+.ant-layout-content {
+    background: #f0f0f0;
+}
+
 .dashboard {
     margin-top: 0;
+    margin: 0 5px;
 }

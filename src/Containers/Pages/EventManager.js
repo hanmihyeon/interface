@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Breadcrumb, Card, Table} from 'antd';
+import {Breadcrumb, Card, Table, Row} from 'antd';
 import {SettingOutlined, UserOutlined} from '@ant-design/icons';
 
 import './Common.css';
@@ -41,10 +41,11 @@ const EventManager = () => {
                 <Breadcrumb.Item><SettingOutlined/>&nbsp;&nbsp;Event</Breadcrumb.Item>
                 <Breadcrumb.Item><UserOutlined/>&nbsp;Event Manager</Breadcrumb.Item>
             </Breadcrumb>
-            <div className="event-manager contents">
+            <div className="event-manager contents" >
+              <Row gutter={[6,6]}>
                 <Card title="Event" size="middle">
-                    <Table columns={columns} dataSource={data} pagination={{ pageSize: 20 }} scroll={{ y: 300 }} />
-                </Card>
+                    <Table columns={columns} dataSource={data} pagination={{ pageSize: 25 }} scroll={{ y: 360 }} />
+                </Card></Row>
             </div>
         </Fragment>
     );

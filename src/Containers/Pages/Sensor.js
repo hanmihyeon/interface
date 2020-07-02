@@ -69,7 +69,7 @@ export class TempChart extends Component {
                     <div style={{
                         fontSize: '16px',
                         float:'right',
-                        border: '1px solid #1890ff',
+                        border: '1px solid #f0faff',
                         background: '#e6f7ff',
                         color: 'black',
                         padding:'5px'
@@ -152,7 +152,7 @@ export class SoundChart extends Component {
                     <div style={{
                         fontSize: '16px',
                         float:'right',
-                        border: '1px solid #1890ff',
+                        border: '1px solid #f0faff',
                         background: '#e6f7ff',
                         color: 'black',
                         padding:'5px'
@@ -193,7 +193,7 @@ export class SagnacChart extends Component {
                     <div style={{
                         fontSize: '16px',
                         float:'right',
-                        border: '1px solid #1890ff',
+                        border: '1px solid #f0faff',
                         background: '#e6f7ff',
                         color: 'black',
                         padding:'5px'
@@ -215,10 +215,10 @@ export class SagnacChart extends Component {
                             color: '#f00'
                         }, {
                             stop: 0.5,
-                            color: '#0CD7FD'
+                            color: '#ff8cac'
                         }, {
                             stop: 1,
-                            color: 'red'
+                            color: '#ff8cac'
                         }
                     ]}
                     gap={4}/></div>

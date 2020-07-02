@@ -24,6 +24,7 @@
     "react-audio-spectrum": "^0.1.0",
     "react-dom": "^16.13.1",
     "react-iframe": "^1.8.0",
+    "react-joystick-component": "^1.4.0",
     "react-perfect-scrollbar": "^1.5.8",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",

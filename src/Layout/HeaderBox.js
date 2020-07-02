@@ -56,7 +56,7 @@ class HeaderBox extends Component {
                     </div>
                     <div
                         style={{
-                            paddingLeft: '320px'
+                            paddingLeft: '130px'
                         }}>
                         <Menu
                             onClick={this.handleClick}

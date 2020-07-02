@@ -8,8 +8,9 @@ export const SagnacAvgChart = () => {
     const optionavg1 = {
         chart: {
             type: 'area',
-            height: 320,
-            marginTop: 70,
+            marginTop: 50,
+            height: 300,
+            width:null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -80,12 +81,8 @@ export const SagnacAvgChart = () => {
         },
 
         legend: {
-            enabled: true,
-            align: 'top',
-            verticalAlign: 'top',
-            layout: 'horizontal',
-            x: 280,
-            y: 0
+            enabled: false,
+            
         },
 
         exporting: {
@@ -120,29 +117,9 @@ export const SagnacAvgChart = () => {
     }
 
     return (
-        <div>
+        <div style={{margin: '40px 0 0 30px'}}>
             <div>
-                <div
-                    className="title"
-                    style={{
-                        fontSize: '16px',
-                        margin: '0 0 0px 32px',
-                        float: 'left'
-                    }}>Sagnac AVG</div>
-                <div
-                    style={{
-                        fontSize: '16px',
-                        float: 'right',
-                        border: '1px solid #1890ff',
-                        background: '#e6f7ff',
-                        color: 'black',
-                        padding: '5px'
-                    }}>1분 단위</div>
-            </div>
-            <div style={{
-                    marginLeft: '32px'
-                }}>
-                <HighchartsReact Highcharts={Highcharts} options={optionavg1} brobot={false}/></div>
+                <HighchartsReact Highcharts={Highcharts} options={optionavg1} brobot={false} style={{overflow:'visible'}}/></div>
         </div>
     );
 }
@@ -151,8 +128,9 @@ export const TempAvgChart = () => {
     const optionavg2 = {
         chart: {
             type: 'area',
-            height: 320,
-            marginTop: 70,
+            marginTop: 50,
+            height: 300,
+            width:null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -264,25 +242,8 @@ export const TempAvgChart = () => {
 
     return (
         <div>
-            <div
-                className="title"
-                style={{
-                    fontSize: '16px',
-                    margin: '0 0 0px 32px',
-                    float: 'left'
-                }}>FBG Temperature AVG</div>
-            <div
-                style={{
-                    fontSize: '16px',
-                    float: 'right',
-                    border: '1px solid #1890ff',
-                    background: '#e6f7ff',
-                    color: 'black',
-                    padding: '5px'
-                }}>1분 단위</div>
-            <div style={{
-                    marginLeft: '32px'
-                }}>
+            
+            <div style={{margin: '40px 0 0 30px'}}>
                 <HighchartsReact Highcharts={Highcharts} options={optionavg2} brobot={false}/></div>
         </div>
     );
@@ -292,9 +253,9 @@ export const SoundAvgChart = () => {
     const optionavg3 = {
         chart: {
             type: 'area',
-            
-            height: 320,
-            marginTop: 70,
+            marginTop: 50,
+            height: 280,
+            width:null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -406,25 +367,8 @@ export const SoundAvgChart = () => {
 
     return (
         <div>
-            <div
-                className="title"
-                style={{
-                    fontSize: '16px',
-                    margin: '0 0 0px 32px',
-                    float: 'left'
-                }}>FBG Sound AVG</div>
-            <div
-                style={{
-                    fontSize: '16px',
-                    float: 'right',
-                    border: '1px solid #1890ff',
-                    background: '#e6f7ff',
-                    color: 'black',
-                    padding: '5px'
-                }}>1분 단위</div>
-            <div style={{
-                    marginLeft: '32px'
-                }}>
+            
+            <div style={{margin: '60px 0 0 30px'}}>
                 <HighchartsReact Highcharts={Highcharts} options={optionavg3} brobot={false}/></div>
         </div>
     );
