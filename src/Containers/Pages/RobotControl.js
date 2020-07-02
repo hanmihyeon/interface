@@ -65,33 +65,34 @@ const RobotControl = () => {
                             style={{
                                 width: '100%',
                                 height: '100%'
-                            }}>
+                            }}
+                            bodyStyle={{padding:'10px'}}>
                             <Card
                                 bodyStyle={{
-                                    border: '5px solid #1890ff',
                                     background: '#e6f7ff',
                                     width: '100%',
                                     height: '100%',
-                                    padding : '20px'
-                                }}>
+                                    padding:0
+                                }}
+                                style={{padding:0}}>
                                 <div>
                                     <h3>카메라 조정 (확대, 축소)</h3>
                                 </div>
-                                <div style={{marginTop:'40px'}}>
+                                <div style={{marginTop:'15px'}}>
                                 <div
                                     style={{
-                                        width:'200px',
+                                        width:'100px',
                                         height:'200px',
                                         float: 'left',
                                         position:'relative',
-                                        margin:'0 0 30px 40px'
+                                        margin:'0 0 20px 10px'
                                     }}>
                                     <div
                                         style={{
                                             width: '7%',
                                             position:'absolute',
                                             top: 20,
-                                            left: 65
+                                            left: 45
                                         }}>
                                         <Button type="primary">▲</Button>
                                     </div>
@@ -101,8 +102,8 @@ const RobotControl = () => {
                                             width: '7%',
                                             float:'left',
                                             position: 'absolute',
-                                            top:72,
-                                            left:15
+                                            top:65,
+                                            left:0
                                         }}>
                                         <Button type="primary">◀</Button>
                                     </div>
@@ -112,8 +113,8 @@ const RobotControl = () => {
                                             height: '10%',
                                             float:'left',
                                             position: 'absolute',
-                                            top:65,
-                                            left:58
+                                            top:60,
+                                            left:38
                                         }}>
                                         <Joystick size={50} baseColor="#1890ff" stickColor="black"></Joystick>
                                     </div>
@@ -122,8 +123,8 @@ const RobotControl = () => {
                                             width: '7%',
                                             float:'left',
                                             position:'absolute',
-                                            top:72,
-                                            right:66
+                                            top:65,
+                                            right:0
                                         }}>
                                         <Button type="primary">▶</Button>
                                     </div></div>
@@ -131,8 +132,8 @@ const RobotControl = () => {
                                         style={{
                                             width: '7%',
                                             position:'absolute',
-                                            bottom:39,
-                                            left:65
+                                            bottom:50,
+                                            left:45
                                         }}>
                                         <Button type="primary">▼</Button>
                                     </div>
@@ -141,13 +142,17 @@ const RobotControl = () => {
                                 <div
                                     className="card3-control-button"
                                     style={{
+                                        width:'100px',
+                                        height:'200px',
                                         float: 'left',
-                                        margin:'15px 0 0 40px'
+                                        position:'relative',
+                                        margin:'0 0 20px 20px'
                                     }}>
                                     <img
                                         style={{
                                             border: '1px solid black',
-                                            height: '180px'
+                                            height: '180px',
+                                            marginLeft:'50px'
                                         }}
                                         src='/scalebar.png'/>
                                 </div>
@@ -155,8 +160,11 @@ const RobotControl = () => {
                                 <div
                                     className="card3-control-button"
                                     style={{
+                                        width:'100px',
+                                        height:'200px',
                                         float: 'left',
-                                        margin:'15px 0 0 70px'
+                                        position:'relative',
+                                        margin:'0 0 20px 50px'
                                     }}>
                                     <div>
                                         <Button
@@ -237,20 +245,49 @@ const RobotControl = () => {
                                         fontSize: '16px'
                                     }}>
                                     <div
-                                        style={{
-                                            float: 'left'
-                                        }}>로봇 환경 센서</div>
-                                    <div
-                                        style={{
-                                            float: 'right'
-                                        }}>Update every minutes</div>
+                                                        style={{
+                                                            float: 'left'
+                                                        }}>로봇 환경 센서</div>
+                                                    <div
+                                                        style={{
+                                                            float: 'right',
+                                                            border: '1px solid #f0faff',
+                                                            background: '#e6f7ff',
+                                                            color: 'black',
+                                                            padding: '5px'
+                                                        }}>1분 단위</div>
                                 </Col>
-                                <Col span={8}><RobotChart1/></Col>
-                                <Col span={8}><RobotChart2/></Col>
-                                <Col span={8}><RobotChart3/></Col>
-                                <Col span={8}><RobotChart4/></Col>
-                                <Col span={8}><RobotChart5/></Col>
-                                <Col span={8}><RobotChart6/></Col>
+                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0',
+                                                        padding:'3px'
+                                                    }}><RobotChart1/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0',
+                                                    }}><RobotChart2/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border:'0.5px solid #b0b0b0',
+                                                    }}><RobotChart3/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border:'0.5px solid #b0b0b0',
+                                                    }}><RobotChart4/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border: '0.5px solid #b0b0b0',
+                                                    }}><RobotChart5/></Col>
+                                                <Col
+                                                    span={8}
+                                                    style={{
+                                                        border:'0.5px solid #b0b0b0',
+                                                    }}><RobotChart6/></Col>
                             </Row>
                         </Card>
                     </Col>
