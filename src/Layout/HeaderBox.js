@@ -12,7 +12,9 @@ import {
     SafetyOutlined,
     RobotOutlined,
     BarChartOutlined,
-    DesktopOutlined
+    DesktopOutlined,
+    BulbOutlined,
+    ToolOutlined
 } from '@ant-design/icons'
 import {Link} from 'react-router-dom';
 
@@ -81,11 +83,11 @@ class HeaderBox extends Component {
                                 <Link to="/Home/Video"/>
                             </Menu.Item>
                             <SubMenu key="sub2" icon={<DesktopOutlined/>} title="이벤트">
-                                <Menu.Item key="5" icon={<UserOutlined/>}>
+                                <Menu.Item key="5" icon={<BulbOutlined/>}>
                                     이벤트 매니저
                                     <Link to="/Home/EventManager"/>
                                 </Menu.Item>
-                                <Menu.Item key="6" icon={<UserOutlined/>}>
+                                <Menu.Item key="6" icon={<RobotOutlined/>}>
                                     로봇 제어
                                     <Link to="/Home/RobotControl"/>
                                 </Menu.Item>
@@ -95,7 +97,7 @@ class HeaderBox extends Component {
                                     User
                                     <Link to="/Home/User"/>
                                 </Menu.Item>
-                                <Menu.Item key="8" icon={<UserOutlined/>}>
+                                <Menu.Item key="8" icon={<ToolOutlined/>}>
                                     Device
                                     <Link to="/Home/Device"/>
                                 </Menu.Item>

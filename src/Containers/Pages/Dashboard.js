@@ -247,20 +247,28 @@ const Dashboard = () => {
                                     <Col span={16}>
                                         <Card
                                             bodyStyle={{
-                                                padding: 0,
+                                                padding: '24px 24px',
                                                 height: 520
                                             }}>
                                             <div
                                                 style={{
                                                     display: 'flex'
                                                 }}>
+                                                    <div
+                                                    className="title"
+                                                    style={{
+                                                        fontSize: '16px',
+                                                        margin: '0 0 0px 16px',
+                                                        float: 'left'
+                                                    }}>터널 상태</div>
                                                 <img
-                                                    src="/tunnel_2.png"
+                                                    src="/tunnel_4.png"
                                                     alt=""
                                                     style={{
-                                                        height: '300px',
-                                                        width: '100%',
-                                                        marginTop: '80px'
+                                                        height: '200px',
+                                                        width: '80%',
+                                                        marginTop: '120px',
+                                                        padding: '10px'
                                                     }}/></div>
                                         </Card>
                                     </Col>
@@ -521,7 +529,7 @@ const Dashboard = () => {
                                                     display: 'flex'
                                                 }}>
                                                 <img
-                                                    src="/tunnel_2.png"
+                                                    src="/tunnel_4.png"
                                                     alt=""
                                                     style={{
                                                         height: '300px',
