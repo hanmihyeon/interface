@@ -55,10 +55,7 @@ const RobotControl = () => {
             <div className="robot-control contents">
                 <Row gutter={[6, 6]}>
                     <Col span={8}>
-                        <Card
-                            style={{
-                                height: '400px'
-                            }}>
+                        <Card className="robot-camera">
                             <Player
                                 playsInline="playsInline"
                                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
@@ -68,10 +65,7 @@ const RobotControl = () => {
                         </Card>
                     </Col>
                     <Col span={8}>
-                        <Card
-                            style={{
-                                height: '400px'
-                            }}>
+                        <Card className="robot-camera">
                             <Player
                                 playsInline="playsInline"
                                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
@@ -81,22 +75,8 @@ const RobotControl = () => {
                         </Card>
                     </Col>
                     <Col span={8}>
-                        <Card
-                            style={{
-                                width: '100%',
-                                height: '100%'
-                            }}
-                            bodyStyle={{
-                                padding: '10px'
-                            }}>
-                            <Card
-                                bodyStyle={{
-                                    background: '#e6f7ff',
-                                    width: '100%',
-                                    height: '100%',
-                                    padding: 0,
-                                    justifyContent: 'center'
-                                }}>
+                        <Card className="control-container" bodyStyle={{padding:'10px'}}>
+                            <Card className="control-wrap"bodyStyle={{padding:0}}>
                                 <div>
                                     <h3>카메라 조정 (확대, 축소)</h3>
                                 </div>
@@ -156,7 +136,7 @@ const RobotControl = () => {
                             </Card>
                             <div className="tunnel-current">
                                 <TweenOne animation={animation}>
-                                    <div className="robot-camera"></div>
+                                    <div className="robot"></div>
                                 </TweenOne>
                                 <img className="robot-tunnel-img" src="/tunnel_5.png" alt=""/>
                             </div>
