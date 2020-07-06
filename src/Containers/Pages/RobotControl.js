@@ -34,10 +34,10 @@ const RobotControl = () => {
             vars: [
                 {
                     x: 375,
-                    y: 0
+                    y: -7
                 }, {
                     x: 375,
-                    y: 0
+                    y: -7
                 }
             ]
         },
