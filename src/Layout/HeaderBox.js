@@ -2,16 +2,13 @@ import React, {Component} from 'react';
 import {Avatar, Layout, Menu, Typography} from 'antd';
 import {
     UserOutlined,
-    LaptopOutlined,
     DashboardOutlined,
     HomeOutlined,
     LineChartOutlined,
     DatabaseOutlined,
     VideoCameraOutlined,
     SettingOutlined,
-    SafetyOutlined,
     RobotOutlined,
-    BarChartOutlined,
     DesktopOutlined,
     BulbOutlined,
     ToolOutlined
@@ -37,23 +34,10 @@ class HeaderBox extends Component {
     render() {
         return (
             <Header className="header">
-                <div
-                    style={{
-                        display: 'flex',
-                        alignItems: 'center'
-                    }}>
+                <div className="header-container">
                     <div className='brand'>
                         <Typography>
-                            <Title
-                                level={4}
-                                style={{
-                                    width: '400px',
-                                    height: '100%',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginBottom: '0'
-                                }}>터널 기반 사고 예방(대응) 플랫폼</Title>
+                            <Title className="header-title" level={4}>터널 기반 사고 예방(대응) 플랫폼</Title>
                         </Typography>
                     </div>
                     <div
@@ -104,36 +88,11 @@ class HeaderBox extends Component {
                             </SubMenu>
                         </Menu>
                     </div>
-                    <div
-                        className="user-info"
-                        style={{
-                            float: 'right',
-                            position: 'absolute',
-                            right: '10px'
-                        }}>
-                        <div
-                            style={{
-                                float: 'left',
-                                marginLeft: '10px'
-                            }}>Login</div>
-                        <div
-                            style={{
-                                float: 'left',
-                                marginLeft: '10px'
-                            }}>hello</div>
-                        <div
-                            style={{
-                                float: 'left',
-                                marginLeft: '10px'
-                            }}>
-                            <Avatar
-                                size={25}
-                                style={{
-                                    backgroundColor: '#e6f7ff',
-                                    color: '#1890ff',
-                                    alignItems: 'center'
-                                }}
-                                icon={<UserOutlined />
+                    <div className="user-info">
+                        <div>Login</div>
+                        <div>hello</div>
+                        <div>
+                            <Avatar className="user-avatar" size={25} icon={<UserOutlined />
 }/>
                         </div>
                     </div>

@@ -57,7 +57,6 @@ export const NetworkChart = () => {
         },
 
         series: [{
-            
             name: 'USD to EUR',
             data: networkdata
         }]

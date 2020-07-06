@@ -26,3 +26,22 @@
 .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {
     padding : 4px 16px;
 }
+
+.chart-title {
+    float: left;
+    font-size: 16px;
+    margin-left: 32px;
+}
+
+.tunnel-title {
+    float: left;
+    font-size: 16px;
+    margin-left: 16px;
+}
+
+.tunnel-img {
+    width: 80%;
+    height: 200px;
+    margin-top: 120px;
+    padding: 10px;
+}

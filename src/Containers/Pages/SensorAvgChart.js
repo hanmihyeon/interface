@@ -101,7 +101,7 @@ export const SagnacAvgChart = () => {
 
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
-                            x: time + i * 5000,
+                            x: time + i * 60000,
                             y: (30 + ((Math.random() * 10) / 10))
                         });
                     }
@@ -220,7 +220,7 @@ export const TempAvgChart = () => {
 
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
-                            x: time + i * 5000,
+                            x: time + i * 60000,
                             y: (30 + ((Math.random() * 10) / 10))
                         });
                     }
@@ -237,7 +237,6 @@ export const TempAvgChart = () => {
 
     return (
         <div>
-            
             <div style={{margin: '40px 0 0 30px'}}>
                 <HighchartsReact Highcharts={Highcharts} options={optionavg2} brobot={false}/></div>
         </div>
@@ -340,7 +339,7 @@ export const SoundAvgChart = () => {
 
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
-                            x: time + i * 5000,
+                            x: time + i * 60000,
                             y: (50 + ((Math.random() * 10) / 10))
                         });
                     }
@@ -357,7 +356,6 @@ export const SoundAvgChart = () => {
 
     return (
         <div>
-            
             <div style={{margin: '60px 0 0 30px'}}>
                 <HighchartsReact Highcharts={Highcharts} options={optionavg3} brobot={false}/></div>
         </div>

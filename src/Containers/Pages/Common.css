@@ -34,3 +34,11 @@
     margin-top: 0;
     margin: 0 5px;
 }
+
+.unit-box {
+    float: right;
+    padding: 5px;
+    background: #E6F7FF;
+    border: 1px solid #F0FAFF;
+    font-size: 12px;
+}

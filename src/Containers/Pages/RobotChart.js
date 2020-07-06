@@ -364,7 +364,6 @@ export const RobotChart4 = () => {
     const option4 = {
         chart: {
             type: 'spline',
-            
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,

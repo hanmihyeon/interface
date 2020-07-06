@@ -13,6 +13,37 @@
     /*box-shadow: 4px 4px 40px 0 rgba(0,0,0,0.05);*/
 }
 
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.header-title {
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.user-info {
+    position: absolute;
+    float: right;
+    right: 10px;
+}
+
+.user-info > div {
+    float: left;
+    margin-left: 10px;
+}
+
+.user-avatar {
+    background: #E6F7FF;
+    color: #1890FF;
+    align-items: center;
+}
+
 .ant-menu-item-active,
 .ant-menu-submenu-active {
     background : white;

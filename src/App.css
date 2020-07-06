@@ -1,6 +1,7 @@
 body {
   -ms-overflow-style: none;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
@@ -8,7 +9,3 @@ body {
 .container {
   padding-top: 40px;
 }
-
-/*.ant-layout {
-  background-color:#e6f7ff;
-}*/

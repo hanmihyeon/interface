@@ -7,9 +7,7 @@ const FormItem = Form.Item
 const Login = () => {
     return (
             <Fragment>
-                <div
-                    className="formform"
-                    >
+                <div className="formform">
                     <Form>
                         <div>
                             <span>h4tech-interface</span>
@@ -32,7 +30,7 @@ const Login = () => {
                         </FormItem>
                         <Row>
                             <Button type="primary">
-                                <Link to="/Home">
+                                <Link to="/Home/Home1">
                                     Sign in</Link>
                             </Button>
                         </Row>

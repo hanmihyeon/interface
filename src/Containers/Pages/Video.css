@@ -1,3 +1,13 @@
 .video-react .video-react-big-play-button {
-    visibility: hidden;;
+    visibility: hidden;
+}
+
+.row-video {
+    justify-content: center;
+}
+
+.video-info {
+    position: absolute;
+    color: white;
+    margin-top: -50%;
 }

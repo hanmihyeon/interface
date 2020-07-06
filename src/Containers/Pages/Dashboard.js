@@ -1,23 +1,14 @@
 import React, {Fragment} from 'react';
 import {Breadcrumb, Row, Col, Card, Tabs} from 'antd';
-import {DashboardOutlined, DatabaseOutlined, ArrowRightOutlined} from '@ant-design/icons';
+import {DashboardOutlined, DatabaseOutlined} from '@ant-design/icons';
+
+import {SagnacChart, SoundChart, TempChart} from './Sensor';
+import {SagnacAvgChart, TempAvgChart, SoundAvgChart} from './SensorAvgChart';
+
+import {NetworkChart} from './NetworkChart';
 
 import './Common.css';
 import './Dashboard.css';
-
-import {SagnacChart, SoundChart, TempChart} from './Sensor';
-import {
-    RobotChart1,
-    RobotChart2,
-    RobotChart3,
-    RobotChart4,
-    RobotChart5,
-    RobotChart6,
-    RobotStateChart
-} from './RobotChart';
-import {SagnacAvgChart, TempAvgChart, SoundAvgChart} from './SensorAvgChart';
-import {TunnelList} from './TunnelCurrentB';
-import {NetworkChart} from './NetworkChart';
 import './Robot1.css';
 
 const {TabPane} = Tabs;
@@ -53,22 +44,8 @@ const Dashboard = () => {
                                                 height: 380
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 32px',
-                                                        float: 'left'
-                                                    }}>Sagnac AVG</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="chart-title">Sagnac AVG</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><SagnacAvgChart/></Card>
                                     </Col>
                                 </Row>
@@ -89,22 +66,8 @@ const Dashboard = () => {
                                                 height: 380
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 32px',
-                                                        float: 'left'
-                                                    }}>FBG Temperature AVG</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="chart-title">FBG Temperature AVG</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><TempAvgChart/></Card>
                                     </Col>
                                     <Col span={12}>
@@ -121,127 +84,12 @@ const Dashboard = () => {
                                                 height: 380
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 32px',
-                                                        float: 'left'
-                                                    }}>FBG Sound AVG</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="chart-title">FBG Sound AVG</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><SoundAvgChart/></Card>
                                     </Col>
                                 </Row>
                             </Card>
-                            {/*
-                            <Card size="small" className="section-title" title="Robot Data">
-                                <Row gutter={[6, 6]}>
-                                    <Col span={8}>
-                                        <Card
-                                            bodyStyle={{
-                                                height: 520
-                                            }}>
-                                            <Card
-                                                title="로봇 상태"
-                                                size="small"
-                                                style={{
-                                                    marginBottom: '15px'
-                                                }}>
-                                                <div className="robot-img">
-                                                    <img
-                                                        src="/robotcamera.png"
-                                                        alt=""
-                                                        style={{
-                                                            width: '100%',
-                                                            height: '100%'
-                                                        }}/>
-                                                </div>
-                                                <div className="robot-info">
-                                                    <p>
-                                                        전압: 220V<br/>
-                                                        전류: 70A<br/>
-                                                        내부온도: 30도<br/>
-                                                        위치: 300m
-                                                    </p>
-                                                </div>
-                                            </Card>
-                                            <Card title="레일 로봇 상태 추이" size="small">
-                                                <RobotStateChart/>
-                                            </Card>
-                                        </Card>
-                                    </Col>
-                                    <Col span={16}>
-                                        <Card
-                                            bodyStyle={{
-                                                padding: '24px 36px 24px 36px',
-                                                height: 520
-                                            }}>
-                                            <Row>
-                                                <Col
-                                                    span={24}
-                                                    style={{
-                                                        marginBottom: '14px',
-                                                        fontSize: '16px'
-                                                    }}>
-                                                    <div
-                                                        style={{
-                                                            float: 'left'
-                                                        }}>로봇 환경 센서</div>
-                                                    <div
-                                                        style={{
-                                                            float: 'right',
-                                                            fontSize:'12px',
-                                                            border: '1px solid #f0faff',
-                                                            background: '#e6f7ff',
-                                                            color: 'black',
-                                                            padding: '5px'
-                                                        }}>1분 단위</div>
-                                                </Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0',
-                                                        padding: '3px'
-                                                    }}><RobotChart1/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart2/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart3/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart4/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart5/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart6/></Col>
-                                            </Row>
-                                        </Card>
-                                    </Col>
-                                </Row>
-                            </Card>
-                                                */}
                             <Card size="small" className="section-title" title="Tunnel">
                                 <Row gutter={[6, 6]}>
                                     <Col span={16}>
@@ -250,26 +98,8 @@ const Dashboard = () => {
                                                 padding: '24px 24px',
                                                 height: 520
                                             }}>
-                                            <div
-                                                style={{
-                                                    display: 'flex'
-                                                }}>
-                                                    <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 16px',
-                                                        float: 'left'
-                                                    }}>터널 상태</div>
-                                                <img
-                                                    src="/tunnel_4.png"
-                                                    alt=""
-                                                    style={{
-                                                        height: '200px',
-                                                        width: '80%',
-                                                        marginTop: '120px',
-                                                        padding: '10px'
-                                                    }}/></div>
+                                            <div className="tunnel-title">터널 상태</div>
+                                            <img src="/tunnel_4.png" alt="" className="tunnel-img"/>
                                         </Card>
                                     </Col>
                                     <Col span={8}>
@@ -279,22 +109,8 @@ const Dashboard = () => {
                                                 height: 520
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 16px',
-                                                        float: 'left'
-                                                    }}>네트워크 상태</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="tunnel-title">네트워크 상태</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><NetworkChart/></Card>
                                     </Col>
                                 </Row>
@@ -304,7 +120,7 @@ const Dashboard = () => {
                 </Fragment>
             </TabPane>
             <TabPane tab="청주-&gt;부강" key="2">
-            <Fragment>
+                <Fragment>
                     <Breadcrumb className="bread">
                         <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
                         <Breadcrumb.Item><DatabaseOutlined/>&nbsp;Data</Breadcrumb.Item>
@@ -327,22 +143,8 @@ const Dashboard = () => {
                                                 height: 380
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 32px',
-                                                        float: 'left'
-                                                    }}>Sagnac AVG</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="chart-title">Sagnac AVG</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><SagnacAvgChart/></Card>
                                     </Col>
                                 </Row>
@@ -363,22 +165,8 @@ const Dashboard = () => {
                                                 height: 380
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 32px',
-                                                        float: 'left'
-                                                    }}>FBG Temperature AVG</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="chart-title">FBG Temperature AVG</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><TempAvgChart/></Card>
                                     </Col>
                                     <Col span={12}>
@@ -395,147 +183,22 @@ const Dashboard = () => {
                                                 height: 380
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 32px',
-                                                        float: 'left'
-                                                    }}>FBG Sound AVG</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="chart-title">FBG Sound AVG</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><SoundAvgChart/></Card>
                                     </Col>
                                 </Row>
                             </Card>
-                            {/*
-                            <Card size="small" className="section-title" title="Robot Data">
-                                <Row gutter={[6, 6]}>
-                                    <Col span={8}>
-                                        <Card
-                                            bodyStyle={{
-                                                height: 520
-                                            }}>
-                                            <Card
-                                                title="로봇 상태"
-                                                size="small"
-                                                style={{
-                                                    marginBottom: '15px'
-                                                }}>
-                                                <div className="robot-img">
-                                                    <img
-                                                        src="/robotcamera.png"
-                                                        alt=""
-                                                        style={{
-                                                            width: '100%',
-                                                            height: '100%'
-                                                        }}/>
-                                                </div>
-                                                <div className="robot-info">
-                                                    <p>
-                                                        전압: 220V<br/>
-                                                        전류: 70A<br/>
-                                                        내부온도: 30도<br/>
-                                                        위치: 300m
-                                                    </p>
-                                                </div>
-                                            </Card>
-                                            <Card title="레일 로봇 상태 추이" size="small">
-                                                <RobotStateChart/>
-                                            </Card>
-                                        </Card>
-                                    </Col>
-                                    <Col span={16}>
-                                        <Card
-                                            bodyStyle={{
-                                                padding: '24px 36px 24px 36px',
-                                                height: 520
-                                            }}>
-                                            <Row>
-                                                <Col
-                                                    span={24}
-                                                    style={{
-                                                        marginBottom: '14px',
-                                                        fontSize: '16px'
-                                                    }}>
-                                                    <div
-                                                        style={{
-                                                            float: 'left'
-                                                        }}>로봇 환경 센서</div>
-                                                    <div
-                                                        style={{
-                                                            float: 'right',
-                                                            fontSize:'12px',
-                                                            border: '1px solid #f0faff',
-                                                            background: '#e6f7ff',
-                                                            color: 'black',
-                                                            padding: '5px'
-                                                        }}>1분 단위</div>
-                                                </Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0',
-                                                        padding: '3px'
-                                                    }}><RobotChart1/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart2/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart3/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart4/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart5/></Col>
-                                                <Col
-                                                    span={8}
-                                                    style={{
-                                                        border: '0.5px solid #b0b0b0'
-                                                    }}><RobotChart6/></Col>
-                                            </Row>
-                                        </Card>
-                                    </Col>
-                                </Row>
-                            </Card>
-                                                */}
                             <Card size="small" className="section-title" title="Tunnel">
                                 <Row gutter={[6, 6]}>
                                     <Col span={16}>
                                         <Card
                                             bodyStyle={{
-                                                padding: 0,
+                                                padding: '24px 24px',
                                                 height: 520
                                             }}>
-                                            <div
-                                                style={{
-                                                    display: 'flex'
-                                                }}>
-                                                <img
-                                                    src="/tunnel_4.png"
-                                                    alt=""
-                                                    style={{
-                                                        height: '300px',
-                                                        width: '100%',
-                                                        marginTop: '80px'
-                                                    }}/></div>
+                                            <div className="tunnel-title">터널 상태</div>
+                                            <img className="tunnel-img" src="/tunnel_4.png" alt=""/>
                                         </Card>
                                     </Col>
                                     <Col span={8}>
@@ -545,22 +208,8 @@ const Dashboard = () => {
                                                 height: 520
                                             }}>
                                             <div>
-                                                <div
-                                                    className="title"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        margin: '0 0 0px 16px',
-                                                        float: 'left'
-                                                    }}>네트워크 상태</div>
-                                                <div
-                                                    style={{
-                                                        fontSize: '12px',
-                                                        float: 'right',
-                                                        border: '1px solid #f0faff',
-                                                        background: '#e6f7ff',
-                                                        color: 'black',
-                                                        padding: '5px'
-                                                    }}>1분 단위</div>
+                                                <div className="tunnel-title">네트워크 상태</div>
+                                                <div className="unit-box">1분 단위</div>
                                             </div><NetworkChart/></Card>
                                     </Col>
                                 </Row>

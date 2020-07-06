@@ -23,14 +23,14 @@ const columns = [
       render: tags => (
         <>
           {tags.map(tag => {
-            let color = tag === 1 ? 'volcano' : 'volcano';
-            if (tag === 2) {
+            let color = tag === `      1      ` ? 'volcano' : 'volcano';
+            if (tag === `      2      `) {
               color = 'orange';
-            } else if (tag === 3) {
+            } else if (tag === `      3      `) {
               color = 'yellow';
-            } else if (tag === 4) {
+            } else if (tag === `      4      `) {
               color = 'green';
-            } else if(tag === 5) {
+            } else if(tag === `      5      `) {
               color = 'geekblue';
             }
             return (
@@ -62,202 +62,202 @@ const columns = [
   const data = [
     {
       id : '25',
-      date : '2020-07-03 16:00',
-      tags : [1],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 16:00:05',
+      tags : [`      1      `],
+      cause: '사고(충돌)',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '24',
-      date : '2020-07-03 15:10',
-      tags : [2],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 15:10:55',
+      tags : [`      2      `],
+      cause: '사고(화재)',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '23',
-      date : '2020-07-03 15:01',
-      tags : [4],
-      cause: '차량',
-      result: '이상',
+      date : '2020-07-03 15:01:27',
+      tags : [`      4      `],
+      cause: '이상',
+      result: '',
       sms: ''
     },
     {
       id : '22',
-      date : '2020-07-03 15:00',
-      tags : [5],
-      cause: '차량',
-      result: '원활',
+      date : '2020-07-03 15:00:00',
+      tags : [`      5      `],
+      cause: '원활',
+      result: '',
       sms: ''
     },
     {
       id : '21',
-      date : '2020-07-03 14:40',
-      tags : [1],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 14:40:05',
+      tags : [`      1      `],
+      cause: '사고(충돌)',
+      result: '',
       sms: '송신 실패'
     },
     {
       id : '20',
-      date : '2020-07-03 14:00',
-      tags : [1],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 14:00:58',
+      tags : [`      1      `],
+      cause: '정체',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '19',
-      date : '2020-07-03 13:50',
-      tags : [2],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 13:50:05',
+      tags : [`      2      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '18',
-      date : '2020-07-03 13:10',
-      tags : [4],
-      cause: '차량',
-      result: '이상',
+      date : '2020-07-03 13:10:10',
+      tags : [`      4      `],
+      cause: '이상',
+      result: '',
       sms: ''
     },
     {
       id : '17',
-      date : '2020-07-03 13:00',
-      tags : [5],
-      cause: '차량',
-      result: '원활',
+      date : '2020-07-03 13:00:01',
+      tags : [`      5      `],
+      cause: '원활',
+      result: '',
       sms: ''
     },
     {
       id : '16',
-      date : '2020-07-03 12:40',
-      tags : [1],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 12:40:30',
+      tags : [`      1      `],
+      cause: '사고',
+      result: '',
       sms: '송신 실패'
     },
     {
       id : '15',
-      date : '2020-07-03 12:00',
-      tags : [3],
-      cause: '차량',
-      result: '정체',
+      date : '2020-07-03 12:00:55',
+      tags : [`      3      `],
+      cause: '정체',
+      result: '처리 완료',
       sms: ''
     },
     {
       id : '14',
-      date : '2020-07-03 11:15',
-      tags : [2],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 11:15:20',
+      tags : [`      2      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '13',
-      date : '2020-07-03 11:10',
-      tags : [4],
-      cause: '차량',
-      result: '이상',
+      date : '2020-07-03 11:10:10',
+      tags : [`      4      `],
+      cause: '이상',
+      result: '',
       sms: ''
     },
     {
       id : '12',
-      date : '2020-07-03 10:20',
-      tags : [5],
-      cause: '차량',
-      result: '원활',
+      date : '2020-07-03 10:20:17',
+      tags : [`      5      `],
+      cause: '원활',
+      result: '',
       sms: ''
     },
     {
       id : '11',
-      date : '2020-07-03 10:17',
-      tags : [1],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 10:17:28',
+      tags : [`      5      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '10',
-      date : '2020-07-03 09:45',
-      tags : [2],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 09:45:30',
+      tags : [`      2      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '9',
-      date : '2020-07-03 09:20',
-      tags : [2],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 09:20:10',
+      tags : [`      2      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '8',
-      date : '2020-07-03 09:10',
-      tags : [4],
-      cause: '차량',
-      result: '이상',
+      date : '2020-07-03 09:10:30',
+      tags : [`      4      `],
+      cause: '이상',
+      result: '',
       sms: ''
     },
     {
       id : '7',
-      date : '2020-07-03 09:00',
-      tags : [5],
-      cause: '차량',
-      result: '원활',
+      date : '2020-07-03 09:00:02',
+      tags : [`      5      `],
+      cause: '원활',
+      result: '',
       sms: ''
     },
     {
       id : '6',
-      date : '2020-07-03 08:55',
-      tags : [1],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 08:55:35',
+      tags : [`      1      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '5',
-      date : '2020-07-03 08:30',
-      tags : [5],
-      cause: '차량',
-      result: '원활',
+      date : '2020-07-03 08:30:33',
+      tags : [`      5      `],
+      cause: '원활',
+      result: '',
       sms: ''
     },
     {
       id : '4',
-      date : '2020-07-03 08:10',
-      tags : [2],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 08:10:13',
+      tags : [`      2      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     },
     {
       id : '3',
-      date : '2020-07-03 08:05',
-      tags : [4],
-      cause: '차량',
-      result: '이상',
+      date : '2020-07-03 08:05:25',
+      tags : [`      4      `],
+      cause: '이상',
+      result: '',
       sms: ''
     },
     {
       id : '2',
-      date : '2020-07-03 08:00',
-      tags : [5],
-      cause: '차량',
-      result: '원활',
+      date : '2020-07-03 08:00:17',
+      tags : [`      5      `],
+      cause: '원활',
+      result: '',
       sms: ''
     },
     {
       id : '1',
-      date : '2020-07-03 07:40',
-      tags : [1],
-      cause: '차량',
-      result: '사고',
+      date : '2020-07-03 07:40:25',
+      tags : [`      1      `],
+      cause: '사고',
+      result: '처리 완료',
       sms: '송신 완료'
     }
   ]

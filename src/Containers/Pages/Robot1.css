@@ -1,8 +1,166 @@
+.robot-move {
+    position: relative;
+    width: 20%;
+    height: 200px;
+    float: left;
+    padding: 10px;
+    margin: 0 0 20px 13px;
+    border: 3px solid #C8C8C8;
+}
+
+.robot-top-button {
+    position: absolute;
+    width: 7%;
+    top: 40px;
+    left: 30px;
+}
+
+.robot-center-button {
+    position: absolute;
+    width: 7%;
+    height: 10%;
+    float: left;
+    top: 80px;
+    left: 23px;
+}
+
+.robot-bottom-button {
+    position: absolute;
+    width: 7%;
+    bottom: 30px;
+    left: 30px;
+}
+
+.camera-move {
+    position: relative;
+    width: 40%;
+    height: 200px;
+    float: left;
+    margin: 0 0 20px 10px;
+    border: 3px solid #C8C8C8;
+}
+
+.camera-top-button {
+    position: absolute;
+    width: 7%;
+    top: 40px;
+    left: 55px;
+}
+
+.camera-left-button {
+    position: absolute;
+    width: 7%;
+    float: left;
+    top: 85px;
+    left: 10px;
+}
+
+.camera-center-button {
+    position: absolute;
+    width: 7%;
+    height: 10%;
+    float: left;
+    top: 80px;
+    left: 48px;
+}
+
+.camera-right-button {
+    position: absolute;
+    width: 7%;
+    float: left;
+    top: 85px;
+    left: 105px;
+}
+
+.camera-bottom-button {
+    position: absolute;
+    width: 7%;
+    bottom: 35px;
+    left: 55px;
+}
+
+.scale-bar {
+    width: 15%;
+    height: 180px;
+    margin: 10px 0 0 145px;
+    border: 1px solid black;
+}
+
+.sub-title-1 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 20px;
+}
+
+.sub-title-2 {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 35px;
+}
+
+.card3-control-button {
+    width: 30%;
+    height: 200px;
+    position: relative;
+    float: left;
+    padding : 10px 10px 10px 20px;
+    margin: 0 0 20px 10px;
+    border: 3px solid #C8C8C8;
+}
+
+.card3-control-button > div:first-child {
+    margin-top : 30px;
+}
+
+.card3-control-button > div {
+    margin-top: 15px;
+}
+
+.card3-control-button > div > button {
+    width: 90%;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+.robot-chart-title {
+    float: left;
+}
+
+.robot-chart {
+    border: 0.5px solid #B0B0B0;
+    padding: 3px;
+}
+
+.tunnel-current {
+    border: none;
+}
+
+.robot-camera {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #1890FF;
+    margin: 48px 0 0 50px;
+    border: 3px solid blue;
+}
+
+.robot-tunnel-img {
+    width: 100%;
+    height: 100%;
+}
+
 .robot-img {
     width: 50%;
     height:200px;
     border: 0.5px solid #b0b0b0;
     float: left;
+}
+
+.robot-img > img {
+    width: 100%;
+    height: 100%;
 }
 
 .robot-info {
@@ -19,3 +177,4 @@
     text-align: left;
     line-height: 40px;
 }
+

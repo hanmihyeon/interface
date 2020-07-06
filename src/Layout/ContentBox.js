@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './ContentBox.css';
 
 class Content extends Component {
     render() {
