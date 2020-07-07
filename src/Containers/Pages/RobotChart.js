@@ -705,6 +705,28 @@ export const RobotChart6 = () => {
                     }
                    // return data;
                 }())
+            },
+            {
+                name: 'Random data1',
+                data: (function () {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+    
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 5000,
+                            y: (30 + ((Math.random() * 10) / 10))
+                        });
+                    }
+                    if (brobot === true) {
+                        return;
+                    } else {
+                        return data;
+                    }
+                   // return data;
+                }())
             }
         ]
     }
