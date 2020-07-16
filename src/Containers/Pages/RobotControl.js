@@ -7,14 +7,18 @@ import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 
 import {
-    RobotChart1,
-    RobotChart2,
-    RobotChart3,
-    RobotChart4,
-    RobotChart5,
-    RobotChart6,
-    RobotStateChart
+   // RobotChart1,
+  //  RobotChart2,
+  //  RobotChart3,
+ //   RobotChart4,
+  //  RobotChart5,
+  //  RobotChart6,
+    RobotStateChart,
+    RobotChart7,
+  //  RobotChart8,
 } from './RobotChart';
+
+// import RealtimeLineChart from './RealtimeLineChart';
 
 import 'video-react/dist/video-react.css';
 import './Robot1.css';
@@ -161,12 +165,14 @@ const RobotControl = () => {
                                     <div className="robot-chart-title">로봇 환경 센서</div>
                                     <div className="unit-box">1분 단위</div>
                                 </Col>
-                                <Col span={8} className="robot-chart robot-first"><RobotChart1/></Col>
+                                {/*<Col span={8} className="robot-chart robot-first"><RobotChart1/></Col>
                                 <Col span={8} className="robot-chart "><RobotChart2/></Col>
                                 <Col span={8} className="robot-chart "><RobotChart3/></Col>
                                 <Col span={8} className="robot-chart "><RobotChart4/></Col>
                                 <Col span={8} className="robot-chart "><RobotChart5/></Col>
-                                <Col span={8} className="robot-chart "><RobotChart6/></Col>
+                                <Col span={8} className="robot-chart "><RobotChart6/></Col>*/}
+                                <Col className="robot-chart-2"><RobotChart7/></Col>
+                                <Col className="robot-chart-2"><RobotChart7/></Col>
                             </Row>
                         </Card>
                     </Col>

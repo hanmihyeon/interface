@@ -42,3 +42,11 @@
     border: 1px solid #F0FAFF;
     font-size: 12px;
 }
+
+.download {
+    text-decoration: none;
+}
+
+.download:hover {
+    text-decoration: underline;
+}
