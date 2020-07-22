@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.dark.css';
 import './Footer.css';
 
 import {Layout} from 'antd';

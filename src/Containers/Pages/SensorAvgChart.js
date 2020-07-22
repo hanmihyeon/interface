@@ -7,6 +7,7 @@ let brobot = false
 export const SagnacAvgChart = () => {
     const optionavg1 = {
         chart: {
+            backgroundColor: 'none',
             type: 'line',
             marginTop: 50,
             height: 300,
@@ -127,6 +128,7 @@ export const SagnacAvgChart = () => {
 export const TempAvgChart = () => {
     const optionavg2 = {
         chart: {
+            backgroundColor: 'none',
             type: 'line',
             marginTop: 50,
             height: 300,
@@ -246,6 +248,7 @@ export const TempAvgChart = () => {
 export const SoundAvgChart = () => {
     const optionavg3 = {
         chart: {
+            backgroundColor: 'none',
             type: 'line',
             marginTop: 50,
             height: 280,

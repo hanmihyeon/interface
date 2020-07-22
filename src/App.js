@@ -3,7 +3,7 @@ import {Layout} from 'antd';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 // import PerfectScrollbar from 'react-perfect-scrollbar';
 
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.dark.css';
 import './App.css';
 // import 'react-perfect-scrollbar/dist/css/styles.css';
 
@@ -28,11 +28,11 @@ class App extends Component {
             <Router>
                 <Fragment>
                     <Layout>
-                        <div class="container">
+                        <div className="container">
                             <HeaderBox/>
                             <Content
                                 style={{
-                                    padding: '10px 25px 20px 25px',
+                                    padding: '10px 0px 20px 10px',
                                     minHeight: 'calc(100% - 70px)'
                                 }}>
                                 <ContentBox/>

@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import {Breadcrumb, Row, Col, Card} from 'antd';
+import {Breadcrumb, Row, Col, Card, notification, Modal, Alert} from 'antd';
 import {LaptopOutlined, VideoCameraOutlined} from '@ant-design/icons';
 import {Player} from 'video-react';
 
@@ -14,7 +14,7 @@ const VideoList = ({vList}) => {
                 <Player
                     playsInline="playsInline"
                     src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                    autoPlay={true}
+                    autoPlay={false}
                     muted={true}/>
                     <div className="video-info">
                         { vList === 1 ? '로봇카메라:일반' : vList === 2
@@ -24,6 +24,30 @@ const VideoList = ({vList}) => {
         </>
     );
 }
+
+
+
+const Alertt = () => {
+
+    const modal = Modal.error({
+        title:'Alert!',
+        content: 'Warning'
+    })
+
+    notification.open({
+        message: 'Alert',
+        style: {
+            backgroundColor: 'red',
+            color: 'white'
+        },
+        description: '터널: 청주 -> 부강 위치: 240m 상태: 화재',
+        onClick: () => {
+            console.log('notification clicked!');
+        },
+    });
+
+};
+
 
 //html초입에서 height 설정안해서 적용안됨 세로 퍼센트
 const Video = (props) => {
@@ -47,15 +71,24 @@ const Video = (props) => {
                 <Breadcrumb.Item><VideoCameraOutlined/>&nbsp;Video</Breadcrumb.Item>
             </Breadcrumb>
             <div className="video contents">
-                <Row gutter={12} className="row-video">
-                    <Col span={11}>
-                        <Card>
+                <Row gutter={12} style={{height:'100%'}}>
+                    <Col span={11} style={{height:'100%'}}>
+                        <Card style={{height:'100%'}}>
                             <Player
                                 playsInline="playsInline"
                                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                                autoPlay={true}
+                                autoPlay={false}
                                 muted={true}/>
-                            <div className="video-info">[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
+                            <div className="video-info" onClick={Alertt}>[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
+                        </Card>
+                        <Card>
+                            <Row gutter={[8, 0]}>
+                                {vList.map(vList => (<VideoList vList={vList} key={vList.id}></VideoList>))}
+                            </Row>
+                        </Card>
+                        <Card>
+                            <div>dd</div>
+                            <div>ss</div>
                         </Card>
                     </Col>
                     <Col span={11}>
@@ -63,25 +96,33 @@ const Video = (props) => {
                             <Player
                                 playsInline="playsInline"
                                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                                autoPlay={true}
+                                autoPlay={false}
                                 muted={true}/>
                             <div className="video-info">[청주 -&gt; 부강] 메인 화면: 2번 카메라(일반)</div>
                         </Card>
-                    </Col>
-                </Row>
-                <Row gutter={12} className="row-video">
-                    <Col span={11}>
                         <Card>
                             <Row gutter={[8, 0]}>
                                 {vList.map(vList => (<VideoList vList={vList} key={vList.id}></VideoList>))}
                             </Row>
                         </Card>
-                    </Col>
-                    <Col span={11}>
                         <Card>
-                            <Row gutter={[8, 0]}>
-                                {vList.map(vList => (<VideoList vList={vList} key={vList.id}></VideoList>))}
-                            </Row>
+                            <div>dd</div>
+                            <div>ss</div>
+                        </Card>
+                    </Col>
+                    <Col span={2}>
+                        <Card bodyStyle={{
+                            height: '1010px',
+                            padding: '3px'
+                        }}>
+                            <div className="alarm-list">
+                                <Alert
+                                    message="Alert"
+                                    description="Warning"
+                                    type="error"
+                                    
+                                    />
+                            </div>
                         </Card>
                     </Col>
                 </Row>

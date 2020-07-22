@@ -7,6 +7,7 @@ import {SagnacAvgChart, TempAvgChart, SoundAvgChart} from './SensorAvgChart';
 
 import {NetworkChart} from './NetworkChart';
 
+import 'antd/dist/antd.dark.css';
 import './Common.css';
 import './Dashboard.css';
 import './Robot1.css';

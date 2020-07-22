@@ -8,8 +8,8 @@ let brobot = false
 export const RobotChart1 = () => {
     const option1 = {
         chart: {
+            backgroundColor: 'none',
             type: 'spline',
-            
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,
@@ -126,6 +126,7 @@ export const RobotChart1 = () => {
 export const RobotChart2 = () => {
     const option2 = {
         chart: {
+            backgroundColor: 'none',
             type: 'spline',
             
             height: 200,
@@ -246,6 +247,7 @@ export const RobotChart3 = () => {
     
     const option3 = {
         chart: {
+            backgroundColor: 'none',
             type: 'spline',
             
             height: 200,
@@ -364,6 +366,7 @@ export const RobotChart4 = () => {
     
     const option4 = {
         chart: {
+            backgroundColor: 'none',
             type: 'spline',
             height: 200,
             animation: Highcharts.svg, // don't animate in old IE
@@ -482,6 +485,7 @@ export const RobotChart5 = () => {
     
     const option5 = {
         chart: {
+            backgroundColor: 'none',
             type: 'spline',
             
             height: 200,
@@ -601,6 +605,7 @@ export const RobotChart6 = () => {
     
     const option6 = {
         chart: {
+            backgroundColor: 'none',
             type: 'spline',
            
             height: 200,
@@ -719,6 +724,7 @@ export const RobotStateChart = () => {
         
     const optionState = {
         chart: {
+            backgroundColor: 'none',
             type: 'areaspline',
             height: 110,
             animation: Highcharts.svg, // don't animate in old IE
@@ -822,6 +828,7 @@ export const RobotChart7 = () => {
     
     const option7 = {
         chart: {
+            backgroundColor: 'none',
             type: 'spline',
             height: 250,
             animation: Highcharts.svg, // don't animate in old IE

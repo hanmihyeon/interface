@@ -4,10 +4,6 @@
     box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.5);
 }
 
-.section-title .ant-card-head {
-    background: white;
-}
-
 .ant-tabs-card.ant-tabs-top> .ant-tabs-nav .ant-tabs-tab {
     border-radius: 10px 10px 0 0;
 }
@@ -15,7 +11,6 @@
 .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab-active {
     color: #1890ff;
     border: 1px solid #1890ff;
-    background: #fff;
 }
 
 .ant-tabs-card > .ant-tabs-nav .ant-tabs-tab {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Avatar, Layout, Menu, Typography} from 'antd';
+import 'antd/dist/antd.dark.css';
 import {
     UserOutlined,
     DashboardOutlined,

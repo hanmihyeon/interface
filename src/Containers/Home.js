@@ -1,7 +1,7 @@
 import React from 'react';
 import {Layout} from 'antd';
 import {BrowserRouter as Router, Route,Switch} from 'react-router-dom';
-
+import 'antd/dist/antd.dark.css';
 import Dashboard from './Dashboard';
 import Chart from './Chart';
 import Video from './Video';

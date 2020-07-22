@@ -1,5 +1,4 @@
 .header {
-    background-color: white;
     overflow: hidden;
     display: flex;
     width: 100%;
@@ -9,7 +8,7 @@
     top: 0;
     right: 0;
     z-index: 1;
-    border-bottom: 0.5px solid #1890ff;
+    border-bottom: 0.5px solid #f0f0f0;
     /*box-shadow: 4px 4px 40px 0 rgba(0,0,0,0.05);*/
 }
 
@@ -42,9 +41,4 @@
     background: #E6F7FF;
     color: #1890FF;
     align-items: center;
-}
-
-.ant-menu-item-active,
-.ant-menu-submenu-active {
-    background : white;
 }

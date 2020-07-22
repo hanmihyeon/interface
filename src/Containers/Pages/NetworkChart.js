@@ -6,6 +6,7 @@ import networkdata from './network.json';
 export const NetworkChart = () => {
     const network = {
         chart: {
+            backgroundColor: 'none',
             zoomType: 'x',
             type: 'area',
             width: null,

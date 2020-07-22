@@ -1,5 +1,4 @@
 .ant-breadcrumb {
-    background:#e6f7ff;
     overflow: hidden;
     display: flex;
     width: 100%;
@@ -9,7 +8,7 @@
     top: 40px;
     left: 0;
     z-index: 2;
-    border-bottom: 0.5px solid #1890ff;
+    border-bottom: 0.5px solid #f0f0f0;
 }
 
 .ant-breadcrumb > span:first-child {
@@ -24,10 +23,6 @@
 
 .contents {
     margin-top:30px;
-}
-
-.ant-layout-content {
-    background: #f0f0f0;
 }
 
 .dashboard {
