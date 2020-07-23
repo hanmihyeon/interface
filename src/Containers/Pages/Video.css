@@ -12,6 +12,73 @@
     margin-top: -50%;
 }
 
-.alarm-list {
+.ant-alert-errer {
+    background : #990c12;
+}
+
+.ant-modal-confirm-error .ant-modal-content {
+    background: #da0101ec;
+}
+
+.ant-modal-confirm-error .ant-modal-content button {
+    background: white;
+    color: black;
+    border-color: white;
+}
+
+.robot-location-bar {
+    position: relative;
+    border: 3px solid #fff;
+    margin-bottom: 30px;
+}
+
+.robot-location-bar:after {
+    position: absolute;
+    content: "";
+    clear: both;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: black;
+    border: 1px solid #fff;
+    top: -10px;
+    cursor: pointer;
+}
+
+.event {
+    display: block;
+    width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.event-section {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 10%;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    background: #808080;
+    border: 0.5px solid #000;
+}
+
+.event-section-red {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 10%;
+    height: 60px;
+    padding: 0;
+    margin: 0;
+    background: #808080;
+    border: 0.5px solid #000;
+    background: red;
+}
+
+.alarm-list-wrap {
+    height: 100%;
+}
+
+.alarm-list-wrap .ant-card-body {
+    padding: 5px;
 }

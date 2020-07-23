@@ -27,7 +27,7 @@ const VideoList = ({vList}) => {
 
 
 
-const Alertt = () => {
+const StatusAlert = () => {
 
     const modal = Modal.error({
         title:'Alert!',
@@ -64,7 +64,10 @@ const Video = (props) => {
         '열화상카메라: 4번 400m'
     ];
 
+    const eventlocation = 2;
+
     return (
+        
         <Fragment>
             <Breadcrumb className="bread">
                 <Breadcrumb.Item><LaptopOutlined/>&nbsp;&nbsp;Multimedia</Breadcrumb.Item>
@@ -79,7 +82,7 @@ const Video = (props) => {
                                 src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                                 autoPlay={false}
                                 muted={true}/>
-                            <div className="video-info" onClick={Alertt}>[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
+                            <div className="video-info" onClick={StatusAlert}>[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
                         </Card>
                         <Card>
                             <Row gutter={[8, 0]}>
@@ -87,8 +90,21 @@ const Video = (props) => {
                             </Row>
                         </Card>
                         <Card>
-                            <div>dd</div>
-                            <div>ss</div>
+                            <div>
+                                <div className="robot-location-bar"></div>
+                            </div>
+                            <div className="event">
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==2 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==2 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==2 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                            </div>
                         </Card>
                     </Col>
                     <Col span={11}>
@@ -106,21 +122,30 @@ const Video = (props) => {
                             </Row>
                         </Card>
                         <Card>
-                            <div>dd</div>
-                            <div>ss</div>
+                            <div>
+                                <div className="robot-location-bar"></div>
+                            </div>
+                            <div className="event">
+                            <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==2 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==2 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==2 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                                <div className={eventlocation==1 ? 'event-section-red' : 'event-section' }></div>
+                            </div>
                         </Card>
                     </Col>
                     <Col span={2}>
-                        <Card bodyStyle={{
-                            height: '1010px',
-                            padding: '3px'
-                        }}>
+                        <Card title="Alert list" size="small" className="alarm-list-wrap">
                             <div className="alarm-list">
                                 <Alert
                                     message="Alert"
                                     description="Warning"
                                     type="error"
-                                    
                                     />
                             </div>
                         </Card>
