@@ -9,7 +9,7 @@ import './App.css';
 
 import Home1 from './Containers/Pages/Home_1';
 import Dashboard from './Containers/Pages/Dashboard';
-import Chart from './Containers/Pages/Chart';
+import Tunnel from './Containers/Pages/Tunnel';
 import Video from './Containers/Pages/Video';
 import EventManager from './Containers/Pages/EventManager';
 import RobotControl from './Containers/Pages/RobotControl';
@@ -32,14 +32,14 @@ class App extends Component {
                             <HeaderBox/>
                             <Content
                                 style={{
-                                    padding: '10px 0px 20px 10px',
+                                    padding: '0 0 0 10px',
                                     minHeight: 'calc(100% - 70px)'
                                 }}>
                                 <ContentBox/>
                                 <Switch>
                                     <Route path="/Home/Home1" component={Home1}/>
                                     <Route path="/Home/Dashboard" component={Dashboard}/>
-                                    <Route path="/Home/Chart" component={Chart}/>
+                                    <Route path="/Home/Tunnel" component={Tunnel}/>
                                     <Route path="/Home/Video" component={Video}/>
                                     <Route path="/Home/EventManager" component={EventManager}/>
                                     <Route path="/Home/RobotControl" component={RobotControl}/>

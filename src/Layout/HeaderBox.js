@@ -59,8 +59,8 @@ class HeaderBox extends Component {
                                     <Link to="/Home/Dashboard"/>
                                 </Menu.Item>
                                 <Menu.Item key="3" icon={<LineChartOutlined />}>
-                                    통계
-                                    <Link to="/Home/Chart"/>
+                                    터널
+                                    <Link to="/Home/Tunnel"/>
                                 </Menu.Item>
                             </SubMenu>
                             <Menu.Item key="4" icon={<VideoCameraOutlined/>}>
@@ -93,8 +93,7 @@ class HeaderBox extends Component {
                         <div>Login</div>
                         <div>hello</div>
                         <div>
-                            <Avatar className="user-avatar" size={25} icon={<UserOutlined />
-}/>
+                            <Avatar className="user-avatar" size={25} icon={<UserOutlined />}/>
                         </div>
                     </div>
                 </div>

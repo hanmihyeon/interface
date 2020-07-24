@@ -1,13 +1,14 @@
-import React, {Fragment, Component} from 'react';
+import React, { Fragment, Component } from 'react';
 import {
     Breadcrumb,
     Card,
     Table,
     Tag,
     Row,
+    Col,
     Drawer,
 } from 'antd';
-import {SettingOutlined, UserOutlined, ZoomInOutlined, DownloadOutlined} from '@ant-design/icons';
+import { SettingOutlined, UserOutlined, ZoomInOutlined, DownloadOutlined } from '@ant-design/icons';
 import './Common.css';
 import DownloadLink from 'react-download-link';
 
@@ -239,18 +240,7 @@ const data = [
         description: 'test2'
     }
 ]
-/*const data = [];
-  for (let i = 50; i > 0; i--) {
-    data.push({
-      id: i,
-      date: `2020-07-01 17:${i}`,
-      class: Math.random()*5,
-      cause: `차량`,
-      result: `사고`,
-      sms: `송신 완료`
-    });
-  }
-*/
+
 class EventManager extends Component {
     state = {
         filteredInfo: null,
@@ -259,39 +249,43 @@ class EventManager extends Component {
 
     handleChange = (pagination, filters) => {
         console.log('Various parameter', pagination, filters);
-        this.setState({filteredInfo: filters});
+        this.setState({ filteredInfo: filters });
     };
 
     clearFillters = () => {
-        this.setState({filteredInfo: null})
+        this.setState({ filteredInfo: null })
     };
 
     clearAll = () => {
-        this.setState({filteredInfo: null});
+        this.setState({ filteredInfo: null });
     };
 
     showDrawer = () => {
-      this.setState({
-        visible: true
-      });
+        this.setState({
+            visible: true
+        });
     };
 
+    showReport = () => {
+        console.log('show');
+    }
+
     onClose = () => {
-      this.setState({
-        visible: false
-      });
+        this.setState({
+            visible: false
+        });
     };
 
     makeFile = () => {
-      return {
-        mime: 'text/plain',
-        filename: 'myfile.txt',
-        contents: 'test',
-      }
+        return {
+            mime: 'text/plain',
+            filename: 'myfile.txt',
+            contents: 'test',
+        }
     }
 
     render() {
-        let {filteredInfo} = this.state;
+        let { filteredInfo } = this.state;
         filteredInfo = filteredInfo || {};
 
         const columns = [
@@ -305,25 +299,25 @@ class EventManager extends Component {
                 dataIndex: 'tags',
                 align: 'center',
                 render: tags => (
-                  <>
-                    {tags.map(tag => {
-                      let color = tag === `1` ? 'volcano' : 'volcano';
-                      if (tag === `2`) {
-                        color = 'orange';
-                      } else if (tag === `3`) {
-                        color = 'yellow';
-                      } else if (tag === `4`) {
-                        color = 'green';
-                      } else if(tag === `5`) {
-                        color = 'geekblue';
-                      }
-                      return (
-                        <Tag color={color} key={tag}>
-                          {tag}
-                        </Tag>
-                      );
-                    })}
-                  </>
+                    <>
+                        {tags.map(tag => {
+                            let color = tag === `1` ? 'volcano' : 'volcano';
+                            if (tag === `2`) {
+                                color = 'orange';
+                            } else if (tag === `3`) {
+                                color = 'yellow';
+                            } else if (tag === `4`) {
+                                color = 'green';
+                            } else if (tag === `5`) {
+                                color = 'geekblue';
+                            }
+                            return (
+                                <Tag color={color} key={tag}>
+                                    {tag}
+                                </Tag>
+                            );
+                        })}
+                    </>
                 )
             }, {
                 title: '터널',
@@ -334,11 +328,11 @@ class EventManager extends Component {
                 dataIndex: 'source',
                 align: 'center',
             }, {
-                title: 'Start time',
+                title: '시작 일시',
                 dataIndex: 'starttime',
                 align: 'center',
             }, {
-                title: 'End time',
+                title: '종료 일시',
                 dataIndex: 'endtime',
                 align: 'center',
             }, {
@@ -371,61 +365,64 @@ class EventManager extends Component {
                 dataIndex: 'sensor',
                 align: 'center',
                 render: () => (
-                  <a onClick={this.showDrawer}><ZoomInOutlined/></a>
+                    <a onClick={this.showDrawer}><ZoomInOutlined /></a>
                 )
             }, {
                 title: '이벤트 리포트',
                 dataIndex: 'eventreport',
                 align: 'center',
                 render: () => (
-                  <DownloadLink
-                    className="download"
-                    label={<DownloadOutlined/>}
-                    filename="myfile.txt"
-                    exportFile={() => Promise.resolve("my data")} />
+                    <a onClick={this.showReport}>조회</a>
+                    /*<DownloadLink
+                      className="download"
+                      label={<DownloadOutlined/>}
+                      filename="myfile.txt"
+                      exportFile={() => Promise.resolve("my data")} />*/
                 )
+            }, {
+                title: '운영자 확인',
+                dataIndex: 'confirm',
+                align: 'center',
             }
         ];
         return (
             <Fragment>
                 <Breadcrumb className="bread">
-                    <Breadcrumb.Item><SettingOutlined/>&nbsp;&nbsp;Event</Breadcrumb.Item>
-                    <Breadcrumb.Item><UserOutlined/>&nbsp;Event Manager</Breadcrumb.Item>
+                    <Breadcrumb.Item><SettingOutlined />&nbsp;&nbsp;Event</Breadcrumb.Item>
+                    <Breadcrumb.Item><UserOutlined />&nbsp;Event Manager</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="event-manager contents">
                     <Row gutter={[6, 6]}>
-                        <Card title="Event" size="small">
-                            <Table
-                                size="small"
-                                onChange={this.handleChange}
-                                /*expandable={{
-                                    expandedRowRender: record => (<p
-                                        style={{
-                                            margin: 0
-                                        }}>{record.description}</p>),
-                                    expandIcon: ({expanded, onExpand, record}) => expanded
-                                        ? (<MinusCircleTwoTone onClick={e => onExpand(record, e)}/>)
-                                        : (<PlusCircleTwoTone onClick={e => onExpand(record, e)}/>)
-                                }}*/
-                                columns={columns}
-                                dataSource={data}
-                                bordered={true}
-                                pagination={{
-                                    pageSize: 25
-                                }}
-                                scroll={{
-                                    y: 425
-                                }}/>
-                        </Card>
+                        <Col span={24}>
+                            <Card title="Event" size="small">
+                                <Table
+                                    size="small"
+                                    onChange={this.handleChange}
+                                    columns={columns}
+                                    dataSource={data}
+                                    bordered={true}
+                                    pagination={{
+                                        pageSize: 25
+                                    }}
+                                    scroll={{
+                                        y: 400
+                                    }} />
+                            </Card>
+                        </Col>
+                        <Col span={24}>
+                            <Card bodyStyle={{
+                                height: '500px'
+                            }}></Card>
+                        </Col>
                     </Row>
                     <Drawer
-                      title="Sensor Data"
-                      width={300}
-                      height={300}
-                      placement="right"
-                      onClose={this.onClose}
-                      visible={this.state.visible}
-                      bodyStyle={{paddingBottom:80}} >
+                        title="Sensor Data"
+                        width={300}
+                        height={300}
+                        placement="right"
+                        onClose={this.onClose}
+                        visible={this.state.visible}
+                        bodyStyle={{ paddingBottom: 80 }} >
                         센서데이터
                       </Drawer>
                 </div>

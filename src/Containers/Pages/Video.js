@@ -93,7 +93,7 @@ const StatusAlert = () => {
                             <Player
                                 playsInline="playsInline"
                                 src={videoUrl}
-                                autoPlay={true}
+                                autoPlay={false}
                                 muted={true}/>
                             <div className="video-info" onClick={StatusAlert}>[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
                         </Card>
@@ -116,7 +116,7 @@ const StatusAlert = () => {
                             <Player
                                 playsInline="playsInline"
                                 src={videoUrl}
-                                autoPlay={true}
+                                autoPlay={false}
                                 muted={true}/>
                             <div className="video-info">[청주 -&gt; 부강] 메인 화면: 2번 카메라(일반)</div>
                         </Card>

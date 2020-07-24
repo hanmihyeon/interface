@@ -1,3 +1,7 @@
+.ant-card-body {
+    padding: 12px;
+}
+
 .video-react .video-react-big-play-button {
     visibility: hidden;
 }
@@ -12,7 +16,7 @@
     margin-top: -50%;
 }
 
-.ant-alert-errer {
+.ant-alert-error {
     background : #990c12;
 }
 
