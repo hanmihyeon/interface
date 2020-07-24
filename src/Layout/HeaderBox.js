@@ -24,7 +24,7 @@ const {Header} = Layout
 
 class HeaderBox extends Component {
     state = {
-        current: '1'
+        current: '',
     };
 
     handleClick = e => {

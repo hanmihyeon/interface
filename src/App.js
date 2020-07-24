@@ -47,7 +47,7 @@ class App extends Component {
                                     <Route path="/Home/Device" component={Device}/>
                                 </Switch>
                             </Content>
-                            <FooterBox/>
+                            {/*<FooterBox/>*/}
                         </div>
                     </Layout>
                 </Fragment>

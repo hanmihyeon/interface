@@ -830,6 +830,7 @@ export const RobotChart7 = () => {
         chart: {
             backgroundColor: 'none',
             type: 'spline',
+            width: 530,
             height: 250,
             animation: Highcharts.svg, // don't animate in old IE
             events: {

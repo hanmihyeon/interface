@@ -8,6 +8,7 @@
     top: 40px;
     left: 0;
     z-index: 2;
+    background-color: black;
     border-bottom: 0.5px solid #f0f0f0;
 }
 
@@ -17,13 +18,18 @@
 
 .ant-tabs-top > .ant-tabs-nav {
     margin-top: 30px;
-    margin-bottom:10px;
-    margin-left: 2px;
+    margin-bottom:0px;
+    margin-left: 0;
 }
 
 .contents {
     margin-top:30px;
 }
+
+.robot-contents {
+    margin-top: 0;
+}
+
 
 .dashboard {
     margin-top: 0;
