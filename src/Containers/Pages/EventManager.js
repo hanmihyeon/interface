@@ -8,10 +8,11 @@ import {
     Drawer,
     Modal,
     Button,
-    Popconfirm
+    Popconfirm,
+    Popover
 } from 'antd';
 
-import { SettingOutlined, UserOutlined, ZoomInOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+import { SettingOutlined, UserOutlined, ZoomInOutlined, QuestionCircleOutlined, RobotOutlined } from '@ant-design/icons';
 import './Common.css';
 import './Event.css';
 // import DownloadLink from 'react-download-link';
@@ -261,7 +262,9 @@ class EventManager extends Component {
         filteredInfo: null,
         visible: false,
         visiblemodal: false,
-        disabled: false
+        disabled: false,
+        robotvisible: false,
+        visiblepop: false,
     };
 
     handleChange = (pagination, filters) => {
@@ -289,6 +292,12 @@ class EventManager extends Component {
         });
     }
 
+    showPop = () => {
+        this.setState({
+            visiblepop: true
+        })
+    }
+
     handleOk = e => {
         console.log(e);
         this.setState({
@@ -308,6 +317,17 @@ class EventManager extends Component {
             disabled: false
         })
     }
+
+    hide = () => {
+        this.setState({
+            visiblepop: false,
+        })
+    }
+
+    handleRobotVisibleChange = visiblepop => {
+        this.setState({ visiblepop });
+    }
+
     handleDisabled = e => {
         this.setState({
             disabled: true
@@ -337,27 +357,42 @@ class EventManager extends Component {
                 title: 'ID',
                 dataIndex: 'id',
                 align: 'center',
+                width: '5%',
             }, {
                 title: '클래스',
                 key: 'class',
                 dataIndex: 'class',
                 align: 'center',
+                width: '3%',
                 render(text, record) {
                     return {
                         props: {
                             style: {
                                 background:
                                     parseInt(text) === 1
-                                        ? '#ff6666' /*'#fbc0c0'*/
+                                        ? '#F9120F' /*'#fbc0c0' '#ff6666'*/
                                         : (parseInt(text) === 2
-                                            ? '#ffbd55' /*'#ffdaa1'*/
+                                            ? '#F25A16' /*'#ffdaa1' '#ffbd55'*/
                                             : (parseInt(text) === 3
-                                                ? '#ffff66' /*'#f9ffc9'*/
+                                                ? '#FEFF37' /*'#f9ffc9' '#ffff66'*/
                                                 : (parseInt(text) === 4
-                                                    ? '#9de24f' /*'#baffe5'*/
+                                                    ? '#51B241' /*'#baffe5' '#9de24f'*/
                                                     : (parseInt(text) === 5
-                                                        ? '#87cefa'/*'#a9cdff'*/ : 'black')))),
-                                color: 'black'
+                                                        ? '#2F92D2'/*'#a9cdff' '#87cefa'*/ : 'black')))),
+                                color:
+                                    parseInt(text) === 1
+                                        ? '#FFF'
+                                        : (parseInt(text) === 2
+                                            ? '#FFF'
+                                            : (parseInt(text) === 3
+                                                ? '#000'
+                                                : (parseInt(text) === 4
+                                                    ? '#fff'
+                                                    : (parseInt(text) === 5
+                                                        ? '#FFF' : 'black')))),
+                                fontSize: '16px',
+                                fontWeight: '500',
+                                /*textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'*/
                             }
                         },
                         children: <div>{text}</div>
@@ -391,22 +426,30 @@ class EventManager extends Component {
                 title: '터널',
                 dataIndex: 'tunnel',
                 align: 'center',
+                width: '14%'
             }, {
-                title: '소스',
-                dataIndex: 'source',
+                title: '센서',
+                dataIndex: 'sensor',
                 align: 'center',
+                width: '9%',
+                render: () => (
+                    <a onClick={this.showDrawer}><ZoomInOutlined /></a>
+                )
             }, {
-                title: '시작 일시',
-                dataIndex: 'starttime',
+                title: '발생 시각',
+                dataIndex: 'date',
                 align: 'center',
+                width: '10%',
             }, {
-                title: '종료 일시',
+                title: '종료 시각',
                 dataIndex: 'endtime',
                 align: 'center',
+                width: '10%',
             }, {
                 title: '원인',
                 dataIndex: 'cause',
                 align: 'center',
+                width: '7%',
                 filters: [
                     {
                         text: '충돌',
@@ -424,21 +467,35 @@ class EventManager extends Component {
                 title: 'SMS 발송',
                 dataIndex: 'sms',
                 align: 'center',
+                width: '7%',
             }, {
                 title: '로봇 출동',
                 dataIndex: 'robot',
                 align: 'center',
-            }, {
-                title: '센서',
-                dataIndex: 'sensor',
-                align: 'center',
+                width: '5%',
                 render: () => (
-                    <a onClick={this.showDrawer}><ZoomInOutlined /></a>
+                    <div>
+                        <div>
+                            <a onClick={this.showPop}>O</a>
+                        </div>
+                        <div>
+                            <Popover
+                                title="로봇 출동"
+                                placement="bottom"
+                                content={<div><p>로봇출동완료</p><a onClick={this.hide}>Close</a></div>}
+                                trigger="click"
+                                visible={this.state.visiblepop}
+                                onVisibleChange={this.handleRobotVisibleChange}
+                            >
+                            </Popover>
+                        </div>
+                    </div>
                 )
             }, {
                 title: '이벤트 리포트',
                 dataIndex: 'eventreport',
                 align: 'center',
+                width: '7%',
                 render: () => (
                     <div>
                         <a onClick={this.showModal}>조회</a>
@@ -471,13 +528,15 @@ class EventManager extends Component {
                 title: '운영자 확인',
                 dataIndex: 'confirm',
                 align: 'center',
+                width: '7%',
                 render: () => (
                     <div>
                         <Popconfirm
                             title="이벤트 확인"
+                            placement="bottom"
                             onConfirm={this.handleDisabled}
                             onCancel={this.handlePopCancel}
-                            icon={<QuestionCircleOutlined style={{color:'red'}}/>}
+                            icon={<QuestionCircleOutlined style={{ color: 'red' }} />}
                         >
                             <Button disabled={this.state.disabled} className="user-confirm">확인</Button>
                         </Popconfirm>

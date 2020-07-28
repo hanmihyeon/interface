@@ -27,6 +27,28 @@
 }
 
 /* 컨펌 */
+.ant-popover-placement-bottom > .ant-popover-content > .ant-popover-arrow {
+    border-top-color: #fff;
+    border-left-color: #fff;
+}
+
+.ant-popover-title {
+    color: black;
+    border-bottom: 0.5px solid #d0d0d0;
+}
+
+.ant-popover-inner {
+    background-color: #fff;
+}
+
+.ant-popover-inner-content div p {
+    color: black;
+}
+
+.ant-popover-message {
+    color: black;
+}
+
 .ant-popover-buttons {
     display: flex;
     justify-content: flex-start;
@@ -35,8 +57,20 @@
 .ant-popover-buttons button {
     margin-left: 4px;
     margin-right: 0;
+    color: black;
+}
+
+.ant-popover-buttons .ant-btn-primary {
+    color: #fff;
 }
 
 .user-confirm {
     width: 50%;
+    background-color: #a03636;
+    color: #fff;
+}
+
+.user-confirm.ant-popover-disabled-compatible-wrapper {
+    background-color: transparent;
+    color: black;
 }

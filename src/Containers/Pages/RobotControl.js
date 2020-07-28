@@ -34,7 +34,7 @@ TweenOne
 //조이스틱 컬러 파스텔 변경
 const RobotControl = () => {
 
-    const [value, setValue] = useState('1');
+    // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
 
     const animation = {
@@ -136,8 +136,8 @@ const RobotControl = () => {
                                         <div className="radio">
                                             <span>감시모드</span>
                                             <Radio.Group>
-                                                <Radio value={1} onClick={() => setValue('1')}>자동</Radio>
-                                                <Radio value={2} onClick={() => setValue('2')}>수동</Radio>
+                                                <Radio value={1}>자동</Radio>
+                                                <Radio value={2}>수동</Radio>
                                             </Radio.Group>
                                         </div>
                                         <div className="toggle">
@@ -246,8 +246,8 @@ const RobotControl = () => {
                                             <img src="/robotcamera.png" alt="" />
                                         </div>*/}
                                         <div className="robot-info">
-                                            <VoltRadial />
-                                            <HighGaugeChart/>
+                                            <HighGaugeChart />
+                                            <HighGaugeChart />
                                             <SpeedChart />
                                             {/*<p>
                                                 전압: 220.{Math.floor(Math.random() * 100)}V<br />

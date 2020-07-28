@@ -11,22 +11,22 @@ import GaugeChart from 'react-gauge-chart';
 import ReactSpeedometer from 'react-d3-speedometer';
 import './Robot1.css';
 charts(FusionCharts);
-// import Chart from 'react-apexcharts';
+
 highchartsMore(Highcharts);
 solidGauge(Highcharts);
 
 export const SpeedChart = () => {
-    return(
-    <ReactSpeedometer
-        width={180}
-        height={150}
-        maxSegmentLabels={0}
-        maxValue={100}
-        value={25}
-        needleColor="red"
-        startColor="green"
-        segments={10}
-        endColor="red" />)
+    return (
+        <ReactSpeedometer
+            width={160}
+            height={150}
+            maxSegmentLabels={0}
+            maxValue={100}
+            value={25}
+            needleColor="red"
+            startColor="green"
+            segments={10}
+            endColor="red" />)
 }
 
 export const TempGaugeChart = () => {
@@ -42,14 +42,15 @@ export const HighGaugeChart = () => {
     const option = {
         chart: {
             type: 'solidgauge',
-            width: 180
+            width: 160,
+            height: 150
         },
 
         title: null,
 
         pane: {
             center: ['50%', '85%'],
-            size: '140%',
+            size: '120%',
             startAngle: -90,
             endAngle: 90,
             background: {
@@ -86,7 +87,7 @@ export const HighGaugeChart = () => {
             tickAmount: 2,
             title: {
                 y: -70,
-                text: 'Speed'
+                text: '전압'
             },
             labels: {
                 y: 16
@@ -225,7 +226,7 @@ export const RobotChart1 = () => {
                             y: (30 + ((Math.random() * 10) / 10))
                         });
                     }
-                    
+
                     return data;
                 }())
             }
@@ -462,7 +463,7 @@ export const RobotChart3 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option3}/>
+        <HighchartsReact Highcharts={Highcharts} options={option3} />
     );
 }
 

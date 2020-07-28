@@ -100,7 +100,8 @@
 .robot-camera-control-wrap {
     float: left;
 }
-.robot-camera-control-wrap > div {
+
+.robot-camera-control-wrap>div {
     margin: 13px 0;
 }
 
@@ -111,10 +112,10 @@
     justify-content: center;
 }
 
-.camera-top-button > button,
-.center-button > div > button,
-.center-button > div > div,
-.camera-bottom-button > button {
+.camera-top-button>button,
+.center-button>div>button,
+.center-button>div>div,
+.camera-bottom-button>button {
     width: 7%;
 }
 
@@ -125,7 +126,7 @@
     align-items: center;
 }
 
-.center-button > div {
+.center-button>div {
     width: 32px;
     height: 32px;
 }
@@ -178,6 +179,7 @@
 .robot-control-1 .light-toggle {
     margin-bottom: 10px;
 }
+
 .robot-control-1 .light-toggle,
 .robot-control-1 .uvlight-toggle {
     width: 100%;
@@ -192,7 +194,12 @@
 /* 현황 */
 
 .apexcharts-legend-text {
-    color: white!important;
+    color: white !important;
+}
+
+.apexcharts-text.apexcharts-pie-label {
+    fill: black!important;
+    font-weight:bold;
 }
 
 .sensor-status .ant-card-body {

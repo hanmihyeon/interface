@@ -18,7 +18,7 @@ TweenOne
 
 //html초입에서 height 설정안해서 적용안됨 세로 퍼센트
 const Tunnel = (props) => {
-    const [value, setValue] = useState('1');
+    // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
     //나중에 배열로 camera url마다 지정해야할듯
     const v1 = 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4';  //분홍구름
@@ -176,8 +176,8 @@ const Tunnel = (props) => {
                                     <div className="radio">
                                         <span>감시모드</span>
                                         <Radio.Group>
-                                            <Radio value={1} onClick={() => setValue('1')}>자동</Radio>
-                                            <Radio value={2} onClick={() => setValue('2')}>수동</Radio>
+                                            <Radio value={1} /*onClick={() => setValue('1')}*/>자동</Radio>
+                                            <Radio value={2} /*onClick={() => setValue('2')}*/>수동</Radio>
                                         </Radio.Group>
                                     </div>
                                     <div className="toggle">
