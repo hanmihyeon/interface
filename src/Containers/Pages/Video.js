@@ -19,8 +19,8 @@ const [videoUrl , setVideoUrl] = useState(v1);  //rerendering
 
 ///////////////////////////////// 영상 변환
 const VideoChange =(index)=>{
-    if(index == 0)setVideoUrl(v2);
-    if(index == 1)setVideoUrl(v1);
+    if(index === 0)setVideoUrl(v2);
+    if(index === 1)setVideoUrl(v1);
 }
 ///////////////////////////////// 클릭시 메인 영상 변경 함수 - Hooks can only be called inside of the body of a function component
 
@@ -31,7 +31,7 @@ const VideoList = ({vList, index}) => {
                 style = {{padding:'1px'}} >
                 <Player
                     playsInline="playsInline"
-                    src={index==1?v1:v2}
+                    src={index===1?v1:v2}
                     autoPlay={index<2? true:false}
                     muted={true}/>
                     <div onClick={()=>{VideoChange(index)}}  style={{ position:'absolute', margin:'-50% 0 0 9%', zIndex:1,width:'80%', height:'70%' }}/>
@@ -102,14 +102,14 @@ const StatusAlert = () => {
                                 {vList.map( (vList, index)=> (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}
                             </Row>
                         </Card>
-                        <Card>
+                        {/*<Card>
                             <div>
                                 <div className="robot-location-bar"></div>
                             </div>
                             <div className="event">
                                 {eL.map(eL => (  <div className={eventlocation==eL ? 'event-section-red' : 'event-section' }></div> ))}
                             </div>
-                        </Card>
+                        </Card>*/}
                     </Col>
                     <Col span={11}>
                         <Card>
@@ -125,14 +125,14 @@ const StatusAlert = () => {
                                 {vList.map( (vList, index)=> (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}
                             </Row>
                         </Card>
-                        <Card>
+                        {/*<Card>
                             <div>
                                 <div className="robot-location-bar"></div>
                             </div>
                             <div className="event">
                                 {eL.map(eL => (  <div className={eventlocation==eL ? 'event-section-red' : 'event-section' }></div> ))} 
                             </div>
-                        </Card>
+                        </Card> */}
                     </Col>
                     <Col span={2}>
                         <Card title="Alert list" size="small" className="alarm-list-wrap">

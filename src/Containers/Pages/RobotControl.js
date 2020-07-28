@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
-import { Breadcrumb, Row, Col, Card, Button, Slider, Tabs, Radio, Switch, Cascader, Select, Form } from 'antd';
-import { DashboardOutlined, DatabaseOutlined, VideoCameraTwoTone, VideoCameraOutlined } from '@ant-design/icons';
+import { Breadcrumb, Row, Col, Card, Button, Slider, Tabs, Radio, Switch, Select, Form } from 'antd';
+import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
 import TweenOne from 'rc-tween-one';
@@ -8,7 +8,13 @@ import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 
 import {
     RobotStateChart,
-    RobotChart7
+    RobotChart7,
+    VoltRadial,
+    CurrentRadial,
+    TempRadial,
+    TempGaugeChart,
+    HighGaugeChart,
+    SpeedChart
 } from './RobotChart';
 
 // import RealtimeLineChart from './RealtimeLineChart';
@@ -30,25 +36,6 @@ const RobotControl = () => {
 
     const [value, setValue] = useState('1');
     const [form] = Form.useForm();
-
-    const stationoptions = [
-        {
-            value: 'Camera1',
-            label: 'Camera1'
-        },
-        {
-            value: 'Camera2',
-            label: 'Camera2'
-        },
-        {
-            value: 'Camera3',
-            label: 'Camera3'
-        },
-        {
-            value: 'Camera4',
-            label: 'Camera4'
-        },
-    ];
 
     const animation = {
         bezier: {
@@ -255,16 +242,19 @@ const RobotControl = () => {
                                         style={{
                                             marginBottom: '10px'
                                         }}>
-                                        <div className="robot-img">
+                                        {/*<div className="robot-img">
                                             <img src="/robotcamera.png" alt="" />
-                                        </div>
+                                        </div>*/}
                                         <div className="robot-info">
-                                            <p>
+                                            <VoltRadial />
+                                            <HighGaugeChart/>
+                                            <SpeedChart />
+                                            {/*<p>
                                                 전압: 220.{Math.floor(Math.random() * 100)}V<br />
                                             전류: 70.{Math.floor(Math.random() * 100)}A<br />
                                             내부온도: 30.{Math.floor(Math.random() * 10)}도<br />
                                             위치: {Math.floor(Math.random() * 500)}m
-                                        </p>
+                                            </p>*/}
                                         </div>
                                     </Card>
                                     <Card title="레일 로봇 상태 추이" size="small">
@@ -277,201 +267,7 @@ const RobotControl = () => {
                 </Fragment>
             </TabPane>
             <TabPane tab="청주-&gt;부강" key="2">
-                <Fragment>
-                    <Breadcrumb className="bread">
-                        <Breadcrumb.Item><DashboardOutlined />&nbsp;&nbsp;Event</Breadcrumb.Item>
-                        <Breadcrumb.Item><DatabaseOutlined />&nbsp;Robot Control</Breadcrumb.Item>
-                    </Breadcrumb>
-                    <div className="robot-control robot-contents">
-                        <Row gutter={[6, 6]}>
-                            <Col span={8}>
-                                <Card className="robot-camera">
-                                    <Player
-                                        fluid={false}
-                                        height={300}
-                                        playsInline="playsInline"
-                                        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                                        autoPlay={true}
-                                        muted={true} />
-                                    <div className="video-info">[부강 -&gt; 청주] 로봇 카메라(일반)</div>
-                                </Card>
-                            </Col>
-                            <Col span={8}>
-                                <Card className="robot-camera">
-                                    <Player
-                                        fluid={false}
-                                        height={300}
-                                        playsInline="playsInline"
-                                        src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
-                                        autoPlay={true}
-                                        muted={true} />
-                                    <div className="video-info">[부강 -&gt; 청주] 로봇 카메라(열화상)</div>
-                                </Card>
-                            </Col>
-                            <Col span={4}>
-                                <Card className="control-container" bodyStyle={{ padding: '10px' }}>
-                                    <Card title="로봇 컨트롤" size="small" className="robot-control">
-                                        <div className="robot-control-wrap">
-                                            <div className="robot-left-button">
-                                                <Button>◀</Button>
-                                            </div>
-                                            <div className="robot-center-button">
-                                                <Joystick size={35} baseColor="#808080" stickColor="black"></Joystick>
-                                            </div>
-                                            <div className="robot-right-button">
-                                                <Button>▶</Button>
-                                            </div>
-                                        </div>
-                                    </Card>
-                                    <Card title="로봇 카메라 컨트롤" size="small" className="robot-camera-control">
-                                        <div className="robot-camera-control-wrap">
-                                            <div className="camera-top-button">
-                                                <Button>▲</Button>
-                                            </div>
-                                            <div className="center-button">
-                                                <div className="camera-left-button">
-                                                    <Button>◀</Button>
-                                                </div>
-                                                <div className="camera-center-button">
-                                                    <Joystick size={30} baseColor="#808080" stickColor="black"></Joystick>
-                                                </div>
-                                                <div className="camera-right-button">
-                                                    <Button>▶</Button>
-                                                </div>
-                                            </div>
-                                            <div className="camera-bottom-button">
-                                                <Button>▼</Button>
-                                            </div>
-                                        </div>
-                                        <div className="zoom-slider-wrap">
-                                            <Slider vertical defaultValue={30} className="zoom-slider" />
-                                        </div>
-                                    </Card>
-                                </Card>
-                            </Col>
-                            <Col span={4}>
-                                <Card className="control-container" bodyStyle={{ padding: '10px' }}>
-                                    <Card title="로봇 컨트롤" size="small" className="robot-control">
-                                        <div className="robot-control-wrap">
-                                            <div className="robot-left-button">
-                                                <Button>◀</Button>
-                                            </div>
-                                            <div className="robot-center-button">
-                                                <Joystick size={35} baseColor="#808080" stickColor="black"></Joystick>
-                                            </div>
-                                            <div className="robot-right-button">
-                                                <Button>▶</Button>
-                                            </div>
-                                        </div>
-                                    </Card>
-                                    <Card title="로봇 카메라 컨트롤" size="small" className="robot-camera-control">
-                                        <div className="robot-camera-control-wrap">
-                                            <div className="camera-top-button">
-                                                <Button>▲</Button>
-                                            </div>
-                                            <div className="center-button">
-                                                <div className="camera-left-button">
-                                                    <Button>◀</Button>
-                                                </div>
-                                                <div className="camera-center-button">
-                                                    <Joystick size={30} baseColor="#808080" stickColor="black"></Joystick>
-                                                </div>
-                                                <div className="camera-right-button">
-                                                    <Button>▶</Button>
-                                                </div>
-                                            </div>
-                                            <div className="camera-bottom-button">
-                                                <Button>▼</Button>
-                                            </div>
-                                        </div>
-                                        <div className="zoom-slider-wrap">
-                                            <Slider vertical defaultValue={30} className="zoom-slider" />
-                                        </div>
-                                    </Card>
-                                </Card>
-                            </Col>
-                            <Col span={24}>
-                                <Card title="터널 상태" size="small" bodyStyle={{
-                                    padding: 0,
-                                    display: 'flex',
-                                    justifyContent: 'space-around'
-                                }}>
-                                    <div className="tunnel-current">
-                                        <div className="tunnel">
-                                            <div className="tunnel-rail"></div>
-                                            <TweenOne animation={animation}>
-                                                <div className="robot"></div>
-                                            </TweenOne>
-                                        </div>
-                                    </div>
-                                    <div className="tunnel-current-status">
-                                        <div className="tunnel-status">
-                                            <h4>현재 터널 상태</h4>
-                                            <p>
-                                                위치 : <br />
-                                            방향 : <br />
-                                            속도 : <br />
-                                            </p>
-                                        </div>
-                                    </div>
-                                </Card>
-                            </Col>
-                            <Col span={16}>
-                                <Card
-                                    style={{
-                                        height: 400
-                                    }}
-                                    bodyStyle={{
-                                        padding: '24px 18px 24px 18px'
-                                    }}>
-                                    <Row>
-                                        <div
-                                            span={24}
-                                            style={{
-                                                marginBottom: '20px',
-                                                fontSize: '16px',
-                                                width: '100%'
-                                            }}>
-                                            <div className="robot-chart-title">로봇 환경 센서</div>
-                                            <div className="unit-box">1분 단위</div>
-                                        </div>
-                                        <div className="robot-chart-2 robot-1"><RobotChart7 /></div>
-                                        <div className="robot-chart-2"><RobotChart7 /></div>
-                                    </Row>
-                                </Card>
-                            </Col>
-                            <Col span={8}>
-                                <Card
-                                    bodyStyle={{
-                                        height: 400,
-                                        padding: '12px 18px'
-                                    }}>
-                                    <Card
-                                        title="로봇 상태"
-                                        size="small"
-                                        style={{
-                                            marginBottom: '10px'
-                                        }}>
-                                        <div className="robot-img">
-                                            <img src="/robotcamera.png" alt="" />
-                                        </div>
-                                        <div className="robot-info">
-                                            <p>
-                                                전압: 220.{Math.floor(Math.random() * 100)}V<br />
-                                            전류: 70.{Math.floor(Math.random() * 100)}A<br />
-                                            내부온도: 30.{Math.floor(Math.random() * 10)}도<br />
-                                            위치: {Math.floor(Math.random() * 500)}m
-                                        </p>
-                                        </div>
-                                    </Card>
-                                    <Card title="레일 로봇 상태 추이" size="small">
-                                        <RobotStateChart />
-                                    </Card>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </div>
-                </Fragment>
+
             </TabPane>
         </Tabs>
     );

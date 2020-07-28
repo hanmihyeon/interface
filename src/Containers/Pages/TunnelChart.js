@@ -1,67 +1,102 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactApexChart from 'react-apexcharts';
 
 export const TunnelChart = () => {
-    const option = {
-        series: [70],
-            options: {
-                chart: {
-                    height: 350,
-                    type: 'radialBar',
-                },
-                plotOptions: {
-                    radialBar: {
-                        hollow: {
-                            size: '70%',
-                        }
-                    },
-                },
-                labels: ['Cricket'],
-            },
-    }
 
-    const options = {
-        series: [67],
-        chart: {
-          height: 350,
-          type: "radialBar",
-          offsetY: -10
-        },
-        plotOptions: {
-          radialBar: {
-            dataLabels: {
-              name: {
-                offsetY: 20,
-                color: "green",
-                formatter: function () {
-                  return ["Posts", "(30 days)"];
-                }
-              },
-              value: {
-                color: "#111",
-                offsetY: -30,
-                fontSize: "22px"
-              }
+  const options = {
+    series: [67],
+    chart: {
+      height: 350,
+      type: "radialBar",
+      offsetY: -10
+    },
+    plotOptions: {
+      radialBar: {
+        dataLabels: {
+          name: {
+            offsetY: 20,
+            color: "green",
+            formatter: function () {
+              return ["Posts", "(30 days)"];
             }
+          },
+          value: {
+            color: "#111",
+            offsetY: -30,
+            fontSize: "22px"
           }
-        },
-        labels: ["Median Ratio"]
-      };
+        }
+      }
+    },
+    labels: ["Median Ratio"]
+  };
 
-    return (
-        <ReactApexChart options={options} type="radialBar" height={150} />
-    );
+  return (
+    <ReactApexChart options={options} type="radialBar" height={150} />
+  );
 }
 
-/*
-export class TunnelChart extends React {
+export class TodayStatus extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      series: [44, 55, 13, 43, 22],
+      options: {
+        chart: {
+          width: 300,
+          type: 'pie',
+        },
+        labels: ['화재', '사고', '정체', '원활', '기타'],
+        colors: ['#9e3953','#dd713e','#9e8439','#529e39','#39539e'],
+        dataLabels: {
+          enabled: true,
+          style: {
+            fontWeight: '400',
+          },
+          dropShadow: {
+            enablde: false,
+            top: 0,
+            left: 0,
+            opacity: 0
+          }
+        },
+        legend: {
+          position: 'bottom'
+        },
+        stroke: {
+          width: 0
+        },
+        responsive: [{
+          breakpoint: 480,
+          options: {
+            chart: {
+              width: 200
+            },
+            legend: {
+              show: false
+            }
+          }
+        }]
+      },
+    };
+  }
+  render() {
+    return (
+      <div id="chart" style={{margin: '15px 0 0 -17px'}}>
+        <ReactApexChart options={this.state.options} series={this.state.series} type="pie" width={300} />
+      </div>
+    );
+  }
+}
+
+export class TunnelRadial extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             series: [70],
             options: {
                 chart: {
-                    height: 350,
+                    height: 250,
                     type: 'radialBar',
                 },
                 plotOptions: {
@@ -71,19 +106,21 @@ export class TunnelChart extends React {
                         }
                     },
                 },
-                labels: ['Cricket'],
+                stroke: {
+                  lineCap: 'round',
+                },
+                labels: ['Data'],
+                colors: ['#39539e']
             },
         };
     }
     render() {
         return (
             <div id="chart">
-                <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={150} />
+                <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={180} />
             </div>
-        )
+        );
     }
 }
-
-export default TunnelChart;*/
 
 

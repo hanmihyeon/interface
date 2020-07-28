@@ -1,0 +1,42 @@
+/* 모달 */
+.ant-modal-mask {
+    background-color: rgba(255,255,255,0.005);
+}
+
+.ant-modal-content {
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+.ant-modal-content .ant-modal-close-x {
+    display: none;
+}
+
+.ant-modal-header {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ant-modal-footer {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ant-modal-footer .ant-btn {
+    width: 15%;
+}
+
+/* 컨펌 */
+.ant-popover-buttons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.ant-popover-buttons button {
+    margin-left: 4px;
+    margin-right: 0;
+}
+
+.user-confirm {
+    width: 50%;
+}

@@ -1,35 +1,36 @@
 import React, { Fragment, useState } from 'react';
-import { Breadcrumb, Row, Col, Card, notification, Modal, Alert, Button, Slider } from 'antd';
+import { Breadcrumb, Row, Col, Card, notification, Modal, Alert, Button, Form, Select, Slider, Radio, Switch } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
-import {TunnelChart} from './TunnelChart';
-
+import { TodayStatus, TunnelRadial } from './TunnelChart';
+import { TunnelChart } from './SensorAvgChart';
 import 'video-react/dist/video-react.css';
 import './Video.css';
-import './Robot1.css';
+import './Tunnel.css';
 
+const { Option } = Select;
 TweenOne
     .plugins
     .push(BezierPlugin);
 
 //html초입에서 height 설정안해서 적용안됨 세로 퍼센트
 const Tunnel = (props) => {
+    const [value, setValue] = useState('1');
+    const [form] = Form.useForm();
     //나중에 배열로 camera url마다 지정해야할듯
     const v1 = 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4';  //분홍구름
     const v2 = 'http://media.w3.org/2010/05/bunny/movie.mp4';         //흰눈
 
-    const eL = [1, 1, 1, 1, 2, 2, 2, 1, 1, 1];
-    const [eventlocation, setEventlocation] = useState(0);  //rerendering eventlocation
     const [videoUrl, setVideoUrl] = useState(v1);  //rerendering
     //https://media.w3.org/2010/05/sintel/trailer_hd.mp4   // http://media.w3.org/2010/05/bunny/movie.mp4
 
     ///////////////////////////////// 영상 변환
     const VideoChange = (index) => {
-        if (index == 0) setVideoUrl(v2);
-        if (index == 1) setVideoUrl(v1);
+        if (index === 0) setVideoUrl(v2);
+        if (index === 1) setVideoUrl(v1);
     }
     ///////////////////////////////// 클릭시 메인 영상 변경 함수 - Hooks can only be called inside of the body of a function component
 
@@ -40,7 +41,7 @@ const Tunnel = (props) => {
                     style={{ padding: '1px' }} >
                     <Player
                         playsInline="playsInline"
-                        src={index == 1 ? v1 : v2}
+                        src={index === 1 ? v1 : v2}
                         autoPlay={index < 2 ? true : false}
                         muted={true} />
                     <div onClick={() => { VideoChange(index) }} style={{ position: 'absolute', margin: '-50% 0 0 9%', zIndex: 1, width: '80%', height: '70%' }} />
@@ -54,11 +55,6 @@ const Tunnel = (props) => {
     }
 
     const StatusAlert = () => {
-        setEventlocation(2);
-        const modal = Modal.error({
-            title: 'Alert!',
-            content: 'Warning'
-        })
 
         notification.open({
             message: 'Alert',
@@ -138,8 +134,19 @@ const Tunnel = (props) => {
                             </div>
                         </Card>
                         <Row>
-                            <Col span={12}>
-                                <Card title="로봇 카메라 컨트롤" size="small" className="robot-camera-control" bodyStyle={{ height: '275px' }}>
+                            <Col span={8}>
+                                <Card title="로봇 컨트롤" size="small" className="robot-control" bodyStyle={{ height: '275px' }}>
+                                    <div className="robot-control-wrap">
+                                        <div className="robot-left-button">
+                                            <Button>◀</Button>
+                                        </div>
+                                        <div className="robot-center-button">
+                                            <Joystick size={35} baseColor="#808080" stickColor="black"></Joystick>
+                                        </div>
+                                        <div className="robot-right-button">
+                                            <Button>▶</Button>
+                                        </div>
+                                    </div>
                                     <div className="robot-camera-control-wrap">
                                         <div className="camera-top-button">
                                             <Button>▲</Button>
@@ -162,22 +169,65 @@ const Tunnel = (props) => {
                                     <div className="zoom-slider-wrap">
                                         <Slider vertical defaultValue={30} className="zoom-slider" />
                                     </div>
-                                    <div className="robot-control-wrap">
-                                        <div className="robot-left-button">
-                                            <Button>◀</Button>
+                                </Card>
+                            </Col>
+                            <Col span={8}>
+                                <Card title="컨트롤" size="small" className="robot-control-1">
+                                    <div className="radio">
+                                        <span>감시모드</span>
+                                        <Radio.Group>
+                                            <Radio value={1} onClick={() => setValue('1')}>자동</Radio>
+                                            <Radio value={2} onClick={() => setValue('2')}>수동</Radio>
+                                        </Radio.Group>
+                                    </div>
+                                    <div className="toggle">
+                                        <div className="light-toggle">
+                                            <span>조명</span>
+                                            <Switch className="light-toggle-button" checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
                                         </div>
-                                        <div className="robot-center-button">
-                                            <Joystick size={35} baseColor="#808080" stickColor="black"></Joystick>
-                                        </div>
-                                        <div className="robot-right-button">
-                                            <Button>▶</Button>
+                                        <div className="uvlight-toggle">
+                                            <span>적외선 조명</span>
+                                            <Switch className="uvlight-toggle-button" checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
                                         </div>
                                     </div>
-                                </Card></Col>
-                            <Col span={12}><Card title="2" size="small" bodyStyle={{ height: '275px' }}></Card></Col>
+                                </Card>
+                                <Card title="스테이션 이동" size="small" className="station-move">
+                                    <Form form={form} name="control">
+                                        <Form.Item name="station" label="station" >
+                                            <Select
+                                                placeholder="스테이션 이동"
+                                                allowClear>
+                                                <Option value="Camera1">Camera1</Option>
+                                                <Option value="Camera2">Camera2</Option>
+                                                <Option value="Camera3">Camera3</Option>
+                                                <Option value="Camera4">Camera4</Option>
+                                            </Select>
+                                        </Form.Item>
+                                        <Form.Item>
+                                            <Button className="station-move-button" htmlType="설정">
+                                                설정
+                                            </Button>
+                                        </Form.Item>
+                                    </Form>
+                                </Card>
+                            </Col>
+                            <Col span={8}>
+                                <Card title="현황" size="small" bodyStyle={{ height: '275px' }}>
+                                    <TodayStatus />
+                                </Card>
+                            </Col>
                         </Row>
-                        <Card title="3" size="small" bodyStyle={{ height: '468px' }}>
-                            <TunnelChart/>
+                        <Card title="3" size="small" className="sensor-status">
+                            <div className="sensor">
+                                <Col span={6}><TunnelRadial /></Col>
+                                <Col span={6}><TunnelRadial /></Col>
+                                <Col span={6}><TunnelRadial /></Col>
+                                <Col span={6}><TunnelRadial /></Col>
+                            </div>
+                            <div className="sensor-chart">
+                                <Col span={12}><TunnelChart /></Col>
+                                <Col span={12}><TunnelChart /></Col>
+                            </div>
                         </Card>
                     </Col>
                     <Col span={2}>
@@ -191,7 +241,6 @@ const Tunnel = (props) => {
                             </div>
                         </Card>
                     </Col>
-
                 </Row>
             </div>
         </Fragment>

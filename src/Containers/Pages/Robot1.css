@@ -1,6 +1,4 @@
 /* 로봇 카메라 모니터링 */
-.robot-camera {
-}
 
 /* 모니터링 조작 탭 */
 .control-container {
@@ -251,12 +249,14 @@
 }
 
 .robot-info {
-    float: left;
-    width: 50%;
-    height:130px;
-    border: 0.5px solid #b0b0b0;
-    border-left: none;
-    padding: 0 15px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    border: 0.5px solid #303030;
+}
+
+.robot-info .chart {
+    width: 33%;
 }
 
 .robot-info p {
@@ -264,3 +264,32 @@
     line-height: 25px;
 }
 
+/* 게이지 차트 */
+/* 변동 가능, 차트 선택 x */
+
+.apexcharts-text.apexcharts-datalabel-value {
+    fill: #fff!important;
+    margin-top: -20px;
+}
+
+#gauge-chart1 {
+    border-left: 0.5px solid #303030;
+    width: 33%!important;
+}
+
+#gauge-chart1 > svg {
+    margin-top: 20px;
+}
+
+.highcharts-background {
+    fill: transparent;
+}
+
+.speedchart {
+    border-left: 0.5px solid #303030;
+}
+
+.speedometer {
+    border-left: 0.5px solid #303030;
+    padding-top: 10px;
+}

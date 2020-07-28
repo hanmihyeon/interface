@@ -17,7 +17,7 @@ import User from './Containers/Pages/User';
 import Device from './Containers/Pages/Device';
 
 import HeaderBox from './Layout/HeaderBox';
-import FooterBox from './Layout/FooterBox';
+// import FooterBox from './Layout/FooterBox';
 import ContentBox from './Layout/ContentBox';
 
 const {Content} = Layout;

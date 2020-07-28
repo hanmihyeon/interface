@@ -1,4 +1,4 @@
-import React, {Fragment, useState, useEffect, useRef, useCallback} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import {Breadcrumb, Table} from 'antd';
 import {SettingOutlined, UserOutlined} from '@ant-design/icons';
 
@@ -40,7 +40,7 @@ const User = () => {
                     )
                 })
                 setData(receivedData);
-                let id = receivedData.map(receivedData=>receivedData.fbg_id);
+                // let id = receivedData.map(receivedData=>receivedData.fbg_id);
                 // setidData(id_data=receivedData.map(receivedData=>receivedData.fbg_id));
                 // settsData(ts_data=receivedData.map(receivedData=>receivedData.fbg_ts));
                 // settempData(temp_data=receivedData.map(receivedData=>receivedData.fbg_temp));
@@ -146,7 +146,7 @@ const User = () => {
         ]
     }
 
-    /* const columns = [
+    const columns = [
         {
             title: 'id',
             dataIndex: 'fbg_id',
@@ -162,7 +162,7 @@ const User = () => {
             dataIndex: 'fbg_temp',
             key: 'fbg_temp'
         }
-    ] */
+    ]
 
     return (
         <Fragment>
@@ -173,11 +173,11 @@ const User = () => {
 
             <div className="user contents">User</div>
             <div>
-                {/*<Table
+                <Table
                     bordered="bordered"
                     columns={columns}
                     dataSource={data}
-                simple="simple" />*/}
+                simple="simple" />
                 <div>
                     <HighchartsReact Highcharts={Highcharts} options={optionavg1}  style={{overflow:'visible'}}/>
                 </div>
