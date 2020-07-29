@@ -4,13 +4,10 @@ import 'antd/dist/antd.dark.css';
 import {
     UserOutlined,
     DashboardOutlined,
-    HomeOutlined,
     LineChartOutlined,
     DatabaseOutlined,
     VideoCameraOutlined,
-    SettingOutlined,
     RobotOutlined,
-    DesktopOutlined,
     BulbOutlined,
     ToolOutlined
 } from '@ant-design/icons'
@@ -66,15 +63,15 @@ class HeaderBox extends Component {
                                     <Link to="/Home/Tunnel" />
                             </Menu.Item>
                             <SubMenu key="sub1" icon={<DashboardOutlined />} title="대시보드">
-                                <Menu.Item key="2" to={'/Dashboard'} icon={<DatabaseOutlined />}>
+                                <Menu.Item key="5" to={'/Dashboard'} icon={<DatabaseOutlined />}>
                                     데이터 대시보드
                                         <Link to="/Home/Dashboard" />
                                 </Menu.Item>
-                                <Menu.Item key="7" icon={<UserOutlined />}>
+                                <Menu.Item key="6" icon={<UserOutlined />}>
                                     User
                                         <Link to="/Home/User" />
                                 </Menu.Item>
-                                <Menu.Item key="8" icon={<ToolOutlined />}>
+                                <Menu.Item key="7" icon={<ToolOutlined />}>
                                     Device
                                         <Link to="/Home/Device" />
                                 </Menu.Item>

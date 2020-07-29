@@ -11,7 +11,7 @@ import {
     ResponsiveContainer
 } from 'recharts';
 import AudioSpectrum from 'react-audio-spectrum';
-import './Sensor.css';
+import './SensorChart.css';
 
 export class TempChart extends Component {
     randomDataArray(nb_elem) {

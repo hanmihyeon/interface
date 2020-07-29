@@ -1,12 +1,15 @@
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Select, Slider, Radio, Switch } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
+
 import { Player } from 'video-react';
 import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
-import { TodayStatus, TunnelRadial } from './TunnelChart';
-import { TunnelChart } from './SensorAvgChart';
+
+import { TodayStatus, TunnelRadial } from './Chart/TunnelChart';
+import { TunnelChart } from './Chart/SensorAvgChart';
+
 import 'video-react/dist/video-react.css';
 import './Video.css';
 import './Tunnel.css';

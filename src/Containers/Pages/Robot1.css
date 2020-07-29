@@ -172,7 +172,7 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    border-right: 0.5px solid #d0d0d0;
+    border-right: 0.5px solid #303030;
 }
 
 .tunnel {
@@ -281,6 +281,7 @@
 .current-chart {
     border-right: 0.5px solid #303030;
 }
+
 /*
 .apexcharts-text.apexcharts-datalabel-value {
     fill: #fff !important;

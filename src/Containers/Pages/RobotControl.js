@@ -12,9 +12,7 @@ import {
     VoltChart,
     CurrentChart,
     TempChart
-} from './RobotChart';
-
-// import RealtimeLineChart from './RealtimeLineChart';
+} from './Chart/RobotChart';
 
 import 'video-react/dist/video-react.css';
 import './Common.css';
@@ -30,7 +28,7 @@ TweenOne
 
 //조이스틱 컬러 파스텔 변경
 const RobotControl = () => {
-
+    console.log('dd');
     // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
 
