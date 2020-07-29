@@ -7,12 +7,13 @@ import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
 
-import { TodayStatus, TunnelRadial } from './Chart/TunnelChart';
-import { TunnelChart } from './Chart/SensorAvgChart';
+import { TodayStatus, TunnelRadial1, TunnelRadial2, TunnelRadial3, TunnelRadial4 } from '../Chart/TunnelChart';
+import { TunnelChart } from '../Chart/SensorAvgChart';
 
 import 'video-react/dist/video-react.css';
-import './Video.css';
+import '../cctv/Video.css';
 import './Tunnel.css';
+import '../Common.css';
 
 const { Option } = Select;
 TweenOne
@@ -175,7 +176,7 @@ const Tunnel = (props) => {
                                 </Card>
                             </Col>
                             <Col span={8}>
-                                <Card title="컨트롤" size="small" className="robot-control-1">
+                                <Card title="컨트롤" size="small" className="tunnel-robot-control-1">
                                     <div className="radio">
                                         <span>감시모드</span>
                                         <Radio.Group>
@@ -195,7 +196,7 @@ const Tunnel = (props) => {
                                     </div>
                                 </Card>
                                 <Card title="스테이션 이동" size="small" className="station-move">
-                                    <Form form={form} name="control">
+                                    <Form form={form} name="control" className="tunnel-form">
                                         <Form.Item name="station" label="station" >
                                             <Select
                                                 placeholder="스테이션 이동"
@@ -220,12 +221,12 @@ const Tunnel = (props) => {
                                 </Card>
                             </Col>
                         </Row>
-                        <Card title="3" size="small" className="sensor-status">
+                        <Card title="데이터 정보" size="small" className="sensor-status">
                             <div className="sensor">
-                                <Col span={6}><TunnelRadial /></Col>
-                                <Col span={6}><TunnelRadial /></Col>
-                                <Col span={6}><TunnelRadial /></Col>
-                                <Col span={6}><TunnelRadial /></Col>
+                                <Col span={6}><TunnelRadial1 /></Col>
+                                <Col span={6}><TunnelRadial2 /></Col>
+                                <Col span={6}><TunnelRadial3 /></Col>
+                                <Col span={6}><TunnelRadial4 /></Col>
                             </div>
                             <div className="sensor-chart">
                                 <Col span={12}><TunnelChart /></Col>

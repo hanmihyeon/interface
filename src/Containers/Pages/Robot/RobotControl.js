@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Breadcrumb, Row, Col, Card, Button, Slider, Tabs, Radio, Switch, Select, Form } from 'antd';
-import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
 import TweenOne from 'rc-tween-one';
@@ -8,16 +8,19 @@ import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 
 import {
     RobotStateChart,
-    RobotChart7,
+    RobotDataChart1,
+    RobotDataChart2,
+    RobotDataChart3,
+    RobotDataChart4,
     VoltChart,
     CurrentChart,
     TempChart
-} from './Chart/RobotChart';
+} from '../Chart/RobotChart';
 
 import 'video-react/dist/video-react.css';
-import './Common.css';
-import './Video.css';
-import './Robot1.css';
+import '../Common.css';
+import '../cctv/Video.css';
+import './RobotControl.css';
 
 const { TabPane } = Tabs;
 const { Option } = Select;
@@ -28,7 +31,7 @@ TweenOne
 
 //조이스틱 컬러 파스텔 변경
 const RobotControl = () => {
-    console.log('dd');
+
     // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
 
@@ -40,7 +43,7 @@ const RobotControl = () => {
                     x: 0,
                     y: 0
                 }, {
-                    x: 1350,
+                    x: 1000,
                     y: 0
                 }
             ]
@@ -169,18 +172,18 @@ const RobotControl = () => {
                                     </Card>
                                 </Card>
                             </Col>
-                            <Col span={24}>
+                            <Col span={20}>
                                 <Card title="터널 상태" size="small" bodyStyle={{
                                     height: '250px',
                                     padding: 0,
                                     display: 'flex',
                                     justifyContent: 'space-around'
                                 }}>
-                                    <div className="tunnel-current">
-                                        <div className="tunnel">
-                                            <div className="tunnel-direction"><span>&gt;&gt;&gt;</span></div>
-                                            <div className="tunnel-rail">
-                                                <div className="cctv">
+                                    <Col span={20} className="robot-tunnel-current">
+                                        <div className="robot-tunnel">
+                                            <div className="robot-tunnel-direction"><ArrowRightOutlined /></div>
+                                            <div className="robot-tunnel-rail">
+                                                <div className="robot-cctv">
                                                     <VideoCameraOutlined /><VideoCameraOutlined /><VideoCameraOutlined /><VideoCameraOutlined />
                                                 </div>
                                                 <TweenOne animation={animation}>
@@ -189,8 +192,8 @@ const RobotControl = () => {
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <div className="tunnel-current-status">
+                                    </Col>
+                                    <Col span={4} className="tunnel-current-status">
                                         <div className="tunnel-status">
                                             <h4>현재 터널 상태</h4>
                                             <p>
@@ -199,9 +202,61 @@ const RobotControl = () => {
                                             속도 : 1.5m/s<br />
                                             </p>
                                         </div>
-                                    </div>
+                                    </Col>
+                                    
                                 </Card>
                             </Col>
+                            <Col span={4} className="tunnel-current-schedule">
+                                        <Card title="스케줄" size="small">
+                                            <Form form={form} name="schedule">
+                                                <Form.Item name="location" label="위치" >
+                                                    <Select
+                                                        placeholder="위치"
+                                                        allowClear>
+                                                        <Option value="Camera1">Camera1</Option>
+                                                        <Option value="Camera2">Camera2</Option>
+                                                        <Option value="Camera3">Camera3</Option>
+                                                        <Option value="Camera4">Camera4</Option>
+                                                    </Select>
+                                                </Form.Item>
+                                                <Form.Item name="count" label="횟수" >
+                                                    <Select
+                                                        placeholder="횟수"
+                                                        allowClear>
+                                                        <Option value="Camera1">Camera1</Option>
+                                                        <Option value="Camera2">Camera2</Option>
+                                                        <Option value="Camera3">Camera3</Option>
+                                                        <Option value="Camera4">Camera4</Option>
+                                                    </Select>
+                                                </Form.Item>
+                                                <Form.Item name="speed" label="속도" >
+                                                    <Select
+                                                        placeholder="속도"
+                                                        allowClear>
+                                                        <Option value="Camera1">Camera1</Option>
+                                                        <Option value="Camera2">Camera2</Option>
+                                                        <Option value="Camera3">Camera3</Option>
+                                                        <Option value="Camera4">Camera4</Option>
+                                                    </Select>
+                                                </Form.Item>
+                                                <Form.Item name="starttime" label="시작 시간" >
+                                                    <Select
+                                                        placeholder="시작 시간"
+                                                        allowClear>
+                                                        <Option value="Camera1">Camera1</Option>
+                                                        <Option value="Camera2">Camera2</Option>
+                                                        <Option value="Camera3">Camera3</Option>
+                                                        <Option value="Camera4">Camera4</Option>
+                                                    </Select>
+                                                </Form.Item>
+                                                <Form.Item>
+                                                    <Button className="schedule-button" htmlType="설정">
+                                                        설정
+                                                </Button>
+                                                </Form.Item>
+                                            </Form>
+                                        </Card>
+                                    </Col>
                             <Col span={16}>
                                 <Card
                                     title="로봇 환경 센서"
@@ -214,24 +269,34 @@ const RobotControl = () => {
                                     }}>
                                     <Row>
                                         <div
-                                            span={24}
                                             style={{
+                                                display: 'flex',
+                                                justifyContent: 'space-around',
                                                 marginBottom: '20px',
                                                 fontSize: '16px',
                                                 width: '100%'
                                             }}>
-                                            
                                             {/*<div className="unit-box">1분 단위</div>*/}
+                                            <div className="robot-data-chart data-row1 data-1"><RobotDataChart1 /></div>
+                                            <div className="robot-data-chart data-row1 data-2"><RobotDataChart2 /></div>
                                         </div>
-                                        <div className="robot-chart-2 robot-1"><RobotChart7 /></div>
-                                        <div className="robot-chart-2"><RobotChart7 /></div>
+                                        <div
+                                            style={{
+                                                display: 'flex',
+                                                justifyContent: 'space-around',
+                                                marginBottom: '20px',
+                                                fontSize: '16px',
+                                                width: '100%'
+                                            }}>
+                                            <div className="robot-data-chart data-row2 data-3"><RobotDataChart3 /></div>
+                                            <div className="robot-data-chart data-row2 data-4"><RobotDataChart4 /></div>
+                                        </div>
                                     </Row>
                                 </Card>
                             </Col>
                             <Col span={8}>
                                 <Card
                                     bodyStyle={{
-                                        height: 400,
                                         padding: '12px 18px'
                                     }}>
                                     <Card
@@ -255,9 +320,12 @@ const RobotControl = () => {
                                             </p>*/}
                                         </div>
                                     </Card>
-                                    <Card title="레일 로봇 상태 추이" size="small">
+                                    <Card title="레일 로봇 상태 추이" size="small" style={{
+                                            marginBottom: '10px'
+                                        }}>
                                         <RobotStateChart />
                                     </Card>
+                                    <Card title="" size="small" bodyStyle={{height:'183px'}}></Card>
                                 </Card>
                             </Col>
                         </Row>

@@ -1,19 +1,16 @@
 import React from 'react';
+
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import highchartsMore from 'highcharts/highcharts-more';
-import solidGauge from 'highcharts/modules/solid-gauge';
-import FusionCharts from 'fusioncharts';
-import ReactFusioncharts from 'react-fusioncharts';
-import charts from 'fusioncharts/fusioncharts.charts';
-import ReactApexChart from 'react-apexcharts';
-import GaugeChart from 'react-gauge-chart';
 import ReactSpeedometer from 'react-d3-speedometer';
 
-charts(FusionCharts);
-
-highchartsMore(Highcharts);
-solidGauge(Highcharts);
+// import highchartsMore from 'highcharts/highcharts-more';
+// import solidGauge from 'highcharts/modules/solid-gauge';
+// import FusionCharts from 'fusioncharts';
+// import ReactFusioncharts from 'react-fusioncharts';
+// import charts from 'fusioncharts/fusioncharts.charts';
+// import ReactApexChart from 'react-apexcharts';
+// import GaugeChart from 'react-gauge-chart';
 
 export const VoltChart = () => {
     return (
@@ -88,107 +85,13 @@ export const TempChart = () => {
     );
 }
 
-export const TempGaugeChart = () => {
-    return (
-        <GaugeChart id="gauge-chart1"
-            nrOfLevels={20}
-            percent={0.86}
-            arcPadding={0.01} />
-    )
-}
-
-export const HighGaugeChart = () => {
-    const option = {
-        chart: {
-            type: 'solidgauge',
-            width: 160,
-            height: 150
-        },
-
-        title: null,
-
-        pane: {
-            center: ['50%', '85%'],
-            size: '120%',
-            startAngle: -90,
-            endAngle: 90,
-            background: {
-                backgroundColor:
-                    Highcharts.defaultOptions.legend.backgroundColor || '#EEE',
-                innerRadius: '60%',
-                outerRadius: '100%',
-                shape: 'arc'
-            }
-        },
-
-        exporting: {
-            enabled: false
-        },
-        credits: {
-            enabled: false
-        },
-        tooltip: {
-            enabled: false
-        },
-
-        // the value axis
-        yAxis: {
-            min: 0,
-            max: 200,
-            stops: [
-                [0.1, '#55BF3B'], // green
-                [0.5, '#DDDF0D'], // yellow
-                [0.9, '#DF5353'] // red
-            ],
-            lineWidth: 0,
-            tickWidth: 0,
-            minorTickInterval: null,
-            tickAmount: 2,
-            title: {
-                y: -70,
-                text: '전압'
-            },
-            labels: {
-                y: 16
-            }
-        },
-        series: [{
-            name: 'Speed',
-            data: [150],
-            dataLabels: {
-                color: '#fff',
-                format:
-                    '<div style="text-align:center">' +
-                    '<span style="font-size:18px">{y}</span><br/>' +
-                    '<span style="font-size:12px;opacity:0.4">A</span>' +
-                    '</div>'
-            },
-
-        }],
-        plotOptions: {
-            solidgauge: {
-                dataLabels: {
-                    y: 5,
-                    borderWidth: 0,
-                    useHTML: true
-                }
-            }
-        },
-    }
-
-    return (
-        <HighchartsReact Highcharts={Highcharts} options={option} />
-    )
-}
-
-export const RobotChart1 = () => {
+export const RobotDataChart1 = () => {
     const option1 = {
         chart: {
+            zoomType:'xy',
             backgroundColor: 'none',
-            type: 'spline',
-            height: 200,
+            height: 300,
             animation: Highcharts.svg, // don't animate in old IE
-            marginRight: 10,
             events: {
                 load: null
                 /*function () {
@@ -210,12 +113,13 @@ export const RobotChart1 = () => {
         },
 
         title: {
-            text: '일산화탄소',
+            text: '온도 / 습도',
             style: {
-                fontSize: '14px'
+                fontSize: '14px',
+                color: '#fff'
             }
         },
-        accessibility: {
+        /*accessibility: {
             announceNewData: {
                 enabled: true,
                 minAnnounceInterval: 15000,
@@ -226,37 +130,58 @@ export const RobotChart1 = () => {
                     return false;
                 }
             }
-        },
+        },*/
 
         plotOptions: {
             series: {
                 marker: {
                     enabled: false
-                }
+                },
+                
             }
         },
 
         xAxis: {
             type: 'datetime',
-            tickPixelInterval: 150
+            tickPixelInterval: 150,
+            crosshair: true,
         },
 
-        yAxis: {
-            title: {
-                text: ''
-            },
-            plotLines: [
-                {
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
+        yAxis: [{
+            labels: {
+                format: '{value}°C',
+                style: {
+                    color: '#fff',
                 }
-            ]
-        },
+            },
+            title: {
+                text: '온도',
+                style: {
+                    color: '#fff',
+                }
+            },
+        }, {
+            labels: {
+                format: '{value}%',
+                style: {
+                    color: '#fff'
+                    // Highcharts.getOptions().colors[0]
+                }
+            },
+            title: {
+                text: '습도',
+                style: {
+                    color: '#fff'
+                    // Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
 
         tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+            shared: true,
+            // headerFormat: '<b>{series.name}</b><br/>',
+            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
         },
 
         legend: {
@@ -269,7 +194,13 @@ export const RobotChart1 = () => {
 
         series: [
             {
-                name: 'Random data',
+                name: '온도',
+                type: 'spline',
+                yAxis: 0,
+                color: '#51b241',
+                tooltip: {
+                    valueSuffix: ' °C',
+                },
                 data: (function () {
                     // generate an array of random data
                     var data = [],
@@ -279,7 +210,30 @@ export const RobotChart1 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
+                            y: (25 + ((Math.random() * 10) / 10))
+                        });
+                    }
+
+                    return data;
+                }())
+            },
+            {
+                name: '습도',
+                type: 'spline',
+                yAxis: 1,
+                tooltip: {
+                    valueSuffix: ' %',
+                },
+                data: (function () {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 5000,
+                            y: (60 + ((Math.random() * 10) / 10))
                         });
                     }
 
@@ -290,23 +244,20 @@ export const RobotChart1 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option1} />
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{width:'50%'}} />
     );
 }
 
-export const RobotChart2 = () => {
-    const option2 = {
+export const RobotDataChart2 = () => {
+    const option1 = {
         chart: {
+            zoomType:'xy',
             backgroundColor: 'none',
-            type: 'spline',
-
-            height: 200,
+            height: 300,
             animation: Highcharts.svg, // don't animate in old IE
-            marginRight: 10,
             events: {
                 load: null
                 /*function () {
-    
                     // set up the updating of the chart each second
                     var series = this.series[0];
                     setInterval(function () {
@@ -325,12 +276,13 @@ export const RobotChart2 = () => {
         },
 
         title: {
-            text: '이산화탄소',
+            text: '연기 / 먼지',
             style: {
-                fontSize: '14px'
+                fontSize: '14px',
+                color: '#fff'
             }
         },
-        accessibility: {
+        /*accessibility: {
             announceNewData: {
                 enabled: true,
                 minAnnounceInterval: 15000,
@@ -341,7 +293,7 @@ export const RobotChart2 = () => {
                     return false;
                 }
             }
-        },
+        },*/
 
         plotOptions: {
             series: {
@@ -353,25 +305,43 @@ export const RobotChart2 = () => {
 
         xAxis: {
             type: 'datetime',
-            tickPixelInterval: 150
+            tickPixelInterval: 150,
+            crosshair: true,
         },
 
-        yAxis: {
-            title: {
-                text: ''
-            },
-            plotLines: [
-                {
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
+        yAxis: [{
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
                 }
-            ]
-        },
+            },
+            title: {
+                text: '',
+                style: {
+                    color: '#fff',
+                }
+            },
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            title: {
+                text: '',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }],
 
         tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+            shared: true,
+            // headerFormat: '<b>{series.name}</b><br/>',
+            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
         },
 
         legend: {
@@ -384,7 +354,13 @@ export const RobotChart2 = () => {
 
         series: [
             {
-                name: 'Random data',
+                name: '연기',
+                type: 'spline',
+                yAxis: 0,
+                color: '#51b241',
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
                 data: (function () {
                     // generate an array of random data
                     var data = [],
@@ -394,112 +370,20 @@ export const RobotChart2 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
+                            y: (5010 + ((Math.random() * 10) / 10))
                         });
                     }
+
                     return data;
                 }())
-            }
-        ]
-    }
-
-    return (
-        <HighchartsReact Highcharts={Highcharts} options={option2} />
-    );
-
-}
-
-export const RobotChart3 = () => {
-
-    const option3 = {
-        chart: {
-            backgroundColor: 'none',
-            type: 'spline',
-
-            height: 200,
-            animation: Highcharts.svg, // don't animate in old IE
-            events: {
-                load: null
-                /*function () {
-    
-                    // set up the updating of the chart each second
-                    var series = this.series[0];
-                    setInterval(function () {
-                        var x = (new Date()).getTime(), // current time
-                            y = (Math.round(Math.random() * 2))
-                        series.addPoint([
-                            x, y
-                        ], true, true);
-                    }, 5000);
-                }*/
-            }
-        },
-
-        time: {
-            useUTC: false
-        },
-
-        title: {
-            text: '이산화질소',
-            style: {
-                fontSize: '14px'
-            }
-        },
-        accessibility: {
-            announceNewData: {
-                enabled: true,
-                minAnnounceInterval: 15000,
-                announcementFormatter: function (allSeries, newSeries, newPoint) {
-                    if (newPoint) {
-                        return 'New point added. Value: ' + newPoint.y;
-                    }
-                    return false;
-                }
-            }
-        },
-
-        plotOptions: {
-            series: {
-                marker: {
-                    enabled: false
-                }
-            }
-        },
-
-        xAxis: {
-            type: 'datetime',
-            tickPixelInterval: 150
-        },
-
-        yAxis: {
-            title: {
-                text: ''
             },
-            plotLines: [
-                {
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }
-            ]
-        },
-
-        tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
-        },
-
-        legend: {
-            enabled: false
-        },
-
-        exporting: {
-            enabled: false
-        },
-
-        series: [
             {
-                name: 'Random data',
+                name: '먼지',
+                type: 'spline',
+                yAxis: 0,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
                 data: (function () {
                     // generate an array of random data
                     var data = [],
@@ -509,9 +393,10 @@ export const RobotChart3 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
+                            y: (5000 + ((Math.random() * 10) / 10))
                         });
                     }
+
                     return data;
                 }())
             }
@@ -519,23 +404,20 @@ export const RobotChart3 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option3} />
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{width:'50%'}} />
     );
 }
 
-export const RobotChart4 = () => {
-
-    const option4 = {
+export const RobotDataChart3 = () => {
+    const option1 = {
         chart: {
+            zoomType:'xy',
             backgroundColor: 'none',
-            type: 'spline',
-            height: 200,
+            height: 300,
             animation: Highcharts.svg, // don't animate in old IE
-            marginRight: 10,
             events: {
                 load: null
                 /*function () {
-    
                     // set up the updating of the chart each second
                     var series = this.series[0];
                     setInterval(function () {
@@ -554,12 +436,13 @@ export const RobotChart4 = () => {
         },
 
         title: {
-            text: '유기복합물(휘발성)',
+            text: 'CO2 / O2 / 황화수소',
             style: {
-                fontSize: '14px'
+                fontSize: '14px',
+                color: '#fff'
             }
         },
-        accessibility: {
+        /*accessibility: {
             announceNewData: {
                 enabled: true,
                 minAnnounceInterval: 15000,
@@ -570,7 +453,7 @@ export const RobotChart4 = () => {
                     return false;
                 }
             }
-        },
+        },*/
 
         plotOptions: {
             series: {
@@ -582,25 +465,56 @@ export const RobotChart4 = () => {
 
         xAxis: {
             type: 'datetime',
-            tickPixelInterval: 150
+            tickPixelInterval: 150,
+            crosshair: true,
         },
 
-        yAxis: {
-            title: {
-                text: ''
-            },
-            plotLines: [
-                {
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
+        yAxis: [{
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
                 }
-            ]
-        },
+            },
+            title: {
+                text: '',
+                style: {
+                    color: '#fff',
+                }
+            },
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            title: {
+                text: '',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
+                }
+            },
+            opposite: true
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
+                }
+            },
+            title: {
+                text: '',
+                style: {
+                    color: '#fff',
+                }
+            },
+        }],
 
         tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+            shared: true,
+            // headerFormat: '<b>{series.name}</b><br/>',
+            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
         },
 
         legend: {
@@ -613,7 +527,13 @@ export const RobotChart4 = () => {
 
         series: [
             {
-                name: 'Random data',
+                name: 'CO2',
+                type: 'spline',
+                yAxis: 0,
+                color: '#51b241',
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
                 data: (function () {
                     // generate an array of random data
                     var data = [],
@@ -623,9 +543,57 @@ export const RobotChart4 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
+                            y: (50 + ((Math.random() * 10) / 10))
                         });
                     }
+
+                    return data;
+                }())
+            },
+            {
+                name: 'O2',
+                type: 'spline',
+                yAxis: 0,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: (function () {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 5000,
+                            y: (60 + ((Math.random() * 10) / 10))
+                        });
+                    }
+
+                    return data;
+                }())
+            },
+            {
+                name: '황화수소',
+                type: 'spline',
+                yAxis: 0,
+                color: '#feff37',
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: (function () {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 5000,
+                            y: (60 + ((Math.random() * 10) / 10))
+                        });
+                    }
+
                     return data;
                 }())
             }
@@ -633,24 +601,20 @@ export const RobotChart4 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option4} />
+        <HighchartsReact Highcharts={Highcharts} options={option1}  style={{width:'50%'}}/>
     );
 }
 
-export const RobotChart5 = () => {
-
-    const option5 = {
+export const RobotDataChart4 = () => {
+    const option1 = {
         chart: {
+            zoomType:'xy',
             backgroundColor: 'none',
-            type: 'spline',
-
-            height: 200,
+            height: 300,
             animation: Highcharts.svg, // don't animate in old IE
-            marginRight: 10,
             events: {
                 load: null
                 /*function () {
-    
                     // set up the updating of the chart each second
                     var series = this.series[0];
                     setInterval(function () {
@@ -669,12 +633,13 @@ export const RobotChart5 = () => {
         },
 
         title: {
-            text: '습도',
+            text: 'CO / VOC / 이산화질소 / 암모니아',
             style: {
-                fontSize: '14px'
+                fontSize: '14px',
+                color: '#fff'
             }
         },
-        accessibility: {
+        /*accessibility: {
             announceNewData: {
                 enabled: true,
                 minAnnounceInterval: 15000,
@@ -685,7 +650,7 @@ export const RobotChart5 = () => {
                     return false;
                 }
             }
-        },
+        },*/
 
         plotOptions: {
             series: {
@@ -697,25 +662,56 @@ export const RobotChart5 = () => {
 
         xAxis: {
             type: 'datetime',
-            tickPixelInterval: 150
+            tickPixelInterval: 150,
+            crosshair: true,
         },
 
-        yAxis: {
+        yAxis: [{
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
+                }
+            },
             title: {
                 text: ''
-            },
-            plotLines: [
-                {
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
+            }
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: Highcharts.getOptions().colors[0]
                 }
-            ]
-        },
+            },
+            title: {
+                text: ''
+            }
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
+                }
+            },
+            title: {
+                text: ''
+            }
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
+                }
+            },
+            title: {
+                text: ''
+            }
+        }],
 
         tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
+            shared: true,
+            // headerFormat: '<b>{series.name}</b><br/>',
+            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
         },
 
         legend: {
@@ -728,7 +724,13 @@ export const RobotChart5 = () => {
 
         series: [
             {
-                name: 'Random data',
+                name: 'CO',
+                type: 'spline',
+                yAxis: 0,
+                color: '#51b241',
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
                 data: (function () {
                     // generate an array of random data
                     var data = [],
@@ -738,111 +740,20 @@ export const RobotChart5 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
+                            y: (55 + ((Math.random() * 10) / 10))
                         });
                     }
+
                     return data;
                 }())
-            }
-        ]
-    }
-
-    return (
-        <HighchartsReact Highcharts={Highcharts} options={option5} />
-    );
-}
-
-export const RobotChart6 = () => {
-
-    const option6 = {
-        chart: {
-            backgroundColor: 'none',
-            type: 'spline',
-
-            height: 200,
-            animation: Highcharts.svg, // don't animate in old IE
-            events: {
-                load: null
-                /*function () {
-    
-                    // set up the updating of the chart each second
-                    var series = this.series[0];
-                    setInterval(function () {
-                        var x = (new Date()).getTime(), // current time
-                            y = (Math.round(Math.random() * 2))
-                        series.addPoint([
-                            x, y
-                        ], true, true);
-                    }, 5000);
-                }*/
-            }
-        },
-
-        time: {
-            useUTC: false
-        },
-
-        title: {
-            text: '온도',
-            style: {
-                fontSize: '14px'
-            }
-        },
-        accessibility: {
-            announceNewData: {
-                enabled: true,
-                minAnnounceInterval: 15000,
-                announcementFormatter: function (allSeries, newSeries, newPoint) {
-                    if (newPoint) {
-                        return 'New point added. Value: ' + newPoint.y;
-                    }
-                    return false;
-                }
-            }
-        },
-
-        plotOptions: {
-            series: {
-                marker: {
-                    enabled: false
-                }
-            }
-        },
-
-        xAxis: {
-            type: 'datetime',
-            tickPixelInterval: 150
-        },
-
-        yAxis: {
-            title: {
-                text: ''
             },
-            plotLines: [
-                {
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }
-            ]
-        },
-
-        tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
-        },
-
-        legend: {
-            enabled: false
-        },
-
-        exporting: {
-            enabled: false
-        },
-
-        series: [
             {
-                name: 'Random data',
+                name: 'VOC',
+                type: 'spline',
+                yAxis: 0,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
                 data: (function () {
                     // generate an array of random data
                     var data = [],
@@ -852,17 +763,66 @@ export const RobotChart6 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
+                            y: (60 + ((Math.random() * 10) / 10))
                         });
                     }
+
                     return data;
                 }())
             },
+            {
+                name: '이산화질소',
+                type: 'spline',
+                yAxis: 0,
+                color: '#feff37',
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: (function () {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 5000,
+                            y: (60 + ((Math.random() * 10) / 10))
+                        });
+                    }
+
+                    return data;
+                }())
+            },
+            {
+                name: '암모니아',
+                type: 'spline',
+                yAxis: 0,
+                color: '#f25a16',
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: (function () {
+                    // generate an array of random data
+                    var data = [],
+                        time = (new Date()).getTime(),
+                        i;
+
+                    for (i = -19; i <= 0; i += 1) {
+                        data.push({
+                            x: time + i * 5000,
+                            y: (60 + ((Math.random() * 10) / 10))
+                        });
+                    }
+
+                    return data;
+                }())
+            }
         ]
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option6} />
+        <HighchartsReact Highcharts={Highcharts} options={option1}  style={{width:'50%'}}/>
     );
 }
 
@@ -872,7 +832,7 @@ export const RobotStateChart = () => {
         chart: {
             backgroundColor: 'none',
             type: 'areaspline',
-            height: 110,
+            height: 200,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,
             events: {
@@ -1122,6 +1082,100 @@ export const RobotChart7 = () => {
 }
 
 /*
+
+export const TempGaugeChart = () => {
+    return (
+        <GaugeChart id="gauge-chart1"
+            nrOfLevels={20}
+            percent={0.86}
+            arcPadding={0.01} />
+    )
+}
+
+export const HighGaugeChart = () => {
+    const option = {
+        chart: {
+            type: 'solidgauge',
+            width: 160,
+            height: 150
+        },
+
+        title: null,
+
+        pane: {
+            center: ['50%', '85%'],
+            size: '120%',
+            startAngle: -90,
+            endAngle: 90,
+            background: {
+                backgroundColor:
+                    Highcharts.defaultOptions.legend.backgroundColor || '#EEE',
+                innerRadius: '60%',
+                outerRadius: '100%',
+                shape: 'arc'
+            }
+        },
+
+        exporting: {
+            enabled: false
+        },
+        credits: {
+            enabled: false
+        },
+        tooltip: {
+            enabled: false
+        },
+
+        // the value axis
+        yAxis: {
+            min: 0,
+            max: 200,
+            stops: [
+                [0.1, '#55BF3B'], // green
+                [0.5, '#DDDF0D'], // yellow
+                [0.9, '#DF5353'] // red
+            ],
+            lineWidth: 0,
+            tickWidth: 0,
+            minorTickInterval: null,
+            tickAmount: 2,
+            title: {
+                y: -70,
+                text: '전압'
+            },
+            labels: {
+                y: 16
+            }
+        },
+        series: [{
+            name: 'Speed',
+            data: [150],
+            dataLabels: {
+                color: '#fff',
+                format:
+                    '<div style="text-align:center">' +
+                    '<span style="font-size:18px">{y}</span><br/>' +
+                    '<span style="font-size:12px;opacity:0.4">A</span>' +
+                    '</div>'
+            },
+
+        }],
+        plotOptions: {
+            solidgauge: {
+                dataLabels: {
+                    y: 5,
+                    borderWidth: 0,
+                    useHTML: true
+                }
+            }
+        },
+    }
+
+    return (
+        <HighchartsReact Highcharts={Highcharts} options={option} />
+    )
+}
+
 export const TempChart = () => {
     const dataSource = {
         chart: {
@@ -1171,6 +1225,7 @@ export const TempChart = () => {
 }
 */
 
+/*
 const dataSource = {
     chart: {
         caption: "Nordstorm's Customer Satisfaction Score for 2017",
@@ -1260,7 +1315,7 @@ export class VoltRadial extends React.Component {
                 },
 
                 labels: ['전압'],
-                colors: ['#3caea3']/*8EB6E0*/
+                colors: ['#3caea3']8EB6E0
             },
         };
     }
@@ -1273,122 +1328,6 @@ export class VoltRadial extends React.Component {
     }
 }
 
-export class CurrentRadial extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            series: [70],
-            options: {
-                chart: {
-                    height: 150,
-                    type: 'radialBar',
-                    offsetY: 0
-                },
-                plotOptions: {
-                    radialBar: {
-                        dataLabels: {
-                            name: {
-                                show: true,
-                                fontWeight: '600',
-                            },
-                            value: {
-                                show: true,
-                                fontSize: '12px',
-                                formatter: function (val) {
-                                    return val + 'A'
-                                },
-                                offsetY: 0
-                            },
-                        },
-                        hollow: {
-                            size: '55%',
-                        }
-                    },
-                },
-                stroke: {
-                    lineCap: 'round',
-                },
-                dataLabels: {
-                    showOn: 'always',
-                    name: {
-                        show: true,
-                        offsetY: -10,
-                    },
-                    value: {
-                        show: true,
-                        offsetY: -16,
-                    }
-                },
-                labels: ['전류'],
-                colors: ['#3caea3']/*8EB6E0*/
-            },
-        };
-    }
-    render() {
-        return (
-            <div id="chart" style={{ width: '33.33333333%', borderRight: '0.5px solid #303030' }}>
-                <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={125} />
-            </div>
-        );
-    }
-}
 
-export class TempRadial extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            series: [25],
-            options: {
-                chart: {
-                    height: 150,
-                    type: 'radialBar',
-                    offsetY: 0
-                },
-                plotOptions: {
-                    radialBar: {
-                        dataLabels: {
-                            name: {
-                                show: true,
-                                fontWeight: '600',
-                            },
-                            value: {
-                                show: true,
-                                fontSize: '12px',
-                                formatter: function (val) {
-                                    return val + '°C'
-                                },
-                                offsetY: 0
-                            },
-                        },
-                        hollow: {
-                            size: '55%',
-                        }
-                    },
-                },
-                stroke: {
-                    lineCap: 'round',
-                },
-                dataLabels: {
-                    name: {
-                        show: true,
-                        offsetY: -10,
-                    },
-                    value: {
-                        show: false,
-                        offsetY: 50,
-                    }
-                },
-                labels: ['온도'],
-                colors: ['#3caea3']/*8EB6E0*/
-            },
-        };
-    }
-    render() {
-        return (
-            <div id="chart" style={{ width: '33.33333333%', borderRight: '0.5px solid #303030' }}>
-                <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={125} />
-            </div>
-        );
-    }
-}
 
+*/

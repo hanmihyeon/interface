@@ -8,13 +8,13 @@ import './App.css';
 // import 'react-perfect-scrollbar/dist/css/styles.css';
 
 import Home1 from './Containers/Pages/Home_1';
-import Dashboard from './Containers/Pages/Dashboard';
-import Tunnel from './Containers/Pages/Tunnel';
-import Video from './Containers/Pages/Video';
-import EventManager from './Containers/Pages/EventManager';
-import RobotControl from './Containers/Pages/RobotControl';
-import User from './Containers/Pages/User';
-import Device from './Containers/Pages/Device';
+import Dashboard from './Containers/Pages/Other/Dashboard';
+import Tunnel from './Containers/Pages/Tunnel/Tunnel';
+import Video from './Containers/Pages/cctv/Video';
+import EventManager from './Containers/Pages/Event/EventManager';
+import RobotControl from './Containers/Pages/Robot/RobotControl';
+import User from './Containers/Pages/Other/User';
+import Device from './Containers/Pages/Other/Device';
 
 import HeaderBox from './Layout/HeaderBox';
 // import FooterBox from './Layout/FooterBox';

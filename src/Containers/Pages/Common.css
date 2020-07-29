@@ -52,6 +52,11 @@
     text-decoration: underline;
 }
 
+.highcharts-credits {
+    color: transparent!important;
+    fill: transparent!important;
+}
+
 /*
 .gauge {
     display: flex;

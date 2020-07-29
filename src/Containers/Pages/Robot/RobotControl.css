@@ -6,6 +6,10 @@
     height: 100%;
 }
 
+.control-container > .ant-card-body {
+    width: 100%;
+}
+
 .robot-control-wrap button,
 .robot-camera-control-wrap button {
     background: #808080;
@@ -14,7 +18,7 @@
     justify-content: center;
 }
 
-.robot-control {
+.robot-control, .robot-control-1 {
     margin-bottom: 10px;
 }
 
@@ -131,6 +135,10 @@
     margin-bottom: 12px;
 }
 
+.ant-form-item:last-child {
+    margin-bottom: 8px;
+}
+
 .station-move-button {
     position: absolute;
     top: 0;
@@ -140,53 +148,29 @@
     color: black;
 }
 
-/* 로봇 환경 센서 */
-
-.robot-chart-title {
-    float: left;
-}
-
-.robot-chart {
-    border: 0.5px solid #B0B0B0;
-    padding: 3px;
-}
-
-.robot-chart-2,
-.robot-1 {
-    border: 0.5px solid #B0B0B0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.robot-1 {
-    margin-right: 10px;
-}
-
 /* 터널 상황*/
-.tunnel-current {
+.robot-tunnel-current {
     position: relative;
     width: 70%;
     height: 250px;
-    padding: 0 20px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0;
+    justify-content: flex-start;
     border-right: 0.5px solid #303030;
 }
 
-.tunnel {
+.robot-tunnel {
     position: relative;
     display: flex;
     align-items: center;
     width: 100%;
+    margin: 0 20px;
     height: 100px;
-    margin: 10px 0;
     box-sizing: border-box;
     background-color: blanchedalmond;
 }
 
-.tunnel-direction {
+.robot-tunnel-direction {
     position: absolute;
     color: black;
     font-size: 25px;
@@ -195,7 +179,7 @@
     left: 10px;
 }
 
-.tunnel-rail {
+.robot-tunnel-rail {
     position: relative;
     display: flex;
     width: 100%;
@@ -203,7 +187,7 @@
     border: 3px solid #000;
 }
 
-.cctv {
+.robot-cctv {
     position: absolute;
     margin-left: -130px;
     font-size: 20px;
@@ -225,7 +209,8 @@
 
 .tunnel-current-status {
     width: 20%;
-    height: 150px;
+    height: 250px;
+    border-right: 0.5px solid #303030;
 }
 
 .tunnel-current-status .tunnel-status {
@@ -236,6 +221,37 @@
 .tunnel-status p {
     text-align: left;
 }
+
+/* 스케줄 */
+
+.schedule-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    background-color: #808080;
+    color: black;
+}
+
+/* 로봇 환경 센서 */
+
+.robot-data-chart {
+    border: 0.5px solid #B0B0B0;
+    padding: 3px;
+    width: 50%;
+}
+
+/*
+.robot-chart-2,
+.robot-1 {
+    border: 0.5px solid #B0B0B0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.robot-1 {
+    margin-right: 10px;
+}*/
 
 /* 로봇 상태 */
 .robot-img {

@@ -13,7 +13,7 @@ import {
 } from 'antd';
 
 import { SettingOutlined, UserOutlined, ZoomInOutlined, QuestionCircleOutlined } from '@ant-design/icons';
-import './Common.css';
+import '../Common.css';
 import './Event.css';
 // import DownloadLink from 'react-download-link';
 

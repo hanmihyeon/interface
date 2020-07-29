@@ -40,7 +40,7 @@ export class TodayStatus extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      series: [44, 55, 13, 43, 22],
+      series: [5, 15, 40, 65, 22],
       options: {
         chart: {
           width: 300,
@@ -91,7 +91,47 @@ export class TodayStatus extends React.Component {
   }
 }
 
-export class TunnelRadial extends React.Component {
+export class TunnelRadial1 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      series: [25],
+      options: {
+        chart: {
+          height: 250,
+          type: 'radialBar',
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: '60%',
+            }
+          },
+        },
+        stroke: {
+          lineCap: 'round',
+        },
+        labels: ['온도'],
+        dataLabels: {
+          enabled: true,
+          style: {
+            color: '#fff'
+          }
+        },
+        colors: ['#39539e']
+      },
+    };
+  }
+  render() {
+    return (
+      <div id="chart">
+        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={180} />
+      </div>
+    );
+  }
+}
+
+export class TunnelRadial2 extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -104,14 +144,82 @@ export class TunnelRadial extends React.Component {
         plotOptions: {
           radialBar: {
             hollow: {
-              size: '70%',
+              size: '60%',
             }
           },
         },
         stroke: {
           lineCap: 'round',
         },
-        labels: ['Data'],
+        labels: ['습도'],
+        colors: ['#39539e']
+      },
+    };
+  }
+  render() {
+    return (
+      <div id="chart">
+        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={180} />
+      </div>
+    );
+  }
+}
+
+export class TunnelRadial3 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      series: [40],
+      options: {
+        chart: {
+          height: 250,
+          type: 'radialBar',
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: '60%',
+            }
+          },
+        },
+        stroke: {
+          lineCap: 'round',
+        },
+        labels: ['연기'],
+        colors: ['#39539e']
+      },
+    };
+  }
+  render() {
+    return (
+      <div id="chart">
+        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={180} />
+      </div>
+    );
+  }
+}
+
+export class TunnelRadial4 extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      series: [40],
+      options: {
+        chart: {
+          height: 250,
+          type: 'radialBar',
+        },
+        plotOptions: {
+          radialBar: {
+            hollow: {
+              size: '60%',
+            }
+          },
+        },
+        stroke: {
+          lineCap: 'round',
+        },
+        labels: ['먼지'],
         colors: ['#39539e']
       },
     };

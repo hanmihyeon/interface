@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    border-right: 0.5px solid #d0d0d0;
 }
 
 .tunnel {
@@ -59,19 +58,6 @@
     border: 3px solid blue;
 }
 
-.tunnel-current-status {
-    width: 20%;
-    height: 150px;
-}
-
-.tunnel-current-status .tunnel-status {
-    height: 100%;
-    padding: 15px 15px 0;
-}
-
-.tunnel-status p {
-    text-align: left;
-}
 
 /* 모니터링 조작 탭 */
 .control-container {
@@ -162,31 +148,31 @@
 
 /* 컨트롤 */
 
-.robot-control-1 {
+.tunnel-robot-control-1 {
     margin-bottom: 0px;
 }
 
-.robot-control-1 .radio {
+.tunnel-robot-control-1 .radio {
     display: flex;
     justify-content: flex-start;
     margin-bottom: 10px;
 }
 
-.robot-control-1 .radio div {
+.tunnel-robot-control-1 .radio div {
     margin-left: 15px;
 }
 
-.robot-control-1 .light-toggle {
+.tunnel-robot-control-1 .light-toggle {
     margin-bottom: 10px;
 }
 
-.robot-control-1 .light-toggle,
-.robot-control-1 .uvlight-toggle {
+.tunnel-robot-control-1 .light-toggle,
+.tunnel-robot-control-1 .uvlight-toggle {
     width: 100%;
 }
 
-.robot-control-1 .light-toggle .light-toggle-button,
-.robot-control-1 .uvlight-toggle .uvlight-toggle-button {
+.tunnel-robot-control-1 .light-toggle .light-toggle-button,
+.tunnel-robot-control-1 .uvlight-toggle .uvlight-toggle-button {
     width: 25%;
     margin-left: 15px;
 }
@@ -223,4 +209,13 @@
 
 .sensor-status .sensor-chart .ant-col {
     border-right: 0.5px solid #303030;
+}
+
+
+.tunnel-form .ant-form-item {
+    margin-bottom: 12px!important;
+}
+
+.apexcharts-datalabel-value {
+    fill: #fff;
 }

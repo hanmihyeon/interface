@@ -2,7 +2,7 @@ import React, {Fragment, useState, useEffect} from 'react';
 import {Breadcrumb, Table} from 'antd';
 import {SettingOutlined, UserOutlined} from '@ant-design/icons';
 
-import './Common.css';
+import '../Common.css';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 

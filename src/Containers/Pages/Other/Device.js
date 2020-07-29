@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import {Breadcrumb} from 'antd';
 import {SettingOutlined, SafetyOutlined} from '@ant-design/icons';
 
-import './Common.css';
+import '../Common.css';
 
 const Device = () => {
     return (

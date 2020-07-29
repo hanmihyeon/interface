@@ -2,15 +2,15 @@ import React, {Fragment} from 'react';
 import {Breadcrumb, Row, Col, Card, Tabs} from 'antd';
 import {DashboardOutlined, DatabaseOutlined} from '@ant-design/icons';
 
-import {SagnacChart, SoundChart, TempChart} from './Chart/SensorChart';
-import {SagnacAvgChart, TempAvgChart, SoundAvgChart} from './Chart/SensorAvgChart';
+import {SagnacChart, SoundChart, TempChart} from '../Chart/SensorChart';
+import {SagnacAvgChart, TempAvgChart, SoundAvgChart} from '../Chart/SensorAvgChart';
 
-import {NetworkChart} from './Chart/NetworkChart';
+import {NetworkChart} from '../Chart/NetworkChart';
 
 import 'antd/dist/antd.dark.css';
-import './Common.css';
+import '../Common.css';
 import './Dashboard.css';
-import './Robot1.css';
+import '../Robot/RobotControl.css';
 
 const {TabPane} = Tabs;
 
