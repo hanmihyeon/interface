@@ -11,6 +11,7 @@ const Home = () => {
                 <Breadcrumb.Item><HomeOutlined/>&nbsp;&nbsp;Home</Breadcrumb.Item>
             </Breadcrumb>
             <div className="home contents">Home</div>
+            
         </Fragment>
     );
 };

@@ -9,24 +9,83 @@ import charts from 'fusioncharts/fusioncharts.charts';
 import ReactApexChart from 'react-apexcharts';
 import GaugeChart from 'react-gauge-chart';
 import ReactSpeedometer from 'react-d3-speedometer';
-import './Robot1.css';
+
 charts(FusionCharts);
 
 highchartsMore(Highcharts);
 solidGauge(Highcharts);
 
-export const SpeedChart = () => {
+export const VoltChart = () => {
     return (
-        <ReactSpeedometer
-            width={160}
-            height={150}
-            maxSegmentLabels={0}
-            maxValue={100}
-            value={25}
-            needleColor="red"
-            startColor="green"
-            segments={10}
-            endColor="red" />)
+        <div className="volt-chart gauge-chart">
+            <h5 className="gauge-title">전압</h5>
+            <ReactSpeedometer
+                value={220}
+                minValue={150}
+                maxValue={400}
+                needleHeightRatio={0.7}
+                segments={7}
+                ringWidth={15}
+                labelFontSize={"10px"}
+                valueTextFontSize={"15px"}
+                width={180}
+                height={120}
+                needleColor="red"
+                startColor="green"
+                endColor="red"
+                needleTransitionDuration={4000}
+                needleTransition="easeElastic"
+                currentValueText="${value}V"
+            /></div>
+    );
+}
+
+export const CurrentChart = () => {
+    return (
+        <div className="current-chart gauge-chart">
+            <h5 className="gauge-title">전류</h5>
+            <ReactSpeedometer
+                value={70}
+                maxValue={100}
+                minValue={65}
+                segments={7}
+                ringWidth={15}
+                labelFontSize={"10px"}
+                valueTextFontSize={"15px"}
+                width={180}
+                height={120}
+                needleColor="red"
+                startColor="green"
+                endColor="red"
+                needleTransitionDuration={4000}
+                needleTransition="easeElastic"
+                currentValueText="${value}A"
+            /></div>
+    );
+
+}
+export const TempChart = () => {
+    return (
+        <div className="temp-chart gauge-chart">
+            <h5 className="gauge-title">온도</h5>
+            <ReactSpeedometer
+                value={25}
+                maxValue={100}
+                minValue={-10}
+                segments={7}
+                ringWidth={15}
+                labelFontSize={"10px"}
+                valueTextFontSize={"15px"}
+                width={180}
+                height={120}
+                needleColor="red"
+                startColor="green"
+                endColor="red"
+                needleTransitionDuration={4000}
+                needleTransition="easeElastic"
+                currentValueText="${value}°C"
+            /></div>
+    );
 }
 
 export const TempGaugeChart = () => {
@@ -115,9 +174,6 @@ export const HighGaugeChart = () => {
                 }
             }
         },
-        tooltip: {
-            valueSuffix: ' A'
-        }
     }
 
     return (

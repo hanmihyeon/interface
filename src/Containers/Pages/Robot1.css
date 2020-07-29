@@ -165,8 +165,8 @@
 /* 터널 상황*/
 .tunnel-current {
     position: relative;
-    width: 80%;
-    height: 150px;
+    width: 70%;
+    height: 250px;
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -269,6 +269,19 @@
 /* 게이지 차트 */
 /* 변동 가능, 차트 선택 x */
 
+.gauge-chart {
+    padding-top: 10px;
+    padding-right: 5px;
+}
+
+.gauge-title {
+    text-align: center;
+}
+
+.current-chart {
+    border-right: 0.5px solid #303030;
+}
+/*
 .apexcharts-text.apexcharts-datalabel-value {
     fill: #fff !important;
     margin-top: -20px;
@@ -295,3 +308,4 @@
     border-left: 0.5px solid #303030;
     padding-top: 10px;
 }
+*/

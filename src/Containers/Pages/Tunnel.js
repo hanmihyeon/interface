@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Breadcrumb, Row, Col, Card, notification, Modal, Alert, Button, Form, Select, Slider, Radio, Switch } from 'antd';
+import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Select, Slider, Radio, Switch } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import TweenOne from 'rc-tween-one';

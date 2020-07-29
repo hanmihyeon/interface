@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { Breadcrumb, Row, Col, Card, Button, Slider, Tabs, Radio, Switch, Select, Form } from 'antd';
 import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
@@ -9,20 +9,17 @@ import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import {
     RobotStateChart,
     RobotChart7,
-    VoltRadial,
-    CurrentRadial,
-    TempRadial,
-    TempGaugeChart,
-    HighGaugeChart,
-    SpeedChart
+    VoltChart,
+    CurrentChart,
+    TempChart
 } from './RobotChart';
 
 // import RealtimeLineChart from './RealtimeLineChart';
 
 import 'video-react/dist/video-react.css';
-import './Robot1.css';
 import './Common.css';
 import './Video.css';
+import './Robot1.css';
 
 const { TabPane } = Tabs;
 const { Option } = Select;
@@ -176,6 +173,7 @@ const RobotControl = () => {
                             </Col>
                             <Col span={24}>
                                 <Card title="터널 상태" size="small" bodyStyle={{
+                                    height: '250px',
                                     padding: 0,
                                     display: 'flex',
                                     justifyContent: 'space-around'
@@ -208,11 +206,13 @@ const RobotControl = () => {
                             </Col>
                             <Col span={16}>
                                 <Card
-                                    style={{
+                                    title="로봇 환경 센서"
+                                    size="small"
+                                    /*style={{
                                         height: 400
-                                    }}
+                                    }}*/
                                     bodyStyle={{
-                                        padding: '24px 18px 24px 18px'
+                                        padding: '12px 18px 12px 18px'
                                     }}>
                                     <Row>
                                         <div
@@ -222,8 +222,8 @@ const RobotControl = () => {
                                                 fontSize: '16px',
                                                 width: '100%'
                                             }}>
-                                            <div className="robot-chart-title">로봇 환경 센서</div>
-                                            <div className="unit-box">1분 단위</div>
+                                            
+                                            {/*<div className="unit-box">1분 단위</div>*/}
                                         </div>
                                         <div className="robot-chart-2 robot-1"><RobotChart7 /></div>
                                         <div className="robot-chart-2"><RobotChart7 /></div>
@@ -246,9 +246,9 @@ const RobotControl = () => {
                                             <img src="/robotcamera.png" alt="" />
                                         </div>*/}
                                         <div className="robot-info">
-                                            <HighGaugeChart />
-                                            <HighGaugeChart />
-                                            <SpeedChart />
+                                            <VoltChart />
+                                            <CurrentChart />
+                                            <TempChart />
                                             {/*<p>
                                                 전압: 220.{Math.floor(Math.random() * 100)}V<br />
                                             전류: 70.{Math.floor(Math.random() * 100)}A<br />

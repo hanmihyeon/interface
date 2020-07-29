@@ -51,3 +51,23 @@
 .download:hover {
     text-decoration: underline;
 }
+
+/*
+.gauge {
+    display: flex;
+    width: 20%;
+}
+
+.raphael-group-4-background rect {
+    fill: transparent!important;
+}
+
+.raphael-group-66-pointGroup path {
+    stroke: #fff;
+    fill: #ff0000;
+}
+
+.raphael-group-LCNYy1Ts text {
+    fill: transparent;
+}
+*/
