@@ -89,11 +89,11 @@ const StatusAlert = () => {
             <div className="video contents">
                 <Row gutter={12} style={{height:'100%'}}>
                     <Col span={11} style={{height:'100%'}}>
-                        <Card style={{height:'100%'}}>
+                        <Card style={{height:'90%'}}>
                             <Player
                                 playsInline="playsInline"
                                 src={videoUrl}
-                                autoPlay={false}
+                                autoPlay={true}
                                 muted={true}/>
                             <div className="video-info" onClick={StatusAlert}>[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
                         </Card>
@@ -102,21 +102,21 @@ const StatusAlert = () => {
                                 {vList.map( (vList, index)=> (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}
                             </Row>
                         </Card>
-                        {/*<Card>
+                        <Card>
                             <div>
                                 <div className="robot-location-bar"></div>
                             </div>
                             <div className="event">
                                 {eL.map(eL => (  <div className={eventlocation==eL ? 'event-section-red' : 'event-section' }></div> ))}
                             </div>
-                        </Card>*/}
+                        </Card>
                     </Col>
                     <Col span={11}>
                         <Card>
                             <Player
                                 playsInline="playsInline"
                                 src={videoUrl}
-                                autoPlay={false}
+                                autoPlay={true}
                                 muted={true}/>
                             <div className="video-info">[청주 -&gt; 부강] 메인 화면: 2번 카메라(일반)</div>
                         </Card>
@@ -125,14 +125,14 @@ const StatusAlert = () => {
                                 {vList.map( (vList, index)=> (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}
                             </Row>
                         </Card>
-                        {/*<Card>
+                        <Card>
                             <div>
                                 <div className="robot-location-bar"></div>
                             </div>
                             <div className="event">
                                 {eL.map(eL => (  <div className={eventlocation==eL ? 'event-section-red' : 'event-section' }></div> ))} 
                             </div>
-                        </Card> */}
+                        </Card> 
                     </Col>
                     <Col span={2}>
                         <Card title="Alert list" size="small" className="alarm-list-wrap">

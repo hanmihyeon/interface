@@ -90,7 +90,7 @@ export const RobotDataChart1 = () => {
         chart: {
             zoomType:'xy',
             backgroundColor: 'none',
-            height: 300,
+            height: 280,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -181,7 +181,7 @@ export const RobotDataChart1 = () => {
         tooltip: {
             shared: true,
             // headerFormat: '<b>{series.name}</b><br/>',
-            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
+            // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y}</b><br/>',
         },
 
         legend: {
@@ -210,7 +210,7 @@ export const RobotDataChart1 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (25 + ((Math.random() * 10) / 10))
+                            y: (25 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -233,7 +233,7 @@ export const RobotDataChart1 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (60 + ((Math.random() * 10) / 10))
+                            y: (60 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -341,7 +341,7 @@ export const RobotDataChart2 = () => {
         tooltip: {
             shared: true,
             // headerFormat: '<b>{series.name}</b><br/>',
-            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
+            // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y:.2f}ppm</b><br/>'
         },
 
         legend: {
@@ -370,7 +370,7 @@ export const RobotDataChart2 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (5010 + ((Math.random() * 10) / 10))
+                            y: (5010 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -393,7 +393,7 @@ export const RobotDataChart2 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (5000 + ((Math.random() * 10) / 10))
+                            y: (5000 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -514,7 +514,7 @@ export const RobotDataChart3 = () => {
         tooltip: {
             shared: true,
             // headerFormat: '<b>{series.name}</b><br/>',
-            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
+            // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y:.2f}ppm</b><br/>'
         },
 
         legend: {
@@ -543,7 +543,7 @@ export const RobotDataChart3 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (50 + ((Math.random() * 10) / 10))
+                            y: (50 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -566,7 +566,7 @@ export const RobotDataChart3 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (60 + ((Math.random() * 10) / 10))
+                            y: (60 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -590,7 +590,7 @@ export const RobotDataChart3 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (60 + ((Math.random() * 10) / 10))
+                            y: (60 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -711,7 +711,7 @@ export const RobotDataChart4 = () => {
         tooltip: {
             shared: true,
             // headerFormat: '<b>{series.name}</b><br/>',
-            // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
+            pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y:.2f}ppm</b><br/>'
         },
 
         legend: {
@@ -740,7 +740,7 @@ export const RobotDataChart4 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (55 + ((Math.random() * 10) / 10))
+                            y: (55 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -763,7 +763,7 @@ export const RobotDataChart4 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (60 + ((Math.random() * 10) / 10))
+                            y: (60 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -787,7 +787,7 @@ export const RobotDataChart4 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (60 + ((Math.random() * 10) / 10))
+                            y: (60 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 
@@ -811,7 +811,7 @@ export const RobotDataChart4 = () => {
                     for (i = -19; i <= 0; i += 1) {
                         data.push({
                             x: time + i * 5000,
-                            y: (60 + ((Math.random() * 10) / 10))
+                            y: (60 + (Math.round((Math.random() * 100)) / 100))
                         });
                     }
 

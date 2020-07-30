@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
+
 export const TunnelChart = () => {
 
   const options = {
@@ -46,8 +49,31 @@ export class TodayStatus extends React.Component {
           width: 300,
           type: 'donut',
         },
+        plotOptions: {
+          pie: {
+            donut: {
+              labels: {
+                show: true,
+                name: {
+                  show: true,
+                  offsetY: -10
+                },
+                value: {
+                  offsetY: 0,
+                  show: true
+                },
+                total: {
+                  show: true,
+                  label: 'Total',
+                  color: '#d0d0d0',
+                  fontSize: '12px',
+                }
+              }
+            }
+          }
+        },
         labels: ['화재', '사고', '정체', '원활', '기타'],
-        colors: ['#F9120F','#F25A16','#FEFF37','#51B241','#2F92D2'],
+        colors: ['#F9120F', '#F25A16', '#FEFF37', '#51B241', '#2F92D2'],
         /*colors: ['#D63249','#E16929','#E0B74E','#39A048','#32A4D7'],
         colors: ['#9e3953', '#dd713e', '#9e8439', '#529e39', '#39539e'],*/
         dataLabels: {
@@ -231,6 +257,432 @@ export class TunnelRadial4 extends React.Component {
       </div>
     );
   }
+}
+
+export const RobotDataChart = () => {
+  const option1 = {
+    chart: {
+      zoomType: 'xy',
+      backgroundColor: 'none',
+      height: 280,
+      animation: Highcharts.svg, // don't animate in old IE
+      events: {
+        load: null
+        /*function () {
+            // set up the updating of the chart each second
+            var series = this.series[0];
+            setInterval(function () {
+                var x = (new Date()).getTime(), // current time
+                    y = (Math.round(Math.random() * 2))
+                series.addPoint([
+                    x, y
+                ], true, true);
+            }, 5000);
+        }*/
+      }
+    },
+
+    time: {
+      useUTC: false
+    },
+
+    title: {
+      text: '기타 센서 데이터',
+      style: {
+        fontSize: '14px',
+        color: '#fff'
+      }
+    },
+    /*accessibility: {
+        announceNewData: {
+            enabled: true,
+            minAnnounceInterval: 15000,
+            announcementFormatter: function (allSeries, newSeries, newPoint) {
+                if (newPoint) {
+                    return 'New point added. Value: ' + newPoint.y;
+                }
+                return false;
+            }
+        }
+    },*/
+
+    plotOptions: {
+      series: {
+        marker: {
+          enabled: false
+        }
+      }
+    },
+
+    xAxis: {
+      type: 'datetime',
+      tickPixelInterval: 150,
+      crosshair: true,
+    },
+
+    yAxis: [{
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: '#fff',
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: '#fff',
+        }
+      },
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }, {
+      labels: {
+        format: '{value}ppm',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: Highcharts.getOptions().colors[0]
+        }
+      },
+      opposite: true
+    }],
+
+    tooltip: {
+      shared: true,
+      // headerFormat: '<b>{series.name}</b><br/>',
+      // pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}<br/>'
+    },
+
+    legend: {
+      enabled: false
+    },
+
+    exporting: {
+      enabled: false
+    },
+
+    series: [
+      {
+        name: '연기',
+        type: 'spline',
+        yAxis: 0,
+        color: '#51b241',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: '먼지',
+        type: 'spline',
+        yAxis: 0,
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5020 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: 'CO2',
+        type: 'spline',
+        yAxis: 0,
+        color: '#feff37',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: 'O2',
+        type: 'spline',
+        yAxis: 0,
+        color: '#f25a16',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: '황화수소',
+        type: 'spline',
+        yAxis: 0,
+        color: '#f9120f',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: 'CO',
+        type: 'spline',
+        yAxis: 0,
+        color: '#a600ba',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: 'VOC',
+        type: 'spline',
+        yAxis: 0,
+        color: '#4f9694',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: '이산화질소',
+        type: 'spline',
+        yAxis: 0,
+        color: '#d0d0d0',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+      {
+        name: '암모니아',
+        type: 'spline',
+        yAxis: 0,
+        color: '#fff',
+        tooltip: {
+          valueSuffix: ' ppm',
+        },
+        data: (function () {
+          // generate an array of random data
+          var data = [],
+            time = (new Date()).getTime(),
+            i;
+
+          for (i = -19; i <= 0; i += 1) {
+            data.push({
+              x: time + i * 5000,
+              y: (5010 + (Math.round((Math.random() * 100)) / 100))
+            });
+          }
+
+          return data;
+        }())
+      },
+    ]
+  }
+
+  return (
+    <HighchartsReact Highcharts={Highcharts} options={option1} style={{ width: '50%' }} />
+  );
 }
 
 

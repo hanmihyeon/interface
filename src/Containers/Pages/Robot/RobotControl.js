@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Breadcrumb, Row, Col, Card, Button, Slider, Tabs, Radio, Switch, Select, Form } from 'antd';
+import { Breadcrumb, Row, Col, Card, Button, Slider, Tabs, Radio, Switch, Select, Form, Popconfirm, message } from 'antd';
 import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
@@ -52,6 +52,14 @@ const RobotControl = () => {
         yoyo: true,
         duration: 10000
     };
+
+    function confirmSchedule(e) {
+        message.success('스케줄이 설정되었습니다!');
+    }
+
+    function confirmStation(e) {
+        message.success('설정되었습니다!');
+    }
 
     return (
         <Tabs type="card">
@@ -163,9 +171,14 @@ const RobotControl = () => {
                                                 </Select>
                                             </Form.Item>
                                             <Form.Item>
-                                                <Button className="station-move-button" htmlType="설정">
-                                                    설정
-                                            </Button>
+                                                <Popconfirm
+                                                    title="스테이션을 이동하시겠습니까?"
+                                                    onConfirm={confirmStation}
+                                                    okText="예"
+                                                    cancelText="취소"><Button className="schedule-button" htmlType="설정">
+                                                        설정
+                                                    </Button>
+                                                </Popconfirm>
                                             </Form.Item>
                                         </Form>
 
@@ -198,65 +211,80 @@ const RobotControl = () => {
                                             <h4>현재 터널 상태</h4>
                                             <p>
                                                 위치 : 100m<br />
-                                            방향 : 전진<br />
-                                            속도 : 1.5m/s<br />
+                                                방향 : 전진<br />
+                                                속도 : 1.5m/s<br />
                                             </p>
                                         </div>
                                     </Col>
-                                    
+
                                 </Card>
                             </Col>
                             <Col span={4} className="tunnel-current-schedule">
-                                        <Card title="스케줄" size="small">
-                                            <Form form={form} name="schedule">
-                                                <Form.Item name="location" label="위치" >
-                                                    <Select
-                                                        placeholder="위치"
-                                                        allowClear>
-                                                        <Option value="Camera1">Camera1</Option>
-                                                        <Option value="Camera2">Camera2</Option>
-                                                        <Option value="Camera3">Camera3</Option>
-                                                        <Option value="Camera4">Camera4</Option>
-                                                    </Select>
-                                                </Form.Item>
-                                                <Form.Item name="count" label="횟수" >
-                                                    <Select
-                                                        placeholder="횟수"
-                                                        allowClear>
-                                                        <Option value="Camera1">Camera1</Option>
-                                                        <Option value="Camera2">Camera2</Option>
-                                                        <Option value="Camera3">Camera3</Option>
-                                                        <Option value="Camera4">Camera4</Option>
-                                                    </Select>
-                                                </Form.Item>
-                                                <Form.Item name="speed" label="속도" >
-                                                    <Select
-                                                        placeholder="속도"
-                                                        allowClear>
-                                                        <Option value="Camera1">Camera1</Option>
-                                                        <Option value="Camera2">Camera2</Option>
-                                                        <Option value="Camera3">Camera3</Option>
-                                                        <Option value="Camera4">Camera4</Option>
-                                                    </Select>
-                                                </Form.Item>
-                                                <Form.Item name="starttime" label="시작 시간" >
-                                                    <Select
-                                                        placeholder="시작 시간"
-                                                        allowClear>
-                                                        <Option value="Camera1">Camera1</Option>
-                                                        <Option value="Camera2">Camera2</Option>
-                                                        <Option value="Camera3">Camera3</Option>
-                                                        <Option value="Camera4">Camera4</Option>
-                                                    </Select>
-                                                </Form.Item>
-                                                <Form.Item>
-                                                    <Button className="schedule-button" htmlType="설정">
-                                                        설정
+                                <Card title="스케줄" size="small">
+                                    <Form form={form} name="schedule">
+                                        <Form.Item name="location" label="위치" >
+                                            <Select
+                                                className="start-location"
+                                                placeholder="시작 위치"
+                                                allowClear>
+                                                <Option value="0m" disabled>시작 위치</Option>
+                                                <Option value="0m">0m</Option>
+                                                <Option value="120m">120m</Option>
+                                                <Option value="240m">240m</Option>
+                                                <Option value="480m">480m</Option>
+                                            </Select>
+                                            <Select
+                                                className="end-location"
+                                                placeholder="종료 위치"
+                                                allowClear>
+                                                <Option value="0m" disabled>종료 위치</Option>
+                                                <Option value="0m">0m</Option>
+                                                <Option value="120m">120m</Option>
+                                                <Option value="240m">240m</Option>
+                                                <Option value="480m">480m</Option>
+                                            </Select>
+                                        </Form.Item>
+                                        <Form.Item name="count" label="횟수" >
+                                            <Select
+                                                placeholder="횟수"
+                                                allowClear>
+                                                <Option value="Camera1">1</Option>
+                                                <Option value="Camera2">2</Option>
+                                                <Option value="Camera3">3</Option>
+                                            </Select>
+                                        </Form.Item>
+                                        <Form.Item name="speed" label="속도" >
+                                            <Select
+                                                placeholder="속도"
+                                                allowClear>
+                                                <Option value="저속">저속</Option>
+                                                <Option value="중속">중속</Option>
+                                                <Option value="고속">고속</Option>
+                                            </Select>
+                                        </Form.Item>
+                                        <Form.Item name="starttime" label="시작 시간" >
+                                            <Select
+                                                placeholder="시작 시간"
+                                                allowClear>
+                                                <Option value="0">0</Option>
+                                                <Option value="1">1</Option>
+                                                <Option value="2">2</Option>
+                                                <Option value="3">3</Option>
+                                            </Select>
+                                        </Form.Item>
+                                        <Form.Item>
+                                            <Popconfirm
+                                                title="스케줄을 설정하시겠습니까?"
+                                                onConfirm={confirmSchedule}
+                                                okText="예"
+                                                cancelText="취소"><Button className="schedule-button" htmlType="설정">
+                                                    설정
                                                 </Button>
-                                                </Form.Item>
-                                            </Form>
-                                        </Card>
-                                    </Col>
+                                            </Popconfirm>
+                                        </Form.Item>
+                                    </Form>
+                                </Card>
+                            </Col>
                             <Col span={16}>
                                 <Card
                                     title="로봇 환경 센서"
@@ -321,11 +349,11 @@ const RobotControl = () => {
                                         </div>
                                     </Card>
                                     <Card title="레일 로봇 상태 추이" size="small" style={{
-                                            marginBottom: '10px'
-                                        }}>
+                                        marginBottom: '10px'
+                                    }}>
                                         <RobotStateChart />
                                     </Card>
-                                    <Card title="" size="small" bodyStyle={{height:'183px'}}></Card>
+                                    <Card title="" size="small" bodyStyle={{ height: '183px' }}></Card>
                                 </Card>
                             </Col>
                         </Row>

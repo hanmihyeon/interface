@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Select, Slider, Radio, Switch } from 'antd';
+import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Select, Slider, Radio, Switch, Popconfirm, message } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
 
 import { Player } from 'video-react';
@@ -7,8 +7,9 @@ import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
 
-import { TodayStatus, TunnelRadial1, TunnelRadial2, TunnelRadial3, TunnelRadial4 } from '../Chart/TunnelChart';
-import { TunnelChart } from '../Chart/SensorAvgChart';
+import { TodayStatus, TunnelRadial1, TunnelRadial2, TunnelRadial3, TunnelRadial4, RobotDataChart } from '../Chart/TunnelChart';
+// import { TunnelChart } from '../Chart/SensorAvgChart';
+import { RobotDataChart1 } from '../Chart/RobotChart';
 
 import 'video-react/dist/video-react.css';
 import '../cctv/Video.css';
@@ -22,6 +23,11 @@ TweenOne
 
 //html초입에서 height 설정안해서 적용안됨 세로 퍼센트
 const Tunnel = (props) => {
+
+    function confirmStation(e) {
+        message.success('설정되었습니다!');
+    }
+
     // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
     //나중에 배열로 camera url마다 지정해야할듯
@@ -113,8 +119,8 @@ const Tunnel = (props) => {
             </Breadcrumb>
             <div className="video contents">
                 <Row gutter={12} style={{ height: '100%' }}>
-                    <Col span={11} style={{ height: '100%' }}>
-                        <Card style={{ height: '100%' }}>
+                    <Col span={11}>
+                        <Card style={{ height: '50%' }}>
                             <Player
                                 playsInline="playsInline"
                                 src={videoUrl}
@@ -122,14 +128,14 @@ const Tunnel = (props) => {
                                 muted={true} />
                             <div className="video-info" onClick={StatusAlert}>[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
                         </Card>
-                        <Card>
+                        <Card style={{ height: '50%' }}>
                             <Row gutter={[8, 0]}>
                                 {vList.map((vList, index) => (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}
                             </Row>
                         </Card>
                     </Col>
                     <Col span={11}>
-                        <Card title="터널 상태" size="small">
+                        <Card title="터널 상태" size="small" style={{ height: '20%' }}>
                             <div className="tunnel">
                                 <div className="tunnel-rail"></div>
                                 <TweenOne animation={animation}>
@@ -137,46 +143,48 @@ const Tunnel = (props) => {
                                 </TweenOne>
                             </div>
                         </Card>
-                        <Row>
-                            <Col span={8}>
-                                <Card title="로봇 컨트롤" size="small" className="robot-control" bodyStyle={{ height: '275px' }}>
-                                    <div className="robot-control-wrap">
-                                        <div className="robot-left-button">
+                        <Row style={{ height: '30%' }}>
+                            <Col span={8} style={{ height: '100%' }}>
+                                <Card title="로봇 컨트롤" size="small" className="tunnel-robot-move-control" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px' }}>
+                                    <div className="tunnel-robot-move-control-wrap">
+                                        <div className="tunnel-robot-left-button">
                                             <Button>◀</Button>
                                         </div>
-                                        <div className="robot-center-button">
+                                        <div className="tunnel-robot-center-button">
                                             <Joystick size={35} baseColor="#808080" stickColor="black"></Joystick>
                                         </div>
-                                        <div className="robot-right-button">
+                                        <div className="tunnel-robot-right-button">
                                             <Button>▶</Button>
                                         </div>
                                     </div>
-                                    <div className="robot-camera-control-wrap">
-                                        <div className="camera-top-button">
-                                            <Button>▲</Button>
-                                        </div>
-                                        <div className="center-button">
-                                            <div className="camera-left-button">
-                                                <Button>◀</Button>
+                                    <div className="tunnel-robot-camera-wrap">
+                                        <div className="tunnel-robot-camera-control-wrap">
+                                            <div className="tunnel-camera-top-button">
+                                                <Button>▲</Button>
                                             </div>
-                                            <div className="camera-center-button">
-                                                <Joystick size={30} baseColor="#808080" stickColor="black"></Joystick>
+                                            <div className="tunnel-center-button">
+                                                <div className="tunnel-camera-left-button">
+                                                    <Button>◀</Button>
+                                                </div>
+                                                <div className="tunnel-camera-center-button">
+                                                    <Joystick size={30} baseColor="#808080" stickColor="black"></Joystick>
+                                                </div>
+                                                <div className="tunnel-camera-right-button">
+                                                    <Button>▶</Button>
+                                                </div>
                                             </div>
-                                            <div className="camera-right-button">
-                                                <Button>▶</Button>
+                                            <div className="tunnel-camera-bottom-button">
+                                                <Button>▼</Button>
                                             </div>
                                         </div>
-                                        <div className="camera-bottom-button">
-                                            <Button>▼</Button>
+                                        <div className="tunnel-zoom-slider-wrap">
+                                            <Slider vertical defaultValue={30} className="tunnel-zoom-slider" />
                                         </div>
-                                    </div>
-                                    <div className="zoom-slider-wrap">
-                                        <Slider vertical defaultValue={30} className="zoom-slider" />
                                     </div>
                                 </Card>
                             </Col>
-                            <Col span={8}>
-                                <Card title="컨트롤" size="small" className="tunnel-robot-control-1">
+                            <Col span={8} style={{ height: '100%' }}>
+                                <Card title="컨트롤" size="small" className="tunnel-robot-control" style={{ height: '50%' }}>
                                     <div className="radio">
                                         <span>감시모드</span>
                                         <Radio.Group>
@@ -195,7 +203,7 @@ const Tunnel = (props) => {
                                         </div>
                                     </div>
                                 </Card>
-                                <Card title="스테이션 이동" size="small" className="station-move">
+                                <Card title="스테이션 이동" size="small" className="station-move" style={{ height: '50%' }}>
                                     <Form form={form} name="control" className="tunnel-form">
                                         <Form.Item name="station" label="station" >
                                             <Select
@@ -208,20 +216,25 @@ const Tunnel = (props) => {
                                             </Select>
                                         </Form.Item>
                                         <Form.Item>
-                                            <Button className="station-move-button" htmlType="설정">
-                                                설정
-                                            </Button>
+                                            <Popconfirm
+                                                title="스테이션을 이동하시겠습니까?"
+                                                onConfirm={confirmStation}
+                                                okText="예"
+                                                cancelText="취소"><Button className="schedule-button" htmlType="설정">
+                                                    설정
+                                                </Button>
+                                            </Popconfirm>
                                         </Form.Item>
                                     </Form>
                                 </Card>
                             </Col>
-                            <Col span={8}>
-                                <Card title="현황" size="small" bodyStyle={{ height: '275px' }}>
+                            <Col span={8} style={{ height: '100%' }}>
+                                <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px' }}>
                                     <TodayStatus />
                                 </Card>
                             </Col>
                         </Row>
-                        <Card title="데이터 정보" size="small" className="sensor-status">
+                        <Card title="데이터 정보" size="small" className="sensor-status" style={{ height: '50%' }}>
                             <div className="sensor">
                                 <Col span={6}><TunnelRadial1 /></Col>
                                 <Col span={6}><TunnelRadial2 /></Col>
@@ -229,8 +242,8 @@ const Tunnel = (props) => {
                                 <Col span={6}><TunnelRadial4 /></Col>
                             </div>
                             <div className="sensor-chart">
-                                <Col span={12}><TunnelChart /></Col>
-                                <Col span={12}><TunnelChart /></Col>
+                                <Col span={12}><RobotDataChart1 /></Col>
+                                <Col span={12}><RobotDataChart /></Col>
                             </div>
                         </Card>
                     </Col>

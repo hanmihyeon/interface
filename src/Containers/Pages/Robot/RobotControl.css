@@ -233,6 +233,19 @@
     color: black;
 }
 
+.ant-form-item-control-input-content {
+    width: 100%;
+}
+
+.ant-form-item-control-input-content > .start-location,
+.ant-form-item-control-input-content > .end-location {
+    width: 48%;
+}
+
+.ant-form-item-control-input-content > .start-location {
+    margin-right: 9px;
+}
+
 /* 로봇 환경 센서 */
 
 .robot-data-chart {
