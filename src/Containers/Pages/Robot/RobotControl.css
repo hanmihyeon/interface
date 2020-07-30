@@ -243,7 +243,7 @@
 }
 
 .ant-form-item-control-input-content > .start-location {
-    margin-right: 9px;
+    margin-right: 4%;
 }
 
 /* 로봇 환경 센서 */
@@ -300,7 +300,11 @@
 
 .gauge-chart {
     padding-top: 10px;
-    padding-right: 5px;
+    padding-right: 10px;
+    width: 33.3333333%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .gauge-title {

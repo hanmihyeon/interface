@@ -428,7 +428,7 @@ class EventManager extends Component {
                 align: 'center',
                 width: '14%'
             }, {
-                title: '센서',
+                title: '이벤트 발생 센서',
                 dataIndex: 'sensor',
                 align: 'center',
                 width: '9%',
