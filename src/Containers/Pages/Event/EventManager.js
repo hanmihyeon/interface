@@ -30,7 +30,6 @@ import './Event.css';
 
 const data = [
     {
-        key: '25',
         id: '25',
         date: '2020-07-03 16:00:05',
         class: '1',
@@ -39,7 +38,6 @@ const data = [
         sms: '송신 완료',
         description: 'test'
     }, {
-        key: '24',
         id: '24',
         date: '2020-07-03 15:10:55',
         class: '2',
@@ -48,7 +46,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '23',
         id: '23',
         date: '2020-07-03 15:01:27',
         class: '4',
@@ -57,7 +54,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '22',
         id: '22',
         date: '2020-07-03 15:00:00',
         class: '5',
@@ -66,7 +62,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '21',
         id: '21',
         date: '2020-07-03 14:40:05',
         class: '1',
@@ -75,7 +70,6 @@ const data = [
         sms: '송신 실패',
         description: 'test2'
     }, {
-        key: '20',
         id: '20',
         date: '2020-07-03 14:00:58',
         class: '1',
@@ -84,7 +78,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '19',
         id: '19',
         date: '2020-07-03 13:50:05',
         class: '2',
@@ -93,7 +86,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '18',
         id: '18',
         date: '2020-07-03 13:10:10',
         class: '4',
@@ -102,7 +94,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '17',
         id: '17',
         date: '2020-07-03 13:00:01',
         class: '5',
@@ -111,7 +102,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '16',
         id: '16',
         date: '2020-07-03 12:40:30',
         class: '1',
@@ -120,7 +110,6 @@ const data = [
         sms: '송신 실패',
         description: 'test2'
     }, {
-        key: '15',
         id: '15',
         date: '2020-07-03 12:00:55',
         class: '3',
@@ -129,7 +118,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '14',
         id: '14',
         date: '2020-07-03 11:15:20',
         class: '2',
@@ -138,7 +126,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '13',
         id: '13',
         date: '2020-07-03 11:10:10',
         class: '4',
@@ -147,7 +134,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '12',
         id: '12',
         date: '2020-07-03 10:20:17',
         class: '5',
@@ -156,7 +142,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '11',
         id: '11',
         date: '2020-07-03 10:17:28',
         class: '5',
@@ -165,7 +150,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '10',
         id: '10',
         date: '2020-07-03 09:45:30',
         class: '2',
@@ -174,7 +158,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '9',
         id: '9',
         date: '2020-07-03 09:20:10',
         class: '2',
@@ -183,7 +166,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '8',
         id: '8',
         date: '2020-07-03 09:10:30',
         class: '4',
@@ -192,7 +174,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '7',
         id: '7',
         date: '2020-07-03 09:00:02',
         class: '5',
@@ -201,7 +182,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '6',
         id: '6',
         date: '2020-07-03 08:55:35',
         class: '1',
@@ -210,7 +190,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '5',
         id: '5',
         date: '2020-07-03 08:30:33',
         class: '5',
@@ -219,7 +198,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '4',
         id: '4',
         date: '2020-07-03 08:10:13',
         class: '2',
@@ -228,7 +206,6 @@ const data = [
         sms: '송신 완료',
         description: 'test2'
     }, {
-        key: '3',
         id: '3',
         date: '2020-07-03 08:05:25',
         class: '3',
@@ -237,7 +214,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '2',
         id: '2',
         date: '2020-07-03 08:00:17',
         class: '5',
@@ -246,7 +222,6 @@ const data = [
         sms: '',
         description: 'test2'
     }, {
-        key: '1',
         id: '1',
         date: '2020-07-03 07:40:25',
         class: '1',
