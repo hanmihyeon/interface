@@ -3,7 +3,7 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import ReactSpeedometer from 'react-d3-speedometer';
-
+import Thermometer from 'react-thermometer-ecotropy';
 // import highchartsMore from 'highcharts/highcharts-more';
 // import solidGauge from 'highcharts/modules/solid-gauge';
 // import FusionCharts from 'fusioncharts';
@@ -11,6 +11,23 @@ import ReactSpeedometer from 'react-d3-speedometer';
 // import charts from 'fusioncharts/fusioncharts.charts';
 // import ReactApexChart from 'react-apexcharts';
 // import GaugeChart from 'react-gauge-chart';
+
+export const Thermom = () => {
+    return (
+        <div className="thermom">
+            <h5 className="gauge-title">온도</h5>
+            <Thermometer
+                theme="dark"
+                value="25"
+                max="50"
+                steps="2"
+                format="°C"
+                size="small"
+                height="120"
+            />
+        </div>
+    )
+}
 
 export const VoltChart = () => {
     return (
@@ -436,7 +453,7 @@ export const RobotDataChart3 = () => {
         },
 
         title: {
-            text: 'CO2 / O2 / 황화수소',
+            text: 'CO / CO2 / O2',
             style: {
                 fontSize: '14px',
                 color: '#fff'
@@ -527,7 +544,7 @@ export const RobotDataChart3 = () => {
 
         series: [
             {
-                name: 'CO2',
+                name: 'CO',
                 type: 'spline',
                 yAxis: 0,
                 color: '#51b241',
@@ -551,7 +568,7 @@ export const RobotDataChart3 = () => {
                 }())
             },
             {
-                name: 'O2',
+                name: 'CO2',
                 type: 'spline',
                 yAxis: 0,
                 tooltip: {
@@ -574,7 +591,7 @@ export const RobotDataChart3 = () => {
                 }())
             },
             {
-                name: '황화수소',
+                name: 'O2',
                 type: 'spline',
                 yAxis: 0,
                 color: '#feff37',
@@ -633,7 +650,7 @@ export const RobotDataChart4 = () => {
         },
 
         title: {
-            text: 'CO / VOC / 이산화질소 / 암모니아',
+            text: 'VOC / 이산화질소 / 황화수소 / 암모니아',
             style: {
                 fontSize: '14px',
                 color: '#fff'
@@ -724,7 +741,7 @@ export const RobotDataChart4 = () => {
 
         series: [
             {
-                name: 'CO',
+                name: 'VOC',
                 type: 'spline',
                 yAxis: 0,
                 color: '#51b241',
@@ -748,7 +765,7 @@ export const RobotDataChart4 = () => {
                 }())
             },
             {
-                name: 'VOC',
+                name: '이산화질소',
                 type: 'spline',
                 yAxis: 0,
                 tooltip: {
@@ -771,7 +788,7 @@ export const RobotDataChart4 = () => {
                 }())
             },
             {
-                name: '이산화질소',
+                name: '황화수소',
                 type: 'spline',
                 yAxis: 0,
                 color: '#feff37',

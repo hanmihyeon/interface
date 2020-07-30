@@ -298,13 +298,15 @@
 /* 게이지 차트 */
 /* 변동 가능, 차트 선택 x */
 
-.gauge-chart {
+.gauge-chart, .thermom {
     padding-top: 10px;
     padding-right: 10px;
-    width: 33.3333333%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.gauge-chart {
+    width: 35%;
 }
 
 .gauge-title {
@@ -313,6 +315,10 @@
 
 .current-chart {
     border-right: 0.5px solid #303030;
+}
+
+.thermometer__bg-color {
+    background: linear-gradient(#f44336,#f49136,#FEFF37,#51B241)!important;
 }
 
 /*

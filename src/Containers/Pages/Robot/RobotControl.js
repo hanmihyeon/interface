@@ -14,7 +14,8 @@ import {
     RobotDataChart4,
     VoltChart,
     CurrentChart,
-    TempChart
+    TempChart,
+    Thermom
 } from '../Chart/RobotChart';
 
 import 'video-react/dist/video-react.css';
@@ -339,7 +340,7 @@ const RobotControl = () => {
                                         <div className="robot-info">
                                             <VoltChart />
                                             <CurrentChart />
-                                            <TempChart />
+                                            <Thermom />
                                             {/*<p>
                                                 전압: 220.{Math.floor(Math.random() * 100)}V<br />
                                             전류: 70.{Math.floor(Math.random() * 100)}A<br />
