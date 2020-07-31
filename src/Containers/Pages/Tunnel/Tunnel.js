@@ -7,7 +7,15 @@ import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
 
-import { TodayStatus, TunnelRadial1, TunnelRadial2, TunnelRadial3, TunnelRadial4, RobotDataChart } from '../Chart/TunnelChart';
+import { 
+    TodayStatus,
+    TunnelRadial1,
+    TunnelRadial2,
+    TunnelRadial3,
+    TunnelRadial4,
+    FBGChart,
+    SagnacChart
+ } from '../Chart/TunnelChart';
 // import { TunnelChart } from '../Chart/SensorAvgChart';
 import { RobotDataChart1 } from '../Chart/RobotChart';
 
@@ -229,7 +237,8 @@ const Tunnel = (props) => {
                                 </Card>
                             </Col>
                             <Col span={8} style={{ height: '100%' }}>
-                                <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px' }}>
+                                <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px', padding:'8px' }}>
+                                    <div className="status-time">2020-07-01 ~ 2020-7-31</div>
                                     <TodayStatus />
                                 </Card>
                             </Col>
@@ -242,8 +251,8 @@ const Tunnel = (props) => {
                                 <Col span={6}><TunnelRadial4 /></Col>
                             </div>
                             <div className="sensor-chart">
-                                <Col span={12}><RobotDataChart1 /></Col>
-                                <Col span={12}><RobotDataChart /></Col>
+                                <Col span={12}><FBGChart /></Col>
+                                <Col span={12}><SagnacChart /></Col>
                             </div>
                         </Card>
                     </Col>

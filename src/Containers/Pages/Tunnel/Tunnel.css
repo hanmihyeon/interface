@@ -179,6 +179,10 @@
 }
 
 /* 현황 */
+.status-time {
+    text-align: right;
+    font-size: 12px;
+}
 
 .apexcharts-legend-text {
     color: white !important;

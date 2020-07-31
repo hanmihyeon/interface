@@ -107,7 +107,7 @@ const StatusAlert = () => {
                                 <div className="robot-location-bar"></div>
                             </div>
                             <div className="event">
-                                {eL.map(eL => (  <div className={eventlocation==eL ? 'event-section-red' : 'event-section' }></div> ))}
+                                {eL.map(eL => (  <div className={eventlocation===eL ? 'event-section-red' : 'event-section' }></div> ))}
                             </div>
                         </Card>
                     </Col>
@@ -130,7 +130,7 @@ const StatusAlert = () => {
                                 <div className="robot-location-bar"></div>
                             </div>
                             <div className="event">
-                                {eL.map(eL => (  <div className={eventlocation==eL ? 'event-section-red' : 'event-section' }></div> ))} 
+                                {eL.map(eL => (  <div className={eventlocation===eL ? 'event-section-red' : 'event-section' }></div> ))} 
                             </div>
                         </Card> 
                     </Col>

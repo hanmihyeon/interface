@@ -105,9 +105,9 @@ export const TempChart = () => {
 export const RobotDataChart1 = () => {
     const option1 = {
         chart: {
-            zoomType:'xy',
+            zoomType: 'xy',
             backgroundColor: 'none',
-            height: 280,
+            height: 300,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -154,7 +154,14 @@ export const RobotDataChart1 = () => {
                 marker: {
                     enabled: false
                 },
-                
+            }
+        },
+
+        legend: {
+            enabled: true,
+            itemStyle: {
+                color: '#fff',
+                fontWeight: '400'
             }
         },
 
@@ -199,10 +206,6 @@ export const RobotDataChart1 = () => {
             shared: true,
             // headerFormat: '<b>{series.name}</b><br/>',
             // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y}</b><br/>',
-        },
-
-        legend: {
-            enabled: false
         },
 
         exporting: {
@@ -261,14 +264,14 @@ export const RobotDataChart1 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option1} style={{width:'50%'}} />
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{ marginTop: '15px' }} />
     );
 }
 
 export const RobotDataChart2 = () => {
     const option1 = {
         chart: {
-            zoomType:'xy',
+            zoomType: 'xy',
             backgroundColor: 'none',
             height: 300,
             animation: Highcharts.svg, // don't animate in old IE
@@ -362,7 +365,11 @@ export const RobotDataChart2 = () => {
         },
 
         legend: {
-            enabled: false
+            enabled: true,
+            itemStyle: {
+                color: '#fff',
+                fontWeight: '400'
+            }
         },
 
         exporting: {
@@ -421,14 +428,14 @@ export const RobotDataChart2 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option1} style={{width:'50%'}} />
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{ width: '50%' }} />
     );
 }
 
 export const RobotDataChart3 = () => {
     const option1 = {
         chart: {
-            zoomType:'xy',
+            zoomType: 'xy',
             backgroundColor: 'none',
             height: 300,
             animation: Highcharts.svg, // don't animate in old IE
@@ -535,7 +542,11 @@ export const RobotDataChart3 = () => {
         },
 
         legend: {
-            enabled: false
+            enabled: true,
+            itemStyle: {
+                color: '#fff',
+                fontWeight: '400'
+            }
         },
 
         exporting: {
@@ -618,14 +629,14 @@ export const RobotDataChart3 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option1}  style={{width:'50%'}}/>
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{ width: '50%' }} />
     );
 }
 
 export const RobotDataChart4 = () => {
     const option1 = {
         chart: {
-            zoomType:'xy',
+            zoomType: 'xy',
             backgroundColor: 'none',
             height: 300,
             animation: Highcharts.svg, // don't animate in old IE
@@ -732,7 +743,11 @@ export const RobotDataChart4 = () => {
         },
 
         legend: {
-            enabled: false
+            enabled: true,
+            itemStyle: {
+                color: '#fff',
+                fontWeight: '400'
+            }
         },
 
         exporting: {
@@ -839,7 +854,7 @@ export const RobotDataChart4 = () => {
     }
 
     return (
-        <HighchartsReact Highcharts={Highcharts} options={option1}  style={{width:'50%'}}/>
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{ width: '50%' }} />
     );
 }
 
@@ -849,7 +864,7 @@ export const RobotStateChart = () => {
         chart: {
             backgroundColor: 'none',
             type: 'areaspline',
-            height: 200,
+            height: 180,
             animation: Highcharts.svg, // don't animate in old IE
             marginRight: 10,
             events: {
@@ -913,7 +928,11 @@ export const RobotStateChart = () => {
         },
 
         legend: {
-            enabled: false
+            enabled: false,
+            itemStyle: {
+                color: '#fff',
+                fontWeight: '400'
+            }
         },
 
         exporting: {
@@ -922,7 +941,7 @@ export const RobotStateChart = () => {
 
         series: [
             {
-                name: 'Random data',
+                name: '로봇 상태',
                 data: (function () {
                     // generate an array of random data
                     var data = [],
@@ -944,6 +963,123 @@ export const RobotStateChart = () => {
 
     return (
         <HighchartsReact Highcharts={Highcharts} options={optionState} />
+    )
+}
+
+export const ModeChart = () => {
+
+    const optionMode = {
+        chart: {
+            backgroundColor: 'none',
+            type: 'column',
+            height: 160,
+            // width: 500,
+            animation: Highcharts.svg, // don't animate in old IE
+            marginRight: 10,
+            events: {
+                load: null
+                /*function () {
+    
+                    // set up the updating of the chart each second
+                    var series = this.series[0];
+                    setInterval(function () {
+                        var x = (new Date()).getTime(), // current time
+                            y = (Math.round(Math.random() * 2))
+                        series.addPoint([
+                            x, y
+                        ], true, true);
+                    }, 5000);
+                }*/
+            }
+        },
+
+        time: {
+            useUTC: false
+        },
+        
+        title: {
+            text: '',
+            style: {
+                fontSize: '14px',
+                color: '#fff'
+            }
+        },
+
+        accessibility: {
+            announceNewData: {
+                enabled: true,
+                minAnnounceInterval: 1500,
+                announcementFormatter: function (allSeries, newSeries, newPoint) {
+                    if (newPoint) {
+                        return 'New point added. Value: ' + newPoint.y;
+                    }
+                    return false;
+                }
+            }
+        },
+
+        xAxis: {
+            type: 'datetime',
+            dateTimeLabelFormats: {
+                day: '%e of %b'
+            }
+        },
+
+        yAxis: {
+            title: {
+                text: ''
+            },
+            plotLines: [
+                {
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }
+            ]
+        },
+
+        tooltip: {
+            headerFormat: '<b>{point.x:%Y-%m-%d %H:%M:%S}</b><br/>',
+            pointFormat: '<span style="color:{point.color}">●</span> {series.name}: <b>{point.y}</b>'
+        },
+
+        legend: {
+            floating: false,
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            backgroundColor: '#d0d0d0',
+            borderColor: '#fff',
+            borderWidth: 1,
+            itemStyle: {
+                color: '#000',
+                fontSize: '11px',
+                fontWeight: '400'
+            },
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        series: [
+            {
+                name: '자동 모드',
+                pointInterval: 24 * 3600 * 1000, // one day
+                pointStart: Date.UTC(2020, 6, 31),
+                data: [1,2,5,2,1,0,4],
+            },
+            {
+                name: '수동 모드',
+                pointInterval: 24 * 3600 * 1000, // one day
+                pointStart: Date.UTC(2020, 6, 31),
+                data: [3,2,5,2,5,9,1],
+            }
+        ]
+    }
+
+    return (
+        <HighchartsReact Highcharts={Highcharts} options={optionMode} />
     )
 }
 

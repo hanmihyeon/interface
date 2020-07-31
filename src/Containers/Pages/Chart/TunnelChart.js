@@ -110,7 +110,7 @@ export class TodayStatus extends React.Component {
   }
   render() {
     return (
-      <div id="chart" style={{ margin: '15px 0 0 -17px' }}>
+      <div id="chart" style={{ margin: '5px 0 0 -17px' }}>
         <ReactApexChart options={this.state.options} series={this.state.series} type="donut" width={300} />
       </div>
     );
@@ -257,6 +257,297 @@ export class TunnelRadial4 extends React.Component {
       </div>
     );
   }
+}
+
+export const FBGChart = () => {
+  const option1 = {
+      chart: {
+          zoomType: 'xy',
+          backgroundColor: 'none',
+          height: 280,
+          animation: Highcharts.svg, // don't animate in old IE
+          events: {
+              load: null
+              /*function () {
+                  // set up the updating of the chart each second
+                  var series = this.series[0];
+                  setInterval(function () {
+                      var x = (new Date()).getTime(), // current time
+                          y = (Math.round(Math.random() * 2))
+                      series.addPoint([
+                          x, y
+                      ], true, true);
+                  }, 5000);
+              }*/
+          }
+      },
+
+      time: {
+          useUTC: false
+      },
+
+      title: {
+          text: 'FBG 센서',
+          style: {
+              fontSize: '14px',
+              color: '#fff'
+          }
+      },
+      /*accessibility: {
+          announceNewData: {
+              enabled: true,
+              minAnnounceInterval: 15000,
+              announcementFormatter: function (allSeries, newSeries, newPoint) {
+                  if (newPoint) {
+                      return 'New point added. Value: ' + newPoint.y;
+                  }
+                  return false;
+              }
+          }
+      },*/
+
+      plotOptions: {
+          series: {
+              marker: {
+                  enabled: false
+              },
+          }
+      },
+
+      legend: {
+          enabled: true,
+          itemStyle: {
+              color: '#fff',
+              fontWeight: '400'
+          }
+      },
+
+      xAxis: {
+          type: 'datetime',
+          tickPixelInterval: 150,
+          crosshair: true,
+      },
+
+      yAxis: [{
+          labels: {
+              format: '{value}°C',
+              style: {
+                  color: '#fff',
+              }
+          },
+          title: {
+              text: '',
+              style: {
+                  color: '#fff',
+              }
+          },
+      }, {
+          labels: {
+              format: '{value}dB',
+              style: {
+                  color: '#fff'
+                  // Highcharts.getOptions().colors[0]
+              }
+          },
+          title: {
+              text: '',
+              style: {
+                  color: '#fff'
+                  // Highcharts.getOptions().colors[0]
+              }
+          },
+          opposite: true
+      }],
+
+      tooltip: {
+          shared: true,
+          // headerFormat: '<b>{series.name}</b><br/>',
+          // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y}</b><br/>',
+      },
+
+      exporting: {
+          enabled: false
+      },
+
+      series: [
+          {
+              name: '온도',
+              type: 'spline',
+              yAxis: 0,
+              color: '#51b241',
+              tooltip: {
+                  valueSuffix: ' °C',
+              },
+              data: (function () {
+                  // generate an array of random data
+                  var data = [],
+                      time = (new Date()).getTime(),
+                      i;
+
+                  for (i = -19; i <= 0; i += 1) {
+                      data.push({
+                          x: time + i * 5000,
+                          y: (25 + (Math.round((Math.random() * 100)) / 100))
+                      });
+                  }
+
+                  return data;
+              }())
+          },
+          {
+              name: '음향',
+              type: 'spline',
+              yAxis: 1,
+              tooltip: {
+                  valueSuffix: ' dB'
+              },
+              data: (function () {
+                  // generate an array of random data
+                  var data = [],
+                      time = (new Date()).getTime(),
+                      i;
+
+                  for (i = -19; i <= 0; i += 1) {
+                      data.push({
+                          x: time + i * 5000,
+                          y: (60 + (Math.round((Math.random() * 100)) / 100))
+                      });
+                  }
+
+                  return data;
+              }())
+          }
+      ]
+  }
+
+  return (
+      <HighchartsReact Highcharts={Highcharts} options={option1} style={{ marginTop: '15px' }} />
+  );
+}
+
+export const SagnacChart = () => {
+  const option1 = {
+      chart: {
+          backgroundColor: 'none',
+          height: 280,
+          animation: Highcharts.svg, // don't animate in old IE
+          events: {
+              load: null
+              /*function () {
+                  // set up the updating of the chart each second
+                  var series = this.series[0];
+                  setInterval(function () {
+                      var x = (new Date()).getTime(), // current time
+                          y = (Math.round(Math.random() * 2))
+                      series.addPoint([
+                          x, y
+                      ], true, true);
+                  }, 5000);
+              }*/
+          }
+      },
+
+      time: {
+          useUTC: false
+      },
+
+      title: {
+          text: 'Sagnac 센서',
+          style: {
+              fontSize: '14px',
+              color: '#fff'
+          }
+      },
+      /*accessibility: {
+          announceNewData: {
+              enabled: true,
+              minAnnounceInterval: 15000,
+              announcementFormatter: function (allSeries, newSeries, newPoint) {
+                  if (newPoint) {
+                      return 'New point added. Value: ' + newPoint.y;
+                  }
+                  return false;
+              }
+          }
+      },*/
+
+      plotOptions: {
+          series: {
+              marker: {
+                  enabled: false
+              },
+          }
+      },
+
+      legend: {
+          enabled: true,
+          itemStyle: {
+              color: '#fff',
+              fontWeight: '400'
+          }
+      },
+
+      xAxis: {
+          type: 'datetime',
+          tickPixelInterval: 150,
+          crosshair: true,
+      },
+
+      yAxis: {
+          labels: {
+              format: '{value}dB',
+              style: {
+                  color: '#fff',
+              }
+          },
+          title: {
+              text: '',
+              style: {
+                  color: '#fff',
+              }
+          },
+      },
+
+      tooltip: {
+          shared: true,
+          // headerFormat: '<b>{series.name}</b><br/>',
+          // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y}</b><br/>',
+      },
+
+      exporting: {
+          enabled: false
+      },
+
+      series: [
+          {
+              name: '음향',
+              type: 'spline',
+              yAxis: 0,
+              tooltip: {
+                  valueSuffix: ' dB'
+              },
+              data: (function () {
+                  // generate an array of random data
+                  var data = [],
+                      time = (new Date()).getTime(),
+                      i;
+
+                  for (i = -19; i <= 0; i += 1) {
+                      data.push({
+                          x: time + i * 5000,
+                          y: (60 + (Math.round((Math.random() * 100)) / 100))
+                      });
+                  }
+
+                  return data;
+              }())
+          }
+      ]
+  }
+
+  return (
+      <HighchartsReact Highcharts={Highcharts} options={option1} style={{ marginTop: '15px' }} />
+  );
 }
 
 export const RobotDataChart = () => {

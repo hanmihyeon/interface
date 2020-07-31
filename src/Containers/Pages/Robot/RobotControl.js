@@ -1,11 +1,18 @@
 import React, { Fragment } from 'react';
-import { Breadcrumb, Row, Col, Card, Button, Slider, Tabs, Radio, Switch, Select, Form, Popconfirm, message } from 'antd';
+import { 
+    Breadcrumb,
+    Row, Col, Card,
+    Radio, Button, Tabs,
+    Slider, Switch,
+    Select, Form,
+    Popconfirm, message,
+    DatePicker, Input } from 'antd';
 import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
 import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
-
+import moment from 'moment';
 import {
     RobotStateChart,
     RobotDataChart1,
@@ -14,8 +21,8 @@ import {
     RobotDataChart4,
     VoltChart,
     CurrentChart,
-    TempChart,
-    Thermom
+    Thermom,
+    ModeChart
 } from '../Chart/RobotChart';
 
 import 'video-react/dist/video-react.css';
@@ -60,6 +67,26 @@ const RobotControl = () => {
 
     function confirmStation(e) {
         message.success('설정되었습니다!');
+    }
+
+    function range(start, end) {
+        const result = [];
+        for(let i=start; i<end; i++) {
+            result.push(i);
+        }
+        return result;
+    }
+    
+    function disabledDate(current) {
+        return current && current < moment().endOf('day');
+    }
+
+    function disabledDateTime() {
+        return {
+            disabledHours : () => range(0,24).splice(4,20),
+            disabledMinutes: () => range(30,60),
+            disabledSeconds: () => [55,56],
+        };
     }
 
     return (
@@ -224,7 +251,11 @@ const RobotControl = () => {
                                 <Card title="스케줄" size="small">
                                     <Form form={form} name="schedule">
                                         <Form.Item name="location" label="위치" >
-                                            <Select
+                                            <Input
+                                                className="start-location"
+                                                placeholder="시작 위치"
+                                                suffix="m" />
+                                            {/*<Select
                                                 className="start-location"
                                                 placeholder="시작 위치"
                                                 allowClear>
@@ -233,26 +264,15 @@ const RobotControl = () => {
                                                 <Option value="120m">120m</Option>
                                                 <Option value="240m">240m</Option>
                                                 <Option value="480m">480m</Option>
-                                            </Select>
-                                            <Select
+                                            </Select>*/}
+                                            <Input
                                                 className="end-location"
                                                 placeholder="종료 위치"
-                                                allowClear>
-                                                <Option value="0m" disabled>종료 위치</Option>
-                                                <Option value="0m">0m</Option>
-                                                <Option value="120m">120m</Option>
-                                                <Option value="240m">240m</Option>
-                                                <Option value="480m">480m</Option>
-                                            </Select>
+                                                suffix="m" />
                                         </Form.Item>
                                         <Form.Item name="count" label="횟수" >
-                                            <Select
-                                                placeholder="횟수"
-                                                allowClear>
-                                                <Option value="Camera1">1</Option>
-                                                <Option value="Camera2">2</Option>
-                                                <Option value="Camera3">3</Option>
-                                            </Select>
+                                            <Input
+                                                suffix="번" />
                                         </Form.Item>
                                         <Form.Item name="speed" label="속도" >
                                             <Select
@@ -264,15 +284,20 @@ const RobotControl = () => {
                                             </Select>
                                         </Form.Item>
                                         <Form.Item name="starttime" label="시작 시간" >
-                                            <Select
+                                            <DatePicker
+                                                format="YYYY-MM-DD HH:mm:ss"
+                                                disabledDate={disabledDate}
+                                                disabledTime={disabledDateTime}
+                                                showTime={{defaultValue: moment('00:00:00', 'HH:mm:ss')}}/>
+                                            {/*<Select
                                                 placeholder="시작 시간"
                                                 allowClear>
                                                 <Option value="0">0</Option>
                                                 <Option value="1">1</Option>
                                                 <Option value="2">2</Option>
                                                 <Option value="3">3</Option>
-                                            </Select>
-                                        </Form.Item>
+                                            </Select>*/}
+                                            </Form.Item>
                                         <Form.Item>
                                             <Popconfirm
                                                 title="스케줄을 설정하시겠습니까?"
@@ -294,7 +319,8 @@ const RobotControl = () => {
                                         height: 400
                                     }}*/
                                     bodyStyle={{
-                                        padding: '12px 18px 12px 18px'
+                                        padding: '12px 18px 12px 18px',
+                                        height: '700px'
                                     }}>
                                     <Row>
                                         <div
@@ -325,11 +351,14 @@ const RobotControl = () => {
                             </Col>
                             <Col span={8}>
                                 <Card
+                                    title="로봇 상태"
+                                    size="small"
                                     bodyStyle={{
-                                        padding: '12px 18px'
+                                        padding: '12px 18px',
+                                        height: '700px'
                                     }}>
                                     <Card
-                                        title="로봇 상태"
+                                        
                                         size="small"
                                         style={{
                                             marginBottom: '10px'
@@ -354,7 +383,7 @@ const RobotControl = () => {
                                     }}>
                                         <RobotStateChart />
                                     </Card>
-                                    <Card title="" size="small" bodyStyle={{ height: '183px' }}></Card>
+                                    <Card title="감시 모드" size="small"><ModeChart/></Card>
                                 </Card>
                             </Col>
                         </Row>

@@ -249,9 +249,13 @@
 /* 로봇 환경 센서 */
 
 .robot-data-chart {
-    border: 0.5px solid #B0B0B0;
+    border: 0.5px solid #303030;
     padding: 3px;
     width: 50%;
+}
+
+.robot-data-chart .highcharts-container {
+    padding-top: 8px;
 }
 
 /*
@@ -305,6 +309,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
 .gauge-chart {
     width: 35%;
 }
