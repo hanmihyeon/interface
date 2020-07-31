@@ -32,8 +32,14 @@ TweenOne
 //html초입에서 height 설정안해서 적용안됨 세로 퍼센트
 const Tunnel = (props) => {
 
-    function confirmStation(e) {
+    const [conVisible, setCon] = useState(false);
+
+    function confirmPop(e) {
         message.success('설정되었습니다!');
+    }
+
+    function showConfirm() {
+        setCon(true);
     }
 
     // const [value, setValue] = useState('1');
@@ -192,13 +198,25 @@ const Tunnel = (props) => {
                                 </Card>
                             </Col>
                             <Col span={8} style={{ height: '100%' }}>
-                                <Card title="컨트롤" size="small" className="tunnel-robot-control" style={{ height: '50%' }}>
+                                <Card title="컨트롤" size="small" className="tunnel-robot-control" style={{ height: '100%' }}>
                                     <div className="radio">
                                         <span>감시모드</span>
-                                        <Radio.Group>
-                                            <Radio value={1} /*onClick={() => setValue('1')}*/>자동</Radio>
-                                            <Radio value={2} /*onClick={() => setValue('2')}*/>수동</Radio>
-                                        </Radio.Group>
+                                        <Radio.Group defaultValue={1}>
+                                                <Popconfirm
+                                                title="설정하시겠습니까?"
+                                                onConfirm={confirmPop}
+                                                okText="예"
+                                                cancelText="취소">
+                                                    <Radio value={1} onClick={showConfirm}>자동</Radio>
+                                                </Popconfirm>
+                                                <Popconfirm
+                                                    title="설정하시겠습니까?"
+                                                    onConfirm={confirmPop}
+                                                    okText="예"
+                                                    cancelText="취소">
+                                                    <Radio value={2} onClick={showConfirm}>수동</Radio>
+                                                </Popconfirm>
+                                            </Radio.Group>
                                     </div>
                                     <div className="toggle">
                                         <div className="light-toggle">
@@ -211,7 +229,7 @@ const Tunnel = (props) => {
                                         </div>
                                     </div>
                                 </Card>
-                                <Card title="스테이션 이동" size="small" className="station-move" style={{ height: '50%' }}>
+                                {/*<Card title="스테이션 이동" size="small" className="station-move" style={{ height: '50%' }}>
                                     <Form form={form} name="control" className="tunnel-form">
                                         <Form.Item name="station" label="station" >
                                             <Select
@@ -234,7 +252,7 @@ const Tunnel = (props) => {
                                             </Popconfirm>
                                         </Form.Item>
                                     </Form>
-                                </Card>
+                                </Card>*/}
                             </Col>
                             <Col span={8} style={{ height: '100%' }}>
                                 <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px', padding:'8px' }}>

@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { 
     Breadcrumb,
     Row, Col, Card,
@@ -42,6 +42,7 @@ const RobotControl = () => {
 
     // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
+    const [conVisible, setCon] = useState(false);
 
     const animation = {
         bezier: {
@@ -61,12 +62,12 @@ const RobotControl = () => {
         duration: 10000
     };
 
-    function confirmSchedule(e) {
-        message.success('스케줄이 설정되었습니다!');
+    function confirmPop(e) {
+        message.success('설정되었습니다!');
     }
 
-    function confirmStation(e) {
-        message.success('설정되었습니다!');
+    function showConfirm() {
+        setCon(true);
     }
 
     function range(start, end) {
@@ -76,7 +77,7 @@ const RobotControl = () => {
         }
         return result;
     }
-    
+
     function disabledDate(current) {
         return current && current < moment().endOf('day');
     }
@@ -165,13 +166,25 @@ const RobotControl = () => {
                                 </Card>
                             </Col>
                             <Col span={4}>
-                                <Card className="control-container" bodyStyle={{ padding: '10px' }}>
+                                {/*<Card className="control-container" bodyStyle={{ padding: '10px' }}>*/}
                                     <Card title="컨트롤" size="small" className="robot-control-1">
                                         <div className="radio">
                                             <span>감시모드</span>
-                                            <Radio.Group>
-                                                <Radio value={1}>자동</Radio>
-                                                <Radio value={2}>수동</Radio>
+                                            <Radio.Group defaultValue={1}>
+                                                <Popconfirm
+                                                title="설정하시겠습니까?"
+                                                onConfirm={confirmPop}
+                                                okText="예"
+                                                cancelText="취소">
+                                                    <Radio value={1} onClick={showConfirm}>자동</Radio>
+                                                </Popconfirm>
+                                                <Popconfirm
+                                                    title="설정하시겠습니까?"
+                                                    onConfirm={confirmPop}
+                                                    okText="예"
+                                                    cancelText="취소">
+                                                    <Radio value={2} onClick={showConfirm}>수동</Radio>
+                                                </Popconfirm>
                                             </Radio.Group>
                                         </div>
                                         <div className="toggle">
@@ -184,9 +197,8 @@ const RobotControl = () => {
                                                 <Switch className="uvlight-toggle-button" checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
                                             </div>
                                         </div>
-
                                     </Card>
-                                    <Card title="스테이션 이동" size="small" className="station-move">
+                                    {/*<Card title="스테이션 이동" size="small" className="station-move">
                                         <Form form={form} name="control">
                                             <Form.Item name="station" label="station" >
                                                 <Select
@@ -209,9 +221,8 @@ const RobotControl = () => {
                                                 </Popconfirm>
                                             </Form.Item>
                                         </Form>
-
-                                    </Card>
-                                </Card>
+                                    </Card>*/}
+                                {/*</Card>*/}
                             </Col>
                             <Col span={20}>
                                 <Card title="터널 상태" size="small" bodyStyle={{
@@ -301,7 +312,7 @@ const RobotControl = () => {
                                         <Form.Item>
                                             <Popconfirm
                                                 title="스케줄을 설정하시겠습니까?"
-                                                onConfirm={confirmSchedule}
+                                                onConfirm={confirmPop}
                                                 okText="예"
                                                 cancelText="취소"><Button className="schedule-button" htmlType="설정">
                                                     설정

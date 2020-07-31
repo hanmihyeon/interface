@@ -19,7 +19,7 @@ export const Thermom = () => {
             <Thermometer
                 theme="dark"
                 value="25"
-                max="50"
+                max="285"
                 steps="2"
                 format="°C"
                 size="small"

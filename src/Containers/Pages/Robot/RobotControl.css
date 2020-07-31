@@ -95,6 +95,7 @@
 
 .robot-control-1 {
     margin-bottom: 10px;
+    height: 100%;
 }
 
 .robot-control-1 .radio {
@@ -122,7 +123,7 @@
     margin-left: 15px;
 }
 
-/* 스테이션 컨트롤 */
+/* 스테이션 컨트롤 (제거) */
 .station-move {
     position: relative;
 }
@@ -326,31 +327,7 @@
     background: linear-gradient(#f44336,#f49136,#FEFF37,#51B241)!important;
 }
 
-/*
-.apexcharts-text.apexcharts-datalabel-value {
-    fill: #fff !important;
-    margin-top: -20px;
+.thermometer__draw-b:before,
+.thermometer__draw-b:after {
+    background-color: #51b241!important;
 }
-
-#gauge-chart1 {
-    border-left: 0.5px solid #303030;
-    width: 33% !important;
-}
-
-#gauge-chart1>svg {
-    margin-top: 20px;
-}
-
-.highcharts-background {
-    fill: transparent;
-}
-
-.speedchart {
-    border-left: 0.5px solid #303030;
-}
-
-.speedometer {
-    border-left: 0.5px solid #303030;
-    padding-top: 10px;
-}
-*/
