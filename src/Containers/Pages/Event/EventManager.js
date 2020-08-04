@@ -240,6 +240,7 @@ class EventManager extends Component {
         disabled: false,
         robotvisible: false,
         visiblepop: false,
+        rowColor: '#424242',
     };
 
     handleChange = (pagination, filters) => {
@@ -305,7 +306,8 @@ class EventManager extends Component {
 
     handleDisabled = e => {
         this.setState({
-            disabled: true
+            disabled: true,
+            rowColor: '#141414',
         })
     }
 
@@ -315,11 +317,9 @@ class EventManager extends Component {
         });
     };
 
-    makeFile = () => {
+    confirmRow = (record) => {
         return {
-            mime: 'text/plain',
-            filename: 'myfile.txt',
-            contents: 'test',
+
         }
     }
 
@@ -338,35 +338,57 @@ class EventManager extends Component {
                 key: 'class',
                 dataIndex: 'class',
                 align: 'center',
-                width: '3%',
-                render(text, record) {
+                width: '5%',
+                filters: [
+                    {
+                        text: '1',
+                        value: '1'
+                    }, {
+                        text: '2',
+                        value: '2'
+                    }, {
+                        text: '3',
+                        value: '3'
+                    }, {
+                        text: '4',
+                        value: '4'
+                    }, {
+                        text: '5',
+                        value: '5'
+                    }
+                ],
+                filteredValue: filteredInfo.class || null,
+                onFilter: (value, record) => record
+                    .class
+                    .includes(value),
+                render(text) {
                     return {
                         props: {
                             style: {
                                 background:
                                     parseInt(text) === 1
-                                        ? '#F9120F' /*'#fbc0c0' '#ff6666'*/
+                                        ? 'rgb(249, 18, 15, 0.5)' /*'#F9120F#fbc0c0' '#ff6666'*/
                                         : (parseInt(text) === 2
-                                            ? '#F25A16' /*'#ffdaa1' '#ffbd55'*/
+                                            ? 'rgb(242, 90, 22,0.5)' /*'#F25A16#ffdaa1' '#ffbd55'*/
                                             : (parseInt(text) === 3
-                                                ? '#FEFF37' /*'#f9ffc9' '#ffff66'*/
+                                                ? 'rgb(254, 255, 55,0.5)' /*'#FEFF37#f9ffc9' '#ffff66'*/
                                                 : (parseInt(text) === 4
-                                                    ? '#51B241' /*'#baffe5' '#9de24f'*/
+                                                    ? 'rgb(81, 178, 65,0.5)' /*'#51B241#baffe5' '#9de24f'*/
                                                     : (parseInt(text) === 5
-                                                        ? '#2F92D2'/*'#a9cdff' '#87cefa'*/ : 'black')))),
+                                                        ? 'rgb(47, 146, 210,0.5)'/*'#2F92D2#a9cdff' '#87cefa'*/ : 'black')))),
                                 color:
                                     parseInt(text) === 1
                                         ? '#FFF'
                                         : (parseInt(text) === 2
                                             ? '#FFF'
                                             : (parseInt(text) === 3
-                                                ? '#000'
+                                                ? '#fff'
                                                 : (parseInt(text) === 4
                                                     ? '#fff'
                                                     : (parseInt(text) === 5
                                                         ? '#FFF' : 'black')))),
                                 fontSize: '16px',
-                                fontWeight: '500',
+                                fontWeight: '400',
                                 /*textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'*/
                             }
                         },
@@ -401,7 +423,20 @@ class EventManager extends Component {
                 title: '터널',
                 dataIndex: 'tunnel',
                 align: 'center',
-                width: '14%'
+                width: '14%',
+                filters: [
+                    {
+                        text: '터널1',
+                        value: '터널1'
+                    }, {
+                        text: '터널2',
+                        value: '터널2'
+                    }
+                ],
+                filteredValue: filteredInfo.tunnel || null,
+                onFilter: (value, record) => record
+                    .tunnel
+                    .includes(value)
             }, {
                 title: '이벤트 발생 센서',
                 dataIndex: 'sensor',
@@ -525,11 +560,12 @@ class EventManager extends Component {
                     <Breadcrumb.Item><SettingOutlined />&nbsp;&nbsp;Event</Breadcrumb.Item>
                     <Breadcrumb.Item><UserOutlined />&nbsp;Event Manager</Breadcrumb.Item>
                 </Breadcrumb>
-                <div className="event-manager contents" id="event">
+                <div className="event-manager contents" style={{width:'91.6%'}} id="event">
                     <Row gutter={[6, 6]}>
                         <Col span={24}>
                             <Card title="Event" size="small">
                                 <Table
+                                    className={(this.state.disabled ? 'row-active': 'row-default')}
                                     size="small"
                                     onChange={this.handleChange}
                                     columns={columns}
@@ -540,7 +576,9 @@ class EventManager extends Component {
                                     }}
                                     scroll={{
                                         y: 400
-                                    }} />
+                                    }}
+                                    onRow={this.confirmRow}
+                                    />
                             </Card>
                         </Col>
                         {/*<Col span={24}>

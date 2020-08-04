@@ -1,0 +1,17 @@
+.alarm-list-wrap {
+    position: fixed;
+    width: 8%;
+    top: 70px;
+    right: 0;
+    z-index: 100;
+    height: calc(100% - 70px);
+}
+
+.alarm-list-wrap .ant-card-body {
+    padding: 5px;
+}
+
+.ant-alert {
+    margin-bottom: 5px;
+}
+

@@ -134,7 +134,7 @@ const StatusAlert = () => {
                             </div>
                         </Card> 
                     </Col>
-                    <Col span={2}>
+                    {/*<Col span={2}>
                         <Card title="Alert list" size="small" className="alarm-list-wrap">
                             <div className="alarm-list">
                                 <Alert
@@ -144,7 +144,7 @@ const StatusAlert = () => {
                                     />
                             </div>
                         </Card>
-                    </Col>
+                    </Col>*/}
                 </Row>
             </div>
         </Fragment>

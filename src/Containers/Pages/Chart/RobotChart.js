@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import ReactSpeedometer from 'react-d3-speedometer';
 import Thermometer from 'react-thermometer-ecotropy';
+import {
+    G2, Chart, Geom, Axis, Tooltip, Coord, Label, Legend, View, Guide, Shape, Facet, Util
+} from 'bizcharts';
 // import highchartsMore from 'highcharts/highcharts-more';
 // import solidGauge from 'highcharts/modules/solid-gauge';
 // import FusionCharts from 'fusioncharts';
@@ -99,6 +102,274 @@ export const TempChart = () => {
                 needleTransition="easeElastic"
                 currentValueText="${value}°C"
             /></div>
+    );
+}
+
+export const RobotDataColumn = () => {
+
+    const option1 = {
+        chart: {
+            // zoomType: 'xy',
+            type: 'column',
+            backgroundColor: 'none',
+            height: 424,
+            animation: Highcharts.svg, // don't animate in old IE
+            events: {
+                load: null
+                /*function () {
+                    // set up the updating of the chart each second
+                    var series = this.series[0];
+                    setInterval(function () {
+                        var x = (new Date()).getTime(), // current time
+                            y = (Math.round(Math.random() * 2))
+                        series.addPoint([
+                            x, y
+                        ], true, true);
+                    }, 5000);
+                }*/
+            }
+        },
+
+        time: {
+            useUTC: false
+        },
+
+        title: {
+            text: '로봇 환경 데이터',
+            style: {
+                fontSize: '14px',
+                color: '#fff'
+            }
+        },
+        /*accessibility: {
+            announceNewData: {
+                enabled: true,
+                minAnnounceInterval: 15000,
+                announcementFormatter: function (allSeries, newSeries, newPoint) {
+                    if (newPoint) {
+                        return 'New point added. Value: ' + newPoint.y;
+                    }
+                    return false;
+                }
+            }
+        },*/
+
+        plotOptions: {
+            column: {
+                // pointPadding: 0.2,
+                borderWidth: 0
+            },
+            series: {
+                grouping: false
+            }
+        },
+
+        legend: {
+            enabled: true,
+            itemStyle: {
+                color: '#fff',
+                fontWeight: '400'
+            }
+        },
+
+        xAxis: {
+            type: 'category',
+            categories : ['온도','습도','연기','먼지','CO','CO2','O2','VOC','황화수소','이산화질소','암모니아'],
+            crosshair: true
+        },
+
+        yAxis: [{
+            labels: {
+                format: '{value}°C',
+                style: {
+                    color:'#fff',
+                }
+            },
+            title: {
+                text:'온도',
+                align:'high',
+                offset: 13,
+                rotation: 0,
+                y: -20,
+                style:{
+                    color: '#fff',
+                }
+            },
+        }, {
+            labels: {
+                format: '{value}%',
+                style: {
+                    color: '#fff',
+                }
+            },
+            title: {
+                text: '습도',
+                align:'high',
+                offset: 13,
+                rotation: 0,
+                y: -20,
+                style: {
+                    color: '#fff',
+                }
+            },
+            opposite: true,
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
+                }
+            },
+            title: {
+                text: '그 외',
+                align:'high',
+                offset: 13,
+                rotation: 0,
+                y: -20,
+                style: {
+                    color: '#fff',
+                }
+            },
+            opposite: true,
+        }],
+
+        tooltip: {
+            shared: true,
+            // headerFormat: '<b>{series.name}</b><br/>',
+            // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y}</b><br/>',
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        series: [
+            {
+                name:'온도',
+                yAxis: 0,
+                tooltip: {
+                    valueSuffix: ' °C',
+                },
+                data: [
+                    {x:0,y:24}
+                ],
+                visible: true
+            },
+            {
+                name:'습도',
+                yAxis: 1,
+                tooltip: {
+                    valueSuffix: ' %',
+                },
+                data: [
+                    {x:1,y:64}
+                ],
+                visible: true
+            },
+            {
+                name:'연기',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:2,y:5004}
+                ],
+                visible: true
+            },
+            {
+                name:'먼지',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:3,y:5024}
+                ],
+                visible: true
+            },
+            {
+                name:'co',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:4,y:5024}
+                ],
+                visible: true
+            },
+            {
+                name:'co2',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:5,y:5204}
+                ],
+                visible: true
+            },
+            {
+                name:'o2',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:6,y:5054}
+                ],
+                visible: true
+            },
+            {
+                name:'voc',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:7,y:5074}
+                ],
+                visible: true
+            },
+            {
+                name:'황화수소',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:8,y:5024}
+                ],
+                visible: true
+            },
+            {
+                name:'이산화질소',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:9,y:5004}
+                ],
+                visible: true
+            },
+            {
+                name:'암모니아',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:10,y:5020}
+                ],
+                visible: true
+            },
+        ],
+    }
+
+    return (
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{ marginTop: '15px' }} />
     );
 }
 
@@ -259,7 +530,7 @@ export const RobotDataChart1 = () => {
 
                     return data;
                 }())
-            }
+            },
         ]
     }
 
@@ -996,7 +1267,7 @@ export const ModeChart = () => {
         time: {
             useUTC: false
         },
-        
+
         title: {
             text: '',
             style: {
@@ -1067,13 +1338,13 @@ export const ModeChart = () => {
                 name: '자동 모드',
                 pointInterval: 24 * 3600 * 1000, // one day
                 pointStart: Date.UTC(2020, 6, 31),
-                data: [1,2,5,2,1,0,4],
+                data: [1, 2, 5, 2, 1, 0, 4],
             },
             {
                 name: '수동 모드',
                 pointInterval: 24 * 3600 * 1000, // one day
                 pointStart: Date.UTC(2020, 6, 31),
-                data: [3,2,5,2,5,9,1],
+                data: [3, 2, 5, 2, 5, 9, 1],
             }
         ]
     }
@@ -1235,6 +1506,81 @@ export const RobotChart7 = () => {
 }
 
 /*
+
+export class BizHistogram extends React.Component {
+    render() {
+      var data = [];
+
+      for (var i = 1; i <= 11; i++) {
+        data.push({
+          month: "" + i,
+          value: Math.round(Math.random() *30),
+        });
+      }
+
+      const scale = {
+        month: {
+          type: "cat",
+          formatter: function(dimValue) {
+            return dimValue + "月";
+          }
+        },
+        value: {
+          min: 0,
+          max: 30
+        }
+      };
+      let chart;
+
+      class RenderChart extends React.Component {
+        constructor() {
+          super();
+          this.state = {
+            data
+          };
+        }
+
+        componentDidMount() {
+          const _this = this;
+
+          setInterval(function() {
+
+            const newData = data.map(function(item) {
+              return {
+                value: Math.round(Math.random() *30),
+                month: item.month
+              };
+            });
+
+            _this.setState({
+              data: newData
+            });
+          }, 5000);
+        }
+
+        render() {
+          return (
+            <Chart
+              data={this.state.data}
+              scale={scale}
+              height={400}
+              forceFit
+            >
+                      <Tooltip/>
+              <Axis />
+              <Legend visible={false} />
+              <Geom type="interval" position="month*value" color="month" />
+            </Chart>
+          );
+        }
+      }
+      return (
+        <div>
+          <RenderChart  />
+        </div>
+      );
+    }
+  }
 
 export const TempGaugeChart = () => {
     return (

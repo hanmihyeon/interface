@@ -16,10 +16,6 @@
     margin-top: -50%;
 }
 
-.ant-alert-error {
-    background : #990c12;
-}
-
 .ant-modal-confirm-error .ant-modal-content {
     background: #da0101ec;
 }
@@ -79,10 +75,3 @@
     background: red;
 }
 
-.alarm-list-wrap {
-    height: 100%;
-}
-
-.alarm-list-wrap .ant-card-body {
-    padding: 5px;
-}

@@ -15,10 +15,12 @@ import EventManager from './Containers/Pages/Event/EventManager';
 import RobotControl from './Containers/Pages/Robot/RobotControl';
 import User from './Containers/Pages/Other/User';
 import Device from './Containers/Pages/Other/Device';
+import RobotControl1 from './Containers/Pages/Robot/RobotControl_1';
 
 import HeaderBox from './Layout/HeaderBox';
 // import FooterBox from './Layout/FooterBox';
 import ContentBox from './Layout/ContentBox';
+import Alarm from './Layout/Alarm';
 
 const {Content} = Layout;
 
@@ -33,6 +35,7 @@ class App extends Component {
                             <Content
                                 style={{
                                     padding: '0 0 0 10px',
+                                    width:'100%',
                                     minHeight: 'calc(100% - 70px)'
                                 }}>
                                 <ContentBox/>
@@ -43,9 +46,10 @@ class App extends Component {
                                     <Route path="/Home/Video" component={Video}/>
                                     <Route path="/Home/EventManager" component={EventManager}/>
                                     <Route path="/Home/RobotControl" component={RobotControl}/>
-                                    <Route path="/Home/User" component={User}/>
+                                    <Route path="/Home/User" component={RobotControl1}/>
                                     <Route path="/Home/Device" component={Device}/>
                                 </Switch>
+                                <Alarm/>
                             </Content>
                             {/*<FooterBox/>*/}
                         </div>

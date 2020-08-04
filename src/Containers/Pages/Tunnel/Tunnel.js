@@ -229,7 +229,8 @@ const Tunnel = (props) => {
                                         </div>
                                     </div>
                                 </Card>
-                                {/*<Card title="스테이션 이동" size="small" className="station-move" style={{ height: '50%' }}>
+                                {/* 스테이션 기능 삭제함
+                                <Card title="스테이션 이동" size="small" className="station-move" style={{ height: '50%' }}>
                                     <Form form={form} name="control" className="tunnel-form">
                                         <Form.Item name="station" label="station" >
                                             <Select
