@@ -48,8 +48,9 @@ export const VoltChart = () => {
                 width={180}
                 height={120}
                 needleColor="red"
-                startColor="green"
-                endColor="red"
+                /********색다시******************/
+                startColor="#005f00"
+                endColor="#a52f00"
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}V"
@@ -72,8 +73,9 @@ export const CurrentChart = () => {
                 width={180}
                 height={120}
                 needleColor="red"
-                startColor="green"
-                endColor="red"
+                /********색다시******************/
+                startColor="#005f00"
+                endColor="#a52f00"
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}A"
@@ -1227,7 +1229,7 @@ export const RobotStateChart = () => {
                     }
                     return data;
                 }()),
-                color: '#59ff7d'
+                color: '#005f00'
             }
         ]
     }

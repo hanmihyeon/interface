@@ -132,9 +132,9 @@
 }
 
 /* 스테이션 컨트롤 (제거) */
-.station-move {
+/*.station-move {
     position: relative;
-}
+}*/
 
 .ant-form-item:first-child {
     margin-top: 10px;
@@ -148,14 +148,14 @@
     margin-bottom: 8px;
 }
 
-.station-move-button {
+/*.station-move-button {
     position: absolute;
     top: 0;
     right: 0;
     width: 25%;
     background: #808080;
     color: black;
-}
+}*/
 
 /* 터널 상황*/
 .robot-tunnel-current {
@@ -338,5 +338,7 @@
 
 .thermometer__draw-b:before,
 .thermometer__draw-b:after {
-    background-color: #51b241!important;
+    /*background-color: #51b241!important;*/
+    /********색다시******************/
+    background-color: #005f00!important;
 }
