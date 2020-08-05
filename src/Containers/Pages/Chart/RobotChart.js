@@ -21,7 +21,7 @@ export const Thermom = () => {
             <h5 className="gauge-title">온도</h5>
             <Thermometer
                 theme="dark"
-                value="25"
+                value="285"
                 max="285"
                 steps="2"
                 format="°C"
@@ -50,7 +50,7 @@ export const VoltChart = () => {
                 needleColor="red"
                 /********색다시******************/
                 startColor="#005f00"
-                endColor="#a52f00"
+                endColor="#b50606"
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}V"
@@ -75,36 +75,13 @@ export const CurrentChart = () => {
                 needleColor="red"
                 /********색다시******************/
                 startColor="#005f00"
-                endColor="#a52f00"
+                endColor="#b50606"
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}A"
             /></div>
     );
 
-}
-export const TempChart = () => {
-    return (
-        <div className="temp-chart gauge-chart">
-            <h5 className="gauge-title">온도</h5>
-            <ReactSpeedometer
-                value={25}
-                maxValue={100}
-                minValue={-10}
-                segments={7}
-                ringWidth={15}
-                labelFontSize={"10px"}
-                valueTextFontSize={"15px"}
-                width={180}
-                height={120}
-                needleColor="red"
-                startColor="green"
-                endColor="red"
-                needleTransitionDuration={4000}
-                needleTransition="easeElastic"
-                currentValueText="${value}°C"
-            /></div>
-    );
 }
 
 export const RobotDataColumn = () => {
@@ -255,6 +232,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:0,y:24}
                 ],
+                color: '#3e5a76',
+                // #7cb5ec
                 visible: true
             },
             {
@@ -266,6 +245,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:1,y:64}
                 ],
+                color: '#3c3c40',
+                // #434348
                 visible: true
             },
             {
@@ -277,6 +258,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:2,y:5004}
                 ],
+                color: '#48763e',
+                // #90ed7d
                 visible: true
             },
             {
@@ -288,6 +271,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:3,y:5024}
                 ],
+                color: '#7b512e',
+                // #f7a35c
                 visible: true
             },
             {
@@ -299,6 +284,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:4,y:5024}
                 ],
+                color: '#404274',
+                // #8085e9
                 visible: true
             },
             {
@@ -310,6 +297,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:5,y:5204}
                 ],
+                color: '#782e40',
+                // #f15c80
                 visible: true
             },
             {
@@ -321,6 +310,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:6,y:5054}
                 ],
+                color: '#72692a',
+                // #e4d354
                 visible: true
             },
             {
@@ -332,6 +323,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:7,y:5074}
                 ],
+                color: '#154847',
+                // #2b908f
                 visible: true
             },
             {
@@ -343,6 +336,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:8,y:5024}
                 ],
+                color: '#7a2d2d',
+                // #f45b5b
                 visible: true
             },
             {
@@ -354,6 +349,8 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:9,y:5004}
                 ],
+                color: '#487470',
+                // #91e8e1
                 visible: true
             },
             {
@@ -365,6 +362,298 @@ export const RobotDataColumn = () => {
                 data: [
                     {x:10,y:5020}
                 ],
+                color: '#3e5a76',
+                // #7cb5ec
+                visible: true
+            },
+        ],
+    }
+
+    return (
+        <HighchartsReact Highcharts={Highcharts} options={option1} style={{ marginTop: '15px' }} />
+    );
+}
+
+export const RobotDataColumn1 = () => {
+
+    const option1 = {
+        chart: {
+            // zoomType: 'xy',
+            type: 'column',
+            backgroundColor: 'none',
+            height: 424,
+            animation: Highcharts.svg, // don't animate in old IE
+            events: {
+                load: null
+                /*function () {
+                    // set up the updating of the chart each second
+                    var series = this.series[0];
+                    setInterval(function () {
+                        var x = (new Date()).getTime(), // current time
+                            y = (Math.round(Math.random() * 2))
+                        series.addPoint([
+                            x, y
+                        ], true, true);
+                    }, 5000);
+                }*/
+            }
+        },
+
+        time: {
+            useUTC: false
+        },
+
+        title: {
+            text: '로봇 환경 데이터',
+            style: {
+                fontSize: '14px',
+                color: '#fff'
+            }
+        },
+        /*accessibility: {
+            announceNewData: {
+                enabled: true,
+                minAnnounceInterval: 15000,
+                announcementFormatter: function (allSeries, newSeries, newPoint) {
+                    if (newPoint) {
+                        return 'New point added. Value: ' + newPoint.y;
+                    }
+                    return false;
+                }
+            }
+        },*/
+
+        plotOptions: {
+            column: {
+                // pointPadding: 0.2,
+                borderWidth: 0
+            },
+            series: {
+                grouping: false
+            }
+        },
+
+        legend: {
+            enabled: true,
+            itemStyle: {
+                color: '#fff',
+                fontWeight: '400'
+            }
+        },
+
+        xAxis: {
+            type: 'category',
+            categories : ['온도','습도','연기','먼지','CO','CO2','O2','VOC','황화수소','이산화질소','암모니아'],
+            crosshair: true
+        },
+
+        yAxis: [{
+            labels: {
+                format: '{value}°C',
+                style: {
+                    color:'#fff',
+                }
+            },
+            title: {
+                text:'온도',
+                align:'high',
+                offset: 13,
+                rotation: 0,
+                y: -20,
+                style:{
+                    color: '#fff',
+                }
+            },
+        }, {
+            labels: {
+                format: '{value}%',
+                style: {
+                    color: '#fff',
+                }
+            },
+            title: {
+                text: '습도',
+                align:'high',
+                offset: 13,
+                rotation: 0,
+                y: -20,
+                style: {
+                    color: '#fff',
+                }
+            },
+            opposite: true,
+        }, {
+            labels: {
+                format: '{value}ppm',
+                style: {
+                    color: '#fff',
+                }
+            },
+            title: {
+                text: '그 외',
+                align:'high',
+                offset: 13,
+                rotation: 0,
+                y: -20,
+                style: {
+                    color: '#fff',
+                }
+            },
+            opposite: true,
+        }],
+
+        tooltip: {
+            shared: true,
+            // headerFormat: '<b>{series.name}</b><br/>',
+            // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y}</b><br/>',
+        },
+
+        exporting: {
+            enabled: false
+        },
+
+        series: [
+            {
+                name:'온도',
+                yAxis: 0,
+                tooltip: {
+                    valueSuffix: ' °C',
+                },
+                data: [
+                    {x:0,y:24}
+                ],
+                color: '#25425c',
+                // #7cb5ec
+                visible: true
+            },
+            {
+                name:'습도',
+                yAxis: 1,
+                tooltip: {
+                    valueSuffix: ' %',
+                },
+                data: [
+                    {x:1,y:64}
+                ],
+                color: '#d6d4a1',
+                // #434348
+                visible: true
+            },
+            {
+                name:'연기',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:2,y:5004}
+                ],
+                color: '#83b490',
+                // #90ed7d
+                visible: true
+            },
+            {
+                name:'먼지',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:3,y:5024}
+                ],
+                color: '#307671',
+                // #f7a35c
+                visible: true
+            },
+            {
+                name:'co',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:4,y:5024}
+                ],
+                color: '#610019',
+                // #8085e9
+                visible: true
+            },
+            {
+                name:'co2',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:5,y:5204}
+                ],
+                color: '#3b0056',
+                // #f15c80
+                visible: true
+            },
+            {
+                name:'o2',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:6,y:5054}
+                ],
+                color: '#d2691e',
+                // #e4d354
+                visible: true
+            },
+            {
+                name:'voc',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:7,y:5074}
+                ],
+                color: '#798488',
+                // #2b908f
+                visible: true
+            },
+            {
+                name:'황화수소',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:8,y:5024}
+                ],
+                color: '#75537c',
+                // #f45b5b
+                visible: true
+            },
+            {
+                name:'이산화질소',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:9,y:5004}
+                ],
+                color: '#487470',
+                // #91e8e1
+                visible: true
+            },
+            {
+                name:'암모니아',
+                yAxis: 2,
+                tooltip: {
+                    valueSuffix: ' ppm',
+                },
+                data: [
+                    {x:10,y:5020}
+                ],
+                color: '#c76345',
+                // #7cb5ec
                 visible: true
             },
         ],

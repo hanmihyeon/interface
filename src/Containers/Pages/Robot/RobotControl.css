@@ -333,12 +333,12 @@
 }
 
 .thermometer__bg-color {
-    background: linear-gradient(#f44336,#f49136,#FEFF37,#51B241)!important;
+    /*background: linear-gradient(#f44336,#f49136,#FEFF37,#51B241)!important;*/
+    background: linear-gradient(#f44336,#f49136,#feff37,#005f00)!important;
 }
 
 .thermometer__draw-b:before,
 .thermometer__draw-b:after {
     /*background-color: #51b241!important;*/
-    /********색다시******************/
     background-color: #005f00!important;
 }

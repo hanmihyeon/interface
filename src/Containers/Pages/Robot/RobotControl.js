@@ -17,7 +17,7 @@ import moment from 'moment';
 import {
     RobotStateChart,
     RobotDataColumn,
-    //BizHistogram,
+    RobotDataColumn1,
     RobotDataChart1,
     RobotDataChart2,
     RobotDataChart3,
@@ -298,7 +298,7 @@ const RobotControl = () => {
                                             width: '100%'
                                         }}>
                                         {/*<div className="unit-box">1분 단위</div>*/}
-                                        <div className="robot-data-chart data-row1 data-1"><RobotDataColumn /></div>
+                                        <div className="robot-data-chart data-row1 data-1"><RobotDataColumn1 /></div>
                                     </div>
                                 </Row>
                             </Card>
