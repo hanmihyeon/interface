@@ -178,14 +178,14 @@ const RobotControl = () => {
                                                 onConfirm={confirmPop}
                                                 okText="예"
                                                 cancelText="취소">
-                                                    <Radio value={1} onClick={showConfirm}>자동</Radio>
+                                                    <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
                                                 </Popconfirm>
                                                 <Popconfirm
                                                     title="설정하시겠습니까?"
                                                     onConfirm={confirmPop}
                                                     okText="예"
                                                     cancelText="취소">
-                                                    <Radio value={2} onClick={showConfirm}>수동</Radio>
+                                                    <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
                                                 </Popconfirm>
                                             </Radio.Group>
                                         </div>

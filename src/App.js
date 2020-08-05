@@ -13,7 +13,7 @@ import Tunnel from './Containers/Pages/Tunnel/Tunnel';
 import Video from './Containers/Pages/cctv/Video';
 import EventManager from './Containers/Pages/Event/EventManager';
 import RobotControl from './Containers/Pages/Robot/RobotControl';
-import User from './Containers/Pages/Other/User';
+// import User from './Containers/Pages/Other/User';
 import Device from './Containers/Pages/Other/Device';
 import RobotControl1 from './Containers/Pages/Robot/RobotControl_1';
 

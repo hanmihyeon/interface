@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import ReactSpeedometer from 'react-d3-speedometer';
 import Thermometer from 'react-thermometer-ecotropy';
-import {
-    G2, Chart, Geom, Axis, Tooltip, Coord, Label, Legend, View, Guide, Shape, Facet, Util
-} from 'bizcharts';
+
 // import highchartsMore from 'highcharts/highcharts-more';
 // import solidGauge from 'highcharts/modules/solid-gauge';
 // import FusionCharts from 'fusioncharts';
@@ -18,10 +16,10 @@ import {
 export const Thermom = () => {
     return (
         <div className="thermom">
-            <h5 className="gauge-title">온도</h5>
+            <h5 className="ther-chart gauge-title">온도</h5>
             <Thermometer
                 theme="dark"
-                value="285"
+                value="25"
                 max="285"
                 steps="2"
                 format="°C"
@@ -48,12 +46,11 @@ export const VoltChart = () => {
                 width={180}
                 height={120}
                 needleColor="red"
-                /********색다시******************/
                 startColor="#005f00"
                 endColor="#b50606"
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
-                currentValueText="${value}V"
+                currentValueText= "${value}V"
             /></div>
     );
 }
@@ -73,7 +70,6 @@ export const CurrentChart = () => {
                 width={180}
                 height={120}
                 needleColor="red"
-                /********색다시******************/
                 startColor="#005f00"
                 endColor="#b50606"
                 needleTransitionDuration={4000}
@@ -209,7 +205,7 @@ export const RobotDataColumn = () => {
                     color: '#fff',
                 }
             },
-            opposite: true,
+            opposite: false,
         }],
 
         tooltip: {
@@ -407,7 +403,8 @@ export const RobotDataColumn1 = () => {
             text: '로봇 환경 데이터',
             style: {
                 fontSize: '14px',
-                color: '#fff'
+                color: '#fff',
+                fontWeight: '600'
             }
         },
         /*accessibility: {
@@ -444,7 +441,12 @@ export const RobotDataColumn1 = () => {
         xAxis: {
             type: 'category',
             categories : ['온도','습도','연기','먼지','CO','CO2','O2','VOC','황화수소','이산화질소','암모니아'],
-            crosshair: true
+            crosshair: true,
+            labels: {
+                style: {
+                    color: '#fff'
+                }
+            }
         },
 
         yAxis: [{
@@ -481,7 +483,7 @@ export const RobotDataColumn1 = () => {
                     color: '#fff',
                 }
             },
-            opposite: true,
+            // opposite: true,
         }, {
             labels: {
                 format: '{value}ppm',

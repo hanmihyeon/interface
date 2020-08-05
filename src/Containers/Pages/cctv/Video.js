@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {Breadcrumb, Row, Col, Card, notification, Modal, Alert} from 'antd';
+import {Breadcrumb, Row, Col, Card, notification, Modal} from 'antd';
 import {LaptopOutlined, VideoCameraOutlined} from '@ant-design/icons';
 import {Player} from 'video-react';
 
@@ -8,11 +8,13 @@ import './Video.css';
 
 //html초입에서 height 설정안해서 적용안됨 세로 퍼센트
 const Video = (props) => {
+
+const robotState = 1;
 //나중에 배열로 camera url마다 지정해야할듯
 const v1 = 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4';  //분홍구름
 const v2 = 'http://media.w3.org/2010/05/bunny/movie.mp4';         //흰눈
 
-const eL =[1, 1, 1, 1, 2, 2, 2, 1, 1, 1];
+const eL =[1, 1, 1, 1, 2, 2, 2 , 1, 1, 1];
 const [eventlocation , setEventlocation] = useState(0);  //rerendering eventlocation
 const [videoUrl , setVideoUrl] = useState(v1);  //rerendering
     //https://media.w3.org/2010/05/sintel/trailer_hd.mp4   // http://media.w3.org/2010/05/bunny/movie.mp4
@@ -48,7 +50,7 @@ const VideoList = ({vList, index}) => {
 
 const StatusAlert = () => {
     setEventlocation(2);
-    const modal = Modal.error({
+    Modal.error({
         title:'Alert!',
         content: 'Warning'
     })
@@ -103,8 +105,14 @@ const StatusAlert = () => {
                             </Row>
                         </Card>
                         <Card>
-                            <div>
+                            <div className="robot-location">
                                 <div className="robot-location-bar"></div>
+                                <div className="robot-device">
+                                    <div className={robotState===1? 'robot-red robot' : (robotState===2? 'robot-yellow robot': (robotState===3?'robot-green robot-device':'robot-green robot'))}>
+                                        <div className="arrow-right"></div>
+                                        <div className="arrow-left"></div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="event">
                                 {eL.map(eL => (  <div className={eventlocation===eL ? 'event-section-red' : 'event-section' }></div> ))}
@@ -126,25 +134,20 @@ const StatusAlert = () => {
                             </Row>
                         </Card>
                         <Card>
-                            <div>
+                            <div className="robot-location">
                                 <div className="robot-location-bar"></div>
+                                <div className="robot-device">
+                                    <div className={robotState===1? 'robot-red robot' : (robotState===2? 'robot-yellow robot': (robotState===3?'robot-green robot-device':'robot-green robot'))}>
+                                        <div className="arrow-right"></div>
+                                        <div className="arrow-left"></div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="event">
                                 {eL.map(eL => (  <div className={eventlocation===eL ? 'event-section-red' : 'event-section' }></div> ))} 
                             </div>
                         </Card> 
                     </Col>
-                    {/*<Col span={2}>
-                        <Card title="Alert list" size="small" className="alarm-list-wrap">
-                            <div className="alarm-list">
-                                <Alert
-                                    message="Alert"
-                                    description="Warning"
-                                    type="error"
-                                    />
-                            </div>
-                        </Card>
-                    </Col>*/}
                 </Row>
             </div>
         </Fragment>

@@ -26,25 +26,109 @@
     border-color: white;
 }
 
+/* 로봇 위치 및 상태 */
+
+.robot-location {
+    position: relative;
+}
+
 .robot-location-bar {
     position: relative;
-    border: 3px solid #fff;
+    border: 3px solid gray;
     margin-bottom: 30px;
 }
 
-.robot-location-bar:after {
+.robot-device {
+    position: relative;
+}
+
+/*.robot-location-bar:after {
     position: absolute;
     content: "";
     clear: both;
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    background: black;
-    border: 1px solid #fff;
+    background: #005f00;
+    border: 1.5px solid #fff;
     top: -10px;
+    left: 450px;
     cursor: pointer;
+}*/
+
+.robot-location .robot-device .robot {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #206794;
+    border: 1.5px solid #fff;
+    z-index: 100;
+    top: -43px;
+    left: 456px;
 }
 
+.robot-green {
+    background: #005f00!important;
+}
+
+.robot-yellow {
+    background : #e8ea00!important;
+}
+
+.robot-red {
+    background: #5f0000!important;
+}
+
+.arrow-left {
+    display: none;
+    /* display: inline-block */
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    top: 3px;
+    left: -21px;
+    background-color: #206794;
+}
+
+.arrow-left:after {
+    position: absolute;
+    content: "";
+    clear: both;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #206794;
+    width: 0;
+    height: 0;
+    top: -5px;
+    left: -10px;
+}
+
+.arrow-right {
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    top: 3px;
+    left: 18px;
+    background-color: #206794;
+}
+
+.arrow-right:after {
+    position: absolute;
+    content: "";
+    clear: both;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #206794;
+    width: 0;
+    height: 0;
+    top: -5px;
+    left: 20px;
+}
+
+/* 사고 발생 위치 */
 .event {
     display: block;
     width: 100%;

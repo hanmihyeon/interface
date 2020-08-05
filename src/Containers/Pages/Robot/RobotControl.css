@@ -265,7 +265,7 @@
 }
 
 .robot-data-chart .highcharts-container {
-    padding-top: 8px;
+    padding-top: 10px;
 }
 
 /*
@@ -320,6 +320,10 @@
     justify-content: center;
 }
 
+.ther-chart {
+    margin-top: -10px;
+}
+
 .gauge-chart {
     width: 35%;
 }
@@ -334,7 +338,7 @@
 
 .thermometer__bg-color {
     /*background: linear-gradient(#f44336,#f49136,#FEFF37,#51B241)!important;*/
-    background: linear-gradient(#f44336,#f49136,#feff37,#005f00)!important;
+    background: linear-gradient(#5f0000,#d26b0b,#e8ea00,#005f00)!important;
 }
 
 .thermometer__draw-b:before,

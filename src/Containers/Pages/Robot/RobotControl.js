@@ -16,16 +16,16 @@ import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import moment from 'moment';
 import {
     RobotStateChart,
-    RobotDataColumn,
+    // RobotDataColumn,
     RobotDataColumn1,
-    RobotDataChart1,
-    RobotDataChart2,
-    RobotDataChart3,
-    RobotDataChart4,
+    // RobotDataChart1,
+    // RobotDataChart2,
+    // RobotDataChart3,
+    // RobotDataChart4,
     VoltChart,
     CurrentChart,
     Thermom,
-    ModeChart
+    // ModeChart
 } from '../Chart/RobotChart';
 
 import 'video-react/dist/video-react.css';
@@ -180,14 +180,14 @@ const RobotControl = () => {
                                             onConfirm={confirmPop}
                                             okText="예"
                                             cancelText="취소">
-                                            <Radio value={1} onClick={showConfirm}>자동</Radio>
+                                            <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
                                         </Popconfirm>
                                         <Popconfirm
                                             title="설정하시겠습니까?"
                                             onConfirm={confirmPop}
                                             okText="예"
                                             cancelText="취소">
-                                            <Radio value={2} onClick={showConfirm}>수동</Radio>
+                                            <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
                                         </Popconfirm>
                                     </Radio.Group>
                                 </div>
@@ -227,9 +227,10 @@ const RobotControl = () => {
                                     <div className="tunnel-status">
                                         <h4>현재 터널 상태</h4>
                                         <p>
-                                            위치 : 100m<br />
-                                                방향 : 전진<br />
-                                                속도 : 1.5m/s<br />
+                                            로봇 위치 : 100m<br />
+                                            방향 : 전진<br />
+                                            속도 : 1.5m/s<br />
+                                            사고 위치 : 
                                         </p>
                                     </div>
                                 </Col>
@@ -281,29 +282,27 @@ const RobotControl = () => {
                                 </Form>
                             </Card>
                         </Col>
-                        <Col span={16}>
+                        <Col span={15}>
                             <Card
                                 title="로봇 환경 센서"
                                 size="small"
                                 bodyStyle={{
-                                    padding: '12px 18px 12px 18px',
+                                    padding: '10px',
                                 }}>
-                                <Row>
                                     <div
                                         style={{
                                             display: 'flex',
                                             justifyContent: 'flex-start',
                                             marginBottom: '20px',
-                                            fontSize: '16px',
                                             width: '100%'
                                         }}>
                                         {/*<div className="unit-box">1분 단위</div>*/}
-                                        <div className="robot-data-chart data-row1 data-1"><RobotDataColumn1 /></div>
+                                        <div className="robot-data-chart data-1"><RobotDataColumn1 /></div>
                                     </div>
-                                </Row>
+                                
                             </Card>
                         </Col>
-                        <Col span={8}>
+                        <Col span={9}>
                             <Card
                                 title="로봇 상태"
                                 size="small"
@@ -311,7 +310,6 @@ const RobotControl = () => {
                                     padding: '12px 18px',
                                 }}>
                                 <Card
-
                                     size="small"
                                     style={{
                                         marginBottom: '10px'

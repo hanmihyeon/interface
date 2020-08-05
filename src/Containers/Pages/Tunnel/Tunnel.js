@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Select, Slider, Radio, Switch, Popconfirm, message } from 'antd';
+import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Slider, Radio, Switch, Popconfirm, message } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
 
 import { Player } from 'video-react';
@@ -17,14 +17,12 @@ import {
     SagnacChart
  } from '../Chart/TunnelChart';
 // import { TunnelChart } from '../Chart/SensorAvgChart';
-import { RobotDataChart1 } from '../Chart/RobotChart';
 
 import 'video-react/dist/video-react.css';
 import '../cctv/Video.css';
 import './Tunnel.css';
 import '../Common.css';
 
-const { Option } = Select;
 TweenOne
     .plugins
     .push(BezierPlugin);
@@ -207,14 +205,14 @@ const Tunnel = (props) => {
                                                 onConfirm={confirmPop}
                                                 okText="예"
                                                 cancelText="취소">
-                                                    <Radio value={1} onClick={showConfirm}>자동</Radio>
+                                                    <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
                                                 </Popconfirm>
                                                 <Popconfirm
                                                     title="설정하시겠습니까?"
                                                     onConfirm={confirmPop}
                                                     okText="예"
                                                     cancelText="취소">
-                                                    <Radio value={2} onClick={showConfirm}>수동</Radio>
+                                                    <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
                                                 </Popconfirm>
                                             </Radio.Group>
                                     </div>
