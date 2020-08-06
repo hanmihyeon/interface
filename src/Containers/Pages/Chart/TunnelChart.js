@@ -8,6 +8,137 @@ import HighchartsReact from 'highcharts-react-official';
 colors: ['#D63249','#E16929','#E0B74E','#39A048','#32A4D7'],
 colors: ['#9e3953', '#dd713e', '#9e8439', '#529e39', '#39539e'],*/
 
+export const FBG = () => {
+  const option1 = {
+      chart: {
+          // zoomType: 'xy',
+          type: 'column',
+          backgroundColor: 'none',
+          height: 160,
+          animation: Highcharts.svg, // don't animate in old IE
+          events: {
+              load: null
+          }
+      },
+
+      time: {
+          useUTC: false
+      },
+
+      title: {
+          text: 'FBG 센서 데이터',
+          style: {
+              fontSize: '14px',
+              color: '#fff'
+          }
+      },
+
+      plotOptions: {
+          series: {
+              marker: {
+                  enabled: false
+              },
+          },
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+          }
+      },
+
+      legend: {
+          align: 'right',
+          verticalAlign: 'top',
+          floating: true,
+          x: -42,
+          y: -6,
+          enabled: true,
+          itemStyle: {
+              color: '#fff',
+              fontWeight: '400'
+          }
+      },
+
+      xAxis: {
+          categories: ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30'],
+          crosshair: true
+      },
+
+      yAxis: [{
+          labels: {
+              format: '{value}°C',
+              style: {
+                  color: '#fff',
+              }
+          },
+          title: {
+              text: '온도',
+              align:'high',
+              offset: 19,
+              rotation: 0,
+              y: -20,
+              style: {
+                  color: '#fff',
+              }
+          },
+      }, {
+          labels: {
+              format: '{value}dB',
+              style: {
+                  color: '#fff'
+                  // Highcharts.getOptions().colors[0]
+              }
+          },
+          title: {
+              text: '음향',
+              align:'high',
+              offset: 18,
+              rotation: 0,
+              y: -20,
+              style: {
+                  color: '#fff'
+                  // Highcharts.getOptions().colors[0]
+              }
+          },
+          opposite: true
+      }],
+
+      tooltip: {
+          shared: true,
+          // headerFormat: '<b>{series.name}</b><br/>',
+          // pointFormat: '<span style="color:{point.color}">●</span> {series.name} : <b>{point.y}</b><br/>',
+      },
+
+      exporting: {
+          enabled: false
+      },
+
+      series: [
+          {
+              name: '온도',
+              yAxis: 0,
+              color: '#51b241',
+              tooltip: {
+                  valueSuffix: ' °C',
+              },
+              data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 95.6, 54.4]
+          },
+          {
+              name: '음향',
+              yAxis: 1,
+              tooltip: {
+                  valueSuffix: ' dB',
+              },
+              data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 95.6, 54.4]
+          },
+      ]
+  }
+
+  return (
+      <HighchartsReact Highcharts={Highcharts} options={option1} />
+  );
+}
+
+
 export class TodayStatus extends React.Component {
   constructor(props) {
     super(props);
@@ -93,13 +224,13 @@ export class TunnelRadial1 extends React.Component {
       series: [25],
       options: {
         chart: {
-          height: 250,
+          height: 350,
           type: 'radialBar',
         },
         plotOptions: {
           radialBar: {
             hollow: {
-              size: '60%',
+              size: '65%',
             }
           },
         },
@@ -119,8 +250,8 @@ export class TunnelRadial1 extends React.Component {
   }
   render() {
     return (
-      <div id="chart">
-        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={180} />
+      <div id="chart" style={{marginTop: '15%'}}>
+        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={230} />
       </div>
     );
   }
@@ -139,7 +270,7 @@ export class TunnelRadial2 extends React.Component {
         plotOptions: {
           radialBar: {
             hollow: {
-              size: '60%',
+              size: '65%',
             }
           },
         },
@@ -153,8 +284,8 @@ export class TunnelRadial2 extends React.Component {
   }
   render() {
     return (
-      <div id="chart">
-        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={180} />
+      <div id="chart" style={{marginTop: '15%'}}>
+        <ReactApexChart options={this.state.options} series={this.state.series} type="radialBar" height={230} />
       </div>
     );
   }
@@ -398,21 +529,10 @@ export const SagnacChart = () => {
   const option1 = {
     chart: {
       backgroundColor: 'none',
-      height: 280,
+      height: 290,
       animation: Highcharts.svg, // don't animate in old IE
       events: {
         load: null
-        /*function () {
-            // set up the updating of the chart each second
-            var series = this.series[0];
-            setInterval(function () {
-                var x = (new Date()).getTime(), // current time
-                    y = (Math.round(Math.random() * 2))
-                series.addPoint([
-                    x, y
-                ], true, true);
-            }, 5000);
-        }*/
       }
     },
 

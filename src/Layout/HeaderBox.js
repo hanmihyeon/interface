@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Avatar, Layout, Menu, Typography } from 'antd';
+import Clock from 'react-live-clock';
 import 'antd/dist/antd.dark.css';
 import {
     UserOutlined,
@@ -22,7 +23,24 @@ const { Header } = Layout
 class HeaderBox extends Component {
     state = {
         current: '',
+        // thisTime: new Date()
     };
+
+    /*componentDidMount() {
+        this.timeID = setInterval(
+            () => this.Change(),
+        )
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.timeID)
+    }
+
+    Change = () => {
+        this.setState({
+            thisTime : new Date(),
+        })
+    }*/
 
     handleClick = e => {
         this.setState({ current: e.key });
@@ -78,8 +96,12 @@ class HeaderBox extends Component {
                         </Menu>
                     </div>
                     <div className="user-info">
+                        <div style={{fontWeight:'bold'}}>
+                            <Clock format={'YYYY년 MM월 DD일 HH:mm:ss'} ticking={true}/>
+                        </div>
+                        {/*<div>{this.state.thisTime.getHours()}:{this.state.thisTime.getMinutes()}</div>*/}
                         <div>Login</div>
-                        <div>hello</div>
+                        <div>Admin</div>
                         <div>
                             <Avatar className="user-avatar" size={25} icon={<UserOutlined />} />
                         </div>

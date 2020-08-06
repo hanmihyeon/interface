@@ -75,7 +75,8 @@
 
 .user-confirm {
     width: 50%;
-    background-color: #177ddc; /*#a03636;*/
+    background-color: #0b3e6e; /*#a03636;*/
+    border: 0.5px solid #303030;
     color: #fff;
 }
 

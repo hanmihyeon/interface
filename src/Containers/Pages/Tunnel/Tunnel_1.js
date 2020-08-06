@@ -1,3 +1,4 @@
+/******************** 0806 버전 *******************/
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Slider, Radio, Switch, Popconfirm, message } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
@@ -8,7 +9,6 @@ import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
 
 import { 
-    FBG,
     TodayStatus,
     TunnelRadial1,
     TunnelRadial2,
@@ -132,7 +132,7 @@ const Tunnel = (props) => {
             </Breadcrumb>
             <div className="video contents">
                 <Row gutter={12} style={{ height: '100%' }}>
-                    <Col span={11} style={{ height: '100%' }}>
+                    <Col span={11}>
                         <Card style={{ height: '50%' }}>
                             <Player
                                 playsInline="playsInline"
@@ -147,8 +147,8 @@ const Tunnel = (props) => {
                             </Row>
                         </Card>
                     </Col>
-                    <Col span={11} style={{ height: '100%' }}>
-                        <Card title="터널 상태" size="small" style={{ height: '15%' }}>
+                    <Col span={11}>
+                        <Card title="터널 상태" size="small" style={{ height: '20%' }}>
                             <div className="tunnel">
                                 <div className="tunnel-rail"></div>
                                 <TweenOne animation={animation}>
@@ -156,13 +156,8 @@ const Tunnel = (props) => {
                                 </TweenOne>
                             </div>
                         </Card>
-                        <Card style={{height:'20%'}}>
-                            <div className="fbg-chart">
-                                <FBG />
-                            </div>
-                        </Card>
                         <Row style={{ height: '30%' }}>
-                            <Col span={8}>
+                            <Col span={8} style={{ height: '100%' }}>
                                 <Card title="로봇 컨트롤" size="small" className="tunnel-robot-move-control" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px' }}>
                                     <div className="tunnel-robot-move-control-wrap">
                                         <div className="tunnel-robot-left-button">
@@ -201,7 +196,7 @@ const Tunnel = (props) => {
                                     </div>
                                 </Card>
                             </Col>
-                            <Col span={8}>
+                            <Col span={8} style={{ height: '100%' }}>
                                 <Card title="컨트롤" size="small" className="tunnel-robot-control" style={{ height: '100%' }}>
                                     <div className="radio">
                                         <span>감시모드</span>
@@ -233,19 +228,60 @@ const Tunnel = (props) => {
                                         </div>
                                     </div>
                                 </Card>
+                                {/* 스테이션 기능 삭제함
+                                <Card title="스테이션 이동" size="small" className="station-move" style={{ height: '50%' }}>
+                                    <Form form={form} name="control" className="tunnel-form">
+                                        <Form.Item name="station" label="station" >
+                                            <Select
+                                                placeholder="스테이션 이동"
+                                                allowClear>
+                                                <Option value="Camera1">Camera1</Option>
+                                                <Option value="Camera2">Camera2</Option>
+                                                <Option value="Camera3">Camera3</Option>
+                                                <Option value="Camera4">Camera4</Option>
+                                            </Select>
+                                        </Form.Item>
+                                        <Form.Item>
+                                            <Popconfirm
+                                                title="스테이션을 이동하시겠습니까?"
+                                                onConfirm={confirmStation}
+                                                okText="예"
+                                                cancelText="취소"><Button className="schedule-button" htmlType="설정">
+                                                    설정
+                                                </Button>
+                                            </Popconfirm>
+                                        </Form.Item>
+                                    </Form>
+                                </Card>*/}
                             </Col>
-                            <Col span={8}>
+                            <Col span={8} style={{ height: '100%' }}>
                                 <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px', padding:'8px' }}>
                                     <div className="status-time">2020-07-01 ~ 2020-7-31</div>
                                     <TodayStatus />
                                 </Card>
                             </Col>
                         </Row>
-                        <Card title="데이터 정보" size="small" className="sensor-status" style={{ height: '35%' }}>
+                        <Card title="데이터 정보" size="small" className="sensor-status" style={{ height: '50%' }}>
                             <div className="sensor">
                                 <Col span={6}><TunnelRadial1 /></Col>
                                 <Col span={6}><TunnelRadial2 /></Col>
+                                <Col span={6}><TunnelRadial3 /></Col>
+                                <Col span={6}><TunnelRadial4 /></Col>
+                            </div>
+                            <div className="sensor-chart">
+                                <Col span={12}><FBGChart /></Col>
                                 <Col span={12}><SagnacChart /></Col>
+                            </div>
+                        </Card>
+                    </Col>
+                    <Col span={2}>
+                        <Card title="Alert list" size="small" className="alarm-list-wrap">
+                            <div className="alarm-list">
+                                <Alert
+                                    message="Alert"
+                                    description="Warning"
+                                    type="error"
+                                />
                             </div>
                         </Card>
                     </Col>
