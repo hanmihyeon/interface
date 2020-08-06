@@ -368,17 +368,6 @@ export const FBGChart = () => {
       animation: Highcharts.svg, // don't animate in old IE
       events: {
         load: null
-        /*function () {
-            // set up the updating of the chart each second
-            var series = this.series[0];
-            setInterval(function () {
-                var x = (new Date()).getTime(), // current time
-                    y = (Math.round(Math.random() * 2))
-                series.addPoint([
-                    x, y
-                ], true, true);
-            }, 5000);
-        }*/
       }
     },
 
@@ -393,19 +382,7 @@ export const FBGChart = () => {
         color: '#fff'
       }
     },
-    /*accessibility: {
-        announceNewData: {
-            enabled: true,
-            minAnnounceInterval: 15000,
-            announcementFormatter: function (allSeries, newSeries, newPoint) {
-                if (newPoint) {
-                    return 'New point added. Value: ' + newPoint.y;
-                }
-                return false;
-            }
-        }
-    },*/
-
+    
     plotOptions: {
       series: {
         marker: {
@@ -547,18 +524,6 @@ export const SagnacChart = () => {
         color: '#fff'
       }
     },
-    /*accessibility: {
-        announceNewData: {
-            enabled: true,
-            minAnnounceInterval: 15000,
-            announcementFormatter: function (allSeries, newSeries, newPoint) {
-                if (newPoint) {
-                    return 'New point added. Value: ' + newPoint.y;
-                }
-                return false;
-            }
-        }
-    },*/
 
     plotOptions: {
       series: {
@@ -638,38 +603,3 @@ export const SagnacChart = () => {
     <HighchartsReact Highcharts={Highcharts} options={option1} style={{ marginTop: '15px' }} />
   );
 }
-
-/* export const TunnelChart = () => {
-
-  const options = {
-    series: [67],
-    chart: {
-      height: 350,
-      type: "radialBar",
-      offsetY: -10
-    },
-    plotOptions: {
-      radialBar: {
-        dataLabels: {
-          name: {
-            offsetY: 20,
-            color: "green",
-            formatter: function () {
-              return ["Posts", "(30 days)"];
-            }
-          },
-          value: {
-            color: "#111",
-            offsetY: -30,
-            fontSize: "22px"
-          }
-        }
-      }
-    },
-    labels: ["Median Ratio"]
-  };
-
-  return (
-    <ReactApexChart options={options} type="radialBar" height={150} />
-  );
-} */
