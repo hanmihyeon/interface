@@ -50,11 +50,11 @@
 .robot {
     position: absolute;
     display: flex;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     margin: 0 40px;
     background: #1890FF;
-    border: 3px solid blue;
+    border: 1.5px solid blue;
 }
 
 /* FBG */

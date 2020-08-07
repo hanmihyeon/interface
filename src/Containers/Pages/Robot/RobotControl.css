@@ -162,6 +162,7 @@
     position: relative;
     width: 70%;
     height: 250px;
+    padding: 0 20px!important;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -173,10 +174,40 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin: 0 20px;
+    margin: 0px;
     height: 100px;
     box-sizing: border-box;
-    background-color: gray;
+}
+
+.tunnel-section {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    width: 10%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    background: #808080;
+    border: 0.5px solid #000;
+}
+
+.tunnel-section-red {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    width: 10%;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    border: 0.5px solid #000;
+    background: red;
+}
+
+.section-distance {
+    position: absolute;
+    color: black;
+    width: 100%;
+    top: 0;
 }
 
 .robot-tunnel-direction {
@@ -189,7 +220,7 @@
 }
 
 .robot-tunnel-rail {
-    position: relative;
+    position: absolute;
     display: flex;
     width: 100%;
     height: 1px;
@@ -198,7 +229,7 @@
 
 .robot-cctv {
     position: absolute;
-    margin-left: -130px;
+    margin-left: -10%;
     font-size: 20px;
     color: black;
     width: 100%;
@@ -209,8 +240,8 @@
 .robot {
     position: absolute;
     display: flex;
-    width: 30px;
-    height: 30px;
+    width: 10px;
+    height: 10px;
     margin: 0 40px;
     background: #1890FF;
     border: 3px solid blue;

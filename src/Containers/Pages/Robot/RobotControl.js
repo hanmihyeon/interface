@@ -8,26 +8,21 @@ import {
     Popconfirm, message,
     DatePicker, Input
 } from 'antd';
-import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined, ArrowRightOutlined } from '@ant-design/icons';
+import { RobotOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
-import TweenOne from 'rc-tween-one';
-import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
+
 import moment from 'moment';
 import {
     RobotStateChart,
     // RobotDataColumn,
     RobotDataColumn1,
-    // RobotDataChart1,
-    // RobotDataChart2,
-    // RobotDataChart3,
-    // RobotDataChart4,
     VoltChart,
     CurrentChart,
-    Thermom,
-    // ModeChart
+    Thermom
 } from '../Chart/RobotChart';
 
+import { TunnelStatus } from '../Tunnel/TunnelStatus';
 import 'video-react/dist/video-react.css';
 import '../Common.css';
 import '../cctv/Video.css';
@@ -36,35 +31,14 @@ import './RobotControl.css';
 const { TabPane } = Tabs;
 const { Option } = Select;
 
-TweenOne
-    .plugins
-    .push(BezierPlugin);
-
 //조이스틱 컬러 파스텔 변경
 const RobotControl = () => {
 
     // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
     const [conVisible, setCon] = useState(false);
-
-    const animation = {
-        bezier: {
-            type: 'soft',
-            vars: [
-                {
-                    x: 0,
-                    y: 0
-                }, {
-                    x: 1000,
-                    y: 0
-                }
-            ]
-        },
-        repeat: -1,
-        yoyo: true,
-        duration: 10000
-    };
-
+    const [eventlocation, setEventlocation] = useState(0);
+    
     function confirmPop(e) {
         message.success('설정되었습니다!');
     }
@@ -93,12 +67,16 @@ const RobotControl = () => {
         };
     }
 
+    const StatusAlert = () => {
+        setEventlocation(2);
+    };
+
+
     return (<Fragment>
         <Breadcrumb className="bread">
-            <Breadcrumb.Item><DashboardOutlined />&nbsp;&nbsp;Event</Breadcrumb.Item>
-            <Breadcrumb.Item><DatabaseOutlined />&nbsp;Robot Control</Breadcrumb.Item>
+            <Breadcrumb.Item><RobotOutlined />&nbsp; 로봇 제어</Breadcrumb.Item>
         </Breadcrumb>
-        <Tabs type="card" style={{width:'91.6%'}}>
+        <Tabs type="card" style={{ width: '91.6%' }}>
             <TabPane tab="부강-&gt;청주" key="1">
                 <div className="robot-control robot-contents">
                     <Row gutter={[6, 6]}>
@@ -112,7 +90,7 @@ const RobotControl = () => {
                                     src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                                     autoPlay={true}
                                     muted={true} />
-                                <div className="video-info">[부강 -&gt; 청주] 로봇 카메라(일반)</div>
+                                <div className="video-info" onClick={StatusAlert}>[부강 -&gt; 청주] 로봇 카메라(일반)</div>
                             </Card>
                         </Col>
                         <Col span={8}>
@@ -211,17 +189,7 @@ const RobotControl = () => {
                                 justifyContent: 'space-around'
                             }}>
                                 <Col span={20} className="robot-tunnel-current">
-                                    <div className="robot-tunnel">
-                                        <div className="robot-tunnel-direction"><ArrowRightOutlined /></div>
-                                        <div className="robot-tunnel-rail">
-                                            <div className="robot-cctv">
-                                                <VideoCameraOutlined /><VideoCameraOutlined /><VideoCameraOutlined /><VideoCameraOutlined />
-                                            </div>
-                                            <TweenOne animation={animation}>
-                                                <div className="robot"></div>
-                                            </TweenOne>
-                                        </div>
-                                    </div>
+                                    <TunnelStatus />
                                 </Col>
                                 <Col span={4} className="tunnel-current-status">
                                     <div className="tunnel-status">
@@ -230,7 +198,7 @@ const RobotControl = () => {
                                             로봇 위치 : 100m<br />
                                             방향 : 전진<br />
                                             속도 : 1.5m/s<br />
-                                            사고 위치 : 
+                                            사고 위치 :
                                         </p>
                                     </div>
                                 </Col>
@@ -240,7 +208,7 @@ const RobotControl = () => {
                             <Card title="스케줄" size="small">
                                 <Form form={form} name="schedule">
                                     <Form.Item name="location" label="위치" >
-                                        <Input
+                                        <Input 
                                             className="start-location"
                                             placeholder="시작 위치"
                                             suffix="m" />
@@ -289,17 +257,17 @@ const RobotControl = () => {
                                 bodyStyle={{
                                     padding: '10px',
                                 }}>
-                                    <div
-                                        style={{
-                                            display: 'flex',
-                                            justifyContent: 'flex-start',
-                                            marginBottom: '20px',
-                                            width: '100%'
-                                        }}>
-                                        {/*<div className="unit-box">1분 단위</div>*/}
-                                        <div className="robot-data-chart data-1"><RobotDataColumn1 /></div>
-                                    </div>
-                                
+                                <div
+                                    style={{
+                                        display: 'flex',
+                                        justifyContent: 'flex-start',
+                                        marginBottom: '20px',
+                                        width: '100%'
+                                    }}>
+                                    {/*<div className="unit-box">1분 단위</div>*/}
+                                    <div className="robot-data-chart data-1"><RobotDataColumn1 /></div>
+                                </div>
+
                             </Card>
                         </Col>
                         <Col span={9}>

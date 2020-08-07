@@ -13,6 +13,7 @@ import Tunnel from './Containers/Pages/Tunnel/Tunnel';
 import Video from './Containers/Pages/cctv/Video';
 import EventManager from './Containers/Pages/Event/EventManager';
 import RobotControl from './Containers/Pages/Robot/RobotControl';
+import HealthCheck from './Containers/Pages/HealthCheck/HealthCheck';
 // import User from './Containers/Pages/Other/User';
 import Device from './Containers/Pages/Other/Device';
 import RobotControl1 from './Containers/Pages/Robot/RobotControl_1';
@@ -46,6 +47,7 @@ class App extends Component {
                                     <Route path="/Home/Video" component={Video}/>
                                     <Route path="/Home/EventManager" component={EventManager}/>
                                     <Route path="/Home/RobotControl" component={RobotControl}/>
+                                    <Route path="/Home/HealthCheck" component={HealthCheck}/>
                                     <Route path="/Home/User" component={RobotControl1}/>
                                     <Route path="/Home/Device" component={Device}/>
                                 </Switch>

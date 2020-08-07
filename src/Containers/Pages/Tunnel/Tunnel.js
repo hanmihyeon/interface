@@ -1,10 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Slider, Radio, Switch, Popconfirm, message } from 'antd';
-import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { LaptopOutlined} from '@ant-design/icons';
 
 import { Player } from 'video-react';
-import TweenOne from 'rc-tween-one';
-import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
 
 import { 
@@ -12,26 +10,21 @@ import {
     TodayStatus,
     TunnelRadial1,
     TunnelRadial2,
-    TunnelRadial3,
-    TunnelRadial4,
     FBGChart,
     SagnacChart
  } from '../Chart/TunnelChart';
-// import { TunnelChart } from '../Chart/SensorAvgChart';
+ import { TunnelStatus } from './TunnelStatus';
 
 import 'video-react/dist/video-react.css';
 import '../cctv/Video.css';
 import './Tunnel.css';
 import '../Common.css';
 
-TweenOne
-    .plugins
-    .push(BezierPlugin);
-
 //html초입에서 height 설정안해서 적용안됨 세로 퍼센트
 const Tunnel = (props) => {
 
     const [conVisible, setCon] = useState(false);
+    const [eventlocation, setEventlocation] = useState(0);
 
     function confirmPop(e) {
         message.success('설정되었습니다!');
@@ -78,7 +71,7 @@ const Tunnel = (props) => {
     }
 
     const StatusAlert = () => {
-
+        setEventlocation(2);
         notification.open({
             message: 'Alert',
             style: {
@@ -114,21 +107,20 @@ const Tunnel = (props) => {
                     x: 0,
                     y: 0
                 }, {
-                    x: 1350,
+                    x: 750,
                     y: 0
                 }
             ]
         },
         repeat: -1,
         yoyo: true,
-        duration: 10000
+        duration: 20000
     };
 
     return (
         <Fragment>
             <Breadcrumb className="bread">
-                <Breadcrumb.Item><LaptopOutlined />&nbsp;&nbsp;Multimedia</Breadcrumb.Item>
-                <Breadcrumb.Item><VideoCameraOutlined />&nbsp;Video</Breadcrumb.Item>
+                <Breadcrumb.Item><LaptopOutlined />&nbsp;&nbsp; 터널 운영</Breadcrumb.Item>
             </Breadcrumb>
             <div className="video contents">
                 <Row gutter={12} style={{ height: '100%' }}>
@@ -149,12 +141,7 @@ const Tunnel = (props) => {
                     </Col>
                     <Col span={11} style={{ height: '100%' }}>
                         <Card title="터널 상태" size="small" style={{ height: '15%' }}>
-                            <div className="tunnel">
-                                <div className="tunnel-rail"></div>
-                                <TweenOne animation={animation}>
-                                    <div className="robot"></div>
-                                </TweenOne>
-                            </div>
+                            <TunnelStatus/>
                         </Card>
                         <Card style={{height:'20%'}}>
                             <div className="fbg-chart">

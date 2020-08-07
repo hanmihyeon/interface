@@ -85,8 +85,7 @@ const StatusAlert = () => {
     return (
         <Fragment>
             <Breadcrumb className="bread">
-                <Breadcrumb.Item><LaptopOutlined/>&nbsp;&nbsp;Multimedia</Breadcrumb.Item>
-                <Breadcrumb.Item><VideoCameraOutlined/>&nbsp;Video</Breadcrumb.Item>
+                <Breadcrumb.Item><VideoCameraOutlined/>&nbsp; CCTV 모니터링</Breadcrumb.Item>
             </Breadcrumb>
             <div className="video contents">
                 <Row gutter={12} style={{height:'100%'}}>

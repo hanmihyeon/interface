@@ -10,7 +10,8 @@ import {
     VideoCameraOutlined,
     RobotOutlined,
     BulbOutlined,
-    ToolOutlined
+    ToolOutlined,
+    CheckCircleOutlined
 } from '@ant-design/icons'
 import { Link } from 'react-router-dom';
 
@@ -76,8 +77,12 @@ class HeaderBox extends Component {
                                 <Link to="/Home/EventManager" />
                             </Menu.Item>
                             <Menu.Item key="4" icon={<LineChartOutlined />}>
-                                터널
+                                터널 운영
                                     <Link to="/Home/Tunnel" />
+                            </Menu.Item>
+                            <Menu.Item key="8" icon={<CheckCircleOutlined />}>
+                                헬스 체크
+                                    <Link to="/Home/HealthCheck" />
                             </Menu.Item>
                             <SubMenu key="sub1" icon={<DashboardOutlined />} title="대시보드">
                                 <Menu.Item key="5" to={'/Dashboard'} icon={<DatabaseOutlined />}>

@@ -12,7 +12,7 @@ import {
     Popover
 } from 'antd';
 
-import { SettingOutlined, UserOutlined, ZoomInOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+import { UserOutlined, ZoomInOutlined, QuestionCircleOutlined } from '@ant-design/icons';
 import '../Common.css';
 import './Event.css';
 // import DownloadLink from 'react-download-link';
@@ -557,8 +557,7 @@ class EventManager extends Component {
         return (
             <Fragment>
                 <Breadcrumb className="bread">
-                    <Breadcrumb.Item><SettingOutlined />&nbsp;&nbsp;Event</Breadcrumb.Item>
-                    <Breadcrumb.Item><UserOutlined />&nbsp;Event Manager</Breadcrumb.Item>
+                    <Breadcrumb.Item><UserOutlined />&nbsp; 이벤트 매니저</Breadcrumb.Item>
                 </Breadcrumb>
                 <div className="event-manager contents" style={{width:'91.6%'}} id="event">
                     <Row gutter={[6, 6]}>
