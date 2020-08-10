@@ -9,7 +9,7 @@ export const SagnacAvgChart = () => {
             type: 'line',
             marginTop: 50,
             height: 300,
-            width:null,
+            width: null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -80,7 +80,7 @@ export const SagnacAvgChart = () => {
 
         legend: {
             enabled: false,
-            
+
         },
 
         exporting: {
@@ -110,9 +110,9 @@ export const SagnacAvgChart = () => {
     }
 
     return (
-        <div style={{margin: '40px 0 0 30px'}}>
+        <div style={{ margin: '40px 0 0 30px' }}>
             <div>
-                <HighchartsReact Highcharts={Highcharts} options={optionavg1} style={{overflow:'visible'}}/></div>
+                <HighchartsReact Highcharts={Highcharts} options={optionavg1} style={{ overflow: 'visible' }} /></div>
         </div>
     );
 }
@@ -124,7 +124,7 @@ export const TempAvgChart = () => {
             type: 'line',
             marginTop: 50,
             height: 300,
-            width:null,
+            width: null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -226,7 +226,7 @@ export const TempAvgChart = () => {
 
     return (
         <div>
-            <div style={{margin: '40px 0 0 30px'}}>
+            <div style={{ margin: '40px 0 0 30px' }}>
                 <HighchartsReact Highcharts={Highcharts} options={optionavg2} /></div>
         </div>
     );
@@ -239,7 +239,7 @@ export const SoundAvgChart = () => {
             type: 'line',
             marginTop: 50,
             height: 280,
-            width:null,
+            width: null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -341,8 +341,8 @@ export const SoundAvgChart = () => {
 
     return (
         <div>
-            <div style={{margin: '60px 0 0 30px'}}>
-                <HighchartsReact Highcharts={Highcharts} options={optionavg3}/></div>
+            <div style={{ margin: '60px 0 0 30px' }}>
+                <HighchartsReact Highcharts={Highcharts} options={optionavg3} /></div>
         </div>
     );
 }
@@ -354,7 +354,7 @@ export const TunnelChart = () => {
             type: 'line',
             marginTop: 50,
             height: 285,
-            width:null,
+            width: null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -426,7 +426,7 @@ export const TunnelChart = () => {
 
         legend: {
             enabled: false,
-            
+
         },
 
         exporting: {
@@ -456,9 +456,9 @@ export const TunnelChart = () => {
     }
 
     return (
-        <div style={{margin: '-10px 0 0 0px'}}>
+        <div style={{ margin: '-10px 0 0 0px' }}>
             <div>
-                <HighchartsReact Highcharts={Highcharts} options={optionavg1} style={{overflow:'visible'}}/></div>
+                <HighchartsReact Highcharts={Highcharts} options={optionavg1} style={{ overflow: 'visible' }} /></div>
         </div>
     );
 }

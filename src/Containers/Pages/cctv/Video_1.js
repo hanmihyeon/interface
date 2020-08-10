@@ -87,23 +87,23 @@ const Video = (props) => {
             <Breadcrumb className="bread">
                 <Breadcrumb.Item><VideoCameraOutlined />&nbsp; CCTV 모니터링</Breadcrumb.Item>
             </Breadcrumb>
-            <div className="video contents">
+            <div className="video contents" style={{ height: '1000px' }}>
                 <Row gutter={12} style={{ height: '100%' }}>
-                    <Col span={11} style={{ height: '90%' }}>
-                        <Card style={{ height: '90%' }}>
-                            <Player
+                    <Col span={11} style={{ height: '100%' }}>
+                        <Card style={{ height: '45%' }}>
+                            {/*<Player
                                 playsInline="playsInline"
                                 src={videoUrl}
                                 autoPlay={true}
-                                muted={true} />
+                            muted={true}/>*/}
                             <div className="video-info" onClick={StatusAlert}>[부강 -&gt; 청주] 메인 화면: 로봇 카메라(일반)</div>
                         </Card>
-                        <Card>
+                        <Card style={{ height: '40%' }}>
                             <Row gutter={[8, 0]}>
-                                {vList.map((vList, index) => (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}
+                                {/* {vList.map( (vList, index)=> (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}*/}
                             </Row>
                         </Card>
-                        <Card>
+                        <Card style={{ height: '15%' }}>
                             <div className="robot-location">
                                 <div className="robot-location-bar"></div>
                                 <div className="robot-device">
@@ -118,8 +118,8 @@ const Video = (props) => {
                             </div>
                         </Card>
                     </Col>
-                    <Col span={11}>
-                        <Card>
+                    <Col span={11} style={{ height: '100%' }}>
+                        <Card style={{ height: '45%' }}>
                             <Player
                                 playsInline="playsInline"
                                 src={videoUrl}
@@ -127,12 +127,12 @@ const Video = (props) => {
                                 muted={true} />
                             <div className="video-info">[청주 -&gt; 부강] 메인 화면: 2번 카메라(일반)</div>
                         </Card>
-                        <Card>
+                        <Card style={{ height: '40%' }}>
                             <Row gutter={[8, 0]}>
                                 {vList.map((vList, index) => (<VideoList vList={vList} index={index} key={vList.id}></VideoList>))}
                             </Row>
                         </Card>
-                        <Card>
+                        <Card style={{ height: '15%' }}>
                             <div className="robot-location">
                                 <div className="robot-location-bar"></div>
                                 <div className="robot-device">

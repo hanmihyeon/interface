@@ -1,14 +1,15 @@
 /**************  라인 그래프 버전 ***************/
 /* 스테이션 기능 및 기존 드롭 옵션 주석 처리 되어 있음 */
 import React, { Fragment, useState } from 'react';
-import { 
+import {
     Breadcrumb,
     Row, Col, Card,
     Radio, Button, Tabs,
     Slider, Switch,
     Select, Form,
     Popconfirm, message,
-    DatePicker, Input } from 'antd';
+    DatePicker, Input
+} from 'antd';
 import { DashboardOutlined, DatabaseOutlined, VideoCameraOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
@@ -74,7 +75,7 @@ const RobotControl = () => {
 
     function range(start, end) {
         const result = [];
-        for(let i=start; i<end; i++) {
+        for (let i = start; i < end; i++) {
             result.push(i);
         }
         return result;
@@ -86,9 +87,9 @@ const RobotControl = () => {
 
     function disabledDateTime() {
         return {
-            disabledHours : () => range(0,24).splice(4,20),
-            disabledMinutes: () => range(30,60),
-            disabledSeconds: () => [55,56],
+            disabledHours: () => range(0, 24).splice(4, 20),
+            disabledMinutes: () => range(30, 60),
+            disabledSeconds: () => [55, 56],
         };
     }
 
@@ -169,38 +170,38 @@ const RobotControl = () => {
                             </Col>
                             <Col span={4}>
                                 {/*<Card className="control-container" bodyStyle={{ padding: '10px' }}>*/}
-                                    <Card title="컨트롤" size="small" className="robot-control-1">
-                                        <div className="radio">
-                                            <span>감시모드</span>
-                                            <Radio.Group defaultValue={1}>
-                                                <Popconfirm
+                                <Card title="컨트롤" size="small" className="robot-control-1">
+                                    <div className="radio">
+                                        <span>감시모드</span>
+                                        <Radio.Group defaultValue={1}>
+                                            <Popconfirm
                                                 title="설정하시겠습니까?"
                                                 onConfirm={confirmPop}
                                                 okText="예"
                                                 cancelText="취소">
-                                                    <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
-                                                </Popconfirm>
-                                                <Popconfirm
-                                                    title="설정하시겠습니까?"
-                                                    onConfirm={confirmPop}
-                                                    okText="예"
-                                                    cancelText="취소">
-                                                    <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
-                                                </Popconfirm>
-                                            </Radio.Group>
+                                                <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
+                                            </Popconfirm>
+                                            <Popconfirm
+                                                title="설정하시겠습니까?"
+                                                onConfirm={confirmPop}
+                                                okText="예"
+                                                cancelText="취소">
+                                                <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
+                                            </Popconfirm>
+                                        </Radio.Group>
+                                    </div>
+                                    <div className="toggle">
+                                        <div className="light-toggle">
+                                            <span>조명</span>
+                                            <Switch className="light-toggle-button" checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
                                         </div>
-                                        <div className="toggle">
-                                            <div className="light-toggle">
-                                                <span>조명</span>
-                                                <Switch className="light-toggle-button" checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
-                                            </div>
-                                            <div className="uvlight-toggle">
-                                                <span>적외선 조명</span>
-                                                <Switch className="uvlight-toggle-button" checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
-                                            </div>
+                                        <div className="uvlight-toggle">
+                                            <span>적외선 조명</span>
+                                            <Switch className="uvlight-toggle-button" checkedChildren="ON" unCheckedChildren="OFF" defaultChecked />
                                         </div>
-                                    </Card>
-                                    {/* 스테이션 기능 삭제 함 
+                                    </div>
+                                </Card>
+                                {/* 스테이션 기능 삭제 함 
                                     <Card title="스테이션 이동" size="small" className="station-move">
                                         <Form form={form} name="control">
                                             <Form.Item name="station" label="station" >
@@ -302,7 +303,7 @@ const RobotControl = () => {
                                                 format="YYYY-MM-DD HH:mm:ss"
                                                 disabledDate={disabledDate}
                                                 disabledTime={disabledDateTime}
-                                                showTime={{defaultValue: moment('00:00:00', 'HH:mm:ss')}}/>
+                                                showTime={{ defaultValue: moment('00:00:00', 'HH:mm:ss') }} />
                                             {/*<Select
                                                 placeholder="시작 시간"
                                                 allowClear>
@@ -311,7 +312,7 @@ const RobotControl = () => {
                                                 <Option value="2">2</Option>
                                                 <Option value="3">3</Option>
                                             </Select>*/}
-                                            </Form.Item>
+                                        </Form.Item>
                                         <Form.Item>
                                             <Popconfirm
                                                 title="스케줄을 설정하시겠습니까?"
@@ -372,7 +373,7 @@ const RobotControl = () => {
                                         height: '700px'
                                     }}>
                                     <Card
-                                        
+
                                         size="small"
                                         style={{
                                             marginBottom: '10px'
@@ -397,7 +398,7 @@ const RobotControl = () => {
                                     }}>
                                         <RobotStateChart />
                                     </Card>
-                                    <Card title="감시 모드" size="small"><ModeChart/></Card>
+                                    <Card title="감시 모드" size="small"><ModeChart /></Card>
                                 </Card>
                             </Col>
                         </Row>

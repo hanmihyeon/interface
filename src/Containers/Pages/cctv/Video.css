@@ -35,26 +35,14 @@
 .robot-location-bar {
     position: relative;
     border: 3px solid gray;
+    margin-top: 10px;
     margin-bottom: 30px;
 }
 
 .robot-device {
     position: relative;
+    height: 0;
 }
-
-/*.robot-location-bar:after {
-    position: absolute;
-    content: "";
-    clear: both;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    background: #005f00;
-    border: 1.5px solid #fff;
-    top: -10px;
-    left: 450px;
-    cursor: pointer;
-}*/
 
 .robot-location .robot-device .robot {
     position: relative;
@@ -70,15 +58,15 @@
 }
 
 .robot-green {
-    background: #005f00!important;
+    background: #005f00 !important;
 }
 
 .robot-yellow {
-    background : #e8ea00!important;
+    background: #e8ea00 !important;
 }
 
 .robot-red {
-    background: #5f0000!important;
+    background: #5f0000 !important;
 }
 
 .arrow-left {
@@ -136,6 +124,7 @@
     padding: 0;
     margin: 0;
 }
+
 .event-section {
     display: inline-block;
     box-sizing: border-box;
@@ -158,4 +147,3 @@
     border: 0.5px solid #000;
     background: red;
 }
-

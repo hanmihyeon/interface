@@ -6,37 +6,37 @@ import HighchartsReact from 'highcharts-react-official';
 export const RobotDataColumn = () => {
     let data = {
         '온도': [
-            ['온도',0]
+            ['온도', 0]
         ],
         '습도': [
-            ['습도',1]
+            ['습도', 1]
         ],
         '연기': [
-            ['연기',12]
+            ['연기', 12]
         ],
         '먼지': [
-            ['먼지',13]
+            ['먼지', 13]
         ],
         'CO': [
-            ['CO',4]
+            ['CO', 4]
         ],
         'CO2': [
-            ['CO2',1]
+            ['CO2', 1]
         ],
         'O2': [
-            ['O2',7]
+            ['O2', 7]
         ],
         'VOC': [
-            ['VOC',2]
+            ['VOC', 2]
         ],
         '황화수소': [
-            ['황화수소',15]
+            ['황화수소', 15]
         ],
         '이산화질소': [
-            ['이산화질소',10]
+            ['이산화질소', 10]
         ],
         '암모니아': [
-            ['암모니아',9]
+            ['암모니아', 9]
         ]
     }
 
@@ -87,7 +87,7 @@ export const RobotDataColumn = () => {
     }]
 
     function getData(data) {
-        return data.map(function (col,i) {
+        return data.map(function (col, i) {
             return {
                 name: col[0],
                 y: col[1],
@@ -143,7 +143,7 @@ export const RobotDataColumn = () => {
         },*/
 
         plotOptions: {
-            
+
             column: {
                 grouping: false,
                 borderWidth: 0
@@ -160,7 +160,7 @@ export const RobotDataColumn = () => {
 
         xAxis: {
             type: 'category',
-            
+
         },
 
         yAxis: [{
@@ -169,7 +169,7 @@ export const RobotDataColumn = () => {
             },
             showFirstLabel: false
         }
-            ],
+        ],
 
         tooltip: {
             shared: true,
@@ -183,33 +183,33 @@ export const RobotDataColumn = () => {
 
         series: [
             {
-                name:'온도',
-                data:[
-                    {x:'온도',y:25}
+                name: '온도',
+                data: [
+                    { x: '온도', y: 25 }
                 ],
                 labels: [],
                 visible: true
             },
             {
-                name:'온도',
-                data:[
-                    {x:'온도',y:44}
+                name: '온도',
+                data: [
+                    { x: '온도', y: 44 }
                 ],
                 labels: [],
                 visible: true
             },
             {
-                name:'연기',
-                data:[
-                    {x:'온도',y:225}
+                name: '연기',
+                data: [
+                    { x: '온도', y: 225 }
                 ],
                 labels: [],
                 visible: true
             },
             {
-                name:'먼지',
-                data:[
-                    {x:'온도',y:22}
+                name: '먼지',
+                data: [
+                    { x: '온도', y: 22 }
                 ],
                 labels: [],
                 visible: true
@@ -218,7 +218,7 @@ export const RobotDataColumn = () => {
         ],
 
         exporting: {
-            allowHTML : true
+            allowHTML: true
         },
 
         responsive: {

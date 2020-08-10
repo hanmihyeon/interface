@@ -29,6 +29,10 @@ export const TunnelStatus = () => {
         duration: 20000
     };
 
+    const StatusAlert = () => {
+        setEventlocation(2);
+    };
+
     return (
         <Fragment>
             <div className="robot-tunnel">
@@ -42,7 +46,7 @@ export const TunnelStatus = () => {
                         <VideoCameraOutlined /><VideoCameraOutlined /><VideoCameraOutlined /><VideoCameraOutlined />
                     </div>
                     <TweenOne animation={animation}>
-                        <div className="robot"></div>
+                        <div className="robot" onClick={StatusAlert}></div>
                     </TweenOne>
                 </div>
             </div>

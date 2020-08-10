@@ -1,6 +1,6 @@
 /* 테이블 */
 .ant-table {
-    background : #424242;
+    background: #424242;
 }
 
 .ant-table-wrapper.row-active .ant-table-row {
@@ -9,7 +9,7 @@
 
 /* 모달 */
 .ant-modal-mask {
-    background-color: rgba(255,255,255,0.005);
+    background-color: rgba(255, 255, 255, 0.005);
 }
 
 .ant-modal-content {
@@ -36,7 +36,7 @@
 }
 
 /* 컨펌 */
-.ant-popover-placement-bottom > .ant-popover-content > .ant-popover-arrow {
+.ant-popover-placement-bottom>.ant-popover-content>.ant-popover-arrow {
     border-top-color: #fff;
     border-left-color: #fff;
 }
@@ -75,7 +75,8 @@
 
 .user-confirm {
     width: 50%;
-    background-color: #0b3e6e; /*#a03636;*/
+    background-color: #0b3e6e;
+    /*#a03636;*/
     border: 0.5px solid #303030;
     color: #fff;
 }

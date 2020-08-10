@@ -1,4 +1,4 @@
-import React, {Fragment, Component} from 'react';
+import React, { Fragment, Component } from 'react';
 import {
     BarChart,
     Bar,
@@ -68,25 +68,25 @@ export class TempChart extends Component {
                                 value: "(m)",
                                 position: 'insideBottomRight',
                                 offset: -3
-                            }}/>
+                            }} />
                         <YAxis
                             domain={[0, 50]}
                             label={{
                                 value: "(°C)",
                                 position: 'insideTop',
                                 offset: -20
-                            }}/>
-                        <CartesianGrid stroke="#e0e0e0" strokeDasharray="3 3"/>
-                        <Tooltip/>
+                            }} />
+                        <CartesianGrid stroke="#e0e0e0" strokeDasharray="3 3" />
+                        <Tooltip />
                         <Legend
                             verticalAlign="top"
                             align="right"
                             wrapperStyle={{
                                 top: '6px',
                                 right: '90px'
-                            }}/>
-                        <Bar dataKey="temp" fill="#c1e0fc"/>
-                        <ReferenceLine y={avg} stroke="red"/>
+                            }} />
+                        <Bar dataKey="temp" fill="#c1e0fc" />
+                        <ReferenceLine y={avg} stroke="red" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
@@ -150,25 +150,25 @@ export class SoundChart extends Component {
                                 value: "(m)",
                                 position: 'insideBottomRight',
                                 offset: -3
-                            }}/>
+                            }} />
                         <YAxis
                             domain={[0, 80]}
                             label={{
                                 value: "(dB)",
                                 position: 'insideTop',
                                 offset: -20
-                            }}/>
-                        <CartesianGrid stroke="#e0e0e0" strokeDasharray="3 3"/>
-                        <Tooltip/>
+                            }} />
+                        <CartesianGrid stroke="#e0e0e0" strokeDasharray="3 3" />
+                        <Tooltip />
                         <Legend
                             verticalAlign="top"
                             align="right"
                             wrapperStyle={{
                                 top: '6px',
                                 right: '90px'
-                            }}/>
-                        <Bar dataKey="dB" fill="#d6fbb5"/>
-                        <ReferenceLine y={avg} stroke="red"/>
+                            }} />
+                        <Bar dataKey="dB" fill="#d6fbb5" />
+                        <ReferenceLine y={avg} stroke="red" />
                     </BarChart>
                 </ResponsiveContainer>
             </div>
@@ -183,8 +183,8 @@ export class SagnacChart extends Component {
                 <div className="title">Sagnac</div>
                 <div>1분 단위</div>
                 <div style={{
-                        marginLeft: '32px'
-                    }}>
+                    marginLeft: '32px'
+                }}>
                     <audio id='audio-element' src='/accident.mp3' autoPlay="autoPlay" loop="loop"></audio>
                     <AudioSpectrum
                         id='audio-canvas'
@@ -207,7 +207,7 @@ export class SagnacChart extends Component {
                                 color: '#ff8cac'
                             }
                         ]}
-                        gap={4}/></div>
+                        gap={4} /></div>
             </Fragment>
         );
     }

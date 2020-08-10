@@ -559,12 +559,12 @@ class EventManager extends Component {
                 <Breadcrumb className="bread">
                     <Breadcrumb.Item><UserOutlined />&nbsp; 이벤트 매니저</Breadcrumb.Item>
                 </Breadcrumb>
-                <div className="event-manager contents" style={{width:'91.6%'}} id="event">
+                <div className="event-manager contents" style={{ width: '91.6%' }} id="event">
                     <Row gutter={[6, 6]}>
                         <Col span={24}>
                             <Card title="Event" size="small">
                                 <Table
-                                    className={(this.state.disabled ? 'row-active': 'row-default')}
+                                    className={(this.state.disabled ? 'row-active' : 'row-default')}
                                     size="small"
                                     onChange={this.handleChange}
                                     columns={columns}
@@ -577,7 +577,7 @@ class EventManager extends Component {
                                         y: 400
                                     }}
                                     onRow={this.confirmRow}
-                                    />
+                                />
                             </Card>
                         </Col>
                         {/*<Col span={24}>

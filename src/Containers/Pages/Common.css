@@ -12,18 +12,18 @@
     border-bottom: 0.5px solid #f0f0f0;
 }
 
-.ant-breadcrumb > span:first-child {
+.ant-breadcrumb>span:first-child {
     margin-left: 24px;
 }
 
-.ant-tabs-top > .ant-tabs-nav {
+.ant-tabs-top>.ant-tabs-nav {
     margin-top: 30px;
-    margin-bottom:0px;
+    margin-bottom: 0px;
     margin-left: 0;
 }
 
 .contents {
-    margin-top:30px;
+    margin-top: 30px;
 }
 
 .robot-contents {
@@ -53,8 +53,8 @@
 }
 
 .highcharts-credits {
-    color: transparent!important;
-    fill: transparent!important;
+    color: transparent !important;
+    fill: transparent !important;
 }
 
 /*

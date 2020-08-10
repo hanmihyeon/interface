@@ -6,7 +6,7 @@
     height: 100%;
 }
 
-.control-container > .ant-card-body {
+.control-container>.ant-card-body {
     width: 100%;
 }
 
@@ -18,7 +18,8 @@
     justify-content: center;
 }
 
-.robot-control, .robot-control-1 {
+.robot-control,
+.robot-control-1 {
     margin-bottom: 10px;
 }
 
@@ -111,6 +112,7 @@
 .ant-radio-checked .ant-radio-inner {
     border-color: #0b3e6e;
 }
+
 .ant-radio-inner::after,
 .ant-switch-checked {
     background-color: #0b3e6e
@@ -162,7 +164,7 @@
     position: relative;
     width: 70%;
     height: 250px;
-    padding: 0 20px!important;
+    padding: 0 20px !important;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -277,12 +279,12 @@
     width: 100%;
 }
 
-.ant-form-item-control-input-content > .start-location,
-.ant-form-item-control-input-content > .end-location {
+.ant-form-item-control-input-content>.start-location,
+.ant-form-item-control-input-content>.end-location {
     width: 48%;
 }
 
-.ant-form-item-control-input-content > .start-location {
+.ant-form-item-control-input-content>.start-location {
     margin-right: 4%;
 }
 
@@ -343,7 +345,8 @@
 /* 게이지 차트 */
 /* 변동 가능, 차트 선택 x */
 
-.gauge-chart, .thermom {
+.gauge-chart,
+.thermom {
     padding-top: 10px;
     padding-right: 10px;
     display: flex;
@@ -369,11 +372,11 @@
 
 .thermometer__bg-color {
     /*background: linear-gradient(#f44336,#f49136,#FEFF37,#51B241)!important;*/
-    background: linear-gradient(#5f0000,#d26b0b,#e8ea00,#005f00)!important;
+    background: linear-gradient(#5f0000, #d26b0b, #e8ea00, #005f00) !important;
 }
 
 .thermometer__draw-b:before,
 .thermometer__draw-b:after {
     /*background-color: #51b241!important;*/
-    background-color: #005f00!important;
+    background-color: #005f00 !important;
 }

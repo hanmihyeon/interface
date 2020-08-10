@@ -50,7 +50,7 @@ export const VoltChart = () => {
                 endColor="#b50606"
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
-                currentValueText= "${value}V"
+                currentValueText="${value}V"
             /></div>
     );
 }
@@ -149,7 +149,7 @@ export const RobotDataColumn = () => {
 
         xAxis: {
             type: 'category',
-            categories : ['온도','습도','연기','먼지','CO','CO2','O2','VOC','황화수소','이산화질소','암모니아'],
+            categories: ['온도', '습도', '연기', '먼지', 'CO', 'CO2', 'O2', 'VOC', '황화수소', '이산화질소', '암모니아'],
             crosshair: true
         },
 
@@ -157,16 +157,16 @@ export const RobotDataColumn = () => {
             labels: {
                 format: '{value}°C',
                 style: {
-                    color:'#fff',
+                    color: '#fff',
                 }
             },
             title: {
-                text:'온도',
-                align:'high',
+                text: '온도',
+                align: 'high',
                 offset: 13,
                 rotation: 0,
                 y: -20,
-                style:{
+                style: {
                     color: '#fff',
                 }
             },
@@ -179,7 +179,7 @@ export const RobotDataColumn = () => {
             },
             title: {
                 text: '습도',
-                align:'high',
+                align: 'high',
                 offset: 13,
                 rotation: 0,
                 y: -20,
@@ -197,7 +197,7 @@ export const RobotDataColumn = () => {
             },
             title: {
                 text: '그 외',
-                align:'high',
+                align: 'high',
                 offset: 13,
                 rotation: 0,
                 y: -20,
@@ -220,143 +220,143 @@ export const RobotDataColumn = () => {
 
         series: [
             {
-                name:'온도',
+                name: '온도',
                 yAxis: 0,
                 tooltip: {
                     valueSuffix: ' °C',
                 },
                 data: [
-                    {x:0,y:24}
+                    { x: 0, y: 24 }
                 ],
                 color: '#3e5a76',
                 // #7cb5ec
                 visible: true
             },
             {
-                name:'습도',
+                name: '습도',
                 yAxis: 1,
                 tooltip: {
                     valueSuffix: ' %',
                 },
                 data: [
-                    {x:1,y:64}
+                    { x: 1, y: 64 }
                 ],
                 color: '#3c3c40',
                 // #434348
                 visible: true
             },
             {
-                name:'연기',
+                name: '연기',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:2,y:5004}
+                    { x: 2, y: 5004 }
                 ],
                 color: '#48763e',
                 // #90ed7d
                 visible: true
             },
             {
-                name:'먼지',
+                name: '먼지',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:3,y:5024}
+                    { x: 3, y: 5024 }
                 ],
                 color: '#7b512e',
                 // #f7a35c
                 visible: true
             },
             {
-                name:'co',
+                name: 'co',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:4,y:5024}
+                    { x: 4, y: 5024 }
                 ],
                 color: '#404274',
                 // #8085e9
                 visible: true
             },
             {
-                name:'co2',
+                name: 'co2',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:5,y:5204}
+                    { x: 5, y: 5204 }
                 ],
                 color: '#782e40',
                 // #f15c80
                 visible: true
             },
             {
-                name:'o2',
+                name: 'o2',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:6,y:5054}
+                    { x: 6, y: 5054 }
                 ],
                 color: '#72692a',
                 // #e4d354
                 visible: true
             },
             {
-                name:'voc',
+                name: 'voc',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:7,y:5074}
+                    { x: 7, y: 5074 }
                 ],
                 color: '#154847',
                 // #2b908f
                 visible: true
             },
             {
-                name:'황화수소',
+                name: '황화수소',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:8,y:5024}
+                    { x: 8, y: 5024 }
                 ],
                 color: '#7a2d2d',
                 // #f45b5b
                 visible: true
             },
             {
-                name:'이산화질소',
+                name: '이산화질소',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:9,y:5004}
+                    { x: 9, y: 5004 }
                 ],
                 color: '#487470',
                 // #91e8e1
                 visible: true
             },
             {
-                name:'암모니아',
+                name: '암모니아',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:10,y:5020}
+                    { x: 10, y: 5020 }
                 ],
                 color: '#3e5a76',
                 // #7cb5ec
@@ -440,7 +440,7 @@ export const RobotDataColumn1 = () => {
 
         xAxis: {
             type: 'category',
-            categories : ['온도','습도','연기','먼지','CO','CO2','O2','VOC','황화수소','이산화질소','암모니아'],
+            categories: ['온도', '습도', '연기', '먼지', 'CO', 'CO2', 'O2', 'VOC', '황화수소', '이산화질소', '암모니아'],
             crosshair: true,
             labels: {
                 style: {
@@ -453,16 +453,16 @@ export const RobotDataColumn1 = () => {
             labels: {
                 format: '{value}°C',
                 style: {
-                    color:'#fff',
+                    color: '#fff',
                 }
             },
             title: {
-                text:'온도',
-                align:'high',
+                text: '온도',
+                align: 'high',
                 offset: 13,
                 rotation: 0,
                 y: -20,
-                style:{
+                style: {
                     color: '#fff',
                 }
             },
@@ -475,7 +475,7 @@ export const RobotDataColumn1 = () => {
             },
             title: {
                 text: '습도',
-                align:'high',
+                align: 'high',
                 offset: 13,
                 rotation: 0,
                 y: -20,
@@ -493,7 +493,7 @@ export const RobotDataColumn1 = () => {
             },
             title: {
                 text: '그 외',
-                align:'high',
+                align: 'high',
                 offset: 13,
                 rotation: 0,
                 y: -20,
@@ -516,143 +516,143 @@ export const RobotDataColumn1 = () => {
 
         series: [
             {
-                name:'온도',
+                name: '온도',
                 yAxis: 0,
                 tooltip: {
                     valueSuffix: ' °C',
                 },
                 data: [
-                    {x:0,y:24}
+                    { x: 0, y: 24 }
                 ],
                 color: '#25425c',
                 // #7cb5ec
                 visible: true
             },
             {
-                name:'습도',
+                name: '습도',
                 yAxis: 1,
                 tooltip: {
                     valueSuffix: ' %',
                 },
                 data: [
-                    {x:1,y:64}
+                    { x: 1, y: 64 }
                 ],
                 color: '#d6d4a1',
                 // #434348
                 visible: true
             },
             {
-                name:'연기',
+                name: '연기',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:2,y:5004}
+                    { x: 2, y: 5004 }
                 ],
                 color: '#83b490',
                 // #90ed7d
                 visible: true
             },
             {
-                name:'먼지',
+                name: '먼지',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:3,y:5024}
+                    { x: 3, y: 5024 }
                 ],
                 color: '#307671',
                 // #f7a35c
                 visible: true
             },
             {
-                name:'co',
+                name: 'co',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:4,y:5024}
+                    { x: 4, y: 5024 }
                 ],
                 color: '#610019',
                 // #8085e9
                 visible: true
             },
             {
-                name:'co2',
+                name: 'co2',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:5,y:5204}
+                    { x: 5, y: 5204 }
                 ],
                 color: '#3b0056',
                 // #f15c80
                 visible: true
             },
             {
-                name:'o2',
+                name: 'o2',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:6,y:5054}
+                    { x: 6, y: 5054 }
                 ],
                 color: '#d2691e',
                 // #e4d354
                 visible: true
             },
             {
-                name:'voc',
+                name: 'voc',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:7,y:5074}
+                    { x: 7, y: 5074 }
                 ],
                 color: '#798488',
                 // #2b908f
                 visible: true
             },
             {
-                name:'황화수소',
+                name: '황화수소',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:8,y:5024}
+                    { x: 8, y: 5024 }
                 ],
                 color: '#75537c',
                 // #f45b5b
                 visible: true
             },
             {
-                name:'이산화질소',
+                name: '이산화질소',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:9,y:5004}
+                    { x: 9, y: 5004 }
                 ],
                 color: '#487470',
                 // #91e8e1
                 visible: true
             },
             {
-                name:'암모니아',
+                name: '암모니아',
                 yAxis: 2,
                 tooltip: {
                     valueSuffix: ' ppm',
                 },
                 data: [
-                    {x:10,y:5020}
+                    { x: 10, y: 5020 }
                 ],
                 color: '#c76345',
                 // #7cb5ec

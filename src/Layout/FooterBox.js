@@ -1,16 +1,16 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import 'antd/dist/antd.dark.css';
 import './Footer.css';
 
-import {Layout} from 'antd';
+import { Layout } from 'antd';
 
-const {Footer} = Layout;
+const { Footer } = Layout;
 
 class FooterBox extends Component {
     render() {
         return (
             <Footer className='footer'>
-            <div> h4tech tunnel system by Ant Design ©2020</div></Footer>
+                <div> h4tech tunnel system by Ant Design ©2020</div></Footer>
         )
     }
 }

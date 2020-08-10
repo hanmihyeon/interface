@@ -1,6 +1,6 @@
-import React, {Fragment, useState, useEffect} from 'react';
-import {Breadcrumb, Table} from 'antd';
-import {SettingOutlined, UserOutlined} from '@ant-design/icons';
+import React, { Fragment, useState, useEffect } from 'react';
+import { Breadcrumb, Table } from 'antd';
+import { SettingOutlined, UserOutlined } from '@ant-design/icons';
 
 import '../Common.css';
 import Highcharts from 'highcharts';
@@ -33,9 +33,9 @@ const User = () => {
                 let receivedData = res.map((datapost) => {
                     return (
                         {
-                            fbg_id : datapost.fbg_id,
+                            fbg_id: datapost.fbg_id,
                             fbg_ts: datapost.fbg_ts,
-                            fbg_temp : datapost.fbg_temp
+                            fbg_temp: datapost.fbg_temp
                         }
                     )
                 })
@@ -44,20 +44,20 @@ const User = () => {
                 // setidData(id_data=receivedData.map(receivedData=>receivedData.fbg_id));
                 // settsData(ts_data=receivedData.map(receivedData=>receivedData.fbg_ts));
                 // settempData(temp_data=receivedData.map(receivedData=>receivedData.fbg_temp));
-                
+
                 // let temp = temp_data.map(Number);
                 // console.log(temp);
             }
             )
     }, []);
     console.log(data);
-    
+
     const optionavg1 = {
         chart: {
             type: 'line',
             marginTop: 50,
             height: 300,
-            width:null,
+            width: null,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
                 load: null
@@ -128,7 +128,7 @@ const User = () => {
 
         legend: {
             enabled: false,
-            
+
         },
 
         exporting: {
@@ -139,7 +139,7 @@ const User = () => {
             {
                 name: 'AVG',
                 color: '#ff8cac',
-                data:data,
+                data: data,
                 key: data,
                 turboThreshold: 1500,
             }
@@ -153,7 +153,7 @@ const User = () => {
             key: 'fbg_id'
         },
         {
-            title:'ts',
+            title: 'ts',
             dataIndex: 'fbg_ts',
             key: 'fbg_ts'
         },
@@ -167,8 +167,8 @@ const User = () => {
     return (
         <Fragment>
             <Breadcrumb className="bread">
-                <Breadcrumb.Item><SettingOutlined/>&nbsp;&nbsp;Setting</Breadcrumb.Item>
-                <Breadcrumb.Item><UserOutlined/>&nbsp;User</Breadcrumb.Item>
+                <Breadcrumb.Item><SettingOutlined />&nbsp;&nbsp;Setting</Breadcrumb.Item>
+                <Breadcrumb.Item><UserOutlined />&nbsp;User</Breadcrumb.Item>
             </Breadcrumb>
 
             <div className="user contents">User</div>
@@ -177,9 +177,9 @@ const User = () => {
                     bordered="bordered"
                     columns={columns}
                     dataSource={data}
-                simple="simple" />
+                    simple="simple" />
                 <div>
-                    <HighchartsReact Highcharts={Highcharts} options={optionavg1}  style={{overflow:'visible'}}/>
+                    <HighchartsReact Highcharts={Highcharts} options={optionavg1} style={{ overflow: 'visible' }} />
                 </div>
             </div>
         </Fragment>

@@ -1,18 +1,18 @@
-import React, {Fragment} from 'react';
-import {Breadcrumb, Row, Col, Card, Tabs} from 'antd';
-import {DashboardOutlined, DatabaseOutlined} from '@ant-design/icons';
+import React, { Fragment } from 'react';
+import { Breadcrumb, Row, Col, Card, Tabs } from 'antd';
+import { DashboardOutlined, DatabaseOutlined } from '@ant-design/icons';
 
-import {SagnacChart, SoundChart, TempChart} from '../Chart/SensorChart';
-import {SagnacAvgChart, TempAvgChart, SoundAvgChart} from '../Chart/SensorAvgChart';
+import { SagnacChart, SoundChart, TempChart } from '../Chart/SensorChart';
+import { SagnacAvgChart, TempAvgChart, SoundAvgChart } from '../Chart/SensorAvgChart';
 
-import {NetworkChart} from '../Chart/NetworkChart';
+import { NetworkChart } from '../Chart/NetworkChart';
 
 import 'antd/dist/antd.dark.css';
 import '../Common.css';
 import './Dashboard.css';
 import '../Robot/RobotControl.css';
 
-const {TabPane} = Tabs;
+const { TabPane } = Tabs;
 
 function callback(key) {
     console.log(key);
@@ -24,8 +24,8 @@ const Dashboard = () => {
             <TabPane tab="부강-&gt;청주" key="1">
                 <Fragment>
                     <Breadcrumb className="bread">
-                        <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
-                        <Breadcrumb.Item><DatabaseOutlined/>&nbsp;Data</Breadcrumb.Item>
+                        <Breadcrumb.Item><DashboardOutlined />&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
+                        <Breadcrumb.Item><DatabaseOutlined />&nbsp;Data</Breadcrumb.Item>
                     </Breadcrumb>
                     <div className="dashboard contents">
                         <Row gutter={[6, 6]}>
@@ -36,7 +36,7 @@ const Dashboard = () => {
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><SagnacChart/></Card>
+                                            }}><SagnacChart /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
@@ -47,7 +47,7 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="chart-title">Sagnac AVG</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><SagnacAvgChart/></Card>
+                                            </div><SagnacAvgChart /></Card>
                                     </Col>
                                 </Row>
                             </Card>
@@ -58,7 +58,7 @@ const Dashboard = () => {
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><TempChart nb_bar={24}/></Card>
+                                            }}><TempChart nb_bar={24} /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
@@ -69,14 +69,14 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="chart-title">FBG Temperature AVG</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><TempAvgChart/></Card>
+                                            </div><TempAvgChart /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><SoundChart nb_bar={24}/></Card>
+                                            }}><SoundChart nb_bar={24} /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
@@ -87,7 +87,7 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="chart-title">FBG Sound AVG</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><SoundAvgChart/></Card>
+                                            </div><SoundAvgChart /></Card>
                                     </Col>
                                 </Row>
                             </Card>
@@ -100,7 +100,7 @@ const Dashboard = () => {
                                                 height: 520
                                             }}>
                                             <div className="tunnel-title">터널 상태</div>
-                                            <img src="/tunnel_4.png" alt="" className="tunnel-img"/>
+                                            <img src="/tunnel_4.png" alt="" className="tunnel-img" />
                                         </Card>
                                     </Col>
                                     <Col span={8}>
@@ -112,7 +112,7 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="tunnel-title">네트워크 상태</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><NetworkChart/></Card>
+                                            </div><NetworkChart /></Card>
                                     </Col>
                                 </Row>
                             </Card>
@@ -123,8 +123,8 @@ const Dashboard = () => {
             <TabPane tab="청주-&gt;부강" key="2">
                 <Fragment>
                     <Breadcrumb className="bread">
-                        <Breadcrumb.Item><DashboardOutlined/>&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
-                        <Breadcrumb.Item><DatabaseOutlined/>&nbsp;Data</Breadcrumb.Item>
+                        <Breadcrumb.Item><DashboardOutlined />&nbsp;&nbsp;Dashboard</Breadcrumb.Item>
+                        <Breadcrumb.Item><DatabaseOutlined />&nbsp;Data</Breadcrumb.Item>
                     </Breadcrumb>
                     <div className="dashboard contents">
                         <Row gutter={[6, 6]}>
@@ -135,7 +135,7 @@ const Dashboard = () => {
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><SagnacChart/></Card>
+                                            }}><SagnacChart /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
@@ -146,7 +146,7 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="chart-title">Sagnac AVG</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><SagnacAvgChart/></Card>
+                                            </div><SagnacAvgChart /></Card>
                                     </Col>
                                 </Row>
                             </Card>
@@ -157,7 +157,7 @@ const Dashboard = () => {
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><TempChart nb_bar={24}/></Card>
+                                            }}><TempChart nb_bar={24} /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
@@ -168,14 +168,14 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="chart-title">FBG Temperature AVG</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><TempAvgChart/></Card>
+                                            </div><TempAvgChart /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
                                             bodyStyle={{
                                                 padding: '24px 36px 24px 0',
                                                 height: 380
-                                            }}><SoundChart nb_bar={24}/></Card>
+                                            }}><SoundChart nb_bar={24} /></Card>
                                     </Col>
                                     <Col span={12}>
                                         <Card
@@ -186,7 +186,7 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="chart-title">FBG Sound AVG</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><SoundAvgChart/></Card>
+                                            </div><SoundAvgChart /></Card>
                                     </Col>
                                 </Row>
                             </Card>
@@ -199,7 +199,7 @@ const Dashboard = () => {
                                                 height: 520
                                             }}>
                                             <div className="tunnel-title">터널 상태</div>
-                                            <img className="tunnel-img" src="/tunnel_4.png" alt=""/>
+                                            <img className="tunnel-img" src="/tunnel_4.png" alt="" />
                                         </Card>
                                     </Col>
                                     <Col span={8}>
@@ -211,7 +211,7 @@ const Dashboard = () => {
                                             <div>
                                                 <div className="tunnel-title">네트워크 상태</div>
                                                 <div className="unit-box">1분 단위</div>
-                                            </div><NetworkChart/></Card>
+                                            </div><NetworkChart /></Card>
                                     </Col>
                                 </Row>
                             </Card>

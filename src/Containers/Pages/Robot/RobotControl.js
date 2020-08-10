@@ -37,8 +37,7 @@ const RobotControl = () => {
     // const [value, setValue] = useState('1');
     const [form] = Form.useForm();
     const [conVisible, setCon] = useState(false);
-    const [eventlocation, setEventlocation] = useState(0);
-    
+
     function confirmPop(e) {
         message.success('설정되었습니다!');
     }
@@ -67,10 +66,6 @@ const RobotControl = () => {
         };
     }
 
-    const StatusAlert = () => {
-        setEventlocation(2);
-    };
-
 
     return (<Fragment>
         <Breadcrumb className="bread">
@@ -90,7 +85,7 @@ const RobotControl = () => {
                                     src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"
                                     autoPlay={true}
                                     muted={true} />
-                                <div className="video-info" onClick={StatusAlert}>[부강 -&gt; 청주] 로봇 카메라(일반)</div>
+                                <div className="video-info">[부강 -&gt; 청주] 로봇 카메라(일반)</div>
                             </Card>
                         </Col>
                         <Col span={8}>
@@ -208,7 +203,7 @@ const RobotControl = () => {
                             <Card title="스케줄" size="small">
                                 <Form form={form} name="schedule">
                                     <Form.Item name="location" label="위치" >
-                                        <Input 
+                                        <Input
                                             className="start-location"
                                             placeholder="시작 위치"
                                             suffix="m" />

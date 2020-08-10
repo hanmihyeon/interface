@@ -64,9 +64,9 @@ export const NetworkChart = () => {
     }
 
     return (
-        <div style={{margin: '60px 0 0 16px'}}>
+        <div style={{ margin: '60px 0 0 16px' }}>
             <div>
-                <HighchartsReact Highcharts={Highcharts} options={network}/></div>
+                <HighchartsReact Highcharts={Highcharts} options={network} /></div>
         </div>
     )
 }

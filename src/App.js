@@ -1,6 +1,6 @@
-import React, {Component, Fragment} from 'react';
-import {Layout} from 'antd';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import React, { Component, Fragment } from 'react';
+import { Layout } from 'antd';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 // import PerfectScrollbar from 'react-perfect-scrollbar';
 
 import 'antd/dist/antd.dark.css';
@@ -11,6 +11,7 @@ import Home1 from './Containers/Pages/Home_1';
 import Dashboard from './Containers/Pages/Other/Dashboard';
 import Tunnel from './Containers/Pages/Tunnel/Tunnel';
 import Video from './Containers/Pages/cctv/Video';
+import Video1 from './Containers/Pages/cctv/Video_1';
 import EventManager from './Containers/Pages/Event/EventManager';
 import RobotControl from './Containers/Pages/Robot/RobotControl';
 import HealthCheck from './Containers/Pages/HealthCheck/HealthCheck';
@@ -23,7 +24,7 @@ import HeaderBox from './Layout/HeaderBox';
 import ContentBox from './Layout/ContentBox';
 import Alarm from './Layout/Alarm';
 
-const {Content} = Layout;
+const { Content } = Layout;
 
 class App extends Component {
     render() {
@@ -32,26 +33,27 @@ class App extends Component {
                 <Fragment>
                     <Layout>
                         <div className="container">
-                            <HeaderBox/>
+                            <HeaderBox />
                             <Content
                                 style={{
                                     padding: '0 0 0 10px',
-                                    width:'100%',
+                                    width: '100%',
                                     minHeight: 'calc(100% - 70px)'
                                 }}>
-                                <ContentBox/>
+                                <ContentBox />
                                 <Switch>
-                                    <Route path="/Home/Home1" component={Home1}/>
-                                    <Route path="/Home/Dashboard" component={Dashboard}/>
-                                    <Route path="/Home/Tunnel" component={Tunnel}/>
-                                    <Route path="/Home/Video" component={Video}/>
-                                    <Route path="/Home/EventManager" component={EventManager}/>
-                                    <Route path="/Home/RobotControl" component={RobotControl}/>
-                                    <Route path="/Home/HealthCheck" component={HealthCheck}/>
-                                    <Route path="/Home/User" component={RobotControl1}/>
-                                    <Route path="/Home/Device" component={Device}/>
+                                    <Route path="/Home/Home1" component={Home1} />
+                                    <Route path="/Home/Dashboard" component={Dashboard} />
+                                    <Route path="/Home/Tunnel" component={Tunnel} />
+                                    <Route path="/Home/Video" component={Video} />
+                                    <Route path="/Home/EventManager" component={EventManager} />
+                                    <Route path="/Home/RobotControl" component={RobotControl} />
+                                    <Route path="/Home/HealthCheck" component={HealthCheck} />
+                                    <Route path="/Home/User" component={RobotControl1} />
+                                    <Route path="/Home/Device" component={Device} />
+                                    <Route path="/Home/Video_1" component={Video1} />
                                 </Switch>
-                                <Alarm/>
+                                <Alarm />
                             </Content>
                             {/*<FooterBox/>*/}
                         </div>

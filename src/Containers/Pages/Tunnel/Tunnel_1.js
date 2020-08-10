@@ -8,7 +8,7 @@ import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 import { Joystick } from 'react-joystick-component';
 
-import { 
+import {
     TodayStatus,
     TunnelRadial1,
     TunnelRadial2,
@@ -16,7 +16,7 @@ import {
     TunnelRadial4,
     FBGChart,
     SagnacChart
- } from '../Chart/TunnelChart';
+} from '../Chart/TunnelChart';
 // import { TunnelChart } from '../Chart/SensorAvgChart';
 
 import 'video-react/dist/video-react.css';
@@ -201,21 +201,21 @@ const Tunnel = (props) => {
                                     <div className="radio">
                                         <span>감시모드</span>
                                         <Radio.Group defaultValue={1}>
-                                                <Popconfirm
+                                            <Popconfirm
                                                 title="설정하시겠습니까?"
                                                 onConfirm={confirmPop}
                                                 okText="예"
                                                 cancelText="취소">
-                                                    <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
-                                                </Popconfirm>
-                                                <Popconfirm
-                                                    title="설정하시겠습니까?"
-                                                    onConfirm={confirmPop}
-                                                    okText="예"
-                                                    cancelText="취소">
-                                                    <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
-                                                </Popconfirm>
-                                            </Radio.Group>
+                                                <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
+                                            </Popconfirm>
+                                            <Popconfirm
+                                                title="설정하시겠습니까?"
+                                                onConfirm={confirmPop}
+                                                okText="예"
+                                                cancelText="취소">
+                                                <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
+                                            </Popconfirm>
+                                        </Radio.Group>
                                     </div>
                                     <div className="toggle">
                                         <div className="light-toggle">
@@ -255,7 +255,7 @@ const Tunnel = (props) => {
                                 </Card>*/}
                             </Col>
                             <Col span={8} style={{ height: '100%' }}>
-                                <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px', padding:'8px' }}>
+                                <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px', padding: '8px' }}>
                                     <div className="status-time">2020-07-01 ~ 2020-7-31</div>
                                     <TodayStatus />
                                 </Card>

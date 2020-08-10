@@ -1,19 +1,19 @@
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Slider, Radio, Switch, Popconfirm, message } from 'antd';
-import { LaptopOutlined} from '@ant-design/icons';
+import { LaptopOutlined } from '@ant-design/icons';
 
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
 
-import { 
+import {
     FBG,
     TodayStatus,
     TunnelRadial1,
     TunnelRadial2,
     FBGChart,
     SagnacChart
- } from '../Chart/TunnelChart';
- import { TunnelStatus } from './TunnelStatus';
+} from '../Chart/TunnelChart';
+import { TunnelStatus } from './TunnelStatus';
 
 import 'video-react/dist/video-react.css';
 import '../cctv/Video.css';
@@ -141,9 +141,9 @@ const Tunnel = (props) => {
                     </Col>
                     <Col span={11} style={{ height: '100%' }}>
                         <Card title="터널 상태" size="small" style={{ height: '15%' }}>
-                            <TunnelStatus/>
+                            <TunnelStatus />
                         </Card>
-                        <Card style={{height:'20%'}}>
+                        <Card style={{ height: '20%' }}>
                             <div className="fbg-chart">
                                 <FBG />
                             </div>
@@ -193,21 +193,21 @@ const Tunnel = (props) => {
                                     <div className="radio">
                                         <span>감시모드</span>
                                         <Radio.Group defaultValue={1}>
-                                                <Popconfirm
+                                            <Popconfirm
                                                 title="설정하시겠습니까?"
                                                 onConfirm={confirmPop}
                                                 okText="예"
                                                 cancelText="취소">
-                                                    <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
-                                                </Popconfirm>
-                                                <Popconfirm
-                                                    title="설정하시겠습니까?"
-                                                    onConfirm={confirmPop}
-                                                    okText="예"
-                                                    cancelText="취소">
-                                                    <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
-                                                </Popconfirm>
-                                            </Radio.Group>
+                                                <Radio value={1} conVisible={conVisible} onClick={showConfirm}>자동</Radio>
+                                            </Popconfirm>
+                                            <Popconfirm
+                                                title="설정하시겠습니까?"
+                                                onConfirm={confirmPop}
+                                                okText="예"
+                                                cancelText="취소">
+                                                <Radio value={2} conVisible={conVisible} onClick={showConfirm}>수동</Radio>
+                                            </Popconfirm>
+                                        </Radio.Group>
                                     </div>
                                     <div className="toggle">
                                         <div className="light-toggle">
@@ -222,7 +222,7 @@ const Tunnel = (props) => {
                                 </Card>
                             </Col>
                             <Col span={8}>
-                                <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px', padding:'8px' }}>
+                                <Card title="현황" size="small" style={{ height: '100%' }} bodyStyle={{ minHeight: '275px', padding: '8px' }}>
                                     <div className="status-time">2020-07-01 ~ 2020-7-31</div>
                                     <TodayStatus />
                                 </Card>

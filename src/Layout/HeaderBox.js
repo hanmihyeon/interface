@@ -97,12 +97,16 @@ class HeaderBox extends Component {
                                     Device
                                         <Link to="/Home/Device" />
                                 </Menu.Item>
+                                <Menu.Item key="9" icon={<ToolOutlined />}>
+                                    ddd
+                                        <Link to="/Home/Video_1" />
+                                </Menu.Item>
                             </SubMenu>
                         </Menu>
                     </div>
                     <div className="user-info">
-                        <div style={{fontWeight:'bold'}}>
-                            <Clock format={'YYYY년 MM월 DD일 HH:mm:ss'} ticking={true}/>
+                        <div style={{ fontWeight: 'bold' }}>
+                            <Clock format={'YYYY년 MM월 DD일 HH:mm:ss'} ticking={true} />
                         </div>
                         {/*<div>{this.state.thisTime.getHours()}:{this.state.thisTime.getMinutes()}</div>*/}
                         <div>Login</div>
