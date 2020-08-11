@@ -2,44 +2,45 @@
 
 ## 기본 구조
 --------------
-> Containers
->    > Pages
->    >    > cctv
->    >    >    > Video.css
->    >    >    > Video.js
->    >    > Chart
->    >    >    > RobotChart.js
->    >    >    > SensorAvgChart.js
->    >    >    > SensorChart.css
->    >    >    > SensorChart.js
->    >    >    > TunnelChart.js
->    >    > Event
->    >    >    > Event.css
->    >    >    > EventManager.js
->    >    > HealthCheck
->    >    >    > HealthCheck.js
->    >    > Other
->    >    >    > Device.js
->    >    >    > User.js
->    >    >    > Dashboard.js
->    >    >    > Dashboard.css
->    >    > Robot
->    >    >    > RobotControl.css
->    >    >    > RobotControl.js
->    >    > Tunnel
->    >    >    > Tunnel.js
->    >    >    > Tunnel.css
->    >    >    > TunnelStatus.js
->    >    > Common.css
->    >    > Login.css
->    >    > Login.js
-> Layout
->    > Alarm.css
->    > Alarm.js
->    > ContentBox.js
->    > Footer.css
->    > FooterBox.js
->    > HeaderBox.css
->    > HeaderBox.js
-> App.js
-> App.css
+
+├── Containers
+│   ├── Pages
+│   │   ├── cctv
+│   │   │   ├── Video.css
+│   │   │   └── Video.js
+│   │   ├── Chart
+│   │   │   ├── RobotChart.js
+│   │   │   ├── SensorAvgChart.js
+│   │   │   ├── SensorChart.css
+│   │   │   ├── SensorChart.js
+│   │   │   └── TunnelChart.js
+│   │   └── Event
+│   │   │   ├── Event.css
+│   │   │   └── EventManager.js
+│   │   ├── HealthCheck
+│   │   │   ├── HealthCheck.css
+│   │   │   └── HealthCheck.js
+│   │   ├── Other
+│   │   │   ├── Dashboard.css
+│   │   │   ├── Dashboard.js
+│   │   │   ├── Device.js
+│   │   │   └── User.js
+│   │   ├── Robot
+│   │   │   ├── RobotControl.css
+│   │   │   └── RobotControl.js
+│   │   ├── Tunnel
+│   │   │   ├── Tunnel.css
+│   │   │   ├── Tunnel.js
+│   │   │   └── TunnelStatus.js
+│   │   ├── Common.css
+│   │   ├── Login.css
+│   │   └── Login.js
+│   └── Home.js
+├── Layout
+│   ├── Alarm.css
+│   ├── Alarm.js
+│   ├── ContentBox.js
+│   ├── HeaderBox.css
+│   └── HeaderBox.js
+├── App.js
+└── App.css
