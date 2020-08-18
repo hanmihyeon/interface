@@ -46,8 +46,6 @@ const Video = (props) => {
         );
     }
 
-
-
     const StatusAlert = () => {
         setEventlocation(2);
         Modal.error({
