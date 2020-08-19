@@ -47,7 +47,7 @@ export const VoltChart = () => {
                 height={120}
                 needleColor="red"
                 startColor="#005f00"
-                endColor="#b50606"
+                endColor="#c0424e"//#005f00 #b50606
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}V"
@@ -55,6 +55,30 @@ export const VoltChart = () => {
     );
 }
 
+export const VoltChart1 = () => {
+    return (
+        <div className="volt-chart gauge-chart">
+            <h5 className="gauge-title">전압</h5>
+            <ReactSpeedometer
+                value={220}
+                minValue={150}
+                maxValue={400}
+                needleHeightRatio={0.7}
+                segments={7}
+                ringWidth={15}
+                labelFontSize={"10px"}
+                valueTextFontSize={"15px"}
+                width={180}
+                height={120}
+                needleColor="red"
+                startColor="#fff"
+                endColor="#543885"//#005f00 #b50606
+                needleTransitionDuration={4000}
+                needleTransition="easeElastic"
+                currentValueText="${value}V"
+            /></div>
+    );
+}
 export const CurrentChart = () => {
     return (
         <div className="current-chart gauge-chart">
@@ -71,7 +95,31 @@ export const CurrentChart = () => {
                 height={120}
                 needleColor="red"
                 startColor="#005f00"
-                endColor="#b50606"
+                endColor="#c0424e"
+                needleTransitionDuration={4000}
+                needleTransition="easeElastic"
+                currentValueText="${value}A"
+            /></div>
+    );
+
+}
+export const CurrentChart1 = () => {
+    return (
+        <div className="current-chart gauge-chart">
+            <h5 className="gauge-title">전류</h5>
+            <ReactSpeedometer
+                value={70}
+                maxValue={100}
+                minValue={65}
+                segments={7}
+                ringWidth={15}
+                labelFontSize={"10px"}
+                valueTextFontSize={"15px"}
+                width={180}
+                height={120}
+                needleColor="red"
+                startColor="#fff"
+                endColor="#543884"
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}A"
@@ -228,8 +276,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 0, y: 24 }
                 ],
-                color: '#3e5a76',
-                // #7cb5ec
+                color: '#e2dbea',
+                // #3e5a76 #7cb5ec
                 visible: true
             },
             {
@@ -241,8 +289,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 1, y: 64 }
                 ],
-                color: '#3c3c40',
-                // #434348
+                color: '#c5b8d5',
+                // #3c3c40 434348
                 visible: true
             },
             {
@@ -254,8 +302,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 2, y: 5004 }
                 ],
-                color: '#48763e',
-                // #90ed7d
+                color: '#a997c1',
+                // #48763e #90ed7d
                 visible: true
             },
             {
@@ -267,8 +315,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 3, y: 5024 }
                 ],
-                color: '#7b512e',
-                // #f7a35c
+                color: '#8d76ac',
+                // #7b512e #f7a35c
                 visible: true
             },
             {
@@ -280,8 +328,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 4, y: 5024 }
                 ],
-                color: '#404274',
-                // #8085e9
+                color: '#715698',
+                // 404274 #8085e9
                 visible: true
             },
             {
@@ -293,8 +341,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 5, y: 5204 }
                 ],
-                color: '#782e40',
-                // #f15c80
+                color: '#543884',
+                // 782e40 #f15c80
                 visible: true
             },
             {
@@ -306,8 +354,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 6, y: 5054 }
                 ],
-                color: '#72692a',
-                // #e4d354
+                color: '#47306d',
+                // 72692a #e4d354
                 visible: true
             },
             {
@@ -319,8 +367,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 7, y: 5074 }
                 ],
-                color: '#154847',
-                // #2b908f
+                color: '#392757',
+                // 154847 #2b908f
                 visible: true
             },
             {
@@ -332,8 +380,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 8, y: 5024 }
                 ],
-                color: '#7a2d2d',
-                // #f45b5b
+                color: '#2d1f41',
+                // 7a2d2d #f45b5b
                 visible: true
             },
             {
@@ -345,8 +393,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 9, y: 5004 }
                 ],
-                color: '#487470',
-                // #91e8e1
+                color: '#20182d',
+                // 487470 #91e8e1
                 visible: true
             },
             {
@@ -358,8 +406,8 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 10, y: 5020 }
                 ],
-                color: '#3e5a76',
-                // #7cb5ec
+                color: '#150f1a',
+                // 3e5a76 #7cb5ec
                 visible: true
             },
         ],
@@ -376,7 +424,7 @@ export const RobotDataColumn1 = () => {
         chart: {
             // zoomType: 'xy',
             type: 'column',
-            backgroundColor: 'none',
+            backgroundColor: '#242424',
             height: 424,
             animation: Highcharts.svg, // don't animate in old IE
             events: {
@@ -524,8 +572,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 0, y: 24 }
                 ],
-                color: '#25425c',
-                // #7cb5ec
+                color: '#e2dbea',
+                // 25425c #7cb5ec
                 visible: true
             },
             {
@@ -537,8 +585,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 1, y: 64 }
                 ],
-                color: '#d6d4a1',
-                // #434348
+                color: '#c5b8d5',
+                // d6d4a1 #434348
                 visible: true
             },
             {
@@ -550,8 +598,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 2, y: 5004 }
                 ],
-                color: '#83b490',
-                // #90ed7d
+                color: '#a997c1',
+                // 83b490 #90ed7d
                 visible: true
             },
             {
@@ -563,8 +611,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 3, y: 5024 }
                 ],
-                color: '#307671',
-                // #f7a35c
+                color: '#8d76ac',
+                // 307671 #f7a35c
                 visible: true
             },
             {
@@ -576,8 +624,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 4, y: 5024 }
                 ],
-                color: '#610019',
-                // #8085e9
+                color: '#715698',
+                // 610019 #8085e9
                 visible: true
             },
             {
@@ -589,8 +637,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 5, y: 5204 }
                 ],
-                color: '#3b0056',
-                // #f15c80
+                color: '#543884',
+                // 3b0056 #f15c80
                 visible: true
             },
             {
@@ -602,8 +650,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 6, y: 5054 }
                 ],
-                color: '#d2691e',
-                // #e4d354
+                color: '#47306d',
+                // d2691e #e4d354
                 visible: true
             },
             {
@@ -615,8 +663,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 7, y: 5074 }
                 ],
-                color: '#798488',
-                // #2b908f
+                color: '#392757',
+                // 798488 #2b908f
                 visible: true
             },
             {
@@ -628,8 +676,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 8, y: 5024 }
                 ],
-                color: '#75537c',
-                // #f45b5b
+                color: '#2d1f41',
+                // 75537c #f45b5b
                 visible: true
             },
             {
@@ -641,8 +689,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 9, y: 5004 }
                 ],
-                color: '#487470',
-                // #91e8e1
+                color: '#20182d',
+                // 487470 #91e8e1
                 visible: true
             },
             {
@@ -654,8 +702,8 @@ export const RobotDataColumn1 = () => {
                 data: [
                     { x: 10, y: 5020 }
                 ],
-                color: '#c76345',
-                // #7cb5ec
+                color: '#150f1a',
+                // c76345 #7cb5ec
                 visible: true
             },
         ],
@@ -1520,7 +1568,7 @@ export const RobotStateChart = () => {
                     }
                     return data;
                 }()),
-                color: '#005f00'
+                color: '#543884'//#005f00
             }
         ]
     }

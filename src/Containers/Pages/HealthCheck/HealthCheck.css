@@ -1,0 +1,26 @@
+.health-check {
+    margin-top: 26px;
+}
+
+.health-section-wrap {
+    height: 1100px;
+}
+
+.health-1, .health-2 {
+    border-right: 0.5px solid #303030;
+}
+
+.health-section .check-list div {
+    position: relative;
+}
+
+.health-section .check-list div svg{
+    position: absolute;
+    top: -15px;
+    left: 130px;
+}
+
+
+.trafficlight {
+    transform: rotate(-90deg);
+}

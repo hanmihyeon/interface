@@ -3,6 +3,8 @@ import { Breadcrumb, Row, Col, Card, notification, Modal } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 
+
+import { TunnelStatus } from '../Tunnel/TunnelStatus';
 import 'video-react/dist/video-react.css';
 import './Video.css';
 
@@ -112,7 +114,7 @@ const Video = (props) => {
                                 </div>
                             </div>
                             <div className="event">
-                                {eL.map(eL => (<div className={eventlocation === eL ? 'event-section-red' : 'event-section'}></div>))}
+                                <TunnelStatus/>    
                             </div>
                         </Card>
                     </Col>
@@ -141,7 +143,7 @@ const Video = (props) => {
                                 </div>
                             </div>
                             <div className="event">
-                                {eL.map(eL => (<div className={eventlocation === eL ? 'event-section-red' : 'event-section'}></div>))}
+                                <TunnelStatus/>    
                             </div>
                         </Card>
                     </Col>

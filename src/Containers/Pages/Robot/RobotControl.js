@@ -18,6 +18,8 @@ import {
     // RobotDataColumn,
     RobotDataColumn1,
     VoltChart,
+    VoltChart1,
+    CurrentChart1,
     CurrentChart,
     Thermom
 } from '../Chart/RobotChart';
@@ -109,7 +111,7 @@ const RobotControl = () => {
                                             <Button>◀</Button>
                                         </div>
                                         <div className="robot-center-button">
-                                            <Joystick size={35} baseColor="#808080" stickColor="black"></Joystick>
+                                            <Joystick size={35} baseColor="#282F6C" stickColor="black"></Joystick>
                                         </div>
                                         <div className="robot-right-button">
                                             <Button>▶</Button>
@@ -126,7 +128,7 @@ const RobotControl = () => {
                                                 <Button>◀</Button>
                                             </div>
                                             <div className="camera-center-button">
-                                                <Joystick size={30} baseColor="#808080" stickColor="black"></Joystick>
+                                                <Joystick size={30} baseColor="#282F6C" stickColor="black"></Joystick>
                                             </div>
                                             <div className="camera-right-button">
                                                 <Button>▶</Button>

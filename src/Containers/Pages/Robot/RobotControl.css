@@ -12,8 +12,6 @@
 
 .robot-control-wrap button,
 .robot-camera-control-wrap button {
-    background: #808080;
-    color: black;
     display: flex;
     justify-content: center;
 }
@@ -109,15 +107,6 @@
     margin-left: 15px;
 }
 
-.ant-radio-checked .ant-radio-inner {
-    border-color: #0b3e6e;
-}
-
-.ant-radio-inner::after,
-.ant-switch-checked {
-    background-color: #0b3e6e
-}
-
 .robot-control-1 .light-toggle {
     margin-bottom: 10px;
 }
@@ -189,7 +178,7 @@
     height: 100px;
     padding: 0;
     margin: 0;
-    background: #808080;
+    background: #543884;
     border: 0.5px solid #000;
 }
 
@@ -202,7 +191,7 @@
     padding: 0;
     margin: 0;
     border: 0.5px solid #000;
-    background: red;
+    background: #c0424e;
 }
 
 .section-distance {
@@ -271,8 +260,6 @@
     top: 0;
     right: 0;
     width: 25%;
-    background-color: #808080;
-    color: black;
 }
 
 .ant-form-item-control-input-content {

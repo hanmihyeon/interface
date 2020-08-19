@@ -22,6 +22,27 @@
     margin-left: 0;
 }
 
+.ant-btn {
+    background-color: #1d1e4e;
+    border-color: #282f6c;
+    /*background-color: #282F6C;
+    border-color: #2f3180;*/
+}
+
+.ant-btn:hover {
+    color: #414781;
+    border-color: #414781;
+}
+
+.ant-radio-checked .ant-radio-inner {
+    border-color: #1d1e4e;
+}
+
+.ant-radio-inner::after,
+.ant-switch-checked {
+    background-color: #1d1e4e;
+}
+
 .contents {
     margin-top: 30px;
 }
@@ -29,7 +50,6 @@
 .robot-contents {
     margin-top: 0;
 }
-
 
 .dashboard {
     margin-top: 0;

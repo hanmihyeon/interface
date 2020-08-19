@@ -17,7 +17,7 @@
     width: 100%;
     height: 100px;
     box-sizing: border-box;
-    background-color: gray;
+    background-color: #543884;
 }
 
 .tunnel-direction {
@@ -85,8 +85,6 @@
 
 .tunnel-robot-move-control-wrap button,
 .tunnel-robot-camera-wrap button {
-    background: #808080;
-    color: black;
     display: flex;
     justify-content: center;
 }
@@ -204,7 +202,7 @@
 .sensor-status .sensor {
     display: flex;
     justify-content: flex-start;
-    border-bottom: 0.5px solid #303030
+    border-bottom: 0.5px solid #303030;
 }
 
 .sensor-status .sensor .ant-col:nth-child(odd) {

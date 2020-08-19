@@ -116,36 +116,37 @@ export const FBG = () => {
       {
         name: '온도',
         yAxis: 0,
-        color: '#51b241',
+        color: '#543884',
         tooltip: {
           valueSuffix: ' °C',
         },
         data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 95.6, 54.4],
         zonesAxis: 'y',
         zones: [{
-          value: 100,
-          color: '#51b241'
+          value: 200,
+          color: '#543884'
         }, {
           value: 285,
-          color: 'red'
+          color: '#c0424e'
         },]
       },
       {
         name: '음향',
         yAxis: 1,
+        color: '#9a77cf',
         tooltip: {
           valueSuffix: ' dB',
         },
         data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4, 95.6, 54.4],
         zones: [{
-          value: 50,
-          color: '#7cb5ec'
+          value: 80,
+          color: '#9177cf'
         }, {
-          value: 100,
-          color: 'yellow'
+          value: 180,
+          color: '#f5ac4e'
         }, {
           value: 285,
-          color: 'red'
+          color: '#c0424e'
         }]
       },
     ]
@@ -162,14 +163,14 @@ export class TodayStatus extends React.Component {
     super(props);
 
     this.state = {
-      series: [1, 2, 3, 4, 5],
+      series: [1, 2, 3, 4],
       options: {
         chart: {
           width: 380,
           type: 'donut',
         },
-        labels: ['화재', '사고', '정체', '원활', '기타'],
-        colors: ['#5f0000', '#d26b0b', '#e8ea00', '#005f00', '#206794'],
+        labels: ['화재', '사고', '정체', '원활'],
+        colors: ['#c0424e', '#f5ac4e', '#367589', '#543884'],
         dataLabels: {
           enabled: false,
           style: {
@@ -262,7 +263,7 @@ export class TunnelRadial1 extends React.Component {
             color: '#fff'
           }
         },
-        colors: ['#39539e']
+        colors: ['#543884']
       },
     };
   }
@@ -296,7 +297,7 @@ export class TunnelRadial2 extends React.Component {
           lineCap: 'round',
         },
         labels: ['습도'],
-        colors: ['#39539e']
+        colors: ['#543884']
       },
     };
   }
@@ -594,6 +595,7 @@ export const SagnacChart = () => {
       {
         name: '음향',
         type: 'spline',
+        color: '#543884',
         yAxis: 0,
         tooltip: {
           valueSuffix: ' dB'

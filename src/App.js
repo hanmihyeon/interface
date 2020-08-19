@@ -36,7 +36,7 @@ class App extends Component {
                             <HeaderBox />
                             <Content
                                 style={{
-                                    padding: '0 0 0 10px',
+                                    padding: '0',
                                     width: '100%',
                                     minHeight: 'calc(100% - 70px)'
                                 }}>

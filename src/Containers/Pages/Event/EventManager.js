@@ -48,7 +48,7 @@ const data = [
     }, {
         id: '23',
         date: '2020-07-03 15:01:27',
-        class: '4',
+        class: '3',
         cause: '이상',
         result: '',
         sms: '',
@@ -56,7 +56,7 @@ const data = [
     }, {
         id: '22',
         date: '2020-07-03 15:00:00',
-        class: '5',
+        class: '3',
         cause: '원활',
         result: '',
         sms: '',
@@ -88,7 +88,7 @@ const data = [
     }, {
         id: '18',
         date: '2020-07-03 13:10:10',
-        class: '4',
+        class: '2',
         cause: '이상',
         result: '',
         sms: '',
@@ -96,7 +96,7 @@ const data = [
     }, {
         id: '17',
         date: '2020-07-03 13:00:01',
-        class: '5',
+        class: '1',
         cause: '원활',
         result: '',
         sms: '',
@@ -128,7 +128,7 @@ const data = [
     }, {
         id: '13',
         date: '2020-07-03 11:10:10',
-        class: '4',
+        class: '3',
         cause: '이상',
         result: '',
         sms: '',
@@ -136,7 +136,7 @@ const data = [
     }, {
         id: '12',
         date: '2020-07-03 10:20:17',
-        class: '5',
+        class: '3',
         cause: '원활',
         result: '',
         sms: '',
@@ -144,7 +144,7 @@ const data = [
     }, {
         id: '11',
         date: '2020-07-03 10:17:28',
-        class: '5',
+        class: '3',
         cause: '사고',
         result: '처리 완료',
         sms: '송신 완료',
@@ -168,7 +168,7 @@ const data = [
     }, {
         id: '8',
         date: '2020-07-03 09:10:30',
-        class: '4',
+        class: '3',
         cause: '이상',
         result: '',
         sms: '',
@@ -176,7 +176,7 @@ const data = [
     }, {
         id: '7',
         date: '2020-07-03 09:00:02',
-        class: '5',
+        class: '3',
         cause: '원활',
         result: '',
         sms: '',
@@ -192,7 +192,7 @@ const data = [
     }, {
         id: '5',
         date: '2020-07-03 08:30:33',
-        class: '5',
+        class: '2',
         cause: '원활',
         result: '',
         sms: '',
@@ -216,7 +216,7 @@ const data = [
     }, {
         id: '2',
         date: '2020-07-03 08:00:17',
-        class: '5',
+        class: '2',
         cause: '원활',
         result: '',
         sms: '',
@@ -349,12 +349,6 @@ class EventManager extends Component {
                     }, {
                         text: '3',
                         value: '3'
-                    }, {
-                        text: '4',
-                        value: '4'
-                    }, {
-                        text: '5',
-                        value: '5'
                     }
                 ],
                 filteredValue: filteredInfo.class || null,
@@ -367,26 +361,17 @@ class EventManager extends Component {
                             style: {
                                 background:
                                     parseInt(text) === 1
-                                        ? 'rgb(249, 18, 15, 0.5)' /*'#F9120F#fbc0c0' '#ff6666'*/
+                                        ? '#c0424e' /*'rgb(249, 18, 15, 0.5) #F9120F#fbc0c0' '#ff6666'*/
                                         : (parseInt(text) === 2
-                                            ? 'rgb(242, 90, 22,0.5)' /*'#F25A16#ffdaa1' '#ffbd55'*/
+                                            ? '#f5ac4e' /* rgb(242, 90, 22,0.5) '#F25A16#ffdaa1' '#ffbd55'*/
                                             : (parseInt(text) === 3
-                                                ? 'rgb(254, 255, 55,0.5)' /*'#FEFF37#f9ffc9' '#ffff66'*/
-                                                : (parseInt(text) === 4
-                                                    ? 'rgb(81, 178, 65,0.5)' /*'#51B241#baffe5' '#9de24f'*/
+                                                ? '#367589' /* rgb(254, 255, 55,0.5)'#FEFF37#f9ffc9' '#ffff66'*/
+                                                 : 'black')),
+                                                /* : (parseInt(text) === 4
+                                                    ? 'rgb(81, 178, 65,0.5)' /*'#51B241#baffe5' '#9de24f'
                                                     : (parseInt(text) === 5
-                                                        ? 'rgb(47, 146, 210,0.5)'/*'#2F92D2#a9cdff' '#87cefa'*/ : 'black')))),
-                                color:
-                                    parseInt(text) === 1
-                                        ? '#FFF'
-                                        : (parseInt(text) === 2
-                                            ? '#FFF'
-                                            : (parseInt(text) === 3
-                                                ? '#fff'
-                                                : (parseInt(text) === 4
-                                                    ? '#fff'
-                                                    : (parseInt(text) === 5
-                                                        ? '#FFF' : 'black')))),
+                                                        ? 'rgb(47, 146, 210,0.5)''#2F92D2#a9cdff' '#87cefa'*/
+                                color: '#fff',
                                 fontSize: '16px',
                                 fontWeight: '400',
                                 /*textShadow: '-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000'*/
