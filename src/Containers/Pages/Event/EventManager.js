@@ -361,11 +361,11 @@ class EventManager extends Component {
                             style: {
                                 background:
                                     parseInt(text) === 1
-                                        ? '#c0424e' /*'rgb(249, 18, 15, 0.5) #F9120F#fbc0c0' '#ff6666'*/
+                                        ? '#2a1215' /*'rgba(192,66,78,0.5) rgb(249, 18, 15, 0.5) #F9120F#fbc0c0' '#ff6666'*/
                                         : (parseInt(text) === 2
-                                            ? '#f5ac4e' /* rgb(242, 90, 22,0.5) '#F25A16#ffdaa1' '#ffbd55'*/
+                                            ? '#2b2111' /* rgba(245,172,78,0.5) rgb(242, 90, 22,0.5) '#F25A16#ffdaa1' '#ffbd55'*/
                                             : (parseInt(text) === 3
-                                                ? '#367589' /* rgb(254, 255, 55,0.5)'#FEFF37#f9ffc9' '#ffff66'*/
+                                                ? '#162312' /* rgba(54,117,137,0.5) rgb(254, 255, 55,0.5)'#FEFF37#f9ffc9' '#ffff66'*/
                                                  : 'black')),
                                                 /* : (parseInt(text) === 4
                                                     ? 'rgb(81, 178, 65,0.5)' /*'#51B241#baffe5' '#9de24f'
@@ -428,7 +428,7 @@ class EventManager extends Component {
                 align: 'center',
                 width: '9%',
                 render: () => (
-                    <a onClick={this.showDrawer}><ZoomInOutlined /></a>
+                    <a onClick={this.showDrawer} className="event-click"><ZoomInOutlined /></a>
                 )
             }, {
                 title: '발생 시각',
@@ -471,7 +471,7 @@ class EventManager extends Component {
                 render: () => (
                     <div>
                         <div>
-                            <a onClick={this.showPop}>O</a>
+                            <a onClick={this.showPop} className="event-click">O</a>
                         </div>
                         <div>
                             <Popover
@@ -493,7 +493,7 @@ class EventManager extends Component {
                 width: '7%',
                 render: () => (
                     <div>
-                        <a onClick={this.showModal}>조회</a>
+                        <a onClick={this.showModal} className="event-click">조회</a>
                         <Modal
                             className="event-report-modal"
                             title="이벤트 리포트"

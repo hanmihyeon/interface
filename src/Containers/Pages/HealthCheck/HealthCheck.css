@@ -3,7 +3,7 @@
 }
 
 .health-section-wrap {
-    height: 1100px;
+    height: 100%;
 }
 
 .health-1, .health-2 {
@@ -20,7 +20,61 @@
     left: 130px;
 }
 
+.section-title svg,
+.section-title1 svg {
+    margin-top: 5px;
+    margin-left: 60px;
+}
 
-.trafficlight {
+.trafficlight,
+.trafficlight-title {
     transform: rotate(-90deg);
+}
+
+.section {
+    padding: 5px;
+}
+
+.section-1 .cctv-optical,
+.section-1 .cctv-thermal,
+.section-1 .robot-optical,
+.section-1 .robot-thermal {
+    display: inline-block;
+    width: 50%;
+}
+
+.section-1 .cctv-optical,
+.section-1 .cctv-thermal {
+    margin-bottom: 15px;
+}
+
+/* 임시3 */
+
+
+.section-title,
+.section-title1 {
+    font-size: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: #141414;
+    position: absolute;
+    width: 95%;
+    height: 95%;
+    margin-bottom: 10px;
+    z-index: 999;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.section-title.active,
+.section-title1.active {
+    opacity: 0;
+}
+
+.section-title1 {
+    height: 80%;
 }

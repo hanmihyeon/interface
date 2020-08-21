@@ -1,10 +1,18 @@
 /* 테이블 */
 .ant-table {
-    background: #424242;
+    background: #303030;
 }
 
 .ant-table-wrapper.row-active .ant-table-row {
     background: #141414;
+}
+
+.event-click {
+    color: #414781;
+}
+
+.event-click:hover {
+    color: #fff;
 }
 
 /* 모달 */

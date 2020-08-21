@@ -65,6 +65,22 @@ class Alarm extends Component {
                                     <p>사고 발생</p>
                                 </Modal>
                             </div>
+                            <div>
+                                <Alert
+                                    onClick={this.showModal}
+                                    message="Success"
+                                    description="해결"
+                                    type="success"
+                                />
+                                <Modal
+                                    className="warn"
+                                    title="Alert"
+                                    visible={this.state.visiblemodal}
+                                    onOk={this.handleOk}
+                                    onCancel={this.handleCancel}>
+                                    <p>사고 해결</p>
+                                </Modal>
+                            </div>
                         </div>
                     </Card>
                 </Col>
