@@ -34,7 +34,7 @@
 
 .robot-location-bar {
     position: relative;
-    border: 3px solid #1d1e4e;
+    border: 3px solid #396afc;
     margin-top: 10px;
     margin-bottom: 15px;
 }
@@ -77,7 +77,7 @@
     height: 10px;
     top: 3px;
     left: -21px;
-    background-color: #367589;
+    background-color: #c6d4fe;
 }
 
 .arrow-left:after {
@@ -86,7 +86,7 @@
     clear: both;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-right: 10px solid #367589;
+    border-right: 10px solid #c6d4fe;
     width: 0;
     height: 0;
     top: -5px;
@@ -100,7 +100,7 @@
     height: 10px;
     top: 3px;
     left: 18px;
-    background-color: #367589;
+    background-color: #c6d4fe;
 }
 
 .arrow-right:after {
@@ -109,7 +109,7 @@
     clear: both;
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid #367589;
+    border-left: 10px solid #c6d4fe;
     width: 0;
     height: 0;
     top: -5px;

@@ -16,7 +16,7 @@ import moment from 'moment';
 import {
     RobotStateChart,
     // RobotDataColumn,
-    RobotDataColumn1,
+    RobotDataColumn,
     VoltChart,
     VoltChart1,
     CurrentChart1,
@@ -111,7 +111,7 @@ const RobotControl = () => {
                                             <Button>◀</Button>
                                         </div>
                                         <div className="robot-center-button">
-                                            <Joystick size={35} baseColor="#282F6C" stickColor="black"></Joystick>
+                                            <Joystick size={35} baseColor="#396afc" stickColor="black"></Joystick>
                                         </div>
                                         <div className="robot-right-button">
                                             <Button>▶</Button>
@@ -128,7 +128,7 @@ const RobotControl = () => {
                                                 <Button>◀</Button>
                                             </div>
                                             <div className="camera-center-button">
-                                                <Joystick size={30} baseColor="#282F6C" stickColor="black"></Joystick>
+                                                <Joystick size={30} baseColor="#396afc" stickColor="black"></Joystick>
                                             </div>
                                             <div className="camera-right-button">
                                                 <Button>▶</Button>
@@ -239,7 +239,7 @@ const RobotControl = () => {
                                             title="스케줄을 설정하시겠습니까?"
                                             onConfirm={confirmPop}
                                             okText="예"
-                                            cancelText="취소"><Button className="schedule-button" htmlType="설정">
+                                            cancelText="취소"><Button type="primary" className="schedule-button" htmlType="설정">
                                                 설정
                                                 </Button>
                                         </Popconfirm>
@@ -262,7 +262,7 @@ const RobotControl = () => {
                                         width: '100%'
                                     }}>
                                     {/*<div className="unit-box">1분 단위</div>*/}
-                                    <div className="robot-data-chart data-1"><RobotDataColumn1 /></div>
+                                    <div className="robot-data-chart data-1"><RobotDataColumn /></div>
                                 </div>
 
                             </Card>

@@ -178,8 +178,8 @@
     height: 100px;
     padding: 0;
     margin: 0;
-    background: #282f6c;
-    border: 0.5px solid #000;
+    background: #080f23;
+    border: 0.5px solid #396afc;
 }
 
 .tunnel-section-red {
@@ -190,7 +190,7 @@
     height: 100px;
     padding: 0;
     margin: 0;
-    border: 0.5px solid #000;
+    border: 0.5px solid #396afc;
     background: #c0424e;
 }
 
@@ -215,7 +215,7 @@
     display: flex;
     width: 100%;
     height: 1px;
-    border: 2px solid #a0a0a0;
+    border: 2.5px solid #396afc;
 }
 
 .robot-cctv {

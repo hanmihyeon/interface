@@ -155,7 +155,7 @@ const Tunnel = (props) => {
                                             <Button>◀</Button>
                                         </div>
                                         <div className="tunnel-robot-center-button">
-                                            <Joystick size={35} baseColor="#282F6C" stickColor="black"></Joystick>
+                                            <Joystick size={35} baseColor="#396afc" stickColor="black"></Joystick>
                                         </div>
                                         <div className="tunnel-robot-right-button">
                                             <Button>▶</Button>
@@ -171,7 +171,7 @@ const Tunnel = (props) => {
                                                     <Button>◀</Button>
                                                 </div>
                                                 <div className="tunnel-camera-center-button">
-                                                    <Joystick size={30} baseColor="#282F6C" stickColor="black"></Joystick>
+                                                    <Joystick size={30} baseColor="#396afc" stickColor="black"></Joystick>
                                                 </div>
                                                 <div className="tunnel-camera-right-button">
                                                     <Button>▶</Button>

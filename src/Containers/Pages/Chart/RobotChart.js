@@ -19,7 +19,7 @@ export const Thermom = () => {
             <h5 className="ther-chart gauge-title">온도</h5>
             <Thermometer
                 theme="dark"
-                value="25"
+                value="285"
                 max="285"
                 steps="2"
                 format="°C"
@@ -71,8 +71,8 @@ export const VoltChart1 = () => {
                 width={180}
                 height={120}
                 needleColor="red"
-                startColor="#fff"
-                endColor="#543885"//#005f00 #b50606
+                startColor="#005f00"
+                endColor="#c0424e"//# #b50606
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}V"
@@ -95,7 +95,7 @@ export const CurrentChart = () => {
                 height={120}
                 needleColor="red"
                 startColor="#005f00"
-                endColor="#c0424e"
+                endColor="#c0424e" //c0424e
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
                 currentValueText="${value}A"
@@ -179,8 +179,9 @@ export const RobotDataColumn = () => {
 
         plotOptions: {
             column: {
-                // pointPadding: 0.2,
-                borderWidth: 0
+                pointPadding: 0.15,
+                borderWidth: 0,
+                borderRadius: 15
             },
             series: {
                 grouping: false
@@ -276,7 +277,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 0, y: 24 }
                 ],
-                color: '#e2dbea',
+                color: '#396afc',
                 // #3e5a76 #7cb5ec
                 visible: true
             },
@@ -289,7 +290,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 1, y: 64 }
                 ],
-                color: '#c5b8d5',
+                color: '#396afc',
                 // #3c3c40 434348
                 visible: true
             },
@@ -302,7 +303,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 2, y: 5004 }
                 ],
-                color: '#a997c1',
+                color: '#396afc',
                 // #48763e #90ed7d
                 visible: true
             },
@@ -315,7 +316,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 3, y: 5024 }
                 ],
-                color: '#8d76ac',
+                color: '#396afc',
                 // #7b512e #f7a35c
                 visible: true
             },
@@ -328,7 +329,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 4, y: 5024 }
                 ],
-                color: '#715698',
+                color: '#396afc',
                 // 404274 #8085e9
                 visible: true
             },
@@ -341,7 +342,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 5, y: 5204 }
                 ],
-                color: '#543884',
+                color: '#396afc',
                 // 782e40 #f15c80
                 visible: true
             },
@@ -354,7 +355,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 6, y: 5054 }
                 ],
-                color: '#47306d',
+                color: '#396afc',
                 // 72692a #e4d354
                 visible: true
             },
@@ -367,7 +368,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 7, y: 5074 }
                 ],
-                color: '#392757',
+                color: '#396afc',
                 // 154847 #2b908f
                 visible: true
             },
@@ -380,7 +381,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 8, y: 5024 }
                 ],
-                color: '#2d1f41',
+                color: '#396afc',
                 // 7a2d2d #f45b5b
                 visible: true
             },
@@ -393,7 +394,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 9, y: 5004 }
                 ],
-                color: '#20182d',
+                color: '#396afc',
                 // 487470 #91e8e1
                 visible: true
             },
@@ -406,7 +407,7 @@ export const RobotDataColumn = () => {
                 data: [
                     { x: 10, y: 5020 }
                 ],
-                color: '#150f1a',
+                color: '#396afc',
                 // 3e5a76 #7cb5ec
                 visible: true
             },
@@ -1568,7 +1569,7 @@ export const RobotStateChart = () => {
                     }
                     return data;
                 }()),
-                color: '#543884'//#005f00
+                color: '#396afc'//#005f00
             }
         ]
     }
@@ -1695,156 +1696,6 @@ export const ModeChart = () => {
     )
 }
 
-export const RobotChart7 = () => {
-
-    const option7 = {
-        chart: {
-            backgroundColor: 'none',
-            type: 'spline',
-            width: 530,
-            height: 250,
-            animation: Highcharts.svg, // don't animate in old IE
-            events: {
-                load: null
-                /*function () {
-    
-                    // set up the updating of the chart each second
-                    var series = this.series[0];
-                    setInterval(function () {
-                        var x = (new Date()).getTime(), // current time
-                            y = (Math.round(Math.random() * 2))
-                        series.addPoint([
-                            x, y
-                        ], true, true);
-                    }, 5000);
-                }*/
-            }
-        },
-
-        time: {
-            useUTC: false
-        },
-
-        title: {
-            text: '온도',
-            style: {
-                fontSize: '14px'
-            }
-        },
-        accessibility: {
-            announceNewData: {
-                enabled: true,
-                minAnnounceInterval: 15000,
-                announcementFormatter: function (allSeries, newSeries, newPoint) {
-                    if (newPoint) {
-                        return 'New point added. Value: ' + newPoint.y;
-                    }
-                    return false;
-                }
-            }
-        },
-
-        plotOptions: {
-            series: {
-                marker: {
-                    enabled: false
-                }
-            }
-        },
-
-        xAxis: {
-            type: 'datetime',
-            tickPixelInterval: 150
-        },
-
-        yAxis: {
-            title: {
-                text: ''
-            },
-            plotLines: [
-                {
-                    value: 0,
-                    width: 1,
-                    color: '#808080'
-                }
-            ]
-        },
-
-        tooltip: {
-            headerFormat: '<b>{series.name}</b><br/>',
-            pointFormat: '{point.x:%Y-%m-%d %H:%M:%S}<br/>{point.y:.2f}'
-        },
-
-        legend: {
-            enabled: false
-        },
-
-        exporting: {
-            enabled: false
-        },
-
-        series: [
-            {
-                name: 'Random data',
-                data: (function () {
-                    // generate an array of random data
-                    var data = [],
-                        time = (new Date()).getTime(),
-                        i;
-
-                    for (i = -19; i <= 0; i += 1) {
-                        data.push({
-                            x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
-                        });
-                    }
-
-                    return data;
-                }())
-            },
-            {
-                name: 'Random data',
-                data: (function () {
-                    // generate an array of random data
-                    var data = [],
-                        time = (new Date()).getTime(),
-                        i;
-
-                    for (i = -19; i <= 0; i += 1) {
-                        data.push({
-                            x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
-                        });
-                    }
-
-                    return data;
-                }())
-            },
-            {
-                name: 'Random data',
-                data: (function () {
-                    // generate an array of random data
-                    var data = [],
-                        time = (new Date()).getTime(),
-                        i;
-
-                    for (i = -19; i <= 0; i += 1) {
-                        data.push({
-                            x: time + i * 5000,
-                            y: (30 + ((Math.random() * 10) / 10))
-                        });
-                    }
-
-                    return data;
-                }())
-            },
-        ]
-    }
-
-    return (
-        <HighchartsReact Highcharts={Highcharts} options={option7} />
-    );
-}
 
 /*
 

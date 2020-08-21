@@ -533,7 +533,7 @@ class EventManager extends Component {
                             onCancel={this.handlePopCancel}
                             icon={<QuestionCircleOutlined style={{ color: 'red' }} />}
                         >
-                            <Button disabled={this.state.disabled} className="user-confirm">확인</Button>
+                            <Button type="link" disabled={this.state.disabled} className="user-confirm">확인</Button>
                         </Popconfirm>
                     </div>
                 )
