@@ -10,7 +10,7 @@ TweenOne
 export const TunnelStatus = () => {
     const eL = [1, 1, 1, 1, 2, 2, 2, 1, 1, 1];
     const [eventlocation, setEventlocation] = useState(0);
-    const distance = [0, 48, 96, 144, 192, 240, 288, 336, 384, 432, 480];
+    // const distance = [0, 48, 96, 144, 192, 240, 288, 336, 384, 432, 480];
     const animation = {
         bezier: {
             type: 'soft',

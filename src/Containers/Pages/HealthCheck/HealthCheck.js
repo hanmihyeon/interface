@@ -7,40 +7,6 @@ import TrafficLight from 'react-trafficlight';
 import '../Common.css';
 import './HealthCheck.css';
 
-/*const treeStyles = {
-    position: 'relative',
-    padding: '4px 10px 0px',
-    color: 'white',
-    fill: 'white',
-    width: '100%'
-}
-
-const typeStyles = {
-    fontSize: '2em',
-    verticalAlign: 'middle'
-}
-
-const trafficStyles2 = {
-    transform: 'rotate(-90deg)',
-    position: 'absolute',
-    top: '-42px',
-    left: '190px'
-}
-
-const trafficStyles1 = {
-    transform: 'rotate(-90deg)',
-    position: 'absolute',
-    top: '-9px',
-    left: '222px'
-}
-
-const trafficStyles = {
-    transform: 'rotate(-90deg)',
-    position: 'absolute',
-    top: '-45px',
-    left: '170px'
-}*/
-
 const HealthCheck = () => {
     const [conVisible1, setCon1] = useState(false);
     const [conVisible2, setCon2] = useState(false);
@@ -54,20 +20,48 @@ const HealthCheck = () => {
             </Breadcrumb>
             <div className="health-check contents" style={{ width: '91.6%' }}>
                 <Row className="no-division-wrap">
-                    <div><Card title="NVR" size="small" className="check-nvr no-division"></Card></div>
-                    <div><Card title="로봇 게이트웨이" size="small" className="check-robot-gw no-division"></Card></div>
-                    <div><Card title="FGB 광센싱 게이트웨이" size="small" className="check-fgb-gw no-division"></Card></div>
-                    <div><Card title="Sagnac 광센싱 게이트웨이" size="small" className="check-sagnac-gw no-division"></Card></div>
-                    <div><Card title="Sagnac 센서" size="small" className="check-sagnac no-division"></Card></div>
-                    <div><Card title="GPU 서버" size="small" className="check-gpu-server no-division"></Card></div>
-                    <div><Card title="운영 데이터베이스" size="small" className="check-op-db no-division"></Card></div>
+                    <div>
+                        <Card title="NVR" size="small" className="check-nvr no-division">
+                            <div className="no-division-check"><TrafficLight Size="50" GreenOn className="no-division-trafficlight" /></div>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card title="로봇 게이트웨이" size="small" className="check-robot-gw no-division">
+                            <div className="no-division-check"><TrafficLight Size="50" GreenOn className="no-division-trafficlight" /></div>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card title="FGB 광센싱 게이트웨이" size="small" className="check-fgb-gw no-division">
+                            <div className="no-division-check"><TrafficLight Size="50" GreenOn className="no-division-trafficlight" /></div>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card title="Sagnac 광센싱 게이트웨이" size="small" className="check-sagnac-gw no-division">
+                            <div className="no-division-check"><TrafficLight Size="50" GreenOn className="no-division-trafficlight" /></div>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card title="Sagnac 센서" size="small" className="check-sagnac no-division">
+                            <div className="no-division-check"><TrafficLight Size="50" GreenOn className="no-division-trafficlight" /></div>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card title="GPU 서버" size="small" className="check-gpu-server no-division">
+                            <div className="no-division-check"><TrafficLight Size="50" GreenOn className="no-division-trafficlight" /></div>
+                        </Card>
+                    </div>
+                    <div>
+                        <Card title="운영 데이터베이스" size="small" className="check-op-db no-division">
+                            <div className="no-division-check"><TrafficLight Size="50" GreenOn className="no-division-trafficlight" /></div>
+                        </Card>
+                    </div>
                 </Row>
                 <Row>
                     <Col span={12} className="health-section-wrap health-1">
                         <Card title="부강->청주" size="small">
                             <Row>
                                 <Col span={12} className="check-left">
-                                    <div><Card title="CCTV" size="small" className="check-cctv division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="CCTV" size="small" className="check-cctv division">
                                         <div className="cctv-optical check-list">
                                             <div>
                                                 <span>CCTV 일반 1</span>
@@ -104,8 +98,21 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
+                                        <div className="hidden-box">
+                                            {/*<span>CCTV</span>
+                                            <div>
+                                                <TrafficLight Size="40" GreenOn className="trafficlight" />
+                                            </div>
+                                            <div>
+                                                <p>
+                                                정상: 6개&nbsp;&nbsp;
+                                                비정상: 1개&nbsp;&nbsp;
+                                                Unknown: 1개
+                                                </p>
+                                            </div>*/}
+                                        </div>
                                     </Card></div>
-                                    <div><Card title="로봇 카메라" size="small" className="check-robotcam division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="로봇 카메라" size="small" className="check-robotcam division">
                                         <div className="robot-optical check-list">
                                             <div>
                                                 <span>Robot 일반 1</span>
@@ -118,8 +125,9 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
-                                    <div><Card title="로봇" size="small" className="check-robot division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="로봇" size="small" className="check-robot division">
                                         <div className="check-list">
                                             <div>
                                                 <span>로봇</span>
@@ -170,22 +178,24 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
-                                    <div><Card title="FBG" size="small" className="check-fbg division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="FBG" size="small" className="check-fbg division">
                                         <div className="check-list">
                                             <div>
                                                 <span>FBGI</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
-                                            </div> 
+                                            </div>
                                             <div>
                                                 <span>FBG 온도/음향</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
-                                            </div>   
-                                        </div>    
+                                            </div>
+                                        </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
                                 </Col>
                                 <Col span={12} className="check-right">
-                                    <div><Card title="고정연기센서" size="small" className="check-smoke division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="고정연기센서" size="small" className="check-smoke division">
                                         <div className="check-list">
                                             <div>
                                                 <span>센서 1</span>
@@ -307,18 +317,18 @@ const HealthCheck = () => {
                                                 <span>센서 30</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                        </div>    
+                                        </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
                                 </Col>
                             </Row>
                         </Card>
                     </Col>
                     <Col span={12} className="health-section-wrap health-2">
-                        <Card>
-                            <h4>청주-&gt;부강</h4>
+                        <Card title="청주->부강" size="small">
                             <Row>
                                 <Col span={12} className="check-left">
-                                    <div><Card title="CCTV" size="small" className="check-cctv division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="CCTV" size="small" className="check-cctv division">
                                         <div className="cctv-optical check-list">
                                             <div>
                                                 <span>CCTV 일반 1</span>
@@ -355,8 +365,9 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
-                                    <div><Card title="로봇 카메라" size="small" className="check-robotcam division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="로봇 카메라" size="small" className="check-robotcam division">
                                         <div className="robot-optical check-list">
                                             <div>
                                                 <span>Robot 일반 1</span>
@@ -369,8 +380,9 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
-                                    <div><Card title="로봇" size="small" className="check-robot division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="로봇" size="small" className="check-robot division">
                                         <div className="check-list">
                                             <div>
                                                 <span>로봇</span>
@@ -421,22 +433,24 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
-                                    <div><Card title="FBG" size="small" className="check-fbg division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="FBG" size="small" className="check-fbg division">
                                         <div className="check-list">
                                             <div>
                                                 <span>FBGI</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
-                                            </div> 
+                                            </div>
                                             <div>
                                                 <span>FBG 온도/음향</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
-                                            </div>   
-                                        </div>    
+                                            </div>
+                                        </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
                                 </Col>
                                 <Col span={12} className="check-right">
-                                    <div><Card title="고정연기센서" size="small" className="check-smoke division" extra={<TrafficLight Size="20" GreenOn className="trafficlight-title" />}>
+                                    <div><Card title="고정연기센서" size="small" className="check-smoke division">
                                         <div className="check-list">
                                             <div>
                                                 <span>센서 1</span>
@@ -558,7 +572,8 @@ const HealthCheck = () => {
                                                 <span>센서 30</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                        </div>    
+                                        </div>
+                                        <div className="hidden-box"></div>
                                     </Card></div>
                                 </Col>
                             </Row>
