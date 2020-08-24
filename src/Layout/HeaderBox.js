@@ -109,11 +109,8 @@ class HeaderBox extends Component {
                             <Clock format={'YYYY년 MM월 DD일 HH:mm:ss'} ticking={true} />
                         </div>
                         {/*<div>{this.state.thisTime.getHours()}:{this.state.thisTime.getMinutes()}</div>*/}
-                        <div>Login</div>
                         <div>Admin</div>
-                        <div>
-                            <Avatar className="user-avatar" size={25} icon={<UserOutlined />} />
-                        </div>
+                        
                     </div>
                 </div>
             </Header>

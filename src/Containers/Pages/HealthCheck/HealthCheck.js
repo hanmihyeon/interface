@@ -12,7 +12,13 @@ const HealthCheck = () => {
     const [conVisible2, setCon2] = useState(false);
     const [conVisible3, setCon3] = useState(false);
     const [conVisible4, setCon4] = useState(false);
-
+    const [conVisible5, setCon5] = useState(false);
+    const [conVisible6, setCon6] = useState(false);
+    const [conVisible7, setCon7] = useState(false);
+    const [conVisible8, setCon8] = useState(false);
+    const [conVisible9, setCon9] = useState(false);
+    const [conVisible10, setCon10] = useState(false);
+    
     return (
         <Fragment>
             <Breadcrumb className="bread">
@@ -98,18 +104,12 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box">
-                                            {/*<span>CCTV</span>
+                                        <div onClick={() => setCon1(!conVisible1)} className={conVisible1 ? 'hidden-box active' : 'hidden-box'}>
+                                            
                                             <div>
+                                            <span>CCTV</span>
                                                 <TrafficLight Size="40" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <p>
-                                                정상: 6개&nbsp;&nbsp;
-                                                비정상: 1개&nbsp;&nbsp;
-                                                Unknown: 1개
-                                                </p>
-                                            </div>*/}
                                         </div>
                                     </Card></div>
                                     <div><Card title="로봇 카메라" size="small" className="check-robotcam division">
@@ -125,7 +125,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon2(!conVisible2)} className={conVisible2 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                     <div><Card title="로봇" size="small" className="check-robot division">
                                         <div className="check-list">
@@ -178,7 +178,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon3(!conVisible3)} className={conVisible3 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                     <div><Card title="FBG" size="small" className="check-fbg division">
                                         <div className="check-list">
@@ -191,7 +191,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon4(!conVisible4)} className={conVisible4 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                 </Col>
                                 <Col span={12} className="check-right">
@@ -318,7 +318,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon5(!conVisible5)} className={conVisible5 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                 </Col>
                             </Row>
@@ -365,7 +365,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon6(!conVisible6)} className={conVisible6 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                     <div><Card title="로봇 카메라" size="small" className="check-robotcam division">
                                         <div className="robot-optical check-list">
@@ -380,7 +380,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon7(!conVisible7)} className={conVisible7 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                     <div><Card title="로봇" size="small" className="check-robot division">
                                         <div className="check-list">
@@ -433,7 +433,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon8(!conVisible8)} className={conVisible8 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                     <div><Card title="FBG" size="small" className="check-fbg division">
                                         <div className="check-list">
@@ -446,7 +446,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon9(!conVisible9)} className={conVisible9 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                 </Col>
                                 <Col span={12} className="check-right">
@@ -573,7 +573,7 @@ const HealthCheck = () => {
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
-                                        <div className="hidden-box"></div>
+                                        <div onClick={() => setCon10(!conVisible10)} className={conVisible10 ? 'hidden-box active' : 'hidden-box'}></div>
                                     </Card></div>
                                 </Col>
                             </Row>
