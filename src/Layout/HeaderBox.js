@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Avatar, Layout, Menu, Typography } from 'antd';
+import { Layout, Menu, Typography } from 'antd';
 import Clock from 'react-live-clock';
 import 'antd/dist/antd.dark.css';
 import {

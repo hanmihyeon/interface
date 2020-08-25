@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Modal } from 'antd';
-import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { VideoCameraOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 
 import 'video-react/dist/video-react.css';

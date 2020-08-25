@@ -18,8 +18,6 @@ import {
     // RobotDataColumn,
     RobotDataColumn,
     VoltChart,
-    VoltChart1,
-    CurrentChart1,
     CurrentChart,
     Thermom
 } from '../Chart/RobotChart';

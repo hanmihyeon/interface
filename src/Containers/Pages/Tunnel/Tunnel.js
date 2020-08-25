@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Slider, Radio, Switch, Popconfirm, message } from 'antd';
+import { Breadcrumb, Row, Col, Card, notification, Button, Slider, Radio, Switch, Popconfirm, message } from 'antd';
 import { LaptopOutlined } from '@ant-design/icons';
 
 import { Player } from 'video-react';
@@ -34,7 +34,7 @@ const Tunnel = (props) => {
     }
 
     // const [value, setValue] = useState('1');
-    const [form] = Form.useForm();
+    // const [form] = Form.useForm();
     //나중에 배열로 camera url마다 지정해야할듯
     const v1 = 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4';  //분홍구름
     const v2 = 'http://media.w3.org/2010/05/bunny/movie.mp4';         //흰눈
@@ -97,24 +97,6 @@ const Tunnel = (props) => {
         '열화상카메라: 3번 300m',
         '열화상카메라: 4번 400m'
     ];
-
-    const animation = {
-        bezier: {
-            type: 'soft',
-            vars: [
-                {
-                    x: 0,
-                    y: 0
-                }, {
-                    x: 750,
-                    y: 0
-                }
-            ]
-        },
-        repeat: -1,
-        yoyo: true,
-        duration: 20000
-    };
 
     return (
         <Fragment>

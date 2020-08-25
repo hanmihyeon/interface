@@ -92,11 +92,14 @@
 }
 
 /* slider */
-.ant-slider-track {
+.ant-slider-track,
+.ant-slider:hover .ant-slider-track {
     background-color: #396afc;
 }
 
-.ant-slider-handle {
+.ant-slider-handle,
+.ant-slider-handle.ant-tooltip-open,
+.ant-slider:hover .ant-slider-handle:not(.ant-tooltip-open) {
     border: 2px solid #557ffc;
 }
 

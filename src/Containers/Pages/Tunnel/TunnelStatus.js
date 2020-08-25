@@ -26,7 +26,7 @@ export const TunnelStatus = () => {
         },
         repeat: -1,
         yoyo: true,
-        duration: 20000
+        duration: 30000
     };
 
     const StatusAlert = () => {
