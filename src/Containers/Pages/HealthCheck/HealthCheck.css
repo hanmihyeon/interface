@@ -92,6 +92,7 @@
     top: 0;
     left: 0;
     opacity: 1;
+    cursor: pointer;
 }
 
 .hidden-box.active {
@@ -104,7 +105,7 @@
     height: 100%;
     padding-left: 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -126,4 +127,22 @@
 .hidden-box p {
     display: flex;
     justify-content: space-around;
+}
+
+.check-cctv .hidden-box > div,
+.check-fbg .hidden-box > div {
+    font-size: 28px;
+}
+
+.check-smoke .hidden-box > div {
+    align-items: flex-start;
+}
+
+.check-smoke .hidden-box > div > div {
+    align-items: flex-start;
+    margin-top: 28px;
+}
+
+.check-smoke .hidden-box span {
+    margin-top: 62px;
 }
