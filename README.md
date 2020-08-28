@@ -16,9 +16,9 @@
 
   + 차트
     * [highcharts](https://www.highcharts.com/): 로봇 제어 페이지의 환경 센서 column 차트, 로봇 상태 추이 area 차트, 터널 운영 페이지의 FBG 센서 column 차트, Sagnac 센서의 line 차트에 사용
-    * [highcharts-react-official]: Highcharts의 React 사용을 위한 라이브러리
+    * [highcharts-react-official](https://www.npmjs.com/package/highcharts-react-official): Highcharts의 React 사용을 위한 라이브러리
     * [apexcharts](https://apexcharts.com/): 터널 운영 페이지의 현황 donut 차트, 환경 센서 radial 차트에 사용
-    * [react-apexcharts]: Apexcharts의 React 사용을 위한 라이브러리
+    * [react-apexcharts](https://www.npmjs.com/package/react-apexcharts): Apexcharts의 React 사용을 위한 라이브러리
     * [react-d3-speedometer](https://www.npmjs.com/package/react-d3-speedometer): 로봇 제어 페이지의 전압, 전류를 표현하기 위해 사용
     * [react-thermometer-ecotropy](https://www.npmjs.com/package/react-thermometer-ecotropy): 로봇 제어 페이지의 온도를 표현하기 위해 사용
 
