@@ -23,7 +23,6 @@ import '../Common.css';
 const Tunnel = (props) => {
 
     const [conVisible, setCon] = useState(false);
-    const [eventlocation, setEventlocation] = useState(0);
 
     function confirmPop(e) {
         message.success('설정되었습니다!');
@@ -70,7 +69,6 @@ const Tunnel = (props) => {
     }
 
     const StatusAlert = () => {
-        setEventlocation(2);
         notification.open({
             message: 'Alert',
             style: {

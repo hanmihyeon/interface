@@ -428,7 +428,7 @@ class EventManager extends Component {
                 align: 'center',
                 width: '9%',
                 render: () => (
-                    <a onClick={this.showDrawer} className="event-click"><ZoomInOutlined /></a>
+                    <span onClick={this.showDrawer} className="event-click"><ZoomInOutlined /></span>
                 )
             }, {
                 title: '발생 시각',
@@ -471,13 +471,13 @@ class EventManager extends Component {
                 render: () => (
                     <div>
                         <div>
-                            <a onClick={this.showPop} className="event-click">O</a>
+                            <span onClick={this.showPop} className="event-click">O</span>
                         </div>
                         <div>
                             <Popover
                                 title="로봇 출동"
                                 placement="bottom"
-                                content={<div><p>로봇출동완료</p><a onClick={this.hide}>Close</a></div>}
+                                content={<div><p>로봇출동완료</p><span onClick={this.hide}>Close</span></div>}
                                 trigger="click"
                                 visible={this.state.visiblepop}
                                 onVisibleChange={this.handleRobotVisibleChange}
@@ -493,7 +493,7 @@ class EventManager extends Component {
                 width: '7%',
                 render: () => (
                     <div>
-                        <a onClick={this.showModal} className="event-click">조회</a>
+                        <span onClick={this.showModal} className="event-click">조회</span>
                         <Modal
                             className="event-report-modal"
                             title="이벤트 리포트"

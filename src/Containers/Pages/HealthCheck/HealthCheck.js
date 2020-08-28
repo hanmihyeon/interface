@@ -18,7 +18,7 @@ const HealthCheck = () => {
     const [conVisible8, setCon8] = useState(false);
     const [conVisible9, setCon9] = useState(false);
     const [conVisible10, setCon10] = useState(false);
-    
+
     return (
         <Fragment>
             <Breadcrumb className="bread">
@@ -69,37 +69,37 @@ const HealthCheck = () => {
                                 <Col span={12} className="check-left">
                                     <div><Card title="CCTV" size="small" className="check-cctv division">
                                         <div className="cctv-optical check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 2</span>
                                                 <TrafficLight Size="20" YellowOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 3</span>
                                                 <TrafficLight Size="20" YellowOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 4</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
                                         <div className="cctv-thermal check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 3</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 4</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -113,13 +113,13 @@ const HealthCheck = () => {
                                     </Card></div>
                                     <div><Card title="로봇 카메라" size="small" className="check-robotcam division">
                                         <div className="robot-optical check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>Robot 일반 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
                                         <div className="robot-thermal check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>Robot 열화상 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -133,51 +133,53 @@ const HealthCheck = () => {
                                     </Card></div>
                                     <div><Card title="로봇" size="small" className="check-robot division">
                                         <div className="check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>로봇</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CO</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CO2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>O2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>VOC</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>온도</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                        </div>
+                                        <div className="check-list">
+                                            <div className="line">
                                                 <span>습도</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>연기</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>먼지</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>이산화질소</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>황화수소</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>암모니아</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -189,13 +191,17 @@ const HealthCheck = () => {
                                             </div>
                                         </div>
                                     </Card></div>
+                                </Col>
+                                <Col span={12} className="check-right">
                                     <div><Card title="FBG" size="small" className="check-fbg division">
                                         <div className="check-list">
-                                            <div>
-                                                <span>FBGI</span>
+                                            <div className="line">
+                                                <span>FBG Interrogate</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                        </div>
+                                        <div className="check-list">
+                                            <div className="line">
                                                 <span>FBG 온도/음향</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -207,128 +213,128 @@ const HealthCheck = () => {
                                             </div>
                                         </div>
                                     </Card></div>
-                                </Col>
-                                <Col span={12} className="check-right">
                                     <div><Card title="고정연기센서" size="small" className="check-smoke division">
                                         <div className="check-list">
-                                            <div>
-                                                <span>센서 1</span>
+                                            <div className="line">
+                                                <span>연기센서 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 2</span>
+                                            <div className="line">
+                                                <span>연기센서 2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 3</span>
+                                            <div className="line">
+                                                <span>연기센서 3</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 4</span>
+                                            <div className="line">
+                                                <span>연기센서 4</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 5</span>
+                                            <div className="line">
+                                                <span>연기센서 5</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 6</span>
+                                            <div className="line">
+                                                <span>연기센서 6</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 7</span>
+                                            <div className="line">
+                                                <span>연기센서 7</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 8</span>
+                                            <div className="line">
+                                                <span>연기센서 8</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 9</span>
+                                            <div className="line">
+                                                <span>연기센서 9</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 10</span>
+                                            <div className="line">
+                                                <span>연기센서 10</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 11</span>
+                                            <div className="line">
+                                                <span>연기센서 11</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 12</span>
+                                            <div className="line">
+                                                <span>연기센서 12</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 13</span>
+                                            <div className="line">
+                                                <span>연기센서 13</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 14</span>
+                                            <div className="line">
+                                                <span>연기센서 14</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 15</span>
+                                            <div className="line">
+                                                <span>연기센서 15</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 16</span>
+                                        </div>
+                                        <div className="check-list">
+                                            <div className="line">
+                                                <span>연기센서 16</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 17</span>
+                                            <div className="line">
+                                                <span>연기센서 17</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 18</span>
+                                            <div className="line">
+                                                <span>연기센서 18</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 19</span>
+                                            <div className="line">
+                                                <span>연기센서 19</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 20</span>
+                                            <div className="line">
+                                                <span>연기센서 20</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 21</span>
+                                            <div className="line">
+                                                <span>연기센서 21</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 22</span>
+                                            <div className="line">
+                                                <span>연기센서 22</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 23</span>
+                                            <div className="line">
+                                                <span>연기센서 23</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 24</span>
+                                            <div className="line">
+                                                <span>연기센서 24</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 25</span>
+                                            <div className="line">
+                                                <span>연기센서 25</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 26</span>
+                                            <div className="line">
+                                                <span>연기센서 26</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 27</span>
+                                            <div className="line">
+                                                <span>연기센서 27</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 28</span>
+                                            <div className="line">
+                                                <span>연기센서 28</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 29</span>
+                                            <div className="line">
+                                                <span>연기센서 29</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 30</span>
+                                            <div className="line">
+                                                <span>연기센서 30</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
@@ -349,37 +355,37 @@ const HealthCheck = () => {
                                 <Col span={12} className="check-left">
                                     <div><Card title="CCTV" size="small" className="check-cctv division">
                                         <div className="cctv-optical check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 2</span>
                                                 <TrafficLight Size="20" YellowOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 3</span>
                                                 <TrafficLight Size="20" YellowOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 일반 4</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
                                         <div className="cctv-thermal check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 3</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CCTV 열화상 4</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -393,13 +399,13 @@ const HealthCheck = () => {
                                     </Card></div>
                                     <div><Card title="로봇 카메라" size="small" className="check-robotcam division">
                                         <div className="robot-optical check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>Robot 일반 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>
                                         <div className="robot-thermal check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>Robot 열화상 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -413,51 +419,53 @@ const HealthCheck = () => {
                                     </Card></div>
                                     <div><Card title="로봇" size="small" className="check-robot division">
                                         <div className="check-list">
-                                            <div>
+                                            <div className="line">
                                                 <span>로봇</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CO</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>CO2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>O2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>VOC</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>온도</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                        </div>
+                                        <div className="check-list">
+                                            <div className="line">
                                                 <span>습도</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>연기</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>먼지</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>이산화질소</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>황화수소</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                            <div className="line">
                                                 <span>암모니아</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -469,13 +477,17 @@ const HealthCheck = () => {
                                             </div>
                                         </div>
                                     </Card></div>
+                                </Col>
+                                <Col span={12} className="check-right">
                                     <div><Card title="FBG" size="small" className="check-fbg division">
                                         <div className="check-list">
-                                            <div>
-                                                <span>FBGI</span>
+                                            <div className="line">
+                                                <span>FBG Interrogate</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
+                                        </div>
+                                        <div className="check-list">
+                                            <div className="line">
                                                 <span>FBG 온도/음향</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
@@ -487,128 +499,128 @@ const HealthCheck = () => {
                                             </div>
                                         </div>
                                     </Card></div>
-                                </Col>
-                                <Col span={12} className="check-right">
                                     <div><Card title="고정연기센서" size="small" className="check-smoke division">
                                         <div className="check-list">
-                                            <div>
-                                                <span>센서 1</span>
+                                            <div className="line">
+                                                <span>연기센서 1</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 2</span>
+                                            <div className="line">
+                                                <span>연기센서 2</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 3</span>
+                                            <div className="line">
+                                                <span>연기센서 3</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 4</span>
+                                            <div className="line">
+                                                <span>연기센서 4</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 5</span>
+                                            <div className="line">
+                                                <span>연기센서 5</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 6</span>
+                                            <div className="line">
+                                                <span>연기센서 6</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 7</span>
+                                            <div className="line">
+                                                <span>연기센서 7</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 8</span>
+                                            <div className="line">
+                                                <span>연기센서 8</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 9</span>
+                                            <div className="line">
+                                                <span>연기센서 9</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 10</span>
+                                            <div className="line">
+                                                <span>연기센서 10</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 11</span>
+                                            <div className="line">
+                                                <span>연기센서 11</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 12</span>
+                                            <div className="line">
+                                                <span>연기센서 12</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 13</span>
+                                            <div className="line">
+                                                <span>연기센서 13</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 14</span>
+                                            <div className="line">
+                                                <span>연기센서 14</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 15</span>
+                                            <div className="line">
+                                                <span>연기센서 15</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 16</span>
+                                        </div>
+                                        <div className="check-list">
+                                            <div className="line">
+                                                <span>연기센서 16</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 17</span>
+                                            <div className="line">
+                                                <span>연기센서 17</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 18</span>
+                                            <div className="line">
+                                                <span>연기센서 18</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 19</span>
+                                            <div className="line">
+                                                <span>연기센서 19</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 20</span>
+                                            <div className="line">
+                                                <span>연기센서 20</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 21</span>
+                                            <div className="line">
+                                                <span>연기센서 21</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 22</span>
+                                            <div className="line">
+                                                <span>연기센서 22</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 23</span>
+                                            <div className="line">
+                                                <span>연기센서 23</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 24</span>
+                                            <div className="line">
+                                                <span>연기센서 24</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 25</span>
+                                            <div className="line">
+                                                <span>연기센서 25</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 26</span>
+                                            <div className="line">
+                                                <span>연기센서 26</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 27</span>
+                                            <div className="line">
+                                                <span>연기센서 27</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 28</span>
+                                            <div className="line">
+                                                <span>연기센서 28</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 29</span>
+                                            <div className="line">
+                                                <span>연기센서 29</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
-                                            <div>
-                                                <span>센서 30</span>
+                                            <div className="line">
+                                                <span>연기센서 30</span>
                                                 <TrafficLight Size="20" GreenOn className="trafficlight" />
                                             </div>
                                         </div>

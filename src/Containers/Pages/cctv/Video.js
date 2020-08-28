@@ -15,9 +15,8 @@ const Video = (props) => {
     //나중에 배열로 camera url마다 지정해야할듯
     const v1 = 'https://media.w3.org/2010/05/sintel/trailer_hd.mp4';  //분홍구름
     const v2 = 'http://media.w3.org/2010/05/bunny/movie.mp4';         //흰눈
-
-    const eL = [1, 1, 1, 1, 2, 2, 2, 1, 1, 1];
-    const [eventlocation, setEventlocation] = useState(0);  //rerendering eventlocation
+    
+    // const [eventlocation, setEventlocation] = useState(0);  //rerendering eventlocation
     const [videoUrl, setVideoUrl] = useState(v1);  //rerendering
     //https://media.w3.org/2010/05/sintel/trailer_hd.mp4   // http://media.w3.org/2010/05/bunny/movie.mp4
 
@@ -49,7 +48,6 @@ const Video = (props) => {
     }
 
     const StatusAlert = () => {
-        setEventlocation(2);
         Modal.error({
             title: 'Alert!',
             content: 'Warning'

@@ -31,6 +31,7 @@ export const Thermom = () => {
 }
 
 export const VoltChart = () => {
+    
     return (
         <div className="volt-chart gauge-chart">
             <h5 className="gauge-title">전압</h5>
@@ -50,35 +51,12 @@ export const VoltChart = () => {
                 endColor="#c0424e"//#005f00 #b50606
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
-                currentValueText="${value}V"
+                currentValueText="#{value}V"
+                currentValuePlaceholderStyle={"#{value}"}
             /></div>
     );
 }
 
-export const VoltChart1 = () => {
-    return (
-        <div className="volt-chart gauge-chart">
-            <h5 className="gauge-title">전압</h5>
-            <ReactSpeedometer
-                value={220}
-                minValue={150}
-                maxValue={400}
-                needleHeightRatio={0.7}
-                segments={7}
-                ringWidth={15}
-                labelFontSize={"10px"}
-                valueTextFontSize={"15px"}
-                width={180}
-                height={120}
-                needleColor="red"
-                startColor="#005f00"
-                endColor="#c0424e"//# #b50606
-                needleTransitionDuration={4000}
-                needleTransition="easeElastic"
-                currentValueText="${value}V"
-            /></div>
-    );
-}
 export const CurrentChart = () => {
     return (
         <div className="current-chart gauge-chart">
@@ -98,31 +76,8 @@ export const CurrentChart = () => {
                 endColor="#c0424e" //c0424e
                 needleTransitionDuration={4000}
                 needleTransition="easeElastic"
-                currentValueText="${value}A"
-            /></div>
-    );
-
-}
-export const CurrentChart1 = () => {
-    return (
-        <div className="current-chart gauge-chart">
-            <h5 className="gauge-title">전류</h5>
-            <ReactSpeedometer
-                value={70}
-                maxValue={100}
-                minValue={65}
-                segments={7}
-                ringWidth={15}
-                labelFontSize={"10px"}
-                valueTextFontSize={"15px"}
-                width={180}
-                height={120}
-                needleColor="red"
-                startColor="#fff"
-                endColor="#543884"
-                needleTransitionDuration={4000}
-                needleTransition="easeElastic"
-                currentValueText="${value}A"
+                currentValueText="#{value}A"
+                currentValuePlaceholderStyle={"#{value}"}
             /></div>
     );
 

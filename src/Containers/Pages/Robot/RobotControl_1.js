@@ -22,8 +22,8 @@ import {
     RobotDataChart2,
     RobotDataChart3,
     RobotDataChart4,
-    VoltChart1,
-    CurrentChart1,
+    VoltChart,
+    CurrentChart,
     Thermom,
     ModeChart
 } from '../Chart/RobotChart';
@@ -382,8 +382,8 @@ const RobotControl = () => {
                                             <img src="/robotcamera.png" alt="" />
                                         </div>*/}
                                         <div className="robot-info">
-                                            <VoltChart1 />
-                                            <CurrentChart1 />
+                                            <VoltChart />
+                                            <CurrentChart />
                                             <Thermom />
                                             {/*<p>
                                                 전압: 220.{Math.floor(Math.random() * 100)}V<br />

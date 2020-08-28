@@ -15,7 +15,6 @@ import { Joystick } from 'react-joystick-component';
 import moment from 'moment';
 import {
     RobotStateChart,
-    // RobotDataColumn,
     RobotDataColumn,
     VoltChart,
     CurrentChart,

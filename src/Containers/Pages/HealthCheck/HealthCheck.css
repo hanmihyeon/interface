@@ -39,11 +39,6 @@
     padding: 5px;
 }
 
-.check-left,
-.check-right {
-    height: 100%;
-}
-
 .check-left > div,
 .check-right > div {
     padding: 5px;
@@ -53,34 +48,21 @@
     height: 100%;
 }
 
-.division .cctv-optical,
-.division .cctv-thermal,
-.division .robot-optical,
-.division .robot-thermal {
+.check-list {
     display: inline-block;
     width: 50%;
-    margin-top: 5px;
 }
 
-.check-list div {
+.check-list .line {
     position: relative;
-    padding: 0 0 2px 15px;
-}
-
-.trafficlight,
-.trafficlight-title {
-    transform: rotate(-90deg);
-    position: absolute;
+    padding-top: 6%;
 }
 
 .trafficlight {
-    top: -15px;
-    left: 130px;
-}
-
-.trafficlight-title {
-    top: -7px;
-    left: 360px;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: -10%;
+    left: 70%;
 }
 
 .hidden-box {
@@ -135,14 +117,14 @@
 }
 
 .check-smoke .hidden-box > div {
-    align-items: flex-start;
+    align-items: center;
 }
 
 .check-smoke .hidden-box > div > div {
-    align-items: flex-start;
-    margin-top: 28px;
+    align-items: center;
+    margin-top: -20px;
 }
 
 .check-smoke .hidden-box span {
-    margin-top: 62px;
+    margin-top: -20px;
 }
