@@ -28,8 +28,10 @@
     * [react-audio-spectrum](https://www.npmjs.com/package/react-audio-spectrum): audio spectrum 표현
     * [recharts](http://recharts.org/en-US): 이전 대시보드 페이지의 센서 차트에 사용
 
+
+
 - Backend
-_담당이 아니기때문에 정확하지 않으며 추후 수정 예정_
+_**담당이 아니기때문에 정확하지 않으며 추후 수정 예정_
   + 서버
     * axios
     * body-parser
