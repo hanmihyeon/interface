@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Typography } from 'antd';
+import { Link } from 'react-router-dom';
 import Clock from 'react-live-clock';
-import 'antd/dist/antd.dark.css';
+
 import {
     UserOutlined,
     DashboardOutlined,
@@ -13,8 +14,9 @@ import {
     ToolOutlined,
     CheckCircleOutlined
 } from '@ant-design/icons'
-import { Link } from 'react-router-dom';
 
+
+import 'antd/dist/antd.dark.css';
 import './HeaderBox.css';
 
 const { SubMenu } = Menu
@@ -26,22 +28,6 @@ class HeaderBox extends Component {
         current: '',
         // thisTime: new Date()
     };
-
-    /*componentDidMount() {
-        this.timeID = setInterval(
-            () => this.Change(),
-        )
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timeID)
-    }
-
-    Change = () => {
-        this.setState({
-            thisTime : new Date(),
-        })
-    }*/
 
     handleClick = e => {
         this.setState({ current: e.key });

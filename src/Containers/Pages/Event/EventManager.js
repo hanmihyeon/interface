@@ -11,22 +11,12 @@ import {
     Popconfirm,
     Popover
 } from 'antd';
-
 import { UserOutlined, ZoomInOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+
 import '../Common.css';
 import './Event.css';
-// import DownloadLink from 'react-download-link';
 
-/*const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transfrom: 'translate(-50%,-50%)'
-    }
-};*/
+// import DownloadLink from 'react-download-link';
 
 const data = [
     {

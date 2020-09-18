@@ -1,4 +1,4 @@
-/*********************** 3가지 버전 ****************************/
+/*********************** 3가지 버전(임시) ****************************/
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card } from 'antd';
 import { CheckCircleOutlined } from '@ant-design/icons';

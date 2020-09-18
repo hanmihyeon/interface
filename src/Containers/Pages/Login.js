@@ -1,9 +1,11 @@
 import React, { Fragment } from 'react';
 import { Button, Row, Input, Form } from 'antd';
-import './Login.css'
 import { Link } from 'react-router-dom';
 
+import './Login.css'
+
 const FormItem = Form.Item
+
 const Login = () => {
     return (
         <Fragment>

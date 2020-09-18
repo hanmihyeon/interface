@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Button, Slider, Radio, Switch, Popconfirm, message } from 'antd';
 import { LaptopOutlined } from '@ant-design/icons';
-
 import { Player } from 'video-react';
 import { Joystick } from 'react-joystick-component';
 

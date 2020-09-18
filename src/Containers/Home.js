@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout } from 'antd';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import 'antd/dist/antd.dark.css';
+
 import Dashboard from './Dashboard';
 import Chart from './Chart';
 import Video from './Video';
@@ -10,9 +10,10 @@ import User from './User';
 import Device from './Device';
 import Home1 from './Home_1';
 import Menu from '../Layout/Menu';
-
 import HeaderBox from '../Layout/HeaderBox';
 import FooterBox from '../Layout/FooterBox';
+
+import 'antd/dist/antd.dark.css';
 
 const { Content, Header, Footer } = Layout;
 

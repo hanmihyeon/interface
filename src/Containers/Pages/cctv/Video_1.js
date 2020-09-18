@@ -1,3 +1,4 @@
+/********************** 비율 강제 수정 하지 않은 버전 *************************/
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Modal } from 'antd';
 import { VideoCameraOutlined } from '@ant-design/icons';

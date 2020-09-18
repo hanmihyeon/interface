@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Col, Card, Modal, Alert } from 'antd';
+
 import './Alarm.css';
 
 class Alarm extends Component {

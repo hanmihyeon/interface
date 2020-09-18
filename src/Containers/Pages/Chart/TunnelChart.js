@@ -1,12 +1,8 @@
 import React from 'react';
-import ReactApexChart from 'react-apexcharts';
 
+import ReactApexChart from 'react-apexcharts';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-
-/*colors: ['#F9120F', '#F25A16', '#FEFF37', '#51B241', '#2F92D2'],
-colors: ['#D63249','#E16929','#E0B74E','#39A048','#32A4D7'],
-colors: ['#9e3953', '#dd713e', '#9e8439', '#529e39', '#39539e'],*/
 
 export const FBG = () => {
   const option1 = {

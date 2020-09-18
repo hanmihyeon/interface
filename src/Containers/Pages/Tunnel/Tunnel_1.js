@@ -2,7 +2,6 @@
 import React, { Fragment, useState } from 'react';
 import { Breadcrumb, Row, Col, Card, notification, Alert, Button, Form, Slider, Radio, Switch, Popconfirm, message } from 'antd';
 import { LaptopOutlined, VideoCameraOutlined } from '@ant-design/icons';
-
 import { Player } from 'video-react';
 import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
@@ -17,7 +16,6 @@ import {
     FBGChart,
     SagnacChart
 } from '../Chart/TunnelChart';
-// import { TunnelChart } from '../Chart/SensorAvgChart';
 
 import 'video-react/dist/video-react.css';
 import '../cctv/Video.css';

@@ -3,8 +3,8 @@ import { Breadcrumb, Row, Col, Card, notification, Modal } from 'antd';
 import { VideoCameraOutlined } from '@ant-design/icons';
 import { Player } from 'video-react';
 
-
 import { TunnelStatus } from '../Tunnel/TunnelStatus';
+
 import 'video-react/dist/video-react.css';
 import './Video.css';
 

@@ -3,6 +3,7 @@ import { ArrowRightOutlined, VideoCameraOutlined } from '@ant-design/icons';
 import TweenOne from 'rc-tween-one';
 import BezierPlugin from 'rc-tween-one/lib/plugin/BezierPlugin';
 
+import './Tunnel.css';
 TweenOne
     .plugins
     .push(BezierPlugin);
